@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  direction: ltr;
+}
+
+[dir="rtl"] {
+  direction: rtl;
+}
+
+.rtl-text {
+  text-align: right;
+}

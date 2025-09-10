@@ -1,0 +1,46 @@
+{
+  "common": {
+    "name": "Badr Ribzat",
+    "title": "International Portfolio",
+    "welcome": "Welcome to my international portfolio",
+    "about": "About",
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "contact": "Contact",
+    "downloadResume": "Download Resume",
+    "downloadPDF": "Download PDF",
+    "language": "Language"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I am a professional developer with international experience, specializing in creating innovative solutions for global markets. My portfolio showcases my work across different countries and cultures."
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "company": "Company",
+    "position": "Position",
+    "duration": "Duration",
+    "description": "Description"
+  },
+  "education": {
+    "title": "Education",
+    "institution": "Institution",
+    "degree": "Degree",
+    "year": "Year"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "technical": "Technical Skills",
+    "languages": "Languages",
+    "tools": "Tools & Frameworks"
+  },
+  "contact": {
+    "title": "Contact Information",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  }
+}

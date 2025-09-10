@@ -1,0 +1,46 @@
+{
+  "common": {
+    "name": "バドル・リブザット",
+    "title": "国際ポートフォリオ",
+    "welcome": "私の国際ポートフォリオへようこそ",
+    "about": "概要",
+    "experience": "経験",
+    "education": "教育",
+    "skills": "スキル",
+    "contact": "連絡先",
+    "downloadResume": "履歴書をダウンロード",
+    "downloadPDF": "PDFダウンロード",
+    "language": "言語"
+  },
+  "about": {
+    "title": "私について",
+    "description": "私は国際的な経験を持つプロフェッショナルな開発者で、グローバル市場向けの革新的なソリューションの作成を専門としています。私のポートフォリオは、さまざまな国や文化での私の作品を紹介しています。"
+  },
+  "experience": {
+    "title": "職歴",
+    "company": "会社",
+    "position": "役職",
+    "duration": "期間",
+    "description": "説明"
+  },
+  "education": {
+    "title": "教育",
+    "institution": "機関",
+    "degree": "学位",
+    "year": "年"
+  },
+  "skills": {
+    "title": "スキルと技術",
+    "technical": "技術スキル",
+    "languages": "言語",
+    "tools": "ツールとフレームワーク"
+  },
+  "contact": {
+    "title": "連絡先情報",
+    "email": "メール",
+    "phone": "電話",
+    "location": "場所",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  }
+}
