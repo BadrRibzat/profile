@@ -1,0 +1,66 @@
+{
+  "title": "Internationales Portfolio-Profil",
+  "subtitle": "Professionelles Profil mit Mehrsprachiger Unterstützung",
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "experience": "Erfahrung",
+    "education": "Bildung",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "download": "Herunterladen"
+  },
+  "hero": {
+    "greeting": "Hallo, ich bin",
+    "name": "Badr Ribzat",
+    "title": "Software-Entwickler und Portfolio-Spezialist",
+    "description": "Erstellung internationaler Portfolio-Profile mit mehrsprachiger Unterstützung und professionellen Dokumentformaten.",
+    "downloadCV": "Lebenslauf Herunterladen",
+    "contactMe": "Kontaktieren Sie mich"
+  },
+  "about": {
+    "title": "Über Mich",
+    "description": "Leidenschaftlicher Software-Entwickler, spezialisiert auf die Erstellung internationaler Portfolio-Profile, die sich an verschiedene kulturelle und professionelle Standards in mehreren Ländern anpassen.",
+    "highlight": "Multikulturelle Erfahrung in globalen Märkten"
+  },
+  "experience": {
+    "title": "Berufserfahrung",
+    "years": "Jahre"
+  },
+  "education": {
+    "title": "Bildung"
+  },
+  "skills": {
+    "title": "Technische Fähigkeiten"
+  },
+  "projects": {
+    "title": "Projekte"
+  },
+  "contact": {
+    "title": "Kontakt Aufnehmen",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Nachricht Senden"
+  },
+  "download": {
+    "title": "Dokumente Herunterladen",
+    "format": "Format Wählen",
+    "language": "Sprache Wählen",
+    "template": "Vorlage Wählen",
+    "generate": "Dokument Generieren"
+  },
+  "formats": {
+    "pdf": "PDF-Dokument",
+    "docx": "Word-Dokument",
+    "html": "Webseite"
+  },
+  "templates": {
+    "modern": "Moderne Vorlage",
+    "classic": "Klassische Vorlage",
+    "minimalist": "Minimalistische Vorlage",
+    "academic": "Akademische Vorlage",
+    "creative": "Kreative Vorlage"
+  }
+}

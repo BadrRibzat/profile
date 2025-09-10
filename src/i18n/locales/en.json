@@ -1,0 +1,66 @@
+{
+  "title": "International Portfolio Profile",
+  "subtitle": "Professional Profile with Multi-Language Support",
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "download": "Download"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Badr Ribzat",
+    "title": "Software Developer & Portfolio Specialist",
+    "description": "Creating international portfolio profiles with multi-language support and professional document formats.",
+    "downloadCV": "Download CV",
+    "contactMe": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Passionate software developer specializing in creating international portfolio profiles that adapt to different cultural and professional standards across multiple countries.",
+    "highlight": "Multi-cultural experience in global markets"
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "years": "years"
+  },
+  "education": {
+    "title": "Education"
+  },
+  "skills": {
+    "title": "Technical Skills"
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message"
+  },
+  "download": {
+    "title": "Download Documents",
+    "format": "Choose Format",
+    "language": "Choose Language",
+    "template": "Choose Template",
+    "generate": "Generate Document"
+  },
+  "formats": {
+    "pdf": "PDF Document",
+    "docx": "Word Document",
+    "html": "Web Page"
+  },
+  "templates": {
+    "modern": "Modern Template",
+    "classic": "Classic Template",
+    "minimalist": "Minimalist Template",
+    "academic": "Academic Template",
+    "creative": "Creative Template"
+  }
+}
