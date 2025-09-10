@@ -1,0 +1,66 @@
+{
+  "title": "国際ポートフォリオプロフィール",
+  "subtitle": "多言語対応のプロフェッショナルプロフィール",
+  "nav": {
+    "home": "ホーム",
+    "about": "私について",
+    "experience": "経験",
+    "education": "学歴",
+    "skills": "スキル",
+    "projects": "プロジェクト",
+    "contact": "お問い合わせ",
+    "download": "ダウンロード"
+  },
+  "hero": {
+    "greeting": "こんにちは、私は",
+    "name": "バドル・リブザット",
+    "title": "ソフトウェア開発者およびポートフォリオ専門家",
+    "description": "多言語サポートとプロフェッショナルな文書形式を持つ国際ポートフォリオプロフィールを作成します。",
+    "downloadCV": "履歴書をダウンロード",
+    "contactMe": "お問い合わせ"
+  },
+  "about": {
+    "title": "私について",
+    "description": "複数の国の異なる文化的および専門的基準に適応する国際ポートフォリオプロフィールの作成を専門とする情熱的なソフトウェア開発者。",
+    "highlight": "グローバル市場での多文化経験"
+  },
+  "experience": {
+    "title": "職歴",
+    "years": "年"
+  },
+  "education": {
+    "title": "学歴"
+  },
+  "skills": {
+    "title": "技術スキル"
+  },
+  "projects": {
+    "title": "プロジェクト"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "name": "お名前",
+    "email": "メールアドレス",
+    "message": "メッセージ",
+    "send": "メッセージを送信"
+  },
+  "download": {
+    "title": "文書をダウンロード",
+    "format": "形式を選択",
+    "language": "言語を選択",
+    "template": "テンプレートを選択",
+    "generate": "文書を生成"
+  },
+  "formats": {
+    "pdf": "PDF文書",
+    "docx": "Word文書",
+    "html": "ウェブページ"
+  },
+  "templates": {
+    "modern": "モダンテンプレート",
+    "classic": "クラシックテンプレート",
+    "minimalist": "ミニマリストテンプレート",
+    "academic": "アカデミックテンプレート",
+    "creative": "クリエイティブテンプレート"
+  }
+}

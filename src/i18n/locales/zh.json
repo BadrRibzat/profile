@@ -1,0 +1,66 @@
+{
+  "title": "国际作品集档案",
+  "subtitle": "具有多语言支持的专业档案",
+  "nav": {
+    "home": "首页",
+    "about": "关于我",
+    "experience": "工作经验",
+    "education": "教育背景",
+    "skills": "技能",
+    "projects": "项目",
+    "contact": "联系我",
+    "download": "下载"
+  },
+  "hero": {
+    "greeting": "你好，我是",
+    "name": "巴德尔·里布扎特",
+    "title": "软件开发者和作品集专家",
+    "description": "创建具有多语言支持和专业文档格式的国际作品集档案。",
+    "downloadCV": "下载简历",
+    "contactMe": "联系我"
+  },
+  "about": {
+    "title": "关于我",
+    "description": "热情的软件开发者，专门创建适应多个国家不同文化和专业标准的国际作品集档案。",
+    "highlight": "在全球市场的多元文化经验"
+  },
+  "experience": {
+    "title": "专业经验",
+    "years": "年"
+  },
+  "education": {
+    "title": "教育背景"
+  },
+  "skills": {
+    "title": "技术技能"
+  },
+  "projects": {
+    "title": "项目"
+  },
+  "contact": {
+    "title": "联系我",
+    "name": "姓名",
+    "email": "邮箱",
+    "message": "信息",
+    "send": "发送信息"
+  },
+  "download": {
+    "title": "下载文档",
+    "format": "选择格式",
+    "language": "选择语言",
+    "template": "选择模板",
+    "generate": "生成文档"
+  },
+  "formats": {
+    "pdf": "PDF文档",
+    "docx": "Word文档",
+    "html": "网页"
+  },
+  "templates": {
+    "modern": "现代模板",
+    "classic": "经典模板",
+    "minimalist": "简约模板",
+    "academic": "学术模板",
+    "creative": "创意模板"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "title": "Perfil Portfolio Internacional",
+  "subtitle": "Perfil Profesional con Soporte Multi-idioma",
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "download": "Descargar"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Badr Ribzat",
+    "title": "Desarrollador de Software y Especialista en Portfolios",
+    "description": "Creando perfiles de portfolio internacionales con soporte multi-idioma y formatos de documentos profesionales.",
+    "downloadCV": "Descargar CV",
+    "contactMe": "Contáctame"
+  },
+  "about": {
+    "title": "Acerca de Mí",
+    "description": "Desarrollador de software apasionado especializado en crear perfiles de portfolio internacionales que se adaptan a diferentes estándares culturales y profesionales en múltiples países.",
+    "highlight": "Experiencia multicultural en mercados globales"
+  },
+  "experience": {
+    "title": "Experiencia Profesional",
+    "years": "años"
+  },
+  "education": {
+    "title": "Educación"
+  },
+  "skills": {
+    "title": "Habilidades Técnicas"
+  },
+  "projects": {
+    "title": "Proyectos"
+  },
+  "contact": {
+    "title": "Ponerse en Contacto",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje"
+  },
+  "download": {
+    "title": "Descargar Documentos",
+    "format": "Elegir Formato",
+    "language": "Elegir Idioma",
+    "template": "Elegir Plantilla",
+    "generate": "Generar Documento"
+  },
+  "formats": {
+    "pdf": "Documento PDF",
+    "docx": "Documento Word",
+    "html": "Página Web"
+  },
+  "templates": {
+    "modern": "Plantilla Moderna",
+    "classic": "Plantilla Clásica",
+    "minimalist": "Plantilla Minimalista",
+    "academic": "Plantilla Académica",
+    "creative": "Plantilla Creativa"
+  }
+}
