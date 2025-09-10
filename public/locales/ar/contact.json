@@ -1,0 +1,49 @@
+{
+  "seo": {
+    "title": "التواصل - بدر ربزاط",
+    "description": "تواصل مع بدر ربزاط للفرص المهنية والتعاونات أو الأسئلة التقنية."
+  },
+  "title": "لنتواصل",
+  "subtitle": "مستعد للتحديات والفرص الجديدة. دعونا نناقش كيف يمكنني المساهمة في فريقكم أو مشروعكم.",
+  "info": {
+    "title": "معلومات التواصل",
+    "email": "البريد الإلكتروني",
+    "phone": "الهاتف",
+    "location": "الموقع",
+    "timezone": "المنطقة الزمنية"
+  },
+  "social": {
+    "title": "الشبكات الاجتماعية"
+  },
+  "availability": {
+    "status": "متاح للفرص",
+    "message": "عادة ما أرد خلال 24 ساعة"
+  },
+  "form": {
+    "title": "إرسال رسالة",
+    "name": "الاسم الكامل",
+    "namePlaceholder": "اسمك الكامل",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "your@email.com",
+    "subject": "الموضوع",
+    "subjectPlaceholder": "موضوع رسالتك",
+    "opportunityType": "نوع الفرصة",
+    "selectOpportunity": "اختر نوعاً",
+    "opportunities": {
+      "fulltime": "وظيفة بدوام كامل",
+      "internship": "تدريب",
+      "contract": "عقد/عمل حر",
+      "training": "تدريب/إرشاد",
+      "collaboration": "تعاون",
+      "other": "أخرى"
+    },
+    "preferredLanguage": "اللغة المفضلة",
+    "message": "الرسالة",
+    "messagePlaceholder": "شارك تفاصيل مشروعك، الفرصة أو أسئلتك...",
+    "send": "إرسال الرسالة",
+    "sending": "جاري الإرسال...",
+    "success": "تم إرسال الرسالة بنجاح!",
+    "error": "خطأ في الإرسال. يرجى المحاولة مرة أخرى.",
+    "responseTime": "عادة ما أرد خلال 24 ساعة"
+  }
+}

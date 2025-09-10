@@ -1,0 +1,49 @@
+{
+  "seo": {
+    "title": "Kontakt - Badr Ribzat",
+    "description": "Kontaktieren Sie Badr Ribzat für berufliche Möglichkeiten, Kooperationen oder technische Fragen."
+  },
+  "title": "Lassen Sie uns verbinden",
+  "subtitle": "Bereit für neue Herausforderungen und Möglichkeiten. Lassen Sie uns besprechen, wie ich zu Ihrem Team oder Projekt beitragen kann.",
+  "info": {
+    "title": "Kontaktinformationen",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "location": "Standort",
+    "timezone": "Zeitzone"
+  },
+  "social": {
+    "title": "Soziale Netzwerke"
+  },
+  "availability": {
+    "status": "Verfügbar für Möglichkeiten",
+    "message": "Antwortet normalerweise innerhalb von 24h"
+  },
+  "form": {
+    "title": "Nachricht senden",
+    "name": "Vollständiger Name",
+    "namePlaceholder": "Ihr vollständiger Name",
+    "email": "E-Mail",
+    "emailPlaceholder": "ihre@email.de",
+    "subject": "Betreff",
+    "subjectPlaceholder": "Betreff Ihrer Nachricht",
+    "opportunityType": "Art der Möglichkeit",
+    "selectOpportunity": "Typ auswählen",
+    "opportunities": {
+      "fulltime": "Vollzeitstelle",
+      "internship": "Praktikum",
+      "contract": "Vertrag/Freelance",
+      "training": "Schulung/Mentoring",
+      "collaboration": "Zusammenarbeit",
+      "other": "Andere"
+    },
+    "preferredLanguage": "Bevorzugte Sprache",
+    "message": "Nachricht",
+    "messagePlaceholder": "Teilen Sie Details über Ihr Projekt, Möglichkeit oder Fragen mit...",
+    "send": "Nachricht senden",
+    "sending": "Senden...",
+    "success": "Nachricht erfolgreich gesendet!",
+    "error": "Fehler beim Senden. Bitte versuchen Sie es erneut.",
+    "responseTime": "Ich antworte normalerweise innerhalb von 24 Stunden"
+  }
+}

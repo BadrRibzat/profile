@@ -1,0 +1,39 @@
+{
+  "seo": {
+    "title": "Badr Ribzat - Ingeniero de Software Full-Stack",
+    "description": "Ingeniero de Software Full-Stack autodidacta especializado en IA, aplicaciones biomédicas y tecnología educativa. Con sede en Marruecos, disponible para oportunidades remotas en todo el mundo."
+  },
+  "hero": {
+    "subtitle": "Ingeniero de Software Full-Stack",
+    "location": "Ksar El Kebir, Marruecos",
+    "availability": "Disponible para Trabajo Remoto",
+    "highlights": {
+      "selfTaught": "Experto Autodidacta",
+      "aiExpert": "Especialista en IA y ML",
+      "resilient": "Solucionador de Problemas Resiliente"
+    },
+    "cta": {
+      "viewResume": "Descargar Currículum",
+      "viewProjects": "Ver Proyectos"
+    }
+  },
+  "stats": {
+    "alxScore": "Puntuación Programa ALX",
+    "projects": "Proyectos en Vivo",
+    "languages": "Lenguajes de Programación",
+    "technologies": "Tecnologías Dominadas"
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "description": "Explora mis últimos trabajos que muestran experiencia en desarrollo full-stack, integración de IA y aplicaciones listas para producción.",
+    "biomedical": {
+      "description": "Sistema de detección biomédica impulsado por IA con capacidades de aprendizaje automático para aplicaciones de salud y asistencia diagnóstica."
+    },
+    "education": {
+      "description": "Plataforma integral de tecnología educativa con gestión de cursos, análisis de estudiantes y módulos de aprendizaje interactivos."
+    },
+    "chatbot": {
+      "description": "Asistente chatbot inteligente con procesamiento de lenguaje natural, respuestas en tiempo real y arquitectura escalable."
+    }
+  }
+}

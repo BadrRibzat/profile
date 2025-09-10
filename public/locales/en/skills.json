@@ -1,0 +1,52 @@
+{
+  "title": "Skills & Expertise",
+  "subtitle": "A comprehensive overview of my technical abilities, practical certifications, and multilingual capabilities developed through self-directed learning and hands-on experience.",
+  "categories": {
+    "programming": "Programming Languages",
+    "backend": "Backend Development", 
+    "frontend": "Frontend Development",
+    "database": "Database Systems",
+    "aiml": "AI & Machine Learning",
+    "devops": "DevOps & Infrastructure"
+  },
+  "technical": {
+    "title": "Technical Skills"
+  },
+  "practical": {
+    "title": "Certified Practical Skills",
+    "forklift": "Forklift Operation",
+    "forkliftDesc": "Heavy machinery operation with safety certifications",
+    "driving": "Professional Driving",
+    "drivingCert": "Valid Moroccan License (All Categories)",
+    "drivingDesc": "Professional driving with excellent safety record",
+    "hairstyling": "Professional Hairstyling",
+    "hairstylingCert": "State-Approved Certification (Men & Women)",
+    "hairstylingDesc": "Full-service styling with modern techniques",
+    "culinary": "Culinary Arts",
+    "culinaryCert": "Therapeutic Nutrition Specialist",
+    "culinaryDesc": "Health-focused cuisine and nutritional planning"
+  },
+  "languages": {
+    "title": "Language Proficiency",
+    "arabic": "Arabic",
+    "french": "French", 
+    "english": "English",
+    "german": "German",
+    "spanish": "Spanish",
+    "japanese": "Japanese"
+  },
+  "levels": {
+    "native": "Native",
+    "professional": "Professional",
+    "upperIntermediate": "Upper-Intermediate",
+    "intermediate": "Intermediate",
+    "basic": "Basic"
+  },
+  "proficiency": "Proficiency Level",
+  "cta": {
+    "title": "Ready to Make an Impact",
+    "description": "Let's discuss how my diverse skill set can contribute to your next project or team.",
+    "contact": "Get in Touch",
+    "resume": "View Resume"
+  }
+}

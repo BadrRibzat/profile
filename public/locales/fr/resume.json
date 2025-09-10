@@ -1,0 +1,47 @@
+{
+  "title": "Curriculum Vitae",
+  "subtitle": "Version optimisée ATS pour",
+  "pageTitle": "CV Professionnel",
+  "pageDescription": "Téléchargez mon CV professionnel optimisé pour les systèmes ATS et adapté aux standards internationaux.",
+  "active": "Actuel",
+  "navigation": {
+    "back": "Retour à l'accueil"
+  },
+  "languageSelector": {
+    "title": "Choisissez votre langue préférée"
+  },
+  "sections": {
+    "summary": "Résumé Professionnel",
+    "skills": "Compétences Techniques",
+    "projects": "Projets Clés",
+    "experience": "Expérience Professionnelle",
+    "education": "Formation & Certifications",
+    "additional": "Qualifications Supplémentaires"
+  },
+  "subsections": {
+    "languages": "Langues",
+    "additionalSkills": "Compétences Supplémentaires"
+  },
+  "generating": "Génération...",
+  "download": "Télécharger PDF",
+  "preview": "Aperçu",
+  "features": "Fonctionnalités",
+  "featuresList": {
+    "atsOptimized": "Optimisé ATS",
+    "localized": "Localisé et culturellement adapté",
+    "professionalFormat": "Format professionnel standard",
+    "japaneseFormat": "Format Rirekisho japonais"
+  },
+  "specifications": "Spécifications",
+  "specs": {
+    "format": "Format",
+    "language": "Langue",
+    "style": "Style",
+    "optimized": "Optimisé"
+  },
+  "cta": {
+    "title": "Prêt à collaborer?",
+    "description": "Contactez-moi pour discuter des opportunités et des projets.",
+    "button": "Contactez-moi"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "certifications": "Certificaciones",
+    "resume": "Currículum",
+    "contact": "Contacto"
+  },
+  "seo": {
+    "description": "Badr Ribzat - Ingeniero de Software Full-Stack autodidacta especializado en IA, aplicaciones biomédicas y tecnología educativa. Con sede en Marruecos, disponible para oportunidades remotas en todo el mundo."
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "builtWith": "Construido con",
+    "madeIn": "Hecho con ❤️ en Marruecos"
+  }
+}

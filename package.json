@@ -1,0 +1,71 @@
+{
+  "name": "badr-ribzat-portfolio",
+  "version": "1.0.0",
+  "description": "Professional international portfolio with multi-language support and ATS-optimized resume generation",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next build && next export",
+    "analyze": "cross-env ANALYZE=true next build",
+    "type-check": "tsc --pretty --noEmit",
+    "preview": "next build && next start",
+    "clean": "rm -rf .next out",
+    "generate-sitemap": "node scripts/generate-sitemap.js"
+  },
+  "keywords": [
+    "portfolio",
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "i18n",
+    "resume-generator",
+    "multilingual",
+    "badr-ribzat",
+    "full-stack-developer"
+  ],
+  "author": "Badr Ribzat <badrribzat@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BadrRibzat/profile.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BadrRibzat/profile/issues"
+  },
+  "homepage": "https://github.com/BadrRibzat/profile#readme",
+  "dependencies": {
+    "@react-pdf/renderer": "^3.1.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "autoprefixer": "^10.4.0",
+    "framer-motion": "^10.0.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.2",
+    "lucide-react": "^0.290.0",
+    "mixpanel-browser": "^2.47.0",
+    "next": "^14.0.0",
+    "next-i18next": "^15.0.0",
+    "next-seo": "^6.4.0",
+    "postcss": "^8.4.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-hotjar": "^6.0.0",
+    "react-i18next": "^13.0.0",
+    "react-intersection-observer": "^9.5.0",
+    "react-pdf": "^10.1.0",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.0",
+    "@tailwindcss/typography": "^0.5.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0"
+  }
+}

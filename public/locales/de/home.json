@@ -1,0 +1,39 @@
+{
+  "seo": {
+    "title": "Badr Ribzat - Full-Stack Softwareingenieur",
+    "description": "Autodidaktischer Full-Stack-Softwareingenieur spezialisiert auf KI, biomedizinische Anwendungen und Bildungstechnologie. Ansässig in Marokko, verfügbar für Remote-Möglichkeiten weltweit."
+  },
+  "hero": {
+    "subtitle": "Full-Stack Softwareingenieur",
+    "location": "Ksar El Kebir, Marokko",
+    "availability": "Verfügbar für Remote-Arbeit",
+    "highlights": {
+      "selfTaught": "Autodidaktischer Experte",
+      "aiExpert": "KI & ML Spezialist",
+      "resilient": "Widerstandsfähiger Problemlöser"
+    },
+    "cta": {
+      "viewResume": "Lebenslauf Herunterladen",
+      "viewProjects": "Projekte Ansehen"
+    }
+  },
+  "stats": {
+    "alxScore": "ALX Programm Punktzahl",
+    "projects": "Live-Projekte",
+    "languages": "Programmiersprachen",
+    "technologies": "Beherrschte Technologien"
+  },
+  "projects": {
+    "title": "Ausgewählte Projekte",
+    "description": "Entdecken Sie meine neuesten Arbeiten, die Expertise in Full-Stack-Entwicklung, KI-Integration und produktionsreife Anwendungen zeigen.",
+    "biomedical": {
+      "description": "KI-gestütztes biomedizinisches Erkennungssystem mit maschinellen Lernfähigkeiten für Gesundheitsanwendungen und Diagnosehilfe."
+    },
+    "education": {
+      "description": "Umfassende Bildungstechnologie-Plattform mit Kursverwaltung, Studentenanalysen und interaktiven Lernmodulen."
+    },
+    "chatbot": {
+      "description": "Intelligenter Chatbot-Assistent mit natürlicher Sprachverarbeitung, Echtzeitantworten und skalierbarer Architektur."
+    }
+  }
+}

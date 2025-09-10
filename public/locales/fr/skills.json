@@ -1,0 +1,52 @@
+{
+  "title": "Compétences & Expertise",
+  "subtitle": "Un aperçu complet de mes capacités techniques, certifications pratiques et compétences multilingues développées par l'apprentissage autonome et l'expérience pratique.",
+  "categories": {
+    "programming": "Langages de Programmation",
+    "backend": "Développement Backend",
+    "frontend": "Développement Frontend", 
+    "database": "Systèmes de Base de Données",
+    "aiml": "IA & Apprentissage Automatique",
+    "devops": "DevOps & Infrastructure"
+  },
+  "technical": {
+    "title": "Compétences Techniques"
+  },
+  "practical": {
+    "title": "Compétences Pratiques Certifiées",
+    "forklift": "Conduite de Chariot Élévateur",
+    "forkliftDesc": "Opération de machinerie lourde avec certifications de sécurité",
+    "driving": "Conduite Professionnelle", 
+    "drivingCert": "Permis Marocain Valide (Toutes Catégories)",
+    "drivingDesc": "Conduite professionnelle avec excellent dossier de sécurité",
+    "hairstyling": "Coiffure Professionnelle",
+    "hairstylingCert": "Certification Agréée par l'État (Hommes & Femmes)",
+    "hairstylingDesc": "Service complet de coiffure avec techniques modernes",
+    "culinary": "Arts Culinaires",
+    "culinaryCert": "Spécialiste en Nutrition Thérapeutique",
+    "culinaryDesc": "Cuisine axée sur la santé et planification nutritionnelle"
+  },
+  "languages": {
+    "title": "Maîtrise des Langues",
+    "arabic": "Arabe",
+    "french": "Français",
+    "english": "Anglais", 
+    "german": "Allemand",
+    "spanish": "Espagnol",
+    "japanese": "Japonais"
+  },
+  "levels": {
+    "native": "Natif",
+    "professional": "Professionnel",
+    "upperIntermediate": "Intermédiaire Supérieur",
+    "intermediate": "Intermédiaire",
+    "basic": "Débutant"
+  },
+  "proficiency": "Niveau de Maîtrise",
+  "cta": {
+    "title": "Prêt à Avoir un Impact",
+    "description": "Discutons de la façon dont mes compétences diverses peuvent contribuer à votre prochain projet ou équipe.",
+    "contact": "Entrer en Contact",
+    "resume": "Voir CV"
+  }
+}

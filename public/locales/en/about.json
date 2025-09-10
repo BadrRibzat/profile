@@ -1,0 +1,38 @@
+{
+  "seo": {
+    "title": "About Me",
+    "description": "Discover the story behind Badr Ribzat, a self-taught full-stack engineer driven by passion, resilience, and a desire to solve complex problems."
+  },
+  "title": "My Journey",
+  "subtitle": "From Practical Trades to Advanced Technology",
+  "philosophy": {
+    "title": "My Philosophy",
+    "content": "I believe that true innovation comes from a blend of diverse experiences. My path wasn't linear, and that's my greatest strength. I tackle problems with a unique perspective, combining practical, hands-on skills with deep technical knowledge."
+  },
+  "story": {
+    "title": "My Story",
+    "p1": "My career began not in front of a screen, but with my hands—mastering trades like professional hairstyling, culinary arts, and operating heavy machinery. These roles taught me discipline, attention to detail, and the art of client satisfaction.",
+    "p2": "However, a deep-seated curiosity for how things work led me to the world of technology. I embarked on an intense journey of self-directed learning, dedicating thousands of hours to mastering software engineering from the ground up.",
+    "p3": "This culminated in my acceptance and outstanding performance in the ALX Software Engineering program, a rigorous 18-month curriculum where I solidified my skills in full-stack development, algorithms, and system design, finishing with a score of 106.76%."
+  },
+  "ambitions": {
+    "title": "My Ambitions & Opportunity Search",
+    "p1": "I am actively seeking a full-time position, internship, or training program (like an 'Ausbildung' in Germany) that offers visa sponsorship. My goal is to apply my diverse skills to a team that values innovation, hard work, and a unique perspective. I am particularly interested in roles within:",
+    "areas": {
+      "ai": "AI & Robotics",
+      "biomedical": "Biomedical Technology",
+      "edtech": "Educational Technology"
+    }
+  },
+  "journey": {
+    "title": "A Timeline of Growth"
+  },
+  "timeline": {
+    "0": { "event": "Professional Driving", "description": "Obtained professional driving licenses, ensuring safety and reliability." },
+    "1": { "event": "Certified Hairstylist", "description": "Graduated with state-approved diplomas in men's and women's hairstyling." },
+    "2": { "event": "Digital Marketing", "description": "Achieved Google certification in Digital Marketing, my first step into the tech world." },
+    "3": { "event": "Forklift Operator", "description": "Certified (CACES R489 & R485) to operate heavy machinery, mastering precision and safety protocols." },
+    "4": { "event": "ALX Software Engineering", "description": "Began the intensive 18-month full-stack development program." },
+    "5": { "event": "Graduation & Specialization", "description": "Completed the ALX program with top scores and began specializing in AI and advanced backend systems." }
+  }
+}

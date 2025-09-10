@@ -1,0 +1,39 @@
+{
+  "seo": {
+    "title": "Badr Ribzat - Ingénieur Logiciel Full-Stack",
+    "description": "Ingénieur logiciel Full-Stack autodidacte spécialisé en IA, applications biomédicales et technologies éducatives. Basé au Maroc, disponible pour des opportunités à distance dans le monde entier."
+  },
+  "hero": {
+    "subtitle": "Ingénieur Logiciel Full-Stack",
+    "location": "Ksar El Kebir, Maroc",
+    "availability": "Disponible pour Travail à Distance",
+    "highlights": {
+      "selfTaught": "Expert Autodidacte",
+      "aiExpert": "Spécialiste IA & ML",
+      "resilient": "Résolveur de Problèmes Résilient"
+    },
+    "cta": {
+      "viewResume": "Télécharger CV",
+      "viewProjects": "Voir Projets"
+    }
+  },
+  "stats": {
+    "alxScore": "Score Programme ALX",
+    "projects": "Projets en Direct",
+    "languages": "Langages de Programmation",
+    "technologies": "Technologies Maîtrisées"
+  },
+  "projects": {
+    "title": "Projets Phares",
+    "description": "Explorez mes derniers travaux démontrant l'expertise en développement full-stack, intégration IA et applications prêtes pour la production.",
+    "biomedical": {
+      "description": "Système de détection biomédicale alimenté par l'IA avec des capacités d'apprentissage automatique pour les applications de santé et l'assistance diagnostique."
+    },
+    "education": {
+      "description": "Plateforme complète de technologie éducative avec gestion des cours, analyses d'étudiants et modules d'apprentissage interactifs."
+    },
+    "chatbot": {
+      "description": "Assistant chatbot intelligent avec traitement du langage naturel, réponses en temps réel et architecture évolutive."
+    }
+  }
+}

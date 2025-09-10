@@ -1,0 +1,39 @@
+{
+  "seo": {
+    "title": "Badr Ribzat - Full-Stack Software Engineer",
+    "description": "Self-taught Full-Stack Software Engineer specializing in AI, biomedical applications, and educational technology. Based in Morocco, available for remote opportunities worldwide."
+  },
+  "hero": {
+    "subtitle": "Full-Stack Software Engineer",
+    "location": "Ksar El Kebir, Morocco",
+    "availability": "Available for Remote Work",
+    "highlights": {
+      "selfTaught": "Self-Taught Expert",
+      "aiExpert": "AI & ML Specialist", 
+      "resilient": "Resilient Problem Solver"
+    },
+    "cta": {
+      "viewResume": "Download Resume",
+      "viewProjects": "View Projects"
+    }
+  },
+  "stats": {
+    "alxScore": "ALX Program Score",
+    "projects": "Live Projects",
+    "languages": "Programming Languages", 
+    "technologies": "Technologies Mastered"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "description": "Explore my latest work showcasing expertise in full-stack development, AI integration, and production-ready applications.",
+    "biomedical": {
+      "description": "AI-powered biomedical detection system with machine learning capabilities for healthcare applications and diagnostic assistance."
+    },
+    "education": {
+      "description": "Comprehensive educational technology platform featuring course management, student analytics, and interactive learning modules."
+    },
+    "chatbot": {
+      "description": "Intelligent chatbot assistant with natural language processing, real-time responses, and scalable architecture."
+    }
+  }
+}

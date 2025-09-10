@@ -1,0 +1,49 @@
+{
+  "seo": {
+    "title": "Contact - Badr Ribzat",
+    "description": "Contact Badr Ribzat for professional opportunities, collaborations, or technical questions."
+  },
+  "title": "Let's Connect",
+  "subtitle": "Ready for new challenges and opportunities. Let's discuss how I can contribute to your team or project.",
+  "info": {
+    "title": "Contact Information",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "timezone": "Timezone"
+  },
+  "social": {
+    "title": "Social Networks"
+  },
+  "availability": {
+    "status": "Available for Opportunities",
+    "message": "Typically responds within 24h"
+  },
+  "form": {
+    "title": "Send a Message",
+    "name": "Full Name",
+    "namePlaceholder": "Your full name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Subject of your message",
+    "opportunityType": "Opportunity Type",
+    "selectOpportunity": "Select a type",
+    "opportunities": {
+      "fulltime": "Full-time Position",
+      "internship": "Internship",
+      "contract": "Contract/Freelance",
+      "training": "Training/Mentorship",
+      "collaboration": "Collaboration",
+      "other": "Other"
+    },
+    "preferredLanguage": "Preferred Language",
+    "message": "Message",
+    "messagePlaceholder": "Share details about your project, opportunity, or questions...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Error sending message. Please try again.",
+    "responseTime": "I typically respond within 24 hours"
+  }
+}

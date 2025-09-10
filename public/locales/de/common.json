@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "skills": "Fähigkeiten",
+    "experience": "Erfahrung",
+    "certifications": "Zertifikate",
+    "resume": "Lebenslauf",
+    "contact": "Kontakt"
+  },
+  "seo": {
+    "description": "Badr Ribzat - Autodidaktischer Full-Stack-Softwareingenieur spezialisiert auf KI, biomedizinische Anwendungen und Bildungstechnologie. Ansässig in Marokko, verfügbar für Remote-Möglichkeiten weltweit."
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten",
+    "builtWith": "Erstellt mit",
+    "madeIn": "Mit ❤️ in Marokko gemacht"
+  }
+}

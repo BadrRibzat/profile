@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "certifications": "Certifications",
+    "resume": "Resume",
+    "contact": "Contact"
+  },
+  "seo": {
+    "description": "Badr Ribzat - Self-taught Full-Stack Software Engineer specializing in AI, biomedical applications, and educational technology. Based in Morocco, available for remote opportunities worldwide."
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "builtWith": "Built with",
+    "madeIn": "Made with ❤️ in Morocco"
+  }
+}

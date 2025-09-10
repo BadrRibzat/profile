@@ -1,0 +1,47 @@
+{
+  "title": "履歴書",
+  "subtitle": "ATS最適化版",
+  "pageTitle": "職務経歴書",
+  "pageDescription": "ATSシステム向けに最適化され、国際基準に適合したプロフェッショナル履歴書をダウンロードしてください。",
+  "active": "現在選択中",
+  "navigation": {
+    "back": "ホームに戻る"
+  },
+  "languageSelector": {
+    "title": "ご希望の言語をお選びください"
+  },
+  "sections": {
+    "summary": "職務要約",
+    "skills": "技術スキル",
+    "projects": "主要プロジェクト",
+    "experience": "職歴",
+    "education": "学歴・資格",
+    "additional": "追加資格"
+  },
+  "subsections": {
+    "languages": "語学力",
+    "additionalSkills": "その他のスキル"
+  },
+  "generating": "生成中...",
+  "download": "PDFダウンロード",
+  "preview": "プレビュー",
+  "features": "特徴",
+  "featuresList": {
+    "atsOptimized": "ATS最適化済み",
+    "localized": "ローカライズ・文化適応済み",
+    "professionalFormat": "標準プロフェッショナル形式",
+    "japaneseFormat": "履歴書形式（日本仕様）"
+  },
+  "specifications": "仕様",
+  "specs": {
+    "format": "形式",
+    "language": "言語",
+    "style": "スタイル",
+    "optimized": "最適化"
+  },
+  "cta": {
+    "title": "協業をご検討ですか？",
+    "description": "機会やプロジェクトについてお話ししましょう。",
+    "button": "お問い合わせ"
+  }
+}
