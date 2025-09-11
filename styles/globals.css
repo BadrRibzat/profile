@@ -119,3 +119,42 @@ body {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
+
+/* Print Styles */
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .resume-container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+}
+
+/* Resume specific styles */
+.resume-container {
+  background: white;
+  color: black;
+}
+
+@media screen {
+  .resume-container {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 20px auto;
+  }
+}

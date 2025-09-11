@@ -1,0 +1,49 @@
+{
+  "seo": {
+    "title": "お問い合わせ - バドル・リブザット",
+    "description": "専門的な機会、コラボレーション、技術的な質問についてバドル・リブザットにお問い合わせください。"
+  },
+  "title": "つながりましょう",
+  "subtitle": "新しい挑戦と機会の準備ができています。あなたのチームやプロジェクトにどのように貢献できるか話し合いましょう。",
+  "info": {
+    "title": "連絡先情報",
+    "email": "メール",
+    "phone": "電話",
+    "location": "所在地",
+    "timezone": "タイムゾーン"
+  },
+  "social": {
+    "title": "ソーシャルネットワーク"
+  },
+  "availability": {
+    "status": "機会を受け付けています",
+    "message": "通常24時間以内に返信"
+  },
+  "form": {
+    "title": "メッセージを送る",
+    "name": "フルネーム",
+    "namePlaceholder": "お名前",
+    "email": "メール",
+    "emailPlaceholder": "your@email.com",
+    "subject": "件名",
+    "subjectPlaceholder": "メッセージの件名",
+    "opportunityType": "機会の種類",
+    "selectOpportunity": "種類を選択",
+    "opportunities": {
+      "fulltime": "正社員",
+      "internship": "インターンシップ",
+      "contract": "契約/フリーランス",
+      "training": "研修/メンターシップ",
+      "collaboration": "コラボレーション",
+      "other": "その他"
+    },
+    "preferredLanguage": "優先言語",
+    "message": "メッセージ",
+    "messagePlaceholder": "プロジェクト、機会、または質問の詳細を共有してください...",
+    "send": "メッセージを送信",
+    "sending": "送信中...",
+    "success": "メッセージが正常に送信されました！",
+    "error": "送信エラー。もう一度お試しください。",
+    "responseTime": "通常24時間以内に返信します"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "seo": {
+    "title": "Mis Proyectos",
+    "description": "Una colección de mis trabajos mostrando habilidades en desarrollo full-stack, IA y aplicaciones listas para producción"
+  },
+  "title": "Portfolio de Proyectos",
+  "subtitle": "Aquí están algunos proyectos que he construido. Cada uno fue un desafío que me enseñó algo nuevo",
+  "filters": {
+    "all": "Todos los Proyectos",
+    "web": "Aplicaciones Web",
+    "healthcare": "Salud",
+    "ai": "IA/ML",
+    "education": "Educación"
+  },
+  "projects": {
+    "biomedical": {
+      "description": "Sistema de detección biomédica impulsado por IA con capacidades de aprendizaje automático"
+    },
+    "education": {
+      "description": "Plataforma educativa integral con gestión de cursos y análisis de estudiantes"
+    },
+    "chatbot": {
+      "description": "Asistente chatbot inteligente con procesamiento de lenguaje natural"
+    },
+    "portfolio": {
+      "description": "Portfolio internacional multilingüe con generación de CV optimizada para ATS"
+    }
+  },
+  "noResults": "No hay proyectos que coincidan con el filtro seleccionado"
+}

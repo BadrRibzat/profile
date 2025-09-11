@@ -7,8 +7,24 @@
   "subtitle": "Here are some of the projects I've built. Each one was a challenge that taught me something new, from system design to user experience.",
   "filters": {
     "all": "All Projects",
+    "web": "Web Applications",
+    "healthcare": "Healthcare",
     "ai": "AI/ML",
-    "biomedical": "Biomedical",
-    "edtech": "Ed-Tech"
-  }
+    "education": "Education"
+  },
+  "projects": {
+    "biomedical": {
+      "description": "AI-powered biomedical detection system with machine learning capabilities for healthcare applications and diagnostic assistance."
+    },
+    "education": {
+      "description": "Comprehensive educational technology platform featuring course management, student analytics, and interactive learning modules."
+    },
+    "chatbot": {
+      "description": "Intelligent chatbot assistant with natural language processing, real-time responses, and scalable architecture."
+    },
+    "portfolio": {
+      "description": "International multilingual portfolio with ATS-optimized resume generation supporting 6+ languages"
+    }
+  },
+  "noResults": "No projects match the selected filter"
 }

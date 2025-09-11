@@ -1,0 +1,72 @@
+{
+  "seo": {
+    "title": "Acerca de Mí",
+    "description": "Descubre la historia de Badr Ribzat, un ingeniero full-stack autodidacta impulsado por la pasión y el deseo de resolver problemas complejos."
+  },
+  "hero": {
+    "title": "Mi Trayectoria",
+    "subtitle": "De oficios prácticos a tecnología avanzada",
+    "location": {
+      "title": "Ubicación",
+      "description": "Ksar El Kebir, Marruecos - Disponible para trabajo remoto mundial"
+    },
+    "focus": {
+      "title": "Especialización",
+      "description": "Desarrollo Full-Stack, IA, Aplicaciones Biomédicas"
+    },
+    "achievement": {
+      "title": "Logro",
+      "description": "106.76% en el programa ALX Software Engineering"
+    },
+    "buttons": {
+      "resume": "Descargar CV",
+      "contact": "Contactar"
+    },
+    "stats": {
+      "languages": "Lenguajes",
+      "certifications": "Certificaciones"
+    }
+  },
+  "story": {
+    "title": "Mi Historia",
+    "subtitle": "Un viaje de transformación de desafíos a oportunidades"
+  },
+  "timeline": {
+    "selfTaught": {
+      "title": "Aprendizaje Autodidacta",
+      "description": "Comencé mi viaje en programación de forma autodidacta, dedicando miles de horas a dominar tecnologías modernas"
+    },
+    "business": {
+      "title": "Experiencias Diversas",
+      "description": "Trabajé en diversos campos desde peluquería hasta marketing digital"
+    },
+    "education": {
+      "title": "Programa ALX",
+      "description": "Completé el intensivo programa ALX de 18 meses con puntuación excepcional"
+    }
+  },
+  "interests": {
+    "title": "Intereses Personales",
+    "description": "Creo que la diversidad de intereses enriquece la creatividad técnica",
+    "items": {
+      "reading": "Lectura",
+      "coffee": "Café",
+      "languages": "Idiomas",
+      "cooking": "Cocina"
+    }
+  },
+  "certifications": {
+    "title": "Certificaciones y Calificaciones",
+    "subtitle": "Un conjunto diverso de certificaciones técnicas y prácticas",
+    "technical": {
+      "title": "Certificaciones Técnicas"
+    },
+    "professional": {
+      "title": "Certificaciones Profesionales"
+    },
+    "languages": {
+      "title": "Idiomas y Educación"
+    },
+    "viewAll": "Ver Todo"
+  }
+}

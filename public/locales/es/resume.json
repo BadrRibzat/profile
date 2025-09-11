@@ -1,0 +1,50 @@
+{
+  "title": "Currículum",
+  "subtitle": "Versión optimizada para ATS",
+  "pageTitle": "Currículum Profesional",
+  "pageDescription": "Descarga mi currículum profesional optimizado para sistemas ATS y adaptado a estándares internacionales.",
+  "active": "Activo",
+  "navigation": {
+    "back": "Volver al inicio"
+  },
+  "languageSelector": {
+    "title": "Elige tu idioma preferido"
+  },
+  "sections": {
+    "summary": "Resumen Profesional",
+    "skills": "Habilidades Técnicas",
+    "projects": "Proyectos Clave",
+    "experience": "Experiencia Profesional",
+    "education": "Educación y Certificaciones",
+    "additional": "Calificaciones Adicionales"
+  },
+  "subsections": {
+    "languages": "Idiomas",
+    "additionalSkills": "Habilidades Adicionales"
+  },
+  "personalInfo": {
+    "title": "Ingeniero de Software Full-Stack"
+  },
+  "generating": "Generando...",
+  "download": "Descargar PDF",
+  "preview": "Vista Previa",
+  "features": {
+    "ats": {
+      "title": "Optimización ATS",
+      "description": "Currículum formateado para Sistemas de Seguimiento de Candidatos con densidad de palabras clave adecuada."
+    },
+    "international": {
+      "title": "Estándares Internacionales",
+      "description": "Adaptado para cumplir con los estándares de contratación de diferentes países y culturas."
+    },
+    "quality": {
+      "title": "Garantía de Calidad",
+      "description": "Formateado profesionalmente con estilo consistente y contenido sin errores en todos los idiomas."
+    }
+  },
+  "cta": {
+    "title": "¿Listo para colaborar?",
+    "description": "Hablemos sobre oportunidades y proyectos.",
+    "button": "Contáctame"
+  }
+}

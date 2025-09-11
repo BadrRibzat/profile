@@ -1,0 +1,52 @@
+{
+  "title": "Habilidades y Experiencia",
+  "subtitle": "Una visión completa de mis habilidades técnicas, certificaciones prácticas y capacidades multilingües",
+  "categories": {
+    "programming": "Lenguajes de Programación",
+    "backend": "Desarrollo Backend",
+    "frontend": "Desarrollo Frontend",
+    "database": "Sistemas de Base de Datos",
+    "aiml": "IA y Aprendizaje Automático",
+    "devops": "DevOps e Infraestructura"
+  },
+  "technical": {
+    "title": "Habilidades Técnicas"
+  },
+  "practical": {
+    "title": "Habilidades Prácticas Certificadas",
+    "forklift": "Operación de Montacargas",
+    "forkliftDesc": "Operación de maquinaria pesada con certificaciones de seguridad",
+    "driving": "Conducción Profesional",
+    "drivingCert": "Licencia Marroquí Válida (Todas las Categorías)",
+    "drivingDesc": "Conducción profesional con excelente historial de seguridad",
+    "hairstyling": "Peluquería Profesional",
+    "hairstylingCert": "Certificación Aprobada por el Estado",
+    "hairstylingDesc": "Servicio completo de estilismo con técnicas modernas",
+    "culinary": "Artes Culinarias",
+    "culinaryCert": "Especialista en Nutrición Terapéutica",
+    "culinaryDesc": "Cocina orientada a la salud y planificación nutricional"
+  },
+  "languages": {
+    "title": "Dominio de Idiomas",
+    "arabic": "Árabe",
+    "french": "Francés",
+    "english": "Inglés",
+    "german": "Alemán",
+    "spanish": "Español",
+    "japanese": "Japonés"
+  },
+  "levels": {
+    "native": "Nativo",
+    "professional": "Profesional",
+    "upperIntermediate": "Intermedio Alto",
+    "intermediate": "Intermedio",
+    "basic": "Básico"
+  },
+  "proficiency": "Nivel de Competencia",
+  "cta": {
+    "title": "Listo para Hacer Impacto",
+    "description": "Discutamos cómo mi conjunto diverso de habilidades puede contribuir a tu próximo proyecto.",
+    "contact": "Contactar",
+    "resume": "Ver Currículum"
+  }
+}

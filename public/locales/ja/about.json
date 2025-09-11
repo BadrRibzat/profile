@@ -1,0 +1,72 @@
+{
+  "seo": {
+    "title": "私について",
+    "description": "情熱と複雑な問題を解決したいという願望に駆られた独学のフルスタックエンジニア、バドル・リブザットの物語をご覧ください。"
+  },
+  "hero": {
+    "title": "私の旅路",
+    "subtitle": "実践的な職業から先進技術へ",
+    "location": {
+      "title": "所在地",
+      "description": "モロッコ、ケサール・エル・ケビル - 世界中のリモートワークに対応"
+    },
+    "focus": {
+      "title": "専門分野",
+      "description": "フルスタック開発、AI、生物医学アプリケーション"
+    },
+    "achievement": {
+      "title": "成果",
+      "description": "ALXソフトウェアエンジニアリングプログラム 106.76%"
+    },
+    "buttons": {
+      "resume": "履歴書をダウンロード",
+      "contact": "お問い合わせ"
+    },
+    "stats": {
+      "languages": "プログラミング言語",
+      "certifications": "資格証明"
+    }
+  },
+  "story": {
+    "title": "私の物語",
+    "subtitle": "挑戦から機会への変革の旅"
+  },
+  "timeline": {
+    "selfTaught": {
+      "title": "独学プログラミング",
+      "description": "独学でプログラミングの旅を始め、現代技術の習得に何千時間も費やしました"
+    },
+    "business": {
+      "title": "多様な経験",
+      "description": "理髪からデジタルマーケティングまで様々な分野で働き、多様なスキルを身につけました"
+    },
+    "education": {
+      "title": "ALXプログラム",
+      "description": "18ヶ月の集中的なALXプログラムを優秀な成績で修了"
+    }
+  },
+  "interests": {
+    "title": "個人的な興味",
+    "description": "興味の多様性が技術的創造性を豊かにすると信じています",
+    "items": {
+      "reading": "読書",
+      "coffee": "コーヒー",
+      "languages": "言語",
+      "cooking": "料理"
+    }
+  },
+  "certifications": {
+    "title": "資格と認定",
+    "subtitle": "技術的および実践的な資格の多様なセット",
+    "technical": {
+      "title": "技術資格"
+    },
+    "professional": {
+      "title": "専門資格"
+    },
+    "languages": {
+      "title": "言語と教育"
+    },
+    "viewAll": "すべて表示"
+  }
+}

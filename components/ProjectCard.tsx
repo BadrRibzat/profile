@@ -12,9 +12,11 @@ import {
   Shield,
   BarChart,
   Play,
-  FileText, 
-  Activity, 
-  Settings
+  FileText,
+  Heart,
+  Activity,
+  Users,
+  Book
 } from 'lucide-react';
 
 interface ApiLink {
@@ -30,7 +32,8 @@ interface ProjectCardProps {
   technologies: string[];
   liveUrl: string;
   githubUrl: string;
-  category: 'healthcare' | 'education' | 'ai' | 'other';
+  category: 'healthcare' | 'education' | 'ai' | 'web' | 'other';
+  apiLinks?: ApiLink[];
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -40,36 +43,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   technologies,
   liveUrl,
   githubUrl,
-  category
+  category,
+  apiLinks = []
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
-
-  // ⚠️ You're using `apiLinks` below but it's not defined!
-  // Let's define a mock or remove it for now.
-  const apiLinks: ApiLink[] = []; // <-- Add this line or pass it as prop
-
-  const getApiIcon = (iconType: string) => {
-    switch (iconType) {
-      case 'docs':
-        return <FileText className="w-4 h-4" />;
-      case 'health':
-        return <Activity className="w-4 h-4" />;
-      case 'admin':
-        return <Settings className="w-4 h-4" />;
-      case 'api':
-        return <ExternalLink className="w-4 h-4" />;
-      default:
-        return <ExternalLink className="w-4 h-4" />;
-    }
-  };
+  const [showApiDocs, setShowApiDocs] = useState(false);
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'healthcare': return <Shield className="w-5 h-5 text-red-500" />;
-      case 'education': return <BarChart className="w-5 h-5 text-green-500" />;
+      case 'education': return <Book className="w-5 h-5 text-green-500" />;
       case 'ai': return <Cpu className="w-5 h-5 text-purple-500" />;
-      default: return <Code2 className="w-5 h-5 text-blue-500" />;
+      case 'web': return <Globe className="w-5 h-5 text-blue-500" />;
+      default: return <Code2 className="w-5 h-5 text-gray-500" />;
     }
   };
 
@@ -78,7 +65,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       case 'healthcare': return 'from-red-500 to-pink-500';
       case 'education': return 'from-green-500 to-emerald-500';
       case 'ai': return 'from-purple-500 to-violet-500';
-      default: return 'from-blue-500 to-cyan-500';
+      case 'web': return 'from-blue-500 to-cyan-500';
+      default: return 'from-gray-500 to-slate-500';
+    }
+  };
+
+  const getApiIcon = (iconType: string) => {
+    switch (iconType) {
+      case 'docs': return <FileText className="w-4 h-4" />;
+      case 'api': return <Database className="w-4 h-4" />;
+      case 'health': return <Activity className="w-4 h-4" />;
+      case 'admin': return <Users className="w-4 h-4" />;
+      default: return <Globe className="w-4 h-4" />;
     }
   };
 
@@ -98,6 +96,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <span className="capitalize">{category}</span>
         </div>
       </div>
+
+      {/* API Docs Badge if available */}
+      {apiLinks.length > 0 && (
+        <div className="absolute top-4 right-4 z-20">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setShowApiDocs(!showApiDocs)}
+            className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm text-gray-700 dark:text-gray-300 px-2 py-1 rounded-full text-xs font-medium shadow-lg hover:bg-white dark:hover:bg-gray-900 transition-all duration-300 flex items-center space-x-1"
+          >
+            <FileText className="w-3 h-3" />
+            <span>API Docs</span>
+          </motion.button>
+        </div>
+      )}
 
       {/* Project Image */}
       <div className="relative h-48 overflow-hidden">
@@ -168,29 +181,40 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </p>
         </div>
 
-        {/* API Documentation Links */}
-        {apiLinks.length > 0 && (
-          <div className="mb-4">
-            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 flex items-center">
-              <FileText className="w-4 h-4 mr-1" />
-              API Resources
-            </h4>
-            <div className="flex flex-wrap gap-2">
-              {apiLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs rounded-full flex items-center hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
-                >
-                  {getApiIcon(link.icon)}
-                  <span className="ml-1">{link.name}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* API Documentation Links (if expanded) */}
+        <AnimatePresence>
+          {showApiDocs && apiLinks.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="mb-4 p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg"
+            >
+              <h4 className="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wider">
+                Technical Documentation
+              </h4>
+              <div className="space-y-2">
+                {apiLinks.map((link, index) => (
+                  <motion.a
+                    key={index}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-center space-x-2 text-xs text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200"
+                  >
+                    {getApiIcon(link.icon)}
+                    <span className="underline">{link.name}</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Technologies */}
         <div className="mb-4">
@@ -200,8 +224,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
-                className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-full hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors duration-300"
+                transition={{ delay: index * 0.05 }}
+                className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-full hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors duration-300"
               >
                 {tech}
               </motion.span>
@@ -231,7 +255,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </a>
         </div>
 
-        {/* Performance Indicators */}
+        {/* Performance & Production Indicators */}
         <div className="mt-4 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
           <div className="flex items-center space-x-1">
             <Zap className="w-3 h-3 text-yellow-500" />
@@ -246,7 +270,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <span>Deployed</span>
           </div>
         </div>
-      </div> {/* ✅ This closes the <div className="p-6"> */}
+
+        {/* Visa Sponsorship Interest Indicator */}
+        <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+          <div className="flex items-center justify-center space-x-1 text-xs text-green-600 dark:text-green-400">
+            <Heart className="w-3 h-3" />
+            <span className="font-medium">Open to International Opportunities</span>
+          </div>
+        </div>
+      </div>
 
       {/* Glow Effect on Hover */}
       <motion.div

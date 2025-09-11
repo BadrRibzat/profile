@@ -218,10 +218,13 @@ const ResumePage: React.FC = () => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const locales = ['en', 'fr', 'ar', 'de', 'es', 'ja'];
   
-  const paths = locales.map(locale => ({
-    params: { locale },
-    locale
-  }));
+  // Create paths for all locales with all locale contexts
+  const paths = locales.flatMap(pageLocale => 
+    locales.map(locale => ({
+      params: { locale: pageLocale },
+      locale: locale
+    }))
+  );
 
   return {
     paths,

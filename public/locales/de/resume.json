@@ -1,0 +1,50 @@
+{
+  "title": "Lebenslauf",
+  "subtitle": "ATS-optimierte Version für",
+  "pageTitle": "Professioneller Lebenslauf",
+  "pageDescription": "Laden Sie meinen professionellen Lebenslauf herunter, optimiert für ATS-Systeme und angepasst an internationale Standards.",
+  "active": "Aktiv",
+  "navigation": {
+    "back": "Zurück zur Startseite"
+  },
+  "languageSelector": {
+    "title": "Wählen Sie Ihre bevorzugte Sprache"
+  },
+  "sections": {
+    "summary": "Berufliche Zusammenfassung",
+    "skills": "Technische Fähigkeiten",
+    "projects": "Schlüsselprojekte",
+    "experience": "Berufserfahrung",
+    "education": "Bildung & Zertifikate",
+    "additional": "Zusätzliche Qualifikationen"
+  },
+  "subsections": {
+    "languages": "Sprachen",
+    "additionalSkills": "Zusätzliche Fähigkeiten"
+  },
+  "personalInfo": {
+    "title": "Full-Stack Softwareentwickler"
+  },
+  "generating": "Generieren...",
+  "download": "PDF Herunterladen",
+  "preview": "Vorschau",
+  "features": {
+    "ats": {
+      "title": "ATS-Optimierung",
+      "description": "Lebenslauf formatiert für Applicant Tracking Systems mit korrekter Keyword-Dichte und Struktur."
+    },
+    "international": {
+      "title": "Internationale Standards",
+      "description": "Angepasst an Einstellungsstandards und Erwartungen verschiedener Länder und Kulturen."
+    },
+    "quality": {
+      "title": "Qualitätssicherung",
+      "description": "Professionell formatiert mit konsistentem Styling und fehlerfreiem Inhalt in allen Sprachen."
+    }
+  },
+  "cta": {
+    "title": "Bereit zur Zusammenarbeit?",
+    "description": "Lassen Sie uns über Möglichkeiten und Projekte sprechen.",
+    "button": "Kontaktieren Sie mich"
+  }
+}

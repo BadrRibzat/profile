@@ -1,0 +1,52 @@
+{
+  "title": "Fähigkeiten & Expertise",
+  "subtitle": "Ein umfassender Überblick über meine technischen Fähigkeiten, praktischen Zertifizierungen und mehrsprachigen Kompetenzen",
+  "categories": {
+    "programming": "Programmiersprachen",
+    "backend": "Backend-Entwicklung",
+    "frontend": "Frontend-Entwicklung",
+    "database": "Datenbanksysteme",
+    "aiml": "KI & Maschinelles Lernen",
+    "devops": "DevOps & Infrastruktur"
+  },
+  "technical": {
+    "title": "Technische Fähigkeiten"
+  },
+  "practical": {
+    "title": "Zertifizierte Praktische Fähigkeiten",
+    "forklift": "Gabelstaplerbetrieb",
+    "forkliftDesc": "Schwermaschinenbetrieb mit Sicherheitszertifikaten",
+    "driving": "Professionelles Fahren",
+    "drivingCert": "Gültiger marokkanischer Führerschein (Alle Kategorien)",
+    "drivingDesc": "Professionelles Fahren mit ausgezeichneter Sicherheitsbilanz",
+    "hairstyling": "Professionelles Haarstyling",
+    "hairstylingCert": "Staatlich anerkannte Zertifizierung",
+    "hairstylingDesc": "Full-Service-Styling mit modernen Techniken",
+    "culinary": "Kulinarische Künste",
+    "culinaryCert": "Spezialist für therapeutische Ernährung",
+    "culinaryDesc": "Gesundheitsorientierte Küche und Ernährungsplanung"
+  },
+  "languages": {
+    "title": "Sprachkenntnisse",
+    "arabic": "Arabisch",
+    "french": "Französisch",
+    "english": "Englisch",
+    "german": "Deutsch",
+    "spanish": "Spanisch",
+    "japanese": "Japanisch"
+  },
+  "levels": {
+    "native": "Muttersprache",
+    "professional": "Professionell",
+    "upperIntermediate": "Obere Mittelstufe",
+    "intermediate": "Mittelstufe",
+    "basic": "Grundkenntnisse"
+  },
+  "proficiency": "Kompetenzniveau",
+  "cta": {
+    "title": "Bereit für Impact",
+    "description": "Lassen Sie uns besprechen, wie meine vielfältigen Fähigkeiten zu Ihrem nächsten Projekt beitragen können.",
+    "contact": "Kontakt Aufnehmen",
+    "resume": "Lebenslauf Ansehen"
+  }
+}

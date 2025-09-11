@@ -1,0 +1,72 @@
+{
+  "seo": {
+    "title": "À Propos de Moi",
+    "description": "Découvrez l'histoire de Badr Ribzat, ingénieur full-stack autodidacte animé par la passion, la résilience et le désir de résoudre des problèmes complexes."
+  },
+  "hero": {
+    "title": "Mon Parcours",
+    "subtitle": "Des métiers pratiques à la technologie avancée",
+    "location": {
+      "title": "Localisation",
+      "description": "Ksar El Kebir, Maroc - Disponible pour travail à distance mondial"
+    },
+    "focus": {
+      "title": "Spécialisation",
+      "description": "Développement Full-Stack, IA, Applications Biomédicales"
+    },
+    "achievement": {
+      "title": "Réalisation",
+      "description": "106,76% au programme ALX Software Engineering"
+    },
+    "buttons": {
+      "resume": "Télécharger CV",
+      "contact": "Me Contacter"
+    },
+    "stats": {
+      "languages": "Langages",
+      "certifications": "Certifications"
+    }
+  },
+  "story": {
+    "title": "Mon Histoire",
+    "subtitle": "Un parcours de transformation des défis en opportunités"
+  },
+  "timeline": {
+    "selfTaught": {
+      "title": "Apprentissage Autodidacte",
+      "description": "J'ai commencé mon parcours en programmation en autodidacte, consacrant des milliers d'heures à maîtriser les technologies modernes"
+    },
+    "business": {
+      "title": "Expériences Diverses",
+      "description": "J'ai travaillé dans divers domaines, de la coiffure au marketing digital, acquérant des compétences variées"
+    },
+    "education": {
+      "title": "Programme ALX",
+      "description": "Complété le programme intensif ALX de 18 mois avec un score exceptionnel"
+    }
+  },
+  "interests": {
+    "title": "Intérêts Personnels",
+    "description": "Je crois que la diversité des intérêts enrichit la créativité technique",
+    "items": {
+      "reading": "Lecture",
+      "coffee": "Café",
+      "languages": "Langues",
+      "cooking": "Cuisine"
+    }
+  },
+  "certifications": {
+    "title": "Certifications et Qualifications",
+    "subtitle": "Un ensemble diversifié de certifications techniques et pratiques",
+    "technical": {
+      "title": "Certifications Techniques"
+    },
+    "professional": {
+      "title": "Certifications Professionnelles"
+    },
+    "languages": {
+      "title": "Langues et Éducation"
+    },
+    "viewAll": "Voir Tout"
+  }
+}

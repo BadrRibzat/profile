@@ -1,0 +1,72 @@
+{
+  "seo": {
+    "title": "Über Mich",
+    "description": "Entdecken Sie die Geschichte von Badr Ribzat, einem autodidaktischen Full-Stack-Ingenieur, angetrieben von Leidenschaft und dem Wunsch, komplexe Probleme zu lösen."
+  },
+  "hero": {
+    "title": "Mein Werdegang",
+    "subtitle": "Von praktischen Berufen zur fortgeschrittenen Technologie",
+    "location": {
+      "title": "Standort",
+      "description": "Ksar El Kebir, Marokko - Verfügbar für weltweite Remote-Arbeit"
+    },
+    "focus": {
+      "title": "Spezialisierung",
+      "description": "Full-Stack-Entwicklung, KI, Biomedizinische Anwendungen"
+    },
+    "achievement": {
+      "title": "Leistung",
+      "description": "106,76% im ALX Software Engineering Programm"
+    },
+    "buttons": {
+      "resume": "Lebenslauf Herunterladen",
+      "contact": "Kontaktieren"
+    },
+    "stats": {
+      "languages": "Programmiersprachen",
+      "certifications": "Zertifikate"
+    }
+  },
+  "story": {
+    "title": "Meine Geschichte",
+    "subtitle": "Eine Reise der Transformation von Herausforderungen zu Chancen"
+  },
+  "timeline": {
+    "selfTaught": {
+      "title": "Selbststudium Programmierung",
+      "description": "Begann meine Programmierreise autodidaktisch, widmete Tausende von Stunden dem Beherrschen moderner Technologien"
+    },
+    "business": {
+      "title": "Vielfältige Erfahrungen",
+      "description": "Arbeitete in verschiedenen Bereichen vom Friseurhandwerk bis zum digitalen Marketing"
+    },
+    "education": {
+      "title": "ALX Programm",
+      "description": "Absolvierte das intensive 18-monatige ALX-Programm mit außergewöhnlichem Ergebnis"
+    }
+  },
+  "interests": {
+    "title": "Persönliche Interessen",
+    "description": "Ich glaube, dass Vielfalt in Interessen die technische Kreativität bereichert",
+    "items": {
+      "reading": "Lesen",
+      "coffee": "Kaffee",
+      "languages": "Sprachen",
+      "cooking": "Kochen"
+    }
+  },
+  "certifications": {
+    "title": "Zertifikate und Qualifikationen",
+    "subtitle": "Eine vielfältige Sammlung technischer und praktischer Zertifikate",
+    "technical": {
+      "title": "Technische Zertifikate"
+    },
+    "professional": {
+      "title": "Berufliche Zertifikate"
+    },
+    "languages": {
+      "title": "Sprachen und Bildung"
+    },
+    "viewAll": "Alle Anzeigen"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "seo": {
+    "title": "Meine Projekte",
+    "description": "Eine Sammlung meiner Arbeiten, die Fähigkeiten in Full-Stack-Entwicklung, KI und produktionsreifen Anwendungen zeigen"
+  },
+  "title": "Projekt-Portfolio",
+  "subtitle": "Hier sind einige Projekte, die ich gebaut habe. Jedes war eine Herausforderung, die mir etwas Neues beigebracht hat",
+  "filters": {
+    "all": "Alle Projekte",
+    "web": "Web-Anwendungen",
+    "healthcare": "Gesundheit",
+    "ai": "KI/ML",
+    "education": "Bildung"
+  },
+  "projects": {
+    "biomedical": {
+      "description": "KI-gestütztes biomedizinisches Erkennungssystem mit maschinellen Lernfähigkeiten"
+    },
+    "education": {
+      "description": "Umfassende Bildungsplattform mit Kursverwaltung und Studentenanalysen"
+    },
+    "chatbot": {
+      "description": "Intelligenter Chatbot-Assistent mit natürlicher Sprachverarbeitung"
+    },
+    "portfolio": {
+      "description": "Internationales mehrsprachiges Portfolio mit ATS-optimierter Lebenslauferstellung"
+    }
+  },
+  "noResults": "Keine Projekte entsprechen dem ausgewählten Filter"
+}

@@ -1,3 +1,4 @@
+// pages/projects.tsx
 import React, { useState } from 'react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -15,55 +16,55 @@ const ProjectsPage: React.FC = () => {
       title: 'Biomedical Detection System',
       description: t('projects:projects.biomedical.description'),
       image: '/images/biomedical-project.jpg',
-      technologies: ['Python', 'FastAPI', 'Machine Learning', 'React', 'PostgreSQL'],
+      technologies: ['Python', 'FastAPI', 'TensorFlow', 'React', 'PostgreSQL', 'Docker', 'Machine Learning'],
       liveUrl: 'https://biomedical-frontend.vercel.app/',
       githubUrl: 'https://github.com/BadrRibzat/biomedical-detection',
-      category: 'healthcare'
+      category: 'healthcare' as const,
+      apiLinks: [
+        { name: 'FastAPI Documentation', url: 'https://biomedical-detection.fly.dev/docs', icon: 'docs' },
+        { name: 'API Redoc', url: 'https://biomedical-detection.fly.dev/redoc', icon: 'docs' },
+        { name: 'Backend Health Check', url: 'https://biomedical-detection.fly.dev/', icon: 'health' }
+      ]
     },
     {
       title: 'IT Learning Platform',
       description: t('projects:projects.education.description'),
       image: '/images/education-project.jpg',
-      technologies: ['Node.js', 'React', 'MongoDB', 'Express'],
+      technologies: ['Node.js', 'Express', 'React', 'MongoDB', 'JWT', 'REST API', 'Socket.io'],
       liveUrl: 'https://it-learning-pi.vercel.app/',
       githubUrl: 'https://github.com/BadrRibzat/it-learning',
-      category: 'education'
+      category: 'education' as const,
+      apiLinks: [
+        { name: 'API Documentation', url: 'https://it-learning-backend.fly.dev/api/docs/', icon: 'docs' },
+        { name: 'Health Status', url: 'https://it-learning-backend.fly.dev/api/health', icon: 'health' },
+        { name: 'Backend API Base', url: 'https://it-learning-backend.fly.dev/', icon: 'api' }
+      ]
     },
     {
       title: 'AI Chatbot Assistant',
       description: t('projects:projects.chatbot.description'),
       image: '/images/chatbot-project.jpg',
-      technologies: ['Python', 'NLP', 'Vector Databases', 'React'],
+      technologies: ['Python', 'FastAPI', 'NLP', 'LangChain', 'Vector DB', 'React', 'WebSockets'],
       liveUrl: 'https://chatbot-assistant-frontend.vercel.app/',
       githubUrl: 'https://github.com/BadrRibzat/chatbot-assistant',
-      category: 'ai'
+      category: 'ai' as const,
+      apiLinks: [
+        { name: 'Swagger Documentation', url: 'https://chatbot-backend-badr.fly.dev/docs', icon: 'docs' },
+        { name: 'ReDoc Documentation', url: 'https://chatbot-backend-badr.fly.dev/redoc/', icon: 'docs' },
+        { name: 'Health Check', url: 'https://chatbot-backend-badr.fly.dev/chat/health/', icon: 'health' },
+        { name: 'Admin Panel', url: 'https://chatbot-backend-badr.fly.dev/admin/', icon: 'admin' },
+        { name: 'OpenAPI Schema', url: 'https://chatbot-backend-badr.fly.dev/?format=openapi', icon: 'api' }
+      ]
     },
     {
-      title: 'Personal Portfolio',
+      title: 'International Portfolio',
       description: t('projects:projects.portfolio.description'),
-      image: '/images/portfolio-project.jpg', 
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'i18n'],
-      liveUrl: 'https://badrribzat.dev',
+      image: '/images/portfolio-project.jpg',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'i18n', 'Framer Motion', 'SEO'],
+      liveUrl: 'https://badrribzat.vercel.app',
       githubUrl: 'https://github.com/BadrRibzat/profile',
-      category: 'web'
-    },
-    {
-      title: 'E-Commerce Dashboard',
-      description: t('projects:projects.ecommerce.description'),
-      image: '/images/ecommerce-project.jpg',
-      technologies: ['React', 'Redux', 'Node.js', 'Chart.js'],
-      liveUrl: '#',
-      githubUrl: '#',
-      category: 'web'
-    },
-    {
-      title: 'Medical Image Analysis Tool',
-      description: t('projects:projects.medical.description'),
-      image: '/images/medical-project.jpg',
-      technologies: ['Python', 'TensorFlow', 'OpenCV', 'Flask'],
-      liveUrl: '#',
-      githubUrl: '#',
-      category: 'healthcare'
+      category: 'web' as const,
+      apiLinks: []
     }
   ];
 
@@ -86,7 +87,7 @@ const ProjectsPage: React.FC = () => {
     >
       <div className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900">
         <div className="container mx-auto px-4">
-          {/* Header */}
+          {/* Header with Availability Notice */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -96,9 +97,20 @@ const ProjectsPage: React.FC = () => {
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
               {t('projects:title')}
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-4">
               {t('projects:subtitle')}
             </p>
+            
+            {/* Availability Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center space-x-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-4 py-2 rounded-full text-sm font-medium"
+            >
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span>Available for Internships, Entry-Level Positions & Apprenticeships with Visa Sponsorship</span>
+            </motion.div>
           </motion.div>
 
           {/* Filters */}
@@ -135,57 +147,46 @@ const ProjectsPage: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 + (index * 0.1) }}
               >
-                <ProjectCard 
-                  {...project}
-                  apiLinks={getApiLinks(project.title)}
-                />
+                <ProjectCard {...project} />
               </motion.div>
             ))}
           </div>
 
-          {/* No Results Message */}
-          {filteredProjects.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-20"
-            >
-              <p className="text-gray-600 dark:text-gray-400 text-lg">
-                {t('projects:noResults')}
-              </p>
-            </motion.div>
-          )}
+          {/* Technical Competencies Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="mt-20 p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl"
+          >
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+              Production-Ready Technical Stack
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">100%</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">API Documentation Coverage</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-600 dark:text-green-400">CI/CD</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Automated Deployments</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">Docker</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Containerized Apps</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-orange-600 dark:text-orange-400">Scalable</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Cloud Architecture</div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </Layout>
   );
 };
-
-// Helper function to get API documentation links based on project title
-function getApiLinks(projectTitle: string) {
-  switch (projectTitle) {
-    case 'Biomedical Detection System':
-      return [
-        { name: 'API Documentation', url: 'https://biomedical-detection.fly.dev/docs', icon: 'docs' },
-        { name: 'Backend API', url: 'https://biomedical-detection.fly.dev/', icon: 'api' },
-      ];
-    case 'IT Learning Platform':
-      return [
-        { name: 'API Documentation', url: 'https://it-learning-backend.fly.dev/api/docs/', icon: 'docs' },
-        { name: 'Health Status', url: 'https://it-learning-backend.fly.dev/api/health', icon: 'health' },
-        { name: 'Backend API', url: 'https://it-learning-backend.fly.dev/', icon: 'api' },
-      ];
-    case 'AI Chatbot Assistant':
-      return [
-        { name: 'API Documentation', url: 'https://chatbot-backend-badr.fly.dev/redoc/', icon: 'docs' },
-        { name: 'Health Status', url: 'http://chatbot-backend-badr.fly.dev/chat/health/', icon: 'health' },
-        { name: 'Admin Panel', url: 'https://chatbot-backend-badr.fly.dev/admin/login/?next=/admin/', icon: 'admin' },
-        { name: 'Backend API', url: 'https://chatbot-backend-badr.fly.dev/', icon: 'api' },
-      ];
-    default:
-      return [];
-  }
-}
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
