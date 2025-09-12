@@ -1,0 +1,157 @@
+{
+  "personalInfo": {
+    "name": "Badr Ribzat",
+    "title": "Full-Stack Software Engineer",
+    "location": "Ksar El Kebir, Morocco",
+    "phone": "+212 627-764176",
+    "email": "badrribzat@gmail.com",
+    "github": "github.com/BadrRibzat",
+    "linkedin": "linkedin.com/in/badr-ribzat",
+    "portfolio": "badrribzat.vercel.app",
+    "birthDate": "1990-12-14",
+    "nationality": "Moroccan",
+    "visaStatus": "Willing to relocate internationally with appropriate visa sponsorship."
+  },
+  "objective": "Seeking entry-level position, internship, or apprenticeship with visa sponsorship in software development. Eager to contribute my self-taught expertise to innovative international teams.",
+  "summary": "Self-taught Full-Stack Engineer with exceptional performance (106.76 %) in ALX Software Engineering program. Proven ability to build production-ready applications with modern technologies.",
+  "technicalSkills": {
+    "languages": ["Python", "JavaScript", "TypeScript", "SQL", "HTML/CSS", "C", "Bash"],
+    "frontend": ["React", "Next.js", "Tailwind CSS", "Material-UI", "Framer Motion"],
+    "backend": ["FastAPI", "Flask", "Node.js", "Express.js", "RESTful APIs"],
+    "databases": ["PostgreSQL", "MongoDB", "SQLite", "Vector Databases"],
+    "tools": ["Git", "Docker", "Linux", "Postman", "Swagger"],
+    "cloud": ["Vercel", "Fly.io", "AWS (Basic)", "CI/CD", "GitHub Actions"]
+  },
+  "projects": [
+    {
+      "name": "Biomedical Detection System",
+      "description": "AI-powered healthcare application with ML capabilities",
+      "technologies": "Python, FastAPI, TensorFlow, React, PostgreSQL, Docker",
+      "achievements": [
+        "Implemented ML models for biomedical signal processing",
+        "Built RESTful APIs with 100 % documentation coverage",
+        "Deployed scalable micro-services architecture",
+        "Achieved 85 % accuracy in diagnostic predictions"
+      ],
+      "links": {
+        "live": "https://biomedical-frontend.vercel.app",
+        "github": "github.com/BadrRibzat/biomedical-detection",
+        "docs": "https://biomedical-detection.fly.dev/docs"
+      }
+    },
+    {
+      "name": "IT Learning Platform",
+      "description": "Educational technology platform with course management",
+      "technologies": "Node.js, Express, React, MongoDB, JWT, Socket.io",
+      "achievements": [
+        "Reduced API response time by 30 % through optimisation",
+        "Implemented real-time features using WebSockets",
+        "Built comprehensive admin dashboard",
+        "Integrated payment processing and analytics"
+      ],
+      "links": {
+        "live": "https://it-learning-pi.vercel.app",
+        "github": "github.com/BadrRibzat/it-learning",
+        "docs": "https://it-learning-backend.fly.dev/api/docs"
+      }
+    },
+    {
+      "name": "AI Chatbot Assistant",
+      "description": "Intelligent conversational AI with NLP capabilities",
+      "technologies": "Python, FastAPI, LangChain, Vector DB, React",
+      "achievements": [
+        "Achieved 85 % intent recognition accuracy",
+        "Handles 50+ concurrent users with stateless architecture",
+        "Implemented RAG system for contextual responses",
+        "Built admin panel for conversation monitoring"
+      ],
+      "links": {
+        "live": "https://chatbot-assistant-frontend.vercel.app",
+        "github": "github.com/BadrRibzat/chatbot-assistant",
+        "docs": "https://chatbot-backend-badr.fly.dev/docs"
+      }
+    }
+  ],
+  "experience": [
+    {
+      "title": "Full-Stack Software Engineer",
+      "company": "Self-Employed / Open Source Contributor",
+      "location": "Remote",
+      "period": "2023 – Present",
+      "achievements": [
+        "Developed and deployed 3+ production-ready full-stack applications",
+        "Contributed to open-source projects with 50+ GitHub stars",
+        "Implemented CI/CD pipelines reducing deployment time by 40 %",
+        "Created comprehensive API documentation using OpenAPI/Swagger",
+        "Mentored junior developers in online communities"
+      ]
+    },
+    {
+      "title": "Multi-Skilled Professional",
+      "company": "Various Positions",
+      "location": "Morocco",
+      "period": "2010 – 2022",
+      "achievements": [
+        "Professional hairstylist with state-approved certification",
+        "Forklift operator (CACES R489 & R485 certified)",
+        "Digital marketing consultant with Google certification",
+        "Demonstrated adaptability across diverse industries"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "ALX Software Engineering Program",
+      "institution": "ALX Africa",
+      "period": "2023 – 2024",
+      "score": "106.76 % (Exceptional Performance)",
+      "details": "18-month intensive full-stack development program"
+    },
+    {
+      "degree": "Self-Directed Learning",
+      "institution": "Online Platforms (Coursera, SoloLearn, Alison)",
+      "period": "2020 – Present",
+      "details": "10+ certifications in programming, AI, and web development"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ALX Software Engineering Certificate",
+      "issuer": "ALX Africa",
+      "date": "2024",
+      "credential": "Score: 106.76 %"
+    },
+    {
+      "name": "IBM AI Fundamentals",
+      "issuer": "IBM SkillsBuild",
+      "date": "2025",
+      "credential": "Credential ID: 73d33834"
+    },
+    {
+      "name": "Python for Beginners",
+      "issuer": "SoloLearn",
+      "date": "2022",
+      "credential": "Certificate: CT-2UUMLNJN"
+    },
+    {
+      "name": "SQL Database Management",
+      "issuer": "SoloLearn",
+      "date": "2023",
+      "credential": "Certificate: CT-RRMGCEB1"
+    }
+  ],
+  "languages": [
+    { "language": "Arabic", "level": "Native", "certification": "" },
+    { "language": "French", "level": "Professional (B2)", "certification": "" },
+    { "language": "English", "level": "Professional (B2)", "certification": "Self-assessed" },
+    { "language": "German", "level": "Basic (A1)", "certification": "Currently learning" },
+    { "language": "Spanish", "level": "Basic (A1)", "certification": "Currently learning" }
+  ],
+  "additionalSkills": [
+    "Professional Driving License (All categories)",
+    "Forklift Operation (CACES R489 & R485)",
+    "Professional Hairstyling Certification",
+    "Therapeutic Nutrition Specialist"
+  ],
+  "interests": ["Open Source", "AI Research", "Language Learning", "Healthcare Innovation"]
+}

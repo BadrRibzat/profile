@@ -1,0 +1,88 @@
+{
+  "personalInfo": {
+    "name": "Badr Ribzat",
+    "title": "Ingeniero de Software Full-Stack",
+    "location": "Ksar El Kebir, Marruecos",
+    "phone": "+212 627-764176",
+    "email": "badrribzat@gmail.com",
+    "github": "github.com/BadrRibzat",
+    "linkedin": "linkedin.com/in/badr-ribzat",
+    "portfolio": "badrribzat.vercel.app",
+    "birthDate": "1990-12-14",
+    "nationality": "Marroquí",
+    "visaStatus": "Dispuesto a reubicarse internacionalmente con patrocinio de visa adecuado."
+  },
+  "objective": "Buscando posición de nivel inicial, pasantía o aprendizaje con patrocinio de visa en desarrollo de software.",
+  "summary": "Ingeniero Full-Stack autodidacta con rendimiento excepcional (106,76 %) en el programa ALX.",
+  "technicalSkills": {
+    "languages": ["Python", "JavaScript", "TypeScript", "SQL", "HTML/CSS", "C", "Bash"],
+    "frontend": ["React", "Next.js", "Tailwind CSS", "Material-UI", "Framer Motion"],
+    "backend": ["FastAPI", "Flask", "Node.js", "Express.js", "RESTful APIs"],
+    "databases": ["PostgreSQL", "MongoDB", "SQLite", "Vector Databases"],
+    "tools": ["Git", "Docker", "Linux", "Postman", "Swagger"],
+    "cloud": ["Vercel", "Fly.io", "AWS (Basic)", "CI/CD", "GitHub Actions"]
+  },
+  "projects": [
+    {
+      "name": "Sistema de Detección Biomédica",
+      "description": "Aplicación de salud impulsada por IA con capacidades ML",
+      "technologies": "Python, FastAPI, TensorFlow, React, PostgreSQL, Docker",
+      "achievements": [
+        "Modelos ML implementados para procesamiento de señales biomédicas",
+        "APIs RESTful construidas con 100 % de cobertura documental",
+        "Arquitectura de microservicios escalable desplegada",
+        "Precisión del 85 % en predicciones diagnósticas"
+      ],
+      "links": {
+        "live": "https://biomedical-frontend.vercel.app",
+        "github": "github.com/BadrRibzat/biomedical-detection",
+        "docs": "https://biomedical-detection.fly.dev/docs"
+      }
+    }
+  ],
+  "experience": [
+    {
+      "title": "Ingeniero de Software Full-Stack",
+      "company": "Autónomo / Colaborador Open Source",
+      "location": "Remoto",
+      "period": "2023 – Presente",
+      "achievements": [
+        "3+ aplicaciones full-stack listas para producción desarrolladas y desplegadas",
+        "Contribuciones a proyectos open-source con 50+ estrellas GitHub",
+        "Pipelines CI/CD implementados que redujeron el tiempo de despliegue un 40 %",
+        "Documentación API comprehensiva creada con OpenAPI/Swagger"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Programa ALX Software Engineering",
+      "institution": "ALX Africa",
+      "period": "2023 – 2024",
+      "score": "106,76 % (Rendimiento Excepcional)",
+      "details": "Programa intensivo de 18 meses en desarrollo full-stack"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Certificado ALX Software Engineering",
+      "issuer": "ALX Africa",
+      "date": "2024",
+      "credential": "Puntuación: 106,76 %"
+    }
+  ],
+  "languages": [
+    { "language": "Árabe", "level": "Lengua materna", "certification": "" },
+    { "language": "Francés", "level": "Profesional (B2)", "certification": "" },
+    { "language": "Inglés", "level": "Profesional (B2)", "certification": "Autoevaluado" },
+    { "language": "Alemán", "level": "Básico (A1)", "certification": "Aprendiendo actualmente" },
+    { "language": "Español", "level": "Básico (A1)", "certification": "Aprendiendo actualmente" }
+  ],
+  "additionalSkills": [
+    "Licencia de conducir profesional (todas las categorías)",
+    "Operación de montacargas (CACES R489 & R485)",
+    "Certificación profesional de peluquería",
+    "Especialista en nutrición terapéutica"
+  ],
+  "interests": ["Código abierto", "Investigación IA", "Aprendizaje de idiomas", "Innovación en salud"]
+}

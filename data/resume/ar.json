@@ -1,0 +1,88 @@
+{
+  "personalInfo": {
+    "name": "بدر ربزات",
+    "title": "مهندس برمجيات متكامل",
+    "location": "قصر الكبير، المغرب",
+    "phone": "+212 627-764176",
+    "email": "badrribzat@gmail.com",
+    "github": "github.com/BadrRibzat",
+    "linkedin": "linkedin.com/in/badr-ribzat",
+    "portfolio": "badrribzat.vercel.app",
+    "birthDate": "1990-12-14",
+    "nationality": "مغربي",
+    "visaStatus": "مستعد للانتقال دوليًا مع رعاية تأشيرة مناسبة."
+  },
+  "objective": "أبحث عن وظيفة مبتدئة أو تدريب أو تلمذة مهنية مع رعاية التأشيرة في تطوير البرمجيات.",
+  "summary": "مهندس متكامل تعلم ذاتياً بأداء استثنائي (106.76 %) في برنامج ALX.",
+  "technicalSkills": {
+    "languages": ["بايثون", "جافاسكريبت", "تايبسكريبت", "SQL", "HTML/CSS", "C", "Bash"],
+    "frontend": ["React", "Next.js", "Tailwind CSS", "Material-UI", "Framer Motion"],
+    "backend": ["FastAPI", "Flask", "Node.js", "Express.js", "RESTful APIs"],
+    "databases": ["PostgreSQL", "MongoDB", "SQLite", "Vector Databases"],
+    "tools": ["Git", "Docker", "Linux", "Postman", "Swagger"],
+    "cloud": ["Vercel", "Fly.io", "AWS (Basic)", "CI/CD", "GitHub Actions"]
+  },
+  "projects": [
+    {
+      "name": "نظام الكشف الطبي",
+      "description": "تطبيق رعاية صحية مدعوم بالذكاء الاصطناعي مع قدرات ML",
+      "technologies": "بايثون، FastAPI، TensorFlow، React، PostgreSQL، Docker",
+      "achievements": [
+        "نماذج ML مُنفذة لمعالجة الإشارات الطبية",
+        "واجهات برمجة تطبيقات RESTful مبنية بتغطية توثيق 100٪",
+        "عمارة مايكروخدمات قابلة للتوسيع نُشرت",
+        "تم تحقيق 85٪ دقة في التنبؤات التشخيصية"
+      ],
+      "links": {
+        "live": "https://biomedical-frontend.vercel.app",
+        "github": "github.com/BadrRibzat/biomedical-detection",
+        "docs": "https://biomedical-detection.fly.dev/docs"
+      }
+    }
+  ],
+  "experience": [
+    {
+      "title": "مهندس برمجيات متكامل",
+      "company": "حسابي الخاص / مساهم مفتوح المصدر",
+      "location": "عن بعد",
+      "period": "2023 – الحاضر",
+      "achievements": [
+        "تم تطوير ونشر 3+ تطبيقات متكاملة جاهزة للإنتاج",
+        "المساهمة في مشاريع مفتوحة المصدر مع 50+ نجمة GitHub",
+        "تم تنفيذ خطوط CI/CD تقلل وقت النشر بـ 40٪",
+        "إنشاء توثيق شامل للواجهات البرمجية باستخدام OpenAPI/Swagger"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "برنامج ALX لهندسة البرمجيات",
+      "institution": "ALX Africa",
+      "period": "2023 – 2024",
+      "score": "106.76 % (أداء استثنائي)",
+      "details": "برنامج تطوير متكامل مكثف لمدة 18 شهرًا"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "شهادة ALX لهندسة البرمجيات",
+      "issuer": "ALX Africa",
+      "date": "2024",
+      "credential": "النقاط: 106.76 %"
+    }
+  ],
+  "languages": [
+    { "language": "العربية", "level": "اللغة الأم", "certification": "" },
+    { "language": "الفرنسية", "level": "مهني (B2)", "certification": "" },
+    { "language": "الإنجليزية", "level": "مهني (B2)", "certification": "تقييم ذاتي" },
+    { "language": "الألمانية", "level": "أساسي (A1)", "certification": "قيد التعلم حاليًا" },
+    { "language": "الإسبانية", "level": "أساسي (A1)", "certification": "قيد التعلم حاليًا" }
+  ],
+  "additionalSkills": [
+    "رخصة قيادة مهنية (جميع الفئات)",
+    "عمل رافعة شوكية (CACES R489 & R485)",
+    "شهادة مهنية في تصفيف الشعر",
+    "أخصائي تغذية علاجية"
+  ],
+  "interests": ["مفتوح المصدر", "بحث الذكاء الاصطناعي", "تعلم اللغات", "ابتكار الرعاية الصحية"]
+}
