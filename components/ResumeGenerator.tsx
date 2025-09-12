@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next';
 import { Document, Page, Text, View, StyleSheet, PDFDownloadLink, Font, Image } from '@react-pdf/renderer';
 import { Download, FileText, Globe, Briefcase, GraduationCap, Award, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
+import CountrySpecificResume from './CountrySpecificResume';
 
 // Register fonts for different languages
 Font.register({
@@ -42,10 +43,10 @@ interface ResumeData {
     github: string;
     linkedin?: string;
     portfolio: string;
-    birthDate?: string; // For Japanese/German formats
+    birthDate?: string;
     nationality?: string;
     visaStatus: string;
-    photo?: string; // For German/Japanese formats
+    photo?: string;
   };
   objective: string;
   summary: string;
@@ -110,12 +111,11 @@ const ResumeGenerator: React.FC = () => {
 
   const loadResumeData = async (currentLocale: string) => {
     setIsGenerating(true);
-    
-    // Resume data with all required information
+
     const data: ResumeData = {
       personalInfo: {
         name: "Badr Ribzat",
-        nameKana: "バドル・リブザット", // For Japanese
+        nameKana: "バドル・リブザット",
         title: getLocalizedTitle(currentLocale),
         location: "Ksar El Kebir, Morocco",
         phone: "+212 627-764176",
@@ -276,7 +276,6 @@ const ResumeGenerator: React.FC = () => {
     setIsGenerating(false);
   };
 
-  // Get localized content based on country requirements
   const getLocalizedTitle = (locale: string): string => {
     const titles: Record<string, string> = {
       en: "Full-Stack Software Engineer",
@@ -296,7 +295,7 @@ const ResumeGenerator: React.FC = () => {
       de: "Suche Einstiegsposition, Praktikum oder Ausbildung mit Visumspatenschaft in der Softwareentwicklung. Möchte meine autodidaktische Expertise in innovative internationale Teams einbringen.",
       ja: "ビザスポンサーシップを伴うエントリーレベルのポジション、インターンシップ、または見習いを求めています。独学で身につけた専門知識を革新的な国際チームに貢献したいと考えています。",
       ar: "أبحث عن وظيفة مبتدئة أو تدريب أو تلمذة مهنية مع رعاية التأشيرة في تطوير البرمجيات. حريص على المساهمة بخبرتي المكتسبة ذاتياً في الفرق الدولية المبتكرة.",
-      es: "Buscando posición de nivel inicial, pasantía o aprendizaje con patrocinio de visa en desarrollo de software. Ansioso por contribuir mi experiencia autodidacta a equipos internacionales innovadores."
+      es: "Buscando posición de nivel inicial, pasantía o aprendizaje con patrocinio de visa en desarrollo de software. Ansoso por contribuir mi experiencia autodidacta a equipos internacionales innovadores."
     };
     return objectives[locale] || objectives.en;
   };
@@ -313,7 +312,6 @@ const ResumeGenerator: React.FC = () => {
     return summaries[locale] || summaries.en;
   };
 
-  // Localized visa note
   const visaNote = {
     en: "Available for: Internships • Entry-Level Positions • Apprenticeships (Ausbildung) • Training Programs\nWilling to relocate internationally with appropriate visa sponsorship. Fast learner committed to long-term growth.",
     fr: "Disponible pour : Stages • Postes débutants • Alternance (Ausbildung) • Programmes de formation\nPrêt à déménager à l'international avec parrainage de visa approprié. Apprenant rapide, engagé dans une croissance à long terme.",
@@ -323,393 +321,105 @@ const ResumeGenerator: React.FC = () => {
     es: "Disponible para: Pasantías, Puestos de nivel inicial, Aprendizajes (Ausbildung), Programas de capacitación.\nDispuesto a reubicarse internacionalmente con patrocinio de visa adecuado. Aprendiz rápido comprometido con el crecimiento a largo plazo."
   };
 
-  // Helper to generate clean HTML for print
+  // ✅ Helper to generate clean HTML for print — defined INSIDE the component
   const createResumeHTML = () => {
-  if (!resumeData) return '';
-
-  // Recompute locale flags here since we're outside createResumePDF()
-  const isJapanese = locale === 'ja';
-  const isGerman = locale === 'de';
-  const isArabic = locale === 'ar';
-  const isFrench = locale === 'fr'; // <-- THIS WAS MISSING!
-  const isSpanish = locale === 'es';
-
-  // Use the localized title from translation or fallback for consistency
-  const getSectionTitle = (en: string, ja: string, fr: string, de: string, es: string, ar: string): string => {    
-        if (isJapanese) return ja;
-        if (isFrench) return fr;
-        if (isGerman) return de;
-        if (isSpanish) return es;
-        if (isArabic) return ar;
-        return en;
-      };
-
-      const html = `
-        <h2 style="font-size: 24px; font-weight:  bold; color: #1e40af; margin-bottom: 5px;">${resumeData.personalInfo.name}</h2>
-        ${isJapanese && resumeData.personalInfo.nameKana ? `<p style="font-size: 10px; color: #6b7280; margin-bottom: 5px;">${resumeData.personalInfo.nameKana}</p>` : ''}
-        <p style="font-size: 14px; color: #4b5563; margin-bottom: 10px;">${resumeData.personalInfo.title}</p>
-        <p style="font-size: 9px; color: #6b7280; margin-bottom: 5px;">${resumeData.personalInfo.location} • ${resumeData.personalInfo.phone} • ${resumeData.personalInfo.email}</p>
-        <p style="font-size: 9px; color: #6b7280; margin-bottom: 5px;">${resumeData.personalInfo.github} • ${resumeData.personalInfo.portfolio} • ${resumeData.personalInfo.linkedin}</p>
-        <p style="font-size: 10px; color: #059669; font-weight: bold; background-color: #d1fae5; padding: 5px; border-radius: 3px; margin-top: 5px;">${resumeData.personalInfo.visaStatus}</p>
-
-        <div style="margin-bottom: 15px;">
-          <h3 style="font-size: 14px; font-weight: bold; color: #1e40af; margin-bottom: 8px; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px;">
-            ${getSectionTitle('Objective', '志望動機', 'Objectif', 'Zielsetzung', 'Objetivo', 'الهدف')}
-          </h3>
-          <p style="font-size: 10px; color: #374151; line-height: 1.4;">${resumeData.objective}</p>
-        </div>
-
-        <div style="margin-bottom: 15px;">
-          <h3 style="font-size: 14px; font-weight: bold; color: #1e40af; margin-bottom: 8px; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px;">
-            ${getSectionTitle('Professional Summary', '職務要約', 'Résumé Professionnel', 'Berufliche Zusammenfassung', 'Resumen Profesional', 'ملخص مهني')}
-          </h3>
-          <p style="font-size: 10px; color: #374151; line-height: 1.4;">${resumeData.summary}</p>
-        </div>
-
-        <div style="margin-bottom: 15px;">
-          <h3 style="font-size: 14px; font-weight: bold; color: #1e40af; margin-bottom: 8px; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px;">
-            ${getSectionTitle('Technical Skills', '技術スキル', 'Compétences Techniques', 'Technische Fähigkeiten', 'Habilidades Técnicas', 'المهارات التقنية')}
-          </h3>
-      
-          <div style="margin-bottom: 5px;">
-            <strong>Programming Languages:</strong><br>
-            ${resumeData.technicalSkills.languages.join(' ')}
-          </div>
-      
-          <div style="margin-bottom: 5px;">
-            <strong>Frontend:</strong><br>
-            ${resumeData.technicalSkills.frontend.join(' ')}
-          </div>
-      
-          <div style="margin-bottom: 5px;">
-            <strong>Backend:</strong><br>
-            ${resumeData.technicalSkills.backend.join(' ')}
-          </div>
-      
-          <div style="margin-bottom: 5px;">
-            <strong>Databases:</strong><br>
-            ${resumeData.technicalSkills.databases.join(' ')}
-          </div>
-        </div>
-
-        <div style="margin-bottom: 15px;">
-          <h3 style="font-size: 14px; font-weight: bold; color: #1e40af; margin-bottom: 8px; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px;">
-            ${getSectionTitle('Key Projects', '主要プロジェクト', 'Projets Clés', 'Schlüsselprojekte', 'Proyectos Clave', 'المشاريع الرئيسية')}
-          </h3>
-          ${resumeData.projects.map(project => `
-            <div style="margin-bottom: 10px;">
-              <strong style="font-size: 11px; color: #111827;">${project.name}</strong><br>
-              <small style="font-size: 9px; color: #6b7280;">${project.technologies}</small><br>
-              <small style="font-size: 10px;">${project.description}</small><br>
-              ${project.achievements.map(ach => `<div style="margin-left: 15px; margin-bottom: 3px; font-size: 10px;">• ${ach}</div>`).join('')}
-              ${project.links.live || project.links.docs ? `
-                <div style="margin-top: 3px; font-size: 9px;">
-                  ${project.links.live ? `<a href="${project.links.live}" style="color: #2563eb; text-decoration: underline;">Live: ${project.links.live}</a>` : ''}
-                  ${project.links.docs ? ` | <a href="${project.links.docs}" style="color: #2563eb; text-decoration: underline;">API Docs: ${project.links.docs}</a>` : ''}
-                </div>` : ''}
-            </div>
-          `).join('')}
-        </div>
-
-        <div style="margin-bottom: 15px;">
-          <h3 style="font-size: 14px; font-weight: bold; color: #1e40af; margin-bottom: 8px; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px;">
-            ${getSectionTitle('Languages', '語学力', 'Langues', 'Sprachen', 'Idiomas', 'اللغات')}
-          </h3>
-          <div style="display: flex; flex-wrap: wrap; gap: 15px; font-size: 10px;">
-            ${resumeData.languages.map(lang => `<div><strong>${lang.language}:</strong> ${lang.level}</div>`).join('')}
-          </div>
-        </div>
-
-        <div style="margin-top: 10px; padding: 5px; background-color: #fef3c7; border-radius: 3px; font-size: 9px;">
-          <strong style="color: #92400e;">Available for: Internships • Entry-Level Positions • Apprenticeships (Ausbildung) • Training Programs</strong><br>
-          <span style="color: #78350f; font-size: 8px;">Willing to relocate internationally with appropriate visa sponsorship. Fast learner committed to long-term growth.</span>
-        </div>
-      `;
-
-      return html;
-    };
-
-  // Create PDF document based on locale
-  const createResumePDF = () => {
-    if (!resumeData) return null;
+    if (!resumeData) return '';
 
     const isJapanese = locale === 'ja';
     const isGerman = locale === 'de';
     const isArabic = locale === 'ar';
     const isFrench = locale === 'fr';
 
-    const styles = StyleSheet.create({
-      page: {
-        padding: isJapanese ? 20 : 30,
-        fontFamily: isArabic ? 'NotoSansArabic' : isJapanese ? 'NotoSansJP' : 'NotoSans',
-        fontSize: isJapanese ? 10 : 11,
-        direction: isArabic ? 'rtl' : 'ltr'
-      },
-      header: {
-        marginBottom: 20,
-        borderBottom: isJapanese ? 0 : 2,
-        borderBottomColor: '#2563eb',
-        paddingBottom: 10
-      },
-      name: {
-        fontSize: isJapanese ? 16 : 24,
-        fontWeight: 'bold',
-        color: '#1e40af',
-        marginBottom: 5
-      },
-      title: {
-        fontSize: isJapanese ? 12 : 14,
-        color: '#4b5563',
-        marginBottom: 10
-      },
-      contactInfo: {
-        flexDirection: isArabic ? 'row-reverse' : 'row',
-        justifyContent: 'space-between',
-        fontSize: 9,
-        color: '#6b7280',
-        marginBottom: 5
-      },
-      visaStatus: {
-        fontSize: 10,
-        color: '#059669',
-        fontWeight: 'bold',
-        marginTop: 5,
-        padding: 5,
-        backgroundColor: '#d1fae5',
-        borderRadius: 3
-      },
-      section: {
-        marginBottom: 15
-      },
-      sectionTitle: {
-        fontSize: isJapanese ? 12 : 14,
-        fontWeight: 'bold',
-        color: '#1e40af',
-        marginBottom: 8,
-        borderBottom: 1,
-        borderBottomColor: '#e5e7eb',
-        paddingBottom: 3
-      },
-      bulletPoint: {
-        flexDirection: isArabic ? 'row-reverse' : 'row',
-        marginBottom: 4,
-        paddingLeft: isArabic ? 0 : 10,
-        paddingRight: isArabic ? 10 : 0
-      },
-      bulletText: {
-        flex: 1,
-        fontSize: isJapanese ? 9 : 10,
-        color: '#374151',
-        lineHeight: 1.4
-      },
-      projectName: {
-        fontSize: 11,
-        fontWeight: 'bold',
-        color: '#111827',
-        marginBottom: 3
-      },
-      link: {
-        fontSize: 9,
-        color: '#2563eb',
-        textDecoration: 'underline'
-      },
-      skillsGrid: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        gap: 5
-      },
-      skillBadge: {
-        backgroundColor: '#eff6ff',
-        padding: '3 6',
-        borderRadius: 3,
-        fontSize: 9,
-        color: '#1e40af',
-        marginRight: 5,
-        marginBottom: 5
-      },
-      photoSection: {
-        position: 'absolute',
-        top: 30,
-        right: 30,
-        width: 80,
-        height: 100,
-        border: 1,
-        borderColor: '#e5e7eb'
-      }
-    });
+    const getSectionTitle = (en: string, ja: string, fr: string, de: string, es: string, ar: string): string => {
+      if (isJapanese) return ja;
+      if (isFrench) return fr;
+      if (isGerman) return de;
+      if (isArabic) return ar;
+      return en;
+    };
 
-    return (
-      <Document>
-        <Page size="A4" style={styles.page}>
-          {/* Header Section */}
-          <View style={styles.header}>
-            {(isGerman || isJapanese) && (
-              <View style={styles.photoSection}>
-                <Image
-                  src="/images/me.jpg"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    borderWidth: 1,
-                    borderColor: '#e5e7eb'
-                  }}
-                />
-              </View>
-            )}
+    const html = `
+      <h2 style="font-size: 24px; font-weight: bold; color: #1e40af; margin-bottom: 5px;">${resumeData.personalInfo.name}</h2>
+      ${isJapanese && resumeData.personalInfo.nameKana ? `<p style="font-size: 10px; color: #6b7280; margin-bottom: 5px;">${resumeData.personalInfo.nameKana}</p>` : ''}
+      <p style="font-size: 14px; color: #4b5563; margin-bottom: 10px;">${resumeData.personalInfo.title}</p>
+      <p style="font-size: 9px; color: #6b7280; margin-bottom: 5px;">${resumeData.personalInfo.location} • ${resumeData.personalInfo.phone} • ${resumeData.personalInfo.email}</p>
+      <p style="font-size: 9px; color: #6b7280; margin-bottom: 5px;">${resumeData.personalInfo.github} • ${resumeData.personalInfo.portfolio} • ${resumeData.personalInfo.linkedin}</p>
+      <p style="font-size: 10px; color: #059669; font-weight: bold; background-color: #d1fae5; padding: 5px; border-radius: 3px; margin-top: 5px;">${resumeData.personalInfo.visaStatus}</p>
 
-            <Text style={[styles.name, isArabic && { fontFamily: 'NotoSansArabic', direction: 'rtl' }]}>
-              {resumeData.personalInfo.name}
-            </Text>
-            {isJapanese && resumeData.personalInfo.nameKana && (
-              <Text style={{ fontSize: 10, color: '#6b7280', marginBottom: 5, fontFamily: 'NotoSansJP' }}>
-                {resumeData.personalInfo.nameKana}
-              </Text>
-            )}
-            <Text style={[styles.title, isArabic && { fontFamily: 'NotoSansArabic', direction: 'rtl' }]}>
-              {resumeData.personalInfo.title}
-            </Text>
+      <div style="margin-bottom: 15px;">
+        <h3 style="font-size: 14px; font-weight: bold; color: #1e40af; margin-bottom: 8px; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px;">
+          ${getSectionTitle('Objective', '志望動機', 'Objectif', 'Zielsetzung', 'Objetivo', 'الهدف')}
+        </h3>
+        <p style="font-size: 10px; color: #374151; line-height: 1.4;">${resumeData.objective}</p>
+      </div>
 
-            <View style={styles.contactInfo}>
-              <Text>{resumeData.personalInfo.location}</Text>
-              <Text>{resumeData.personalInfo.phone}</Text>
-              <Text>{resumeData.personalInfo.email}</Text>
-            </View>
-            <View style={styles.contactInfo}>
-              <Text>{resumeData.personalInfo.github}</Text>
-              <Text>{resumeData.personalInfo.portfolio}</Text>
-              {resumeData.personalInfo.linkedin && (
-                <Text>{resumeData.personalInfo.linkedin}</Text>
-              )}
-            </View>
+      <div style="margin-bottom: 15px;">
+        <h3 style="font-size: 14px; font-weight: bold; color: #1e40af; margin-bottom: 8px; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px;">
+          ${getSectionTitle('Professional Summary', '職務要約', 'Résumé Professionnel', 'Berufliche Zusammenfassung', 'Resumen Profesional', 'ملخص مهني')}
+        </h3>
+        <p style="font-size: 10px; color: #374151; line-height: 1.4;">${resumeData.summary}</p>
+      </div>
 
-            <Text style={styles.visaStatus}>
-              {resumeData.personalInfo.visaStatus}
-            </Text>
-          </View>
+      <div style="margin-bottom: 15px;">
+        <h3 style="font-size: 14px; font-weight: bold; color: #1e40af; margin-bottom: 8px; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px;">
+          ${getSectionTitle('Technical Skills', '技術スキル', 'Compétences Techniques', 'Technische Fähigkeiten', 'Habilidades Técnicas', 'المهارات التقنية')}
+        </h3>
+        <div style="margin-bottom: 5px;">
+          <strong>Programming Languages:</strong><br>
+          ${resumeData.technicalSkills.languages.join(' ')}
+        </div>
+        <div style="margin-bottom: 5px;">
+          <strong>Frontend:</strong><br>
+          ${resumeData.technicalSkills.frontend.join(' ')}
+        </div>
+        <div style="margin-bottom: 5px;">
+          <strong>Backend:</strong><br>
+          ${resumeData.technicalSkills.backend.join(' ')}
+        </div>
+        <div style="margin-bottom: 5px;">
+          <strong>Databases:</strong><br>
+          ${resumeData.technicalSkills.databases.join(' ')}
+        </div>
+      </div>
 
-          {/* Objective Section */}
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>
-              {isJapanese ? '志望動機' : isFrench ? 'Objectif' : isGerman ? 'Zielsetzung' : 'Objective'}
-            </Text>
-            <Text style={[styles.bulletText, isArabic && { fontFamily: 'NotoSansArabic', direction: 'rtl' }]}>
-              {resumeData.objective}
-            </Text>
-          </View>
+      <div style="margin-bottom: 15px;">
+        <h3 style="font-size: 14px; font-weight: bold; color: #1e40af; margin-bottom: 8px; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px;">
+          ${getSectionTitle('Key Projects', '主要プロジェクト', 'Projets Clés', 'Schlüsselprojekte', 'Proyectos Clave', 'المشاريع الرئيسية')}
+        </h3>
+        ${resumeData.projects.map(project => `
+          <div style="margin-bottom: 10px;">
+            <strong style="font-size: 11px; color: #111827;">${project.name}</strong><br>
+            <small style="font-size: 9px; color: #6b7280;">${project.technologies}</small><br>
+            <small style="font-size: 10px;">${project.description}</small><br>
+            ${project.achievements.map(ach => `<div style="margin-left: 15px; margin-bottom: 3px; font-size: 10px;">• ${ach}</div>`).join('')}
+            ${project.links.live || project.links.docs ? `
+              <div style="margin-top: 3px; font-size: 9px;">
+                ${project.links.live ? `<a href="${project.links.live}" style="color: #2563eb; text-decoration: underline;">Live: ${project.links.live}</a>` : ''}
+                ${project.links.docs ? ` | <a href="${project.links.docs}" style="color: #2563eb; text-decoration: underline;">API Docs: ${project.links.docs}</a>` : ''}
+              </div>` : ''}
+          </div>
+        `).join('')}
+      </div>
 
-          {/* Professional Summary */}
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>
-              {isJapanese ? '職務要約' : isFrench ? 'Résumé Professionnel' : isGerman ? 'Berufliche Zusammenfassung' : 'Professional Summary'}
-            </Text>
-            <Text style={[styles.bulletText, isArabic && { fontFamily: 'NotoSansArabic', direction: 'rtl' }]}>
-              {resumeData.summary}
-            </Text>
-          </View>
+      <div style="margin-bottom: 15px;">
+        <h3 style="font-size: 14px; font-weight: bold; color: #1e40af; margin-bottom: 8px; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px;">
+          ${getSectionTitle('Languages', '語学力', 'Langues', 'Sprachen', 'Idiomas', 'اللغات')}
+        </h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; font-size: 10px;">
+          ${resumeData.languages.map(lang => `<div><strong>${lang.language}:</strong> ${lang.level}</div>`).join('')}
+        </div>
+      </div>
 
-          {/* Technical Skills */}
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>
-              {isJapanese ? '技術スキル' : isFrench ? 'Compétences Techniques' : isGerman ? 'Technische Fähigkeiten' : 'Technical Skills'}
-            </Text>
-            <View style={{ marginBottom: 5 }}>
-              <Text style={{ fontSize: 10, fontWeight: 'bold', marginBottom: 3 }}>
-                Programming Languages:
-              </Text>
-              <View style={styles.skillsGrid}>
-                {resumeData.technicalSkills.languages.map((skill, index) => (
-                  <Text key={index} style={styles.skillBadge}>{skill}</Text>
-                ))}
-              </View>
-            </View>
-            <View style={{ marginBottom: 5 }}>
-              <Text style={{ fontSize: 10, fontWeight: 'bold', marginBottom: 3 }}>
-                Frontend:
-              </Text>
-              <View style={styles.skillsGrid}>
-                {resumeData.technicalSkills.frontend.map((skill, index) => (
-                  <Text key={index} style={styles.skillBadge}>{skill}</Text>
-                ))}
-              </View>
-            </View>
-            <View style={{ marginBottom: 5 }}>
-              <Text style={{ fontSize: 10, fontWeight: 'bold', marginBottom: 3 }}>
-                Backend:
-              </Text>
-              <View style={styles.skillsGrid}>
-                {resumeData.technicalSkills.backend.map((skill, index) => (
-                  <Text key={index} style={styles.skillBadge}>{skill}</Text>
-                ))}
-              </View>
-            </View>
-            <View style={{ marginBottom: 5 }}>
-              <Text style={{ fontSize: 10, fontWeight: 'bold', marginBottom: 3 }}>
-                Databases:
-              </Text>
-              <View style={styles.skillsGrid}>
-                {resumeData.technicalSkills.databases.map((skill, index) => (
-                  <Text key={index} style={styles.skillBadge}>{skill}</Text>
-                ))}
-              </View>
-            </View>
-          </View>
+      <div style="margin-top: 10px; padding: 5px; background-color: #fef3c7; border-radius: 3px; font-size: 9px;">
+        <strong style="color: #92400e;">Available for: Internships • Entry-Level Positions • Apprenticeships (Ausbildung) • Training Programs</strong><br>
+        <span style="color: #78350f; font-size: 8px;">Willing to relocate internationally with appropriate visa sponsorship. Fast learner committed to long-term growth.</span>
+      </div>
+    `;
 
-          {/* Key Projects */}
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>
-              {isJapanese ? '主要プロジェクト' : isFrench ? 'Projets Clés' : isGerman ? 'Schlüsselprojekte' : 'Key Projects'}
-            </Text>
-            {resumeData.projects.map((project, index) => (
-              <View key={index} style={{ marginBottom: 10 }}>
-                <Text style={styles.projectName}>{project.name}</Text>
-                <Text style={{ fontSize: 9, color: '#6b7280', marginBottom: 2 }}>
-                  {project.technologies}
-                </Text>
-                <Text style={{ fontSize: 10, marginBottom: 3 }}>{project.description}</Text>
-                {project.achievements.map((achievement, idx) => (
-                  <View key={idx} style={styles.bulletPoint}>
-                    <Text style={{ marginRight: 5 }}>•</Text>
-                    <Text style={styles.bulletText}>{achievement}</Text>
-                  </View>
-                ))}
-                <View style={{ flexDirection: 'row', gap: 10, marginTop: 3 }}>
-                  {project.links.live && (
-                    <Text style={styles.link}>Live: {project.links.live}</Text>
-                  )}
-                  {project.links.docs && (
-                    <Text style={styles.link}>API Docs: {project.links.docs}</Text>
-                  )}
-                </View>
-              </View>
-            ))}
-          </View>
-
-          {/* Languages */}
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>
-              {isJapanese ? '語学力' : isFrench ? 'Langues' : isGerman ? 'Sprachen' : 'Languages'}
-            </Text>
-            <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-              {resumeData.languages.map((lang, index) => (
-                <Text key={index} style={{ marginRight: 15, fontSize: 10, marginBottom: 3 }}>
-                  <Text style={{ fontWeight: 'bold' }}>{lang.language}:</Text> {lang.level}
-                </Text>
-              ))}
-            </View>
-          </View>
-
-          {/* Visa Note */}
-          <View style={{ marginTop: 10, padding: 5, backgroundColor: '#fef3c7', borderRadius: 3 }}>
-            <Text style={{ fontSize: 9, color: '#92400e', fontWeight: 'bold' }}>
-              {visaNote[locale as keyof typeof visaNote] || visaNote.en}
-            </Text>
-          </View>
-        </Page>
-      </Document>
-    );
+    return html;
   };
 
+  // ✅ DO NOT CLOSE ANYTHING AFTER THIS POINT — JUST RETURN THE JSX COMPONENT BELOW
   return (
     <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
       <div className="flex items-center justify-between mb-6">
@@ -798,7 +508,7 @@ const ResumeGenerator: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-4">
           {resumeData ? (
             <PDFDownloadLink
-              document={createResumePDF()}
+              document={<CountrySpecificResume locale={locale} />}
               fileName={`Badr_Ribzat_Resume_${locale || 'en'}_${new Date().toISOString().split('T')[0]}.pdf`}
               className="flex-1"
             >
