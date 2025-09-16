@@ -1,89 +1,120 @@
 {
   "personalInfo": {
     "name": "バドル・リブザット",
-    "nameKana": "バドル・リブザット",
+    "nameKana": "ばどる りぶざっと",
     "title": "フルスタックソフトウェアエンジニア",
-    "location": "モロッコ・クサル・エル・ケビル",
+    "location": "モロッコ、クサル・エル・ケビル",
     "phone": "+212 627-764176",
     "email": "badrribzat@gmail.com",
-    "github": "github.com/BadrRibzat",
-    "linkedin": "linkedin.com/in/badr-ribzat",
-    "portfolio": "badrribzat.vercel.app",
-    "birthDate": "1990-12-14",
-    "nationality": "モロッコ人",
-    "visaStatus": "適切なビザスポンサーシップを伴って国際的な移動に応じます。"
+    "github": "https://github.com/BadrRibzat",
+    "linkedin": "https://linkedin.com/in/badr-ribzat",
+    "portfolio": "https://badrribzat.dev",
+    "birthDate": "1990年12月14日",
+    "nationality": "モロッコ",
+    "visaStatus": "海外移転のためのビザスポンサー付きの機会を積極的に探しています。",
+    "photo": "/images/me.jpg"
   },
-  "objective": "ビザスポンサーシップを伴うエントリーレベルのポジション、インターンシップ、または見習いを求めています。",
-  "summary": "ALXソフトウェアエンジニアリングプログラムで優秀な成績（106.76％）を収めた独学のフルスタックエンジニア。",
-  "technicalSkills": {
-    "languages": ["Python", "JavaScript", "TypeScript", "SQL", "HTML/CSS", "C", "Bash"],
-    "frontend": ["React", "Next.js", "Tailwind CSS", "Material-UI", "Framer Motion"],
-    "backend": ["FastAPI", "Flask", "Node.js", "Express.js", "RESTful APIs"],
-    "databases": ["PostgreSQL", "MongoDB", "SQLite", "Vector Databases"],
-    "tools": ["Git", "Docker", "Linux", "Postman", "Swagger"],
-    "cloud": ["Vercel", "Fly.io", "AWS (Basic)", "CI/CD", "GitHub Actions"]
-  },
-  "projects": [
-    {
-      "name": "生物医学検出システム",
-      "description": "機械学習機能を持つAI搭載医療アプリケーション",
-      "technologies": "Python, FastAPI, TensorFlow, React, PostgreSQL, Docker",
-      "achievements": [
-        "生物医学信号処理のためのMLモデルを実装",
-        "100％文書カバレッジでRESTful APIを構築",
-        "スケーラブルなマイクロサービスアーキテクチャをデプロイ",
-        "診断予測で85％の精度を達成"
-      ],
-      "links": {
-        "live": "https://biomedical-frontend.vercel.app",
-        "github": "github.com/BadrRibzat/biomedical-detection",
-        "docs": "https://biomedical-detection.fly.dev/docs"
-      }
-    }
-  ],
+  "summary": "非常に強靭な精神力を持つ独学のフルスタックソフトウェアエンジニア。複雑な技術を習得し、エンドツーエンドの本番稼働可能なアプリケーションを提供する実績があります。厳しいALXソフトウェアエンジニアリングプログラムで106.76%という卓越した成績を収め、期待を常に上回る能力を証明しました。ヘルスケア、AI、教育の分野で有意義な問題を解決するためにテクノロジーを活用することに情熱を注いでおり、革新的な国際チームに貢献したいと願っています。",
   "experience": [
     {
-      "title": "フルスタックソフトウェアエンジニア",
-      "company": "自営業 / オープンソース貢献者",
+      "title": "フルスタックエンジニア（自主学習）",
+      "company": "個人プロジェクトおよびオープンソース活動",
       "location": "リモート",
-      "period": "2023 – 現在",
+      "period": "2022年 - 現在",
       "achievements": [
-        "3 つ以上の本番環境対応フルスタックアプリケーションを開発・デプロイ",
-        "GitHub スター 50 以上のオープンソースプロジェクトに貢献",
-        "デプロイ時間を 40 % 削減する CI/CD パイプラインを実装",
-        "OpenAPI/Swagger を使用した包括的 API ドキュメントを作成"
+        "AI、ヘルスケア、教育に焦点を当てた3つのフルスタックアプリケーションを構想から本番まで設計、開発、デプロイしました。",
+        "100%のドキュメンテーションカバレッジを持つRESTful API（Swagger/Redoc）、ヘルスチェックエンドポイント、自動デプロイのためのCI/CDパイプラインを構築しました。",
+        "Dockerを使用してアプリケーションをコンテナ化し、移植性とスケーラビリティを向上させ、Fly.ioやVercelなどのクラウドプラットフォームにデプロイしました。"
       ]
+    },
+    {
+      "title": "多技能専門職",
+      "company": "多様な業界（物流、サービス、顧客対応）",
+      "location": "モロッコ",
+      "period": "2008年 – 2022年",
+      "achievements": [
+        "限られたリソースの中で、要求の厳しい高圧的な環境で成功し、並外れた回復力と適応力を示しました。",
+        "ヘアスタイリングや栄養学の認定専門職を通じて、強力な対人スキルと顧客対応スキルを培いました。",
+        "認定フォークリフト操作（CACES R489 & R485）を含む実践的なスキルを習得し、様々な分野での迅速な学習能力を証明しました。"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AIチャットボットアシスタント",
+      "description": "文脈に応じた応答のためのNLPおよびRAG機能を備えたインテリジェントな対話型AI。",
+      "technologies": "Python, FastAPI, LangChain, ベクトルデータベース, React, WebSockets",
+      "links": {
+        "live": "https://chatbot-assistant-frontend.vercel.app/signin",
+        "github": "https://github.com/BadrRibzat/chatbot-assistant",
+        "docs": "https://chatbot-backend-badr.fly.dev",
+        "redoc": "https://chatbot-backend-badr.fly.dev/redoc/"
+      }
+    },
+    {
+      "name": "IT学習プラットフォーム",
+      "description": "コース管理、リアルタイム機能、分析機能を備えた教育技術プラットフォーム。",
+      "technologies": "Node.js, Express, React, MongoDB, JWT, Socket.io",
+      "links": {
+        "live": "https://it-learning-pi.vercel.app/",
+        "github": "https://github.com/BadrRibzat/it-learning",
+        "docs": "https://it-learning-backend.fly.dev/api/docs/",
+        "health": "https://it-learning-backend.fly.dev/api/health"
+      }
+    },
+    {
+      "name": "生物医学的検出システム",
+      "description": "画像からの診断予測のためのML機能を備えたAI搭載のヘルスケアアプリケーション。",
+      "technologies": "Python, FastAPI, TensorFlow, React, PostgreSQL, Docker",
+      "links": {
+        "live": "https://biomedical-frontend.vercel.app/",
+        "github": "https://github.com/BadrRibzat/biomedical-detection",
+        "docs": "https://biomedical-detection.fly.dev/docs",
+        "redoc": "https://biomedical-detection.fly.dev/redoc"
+      }
     }
   ],
   "education": [
     {
-      "degree": "ALX ソフトウェアエンジニアリングプログラム",
-      "institution": "ALX Africa",
-      "period": "2023 – 2024",
-      "score": "106.76 %（優秀な成績）",
-      "details": "18 か月間の集中フルスタック開発プログラム"
+      "degree": "フルスタックソフトウェアエンジニアリング",
+      "institution": "ALX Africa（Holberton School提携）",
+      "period": "2023年 – 2024年",
+      "score": "106.76%（基礎スコア認定）",
+      "details": "低レベルプログラミング、アルゴリズム、データ構造、フルスタックWeb開発を網羅する18ヶ月間の厳格なプロジェクトベースのプログラム。"
+    },
+    {
+      "degree": "中学校卒業証明",
+      "institution": "アブデルクリム・エル・ダウディ中学校、フェズ",
+      "period": "2008年修了",
+      "score": null,
+      "details": "独学および専門資格取得に進む前に修了した最終公式中等教育。"
     }
   ],
   "certifications": [
-    {
-      "name": "ALX ソフトウェアエンジニアリング証明書",
-      "issuer": "ALX Africa",
-      "date": "2024",
-      "credential": "スコア: 106.76 %"
-    }
+    { "name": "人工知能の基礎", "issuer": "IBM SkillsBuild", "date": "2025年9月" },
+    { "name": "SQL", "issuer": "SoloLearn", "date": "2023年3月" },
+    { "name": "C言語入門", "issuer": "SoloLearn", "date": "2023年5月" },
+    { "name": "初心者向けPython", "issuer": "SoloLearn", "date": "2022年8月" },
+    { "name": "Pythonの基礎", "issuer": "CodeStudio", "date": "2023年1月" },
+    { "name": "ウェブ開発の基礎", "issuer": "SoloLearn", "date": "2023年1月" },
+    { "name": "初心者向けウェブ開発", "issuer": "Cursa", "date": "2022年11月" },
+    { "name": "中上級英語（ESL）", "issuer": "Saylor Academy", "date": "2023年1月" },
+    { "name": "デジタルマーケティングの基礎", "issuer": "Google", "date": "2020年12月" },
+    { "name": "治療栄養学", "issuer": "Edraak", "date": "2020年12月" },
+    { "name": "調理技術と食品調理", "issuer": "Edraak", "date": "2026年2月" },
+    { "name": "プロフェッショナルヘアスタイリング（男女）", "issuer": "Ecole Univers Coiffure（国家認定）", "date": "2014年10月" }
+  ],
+  "practicalLicenses": [
+    "運転免許証（Bカテゴリー）、モロッコ",
+    "フォークリフト運転者免許（CACES R489 & R485）"
   ],
   "languages": [
-    { "language": "アラビア語", "level": "母語", "certification": "" },
-    { "language": "フランス語", "level": "ビジネス (B2)", "certification": "" },
-    { "language": "英語", "level": "ビジネス (B2)", "certification": "自己評価" },
-    { "language": "ドイツ語", "level": "基礎 (A1)", "certification": "現在学習中" },
-    { "language": "スペイン語", "level": "基礎 (A1)", "certification": "現在学習中" }
+    { "language": "アラビア語", "level": "母語" },
+    { "language": "フランス語", "level": "ビジネスレベル" },
+    { "language": "英語", "level": "中上級（B2）" },
+    { "language": "ドイツ語", "level": "初級（A1）" },
+    { "language": "スペイン語", "level": "初級（A1）" },
+    { "language": "日本語", "level": "初級（学習中）" }
   ],
-  "additionalSkills": [
-    "プロフェッショナル運転免許（すべてのカテゴリー）",
-    "フォークリフト操作（CACES R489 & R485）",
-    "プロフェッショナル美容師資格",
-    "栄養療法士"
-  ],
-  "interests": ["オープンソース", "AI 研究", "言語学習", "医療イノベーション"]
+  "interests": ["オープンソース開発", "AI研究", "語学学習", "健康・栄養技術"]
 }

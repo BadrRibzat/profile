@@ -313,13 +313,6 @@ const SkillsSection: React.FC = () => {
               >
                 {t('cta.contact')}
               </a>
-              <a
-                href="/resume/en"
-                target="_blank"
-                className="border-2 border-white text-white font-semibold py-3 px-8 rounded-full hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105"
-              >
-                {t('cta.resume')}
-              </a>
             </div>
           </div>
         </motion.div>

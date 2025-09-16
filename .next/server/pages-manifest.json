@@ -2,6 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/resume/[locale]": "pages/resume/[locale].js",
   "/": "pages/index.js",
-  "/resume/[locale]": "pages/resume/[locale].js"
+  "/about": "pages/about.js"
 }

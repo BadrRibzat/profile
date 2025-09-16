@@ -154,14 +154,6 @@ const HomePage: React.FC = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
             >
               <a
-                href="/resume/en"
-                target="_blank"
-                className="group flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              >
-                <Download className="w-5 h-5 group-hover:animate-bounce" />
-                <span>{t('hero.cta.viewResume')}</span>
-              </a>
-              <a
                 href="#projects"
                 className="group flex items-center space-x-2 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 font-semibold py-3 px-8 rounded-full border border-gray-200 dark:border-gray-700 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
               >

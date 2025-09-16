@@ -113,13 +113,6 @@ const AboutPage: React.FC = () => {
               
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <a 
-                  href="/resume/en" 
-                  className="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg"
-                >
-                  <Download className="w-5 h-5" />
-                  <span>{t('about:hero.buttons.resume')}</span>
-                </a>
-                <a 
                   href="/contact" 
                   className="flex items-center justify-center space-x-2 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white font-medium py-3 px-6 rounded-lg border border-gray-300 dark:border-gray-700 transition-all duration-300"
                 >

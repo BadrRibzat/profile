@@ -1,88 +1,120 @@
 {
   "personalInfo": {
     "name": "Badr Ribzat",
+    "nameKana": "バドル・リブザット",
     "title": "Ingeniero de Software Full-Stack",
-    "location": "Ksar El Kebir, Marruecos",
+    "location": "Alcazarquivir, Marruecos",
     "phone": "+212 627-764176",
     "email": "badrribzat@gmail.com",
-    "github": "github.com/BadrRibzat",
-    "linkedin": "linkedin.com/in/badr-ribzat",
-    "portfolio": "badrribzat.vercel.app",
-    "birthDate": "1990-12-14",
+    "github": "https://github.com/BadrRibzat",
+    "linkedin": "https://linkedin.com/in/badr-ribzat",
+    "portfolio": "https://badrribzat.dev",
+    "birthDate": "14/12/1990",
     "nationality": "Marroquí",
-    "visaStatus": "Dispuesto a reubicarse internacionalmente con patrocinio de visa adecuado."
+    "visaStatus": "Buscando activamente oportunidades con patrocinio de visa para reubicación internacional.",
+    "photo": "/images/me.jpg"
   },
-  "objective": "Buscando posición de nivel inicial, pasantía o aprendizaje con patrocinio de visa en desarrollo de software.",
-  "summary": "Ingeniero Full-Stack autodidacta con rendimiento excepcional (106,76 %) en el programa ALX.",
-  "technicalSkills": {
-    "languages": ["Python", "JavaScript", "TypeScript", "SQL", "HTML/CSS", "C", "Bash"],
-    "frontend": ["React", "Next.js", "Tailwind CSS", "Material-UI", "Framer Motion"],
-    "backend": ["FastAPI", "Flask", "Node.js", "Express.js", "RESTful APIs"],
-    "databases": ["PostgreSQL", "MongoDB", "SQLite", "Vector Databases"],
-    "tools": ["Git", "Docker", "Linux", "Postman", "Swagger"],
-    "cloud": ["Vercel", "Fly.io", "AWS (Basic)", "CI/CD", "GitHub Actions"]
-  },
-  "projects": [
-    {
-      "name": "Sistema de Detección Biomédica",
-      "description": "Aplicación de salud impulsada por IA con capacidades ML",
-      "technologies": "Python, FastAPI, TensorFlow, React, PostgreSQL, Docker",
-      "achievements": [
-        "Modelos ML implementados para procesamiento de señales biomédicas",
-        "APIs RESTful construidas con 100 % de cobertura documental",
-        "Arquitectura de microservicios escalable desplegada",
-        "Precisión del 85 % en predicciones diagnósticas"
-      ],
-      "links": {
-        "live": "https://biomedical-frontend.vercel.app",
-        "github": "github.com/BadrRibzat/biomedical-detection",
-        "docs": "https://biomedical-detection.fly.dev/docs"
-      }
-    }
-  ],
+  "summary": "Ingeniero de Software Full-Stack autodidacta y excepcionalmente resiliente, con una capacidad demostrada para dominar tecnologías complejas y entregar aplicaciones completas listas para producción. Logré una destacada puntuación del 106.76% en el riguroso programa de Ingeniería de Software de ALX, demostrando una capacidad para superar constantemente las expectativas. Apasionado por aprovechar la tecnología para resolver problemas significativos en salud, IA y educación, y con ganas de contribuir a un equipo internacional innovador.",
   "experience": [
     {
-      "title": "Ingeniero de Software Full-Stack",
-      "company": "Autónomo / Colaborador Open Source",
+      "title": "Ingeniero Full-Stack (Autodirigido)",
+      "company": "Proyectos Personales y de Código Abierto",
       "location": "Remoto",
-      "period": "2023 – Presente",
+      "period": "2022 - Actualidad",
       "achievements": [
-        "3+ aplicaciones full-stack listas para producción desarrolladas y desplegadas",
-        "Contribuciones a proyectos open-source con 50+ estrellas GitHub",
-        "Pipelines CI/CD implementados que redujeron el tiempo de despliegue un 40 %",
-        "Documentación API comprehensiva creada con OpenAPI/Swagger"
+        "Diseñé, desarrollé e implementé tres aplicaciones full-stack desde el concepto hasta la producción, centrándome en IA, salud y educación.",
+        "Creé APIs RESTful completas con una cobertura de documentación del 100% (Swagger/Redoc), puntos de control de estado y pipelines de CI/CD para implementaciones automatizadas.",
+        "Containericé aplicaciones utilizando Docker para mejorar la portabilidad y escalabilidad, implementándolas en plataformas en la nube como Fly.io y Vercel."
       ]
+    },
+    {
+      "title": "Profesional Polivalente",
+      "company": "Diversas Industrias (Logística, Servicios, Roles de cara al cliente)",
+      "location": "Marruecos",
+      "period": "2008 – 2022",
+      "achievements": [
+        "Demostré una resiliencia y adaptabilidad excepcionales al prosperar en entornos exigentes y de alta presión con recursos limitados.",
+        "Cultivé sólidas habilidades interpersonales y de atención al cliente a través de roles profesionales certificados en peluquería y nutrición.",
+        "Dominé habilidades prácticas, incluida la operación certificada de carretillas elevadoras (CACES R489 & R485), demostrando una rápida capacidad de aprendizaje en diferentes dominios."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Asistente de Chatbot con IA",
+      "description": "IA conversacional inteligente con capacidades de PNL y RAG para respuestas contextuales.",
+      "technologies": "Python, FastAPI, LangChain, Vector DB, React, WebSockets",
+      "links": {
+        "live": "https://chatbot-assistant-frontend.vercel.app/signin",
+        "github": "https://github.com/BadrRibzat/chatbot-assistant",
+        "docs": "https://chatbot-backend-badr.fly.dev",
+        "redoc": "https://chatbot-backend-badr.fly.dev/redoc/"
+      }
+    },
+    {
+      "name": "Plataforma de Aprendizaje de TI",
+      "description": "Plataforma de tecnología educativa con gestión de cursos, funciones en tiempo real y análisis.",
+      "technologies": "Node.js, Express, React, MongoDB, JWT, Socket.io",
+      "links": {
+        "live": "https://it-learning-pi.vercel.app/",
+        "github": "https://github.com/BadrRibzat/it-learning",
+        "docs": "https://it-learning-backend.fly.dev/api/docs/",
+        "health": "https://it-learning-backend.fly.dev/api/health"
+      }
+    },
+    {
+      "name": "Sistema de Detección Biomédica",
+      "description": "Aplicación de salud impulsada por IA con capacidades de ML para predicciones de diagnóstico a partir de imágenes.",
+      "technologies": "Python, FastAPI, TensorFlow, React, PostgreSQL, Docker",
+      "links": {
+        "live": "https://biomedical-frontend.vercel.app/",
+        "github": "https://github.com/BadrRibzat/biomedical-detection",
+        "docs": "https://biomedical-detection.fly.dev/docs",
+        "redoc": "https://biomedical-detection.fly.dev/redoc"
+      }
     }
   ],
   "education": [
     {
-      "degree": "Programa ALX Software Engineering",
-      "institution": "ALX Africa",
+      "degree": "Ingeniería de Software Full-Stack",
+      "institution": "ALX Africa (Impulsado por Holberton School)",
       "period": "2023 – 2024",
-      "score": "106,76 % (Rendimiento Excepcional)",
-      "details": "Programa intensivo de 18 meses en desarrollo full-stack"
+      "score": "106.76% (Puntuación de Fundamentos Validada)",
+      "details": "Riguroso programa de 18 meses basado en proyectos que cubre programación de bajo nivel, algoritmos, estructuras de datos y desarrollo web full-stack."
+    },
+    {
+      "degree": "Certificado de Educación Secundaria (Tercer Nivel)",
+      "institution": "Colegio Abdelkrim El Daoudi, Fez",
+      "period": "Completado en 2008",
+      "score": null,
+      "details": "Nivel más alto de educación secundaria formal alcanzado antes de seguir un aprendizaje autodirigido y certificaciones profesionales."
     }
   ],
   "certifications": [
-    {
-      "name": "Certificado ALX Software Engineering",
-      "issuer": "ALX Africa",
-      "date": "2024",
-      "credential": "Puntuación: 106,76 %"
-    }
+    { "name": "Fundamentos de Inteligencia Artificial", "issuer": "IBM SkillsBuild", "date": "Sep 2025" },
+    { "name": "SQL", "issuer": "SoloLearn", "date": "Mar 2023" },
+    { "name": "Introducción a C", "issuer": "SoloLearn", "date": "May 2023" },
+    { "name": "Python para Principiantes", "issuer": "SoloLearn", "date": "Ago 2022" },
+    { "name": "Fundamentos de Python", "issuer": "CodeStudio", "date": "Ene 2023" },
+    { "name": "Fundamentos de Desarrollo Web", "issuer": "SoloLearn", "date": "Ene 2023" },
+    { "name": "Desarrollo Web para Principiantes", "issuer": "Cursa", "date": "Nov 2022" },
+    { "name": "Inglés Intermedio-Alto (ESL)", "issuer": "Saylor Academy", "date": "Ene 2023" },
+    { "name": "Fundamentos de Marketing Digital", "issuer": "Google", "date": "Dic 2020" },
+    { "name": "Nutrición Terapéutica", "issuer": "Edraak", "date": "Dic 2020" },
+    { "name": "Artes Culinarias y Preparación de Alimentos", "issuer": "Edraak", "date": "Feb 2026" },
+    { "name": "Peluquería Profesional (Hombres y Mujeres)", "issuer": "Ecole Univers Coiffure (Reconocido por el Estado)", "date": "Oct 2014" }
+  ],
+  "practicalLicenses": [
+    "Permiso de Conducir (Categoría B), Marruecos",
+    "Licencia de Operador de Carretilla Elevadora (CACES R489 & R485)"
   ],
   "languages": [
-    { "language": "Árabe", "level": "Lengua materna", "certification": "" },
-    { "language": "Francés", "level": "Profesional (B2)", "certification": "" },
-    { "language": "Inglés", "level": "Profesional (B2)", "certification": "Autoevaluado" },
-    { "language": "Alemán", "level": "Básico (A1)", "certification": "Aprendiendo actualmente" },
-    { "language": "Español", "level": "Básico (A1)", "certification": "Aprendiendo actualmente" }
+    { "language": "Árabe", "level": "Nativo" },
+    { "language": "Francés", "level": "Fluidez Profesional" },
+    { "language": "Inglés", "level": "Intermedio-Alto (B2)" },
+    { "language": "Alemán", "level": "Principiante (A1)" },
+    { "language": "Español", "level": "Principiante (A1)" },
+    { "language": "Japonés", "level": "Principiante (Aprendiendo)" }
   ],
-  "additionalSkills": [
-    "Licencia de conducir profesional (todas las categorías)",
-    "Operación de montacargas (CACES R489 & R485)",
-    "Certificación profesional de peluquería",
-    "Especialista en nutrición terapéutica"
-  ],
-  "interests": ["Código abierto", "Investigación IA", "Aprendizaje de idiomas", "Innovación en salud"]
+  "interests": ["Desarrollo de Código Abierto", "Investigación en IA", "Aprendizaje de Idiomas", "Tecnología de Salud y Nutrición"]
 }

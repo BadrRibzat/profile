@@ -1,88 +1,120 @@
 {
   "personalInfo": {
     "name": "Badr Ribzat",
+    "nameKana": "バドル・リブザット",
     "title": "Ingénieur Logiciel Full-Stack",
-    "location": "Ksar El Kebir, Maroc",
+    "location": "Ksar El Kébir, Maroc",
     "phone": "+212 627-764176",
     "email": "badrribzat@gmail.com",
-    "github": "github.com/BadrRibzat",
-    "linkedin": "linkedin.com/in/badr-ribzat",
-    "portfolio": "badrribzat.vercel.app",
-    "birthDate": "1990-12-14",
+    "github": "https://github.com/BadrRibzat",
+    "linkedin": "https://linkedin.com/in/badr-ribzat",
+    "portfolio": "https://badrribzat.dev",
+    "birthDate": "14/12/1990",
     "nationality": "Marocain",
-    "visaStatus": "Prêt à déménager à l'international avec parrainage de visa approprié."
+    "visaStatus": "Recherche activement des opportunités avec parrainage de visa pour une relocalisation internationale.",
+    "photo": "/images/me.jpg"
   },
-  "objective": "À la recherche d'un poste débutant, stage ou alternance avec parrainage de visa en développement logiciel.",
-  "summary": "Ingénieur Full-Stack autodidacte avec performance exceptionnelle (106,76 %) au programme ALX.",
-  "technicalSkills": {
-    "languages": ["Python", "JavaScript", "TypeScript", "SQL", "HTML/CSS", "C", "Bash"],
-    "frontend": ["React", "Next.js", "Tailwind CSS", "Material-UI", "Framer Motion"],
-    "backend": ["FastAPI", "Flask", "Node.js", "Express.js", "RESTful APIs"],
-    "databases": ["PostgreSQL", "MongoDB", "SQLite", "Vector Databases"],
-    "tools": ["Git", "Docker", "Linux", "Postman", "Swagger"],
-    "cloud": ["Vercel", "Fly.io", "AWS (Basic)", "CI/CD", "GitHub Actions"]
-  },
-  "projects": [
-    {
-      "name": "Système de Détection Biomédicale",
-      "description": "Application de santé alimentée par l'IA avec des capacités ML",
-      "technologies": "Python, FastAPI, TensorFlow, React, PostgreSQL, Docker",
-      "achievements": [
-        "Modèles ML implémentés pour le traitement de signaux biomédicaux",
-        "APIs RESTful construites avec 100 % de couverture documentaire",
-        "Architecture de micro-services scalable déployée",
-        "Précision de 85 % dans les prédictions diagnostiques"
-      ],
-      "links": {
-        "live": "https://biomedical-frontend.vercel.app",
-        "github": "github.com/BadrRibzat/biomedical-detection",
-        "docs": "https://biomedical-detection.fly.dev/docs"
-      }
-    }
-  ],
+  "summary": "Ingénieur logiciel Full-Stack autodidacte et exceptionnellement résilient, avec une capacité avérée à maîtriser des technologies complexes et à livrer des applications complètes prêtes pour la production. J'ai obtenu un score exceptionnel de 106,76% au programme rigoureux d'ingénierie logicielle d'ALX, démontrant une capacité à dépasser constamment les attentes. Passionné par l'utilisation de la technologie pour résoudre des problèmes significatifs dans les domaines de la santé, de l'IA et de l'éducation, et désireux de contribuer à une équipe internationale innovante.",
   "experience": [
     {
-      "title": "Ingénieur Logiciel Full-Stack",
-      "company": "Indépendant / Contributeur Open Source",
-      "location": "Télétravail",
-      "period": "2023 – Présent",
+      "title": "Ingénieur Full-Stack (Autodidacte)",
+      "company": "Projets Personnels et Open Source",
+      "location": "À distance",
+      "period": "2022 - Aujourd'hui",
       "achievements": [
-        "3+ applications full-stack prêtes pour la production développées et déployées",
-        "Contributions à des projets open-source avec 50+ étoiles GitHub",
-        "Pipelines CI/CD implémentés réduisant le temps de déploiement de 40 %",
-        "Documentation API complète créée avec OpenAPI/Swagger"
+        "Conception, développement et déploiement de trois applications full-stack, du concept à la production, axées sur l'IA, la santé et l'éducation.",
+        "Création d'API RESTful complètes avec une couverture de documentation de 100% (Swagger/Redoc), des points de terminaison de vérification de l'état et des pipelines CI/CD pour les déploiements automatisés.",
+        "Conteneurisation d'applications avec Docker pour une portabilité et une évolutivité améliorées, en les déployant sur des plateformes cloud comme Fly.io et Vercel."
       ]
+    },
+    {
+      "title": "Professionnel Polyvalent",
+      "company": "Diverses Industries (Logistique, Services, Relation Client)",
+      "location": "Maroc",
+      "period": "2008 – 2022",
+      "achievements": [
+        "Démonstration d'une résilience et d'une adaptabilité exceptionnelles en réussissant dans des environnements exigeants et à haute pression avec des ressources limitées.",
+        "Développement de solides compétences interpersonnelles et relationnelles avec les clients grâce à des rôles professionnels certifiés en coiffure et en nutrition.",
+        "Maîtrise de compétences pratiques, y compris la conduite certifiée de chariots élévateurs (CACES R489 & R485), prouvant une capacité d'apprentissage rapide dans différents domaines."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Assistant Chatbot IA",
+      "description": "IA conversationnelle intelligente avec des capacités de NLP et RAG pour des réponses contextuelles.",
+      "technologies": "Python, FastAPI, LangChain, Base de données vectorielle, React, WebSockets",
+      "links": {
+        "live": "https://chatbot-assistant-frontend.vercel.app/signin",
+        "github": "https://github.com/BadrRibzat/chatbot-assistant",
+        "docs": "https://chatbot-backend-badr.fly.dev",
+        "redoc": "https://chatbot-backend-badr.fly.dev/redoc/"
+      }
+    },
+    {
+      "name": "Plateforme d'Apprentissage Informatique",
+      "description": "Plateforme de technologie éducative avec gestion de cours, fonctionnalités en temps réel et analyses.",
+      "technologies": "Node.js, Express, React, MongoDB, JWT, Socket.io",
+      "links": {
+        "live": "https://it-learning-pi.vercel.app/",
+        "github": "https://github.com/BadrRibzat/it-learning",
+        "docs": "https://it-learning-backend.fly.dev/api/docs/",
+        "health": "https://it-learning-backend.fly.dev/api/health"
+      }
+    },
+    {
+      "name": "Système de Détection Biomédicale",
+      "description": "Application de santé basée sur l'IA avec des capacités de ML pour les prédictions diagnostiques à partir d'images.",
+      "technologies": "Python, FastAPI, TensorFlow, React, PostgreSQL, Docker",
+      "links": {
+        "live": "https://biomedical-frontend.vercel.app/",
+        "github": "https://github.com/BadrRibzat/biomedical-detection",
+        "docs": "https://biomedical-detection.fly.dev/docs",
+        "redoc": "https://biomedical-detection.fly.dev/redoc"
+      }
     }
   ],
   "education": [
     {
-      "degree": "Programme ALX Software Engineering",
-      "institution": "ALX Africa",
+      "degree": "Ingénierie Logicielle Full-Stack",
+      "institution": "ALX Africa (Propulsé par Holberton School)",
       "period": "2023 – 2024",
-      "score": "106,76 % (Performance Exceptionnelle)",
-      "details": "Programme intensif de 18 mois en développement full-stack"
+      "score": "106,76% (Score des Fondamentaux Validé)",
+      "details": "Programme rigoureux de 18 mois, basé sur des projets, couvrant la programmation de bas niveau, les algorithmes, les structures de données et le développement web full-stack."
+    },
+    {
+      "degree": "Brevet d'Enseignement Préparatoire",
+      "institution": "Collège Abdelkrim El Daoudi, Fès",
+      "period": "Obtenu en 2008",
+      "score": null,
+      "details": "Plus haut niveau d'enseignement secondaire formel atteint avant de poursuivre un apprentissage autodidacte et des certifications professionnelles."
     }
   ],
   "certifications": [
-    {
-      "name": "Certificat ALX Software Engineering",
-      "issuer": "ALX Africa",
-      "date": "2024",
-      "credential": "Score: 106,76 %"
-    }
+    { "name": "Fondamentaux de l'Intelligence Artificielle", "issuer": "IBM SkillsBuild", "date": "Sep 2025" },
+    { "name": "SQL", "issuer": "SoloLearn", "date": "Mar 2023" },
+    { "name": "Introduction au C", "issuer": "SoloLearn", "date": "Mai 2023" },
+    { "name": "Python pour Débutants", "issuer": "SoloLearn", "date": "Aoû 2022" },
+    { "name": "Bases de Python", "issuer": "CodeStudio", "date": "Jan 2023" },
+    { "name": "Fondamentaux du Développement Web", "issuer": "SoloLearn", "date": "Jan 2023" },
+    { "name": "Développement Web pour Débutants", "issuer": "Cursa", "date": "Nov 2022" },
+    { "name": "Anglais Intermédiaire-Supérieur (ESL)", "issuer": "Saylor Academy", "date": "Jan 2023" },
+    { "name": "Principes de Marketing Numérique", "issuer": "Google", "date": "Déc 2020" },
+    { "name": "Nutrition Thérapeutique", "issuer": "Edraak", "date": "Déc 2020" },
+    { "name": "Arts Culinaires et Préparation des Aliments", "issuer": "Edraak", "date": "Fév 2026" },
+    { "name": "Coiffure Professionnelle (Hommes & Femmes)", "issuer": "Ecole Univers Coiffure (Reconnue par l'État)", "date": "Oct 2014" }
+  ],
+  "practicalLicenses": [
+    "Permis de Conduire (Catégorie B), Maroc",
+    "Permis Cariste (CACES R489 & R485)"
   ],
   "languages": [
-    { "language": "Arabe", "level": "Langue maternelle", "certification": "" },
-    { "language": "Français", "level": "Professionnel (B2)", "certification": "" },
-    { "language": "Anglais", "level": "Professionnel (B2)", "certification": "Auto-évalué" },
-    { "language": "Allemand", "level": "Basique (A1)", "certification": "En cours d'apprentissage" },
-    { "language": "Espagnol", "level": "Basique (A1)", "certification": "En cours d'apprentissage" }
+    { "language": "Arabe", "level": "Natif" },
+    { "language": "Français", "level": "Courant Professionnel" },
+    { "language": "Anglais", "level": "Intermédiaire-Supérieur (B2)" },
+    { "language": "Allemand", "level": "Débutant (A1)" },
+    { "language": "Espagnol", "level": "Débutant (A1)" },
+    { "language": "Japonais", "level": "Débutant (En apprentissage)" }
   ],
-  "additionalSkills": [
-    "Permis de conduire professionnel (toutes catégories)",
-    "Opération de chariot élévateur (CACES R489 & R485)",
-    "Certification professionnelle de coiffure",
-    "Spécialiste en nutrition thérapeutique"
-  ],
-  "interests": ["Open Source", "Recherche IA", "Apprentissage des langues", "Innovation santé"]
+  "interests": ["Développement Open Source", "Recherche en IA", "Apprentissage des Langues", "Technologie de la Santé et de la Nutrition"]
 }

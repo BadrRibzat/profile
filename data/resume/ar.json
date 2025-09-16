@@ -1,88 +1,120 @@
 {
   "personalInfo": {
     "name": "بدر ربزات",
+    "nameKana": "バドル・リブザット",
     "title": "مهندس برمجيات متكامل",
-    "location": "قصر الكبير، المغرب",
+    "location": "القصر الكبير، المغرب",
     "phone": "+212 627-764176",
     "email": "badrribzat@gmail.com",
-    "github": "github.com/BadrRibzat",
-    "linkedin": "linkedin.com/in/badr-ribzat",
-    "portfolio": "badrribzat.vercel.app",
+    "github": "https://github.com/BadrRibzat",
+    "linkedin": "https://linkedin.com/in/badr-ribzat",
+    "portfolio": "https://badrribzat.dev",
     "birthDate": "1990-12-14",
     "nationality": "مغربي",
-    "visaStatus": "مستعد للانتقال دوليًا مع رعاية تأشيرة مناسبة."
+    "visaStatus": "أبحث بجدية عن فرص عمل تتضمن كفالة تأشيرة للانتقال دوليًا.",
+    "photo": "/images/me.jpg"
   },
-  "objective": "أبحث عن وظيفة مبتدئة أو تدريب أو تلمذة مهنية مع رعاية التأشيرة في تطوير البرمجيات.",
-  "summary": "مهندس متكامل تعلم ذاتياً بأداء استثنائي (106.76 %) في برنامج ALX.",
-  "technicalSkills": {
-    "languages": ["بايثون", "جافاسكريبت", "تايبسكريبت", "SQL", "HTML/CSS", "C", "Bash"],
-    "frontend": ["React", "Next.js", "Tailwind CSS", "Material-UI", "Framer Motion"],
-    "backend": ["FastAPI", "Flask", "Node.js", "Express.js", "RESTful APIs"],
-    "databases": ["PostgreSQL", "MongoDB", "SQLite", "Vector Databases"],
-    "tools": ["Git", "Docker", "Linux", "Postman", "Swagger"],
-    "cloud": ["Vercel", "Fly.io", "AWS (Basic)", "CI/CD", "GitHub Actions"]
-  },
-  "projects": [
-    {
-      "name": "نظام الكشف الطبي",
-      "description": "تطبيق رعاية صحية مدعوم بالذكاء الاصطناعي مع قدرات ML",
-      "technologies": "بايثون، FastAPI، TensorFlow، React، PostgreSQL، Docker",
-      "achievements": [
-        "نماذج ML مُنفذة لمعالجة الإشارات الطبية",
-        "واجهات برمجة تطبيقات RESTful مبنية بتغطية توثيق 100٪",
-        "عمارة مايكروخدمات قابلة للتوسيع نُشرت",
-        "تم تحقيق 85٪ دقة في التنبؤات التشخيصية"
-      ],
-      "links": {
-        "live": "https://biomedical-frontend.vercel.app",
-        "github": "github.com/BadrRibzat/biomedical-detection",
-        "docs": "https://biomedical-detection.fly.dev/docs"
-      }
-    }
-  ],
+  "summary": "مهندس برمجيات متكامل ومكتسب للمهارات ذاتيًا، أتمتع بمرونة استثنائية وقدرة مثبتة على إتقان التقنيات المعقدة وتقديم تطبيقات شاملة جاهزة للإنتاج. حققت درجة متميزة بنسبة 106.76% في برنامج ALX لهندسة البرمجيات، مما يبرهن على قدرتي على تجاوز التوقعات باستمرار. شغوف بتسخير التكنولوجيا لحل المشكلات الهادفة في مجالات الرعاية الصحية والذكاء الاصطناعي والتعليم، وأتطلع للمساهمة في فريق دولي مبتكر.",
   "experience": [
     {
-      "title": "مهندس برمجيات متكامل",
-      "company": "حسابي الخاص / مساهم مفتوح المصدر",
+      "title": "مهندس متكامل (بتوجيه ذاتي)",
+      "company": "مشاريع شخصية ومساهمات مفتوحة المصدر",
       "location": "عن بعد",
-      "period": "2023 – الحاضر",
+      "period": "2022 - حتى الآن",
       "achievements": [
-        "تم تطوير ونشر 3+ تطبيقات متكاملة جاهزة للإنتاج",
-        "المساهمة في مشاريع مفتوحة المصدر مع 50+ نجمة GitHub",
-        "تم تنفيذ خطوط CI/CD تقلل وقت النشر بـ 40٪",
-        "إنشاء توثيق شامل للواجهات البرمجية باستخدام OpenAPI/Swagger"
+        "تصميم وتطوير ونشر ثلاثة تطبيقات متكاملة من الفكرة إلى الإنتاج، مع التركيز على الذكاء الاصطناعي والرعاية الصحية والتعليم.",
+        "هندسة واجهات برمجة تطبيقات RESTful شاملة مع توثيق كامل (Swagger/Redoc)، ونقاط فحص الحالة، وخطوط أنابيب CI/CD للنشر الآلي.",
+        "استخدام Docker لتحويل التطبيقات إلى حاويات لتعزيز قابلية النقل والتوسع، ونشرها على منصات سحابية مثل Fly.io و Vercel."
       ]
+    },
+    {
+      "title": "محترف متعدد المهارات",
+      "company": "صناعات متنوعة (الخدمات اللوجستية، الخدمات، الأدوار المباشرة مع العملاء)",
+      "location": "المغرب",
+      "period": "2008 – 2022",
+      "achievements": [
+        "إظهار مرونة وقدرة على التكيف استثنائية من خلال الازدهار في بيئات عمل متطلبة وعالية الضغط بموارد محدودة.",
+        "تنمية مهارات قوية في التعامل مع الآخرين والعملاء من خلال أدوار مهنية معتمدة في تصفيف الشعر والتغذية.",
+        "إتقان مهارات عملية وتطبيقية بما في ذلك تشغيل الرافعات الشوكية المعتمد (CACES R489 & R485)، مما يثبت القدرة على التعلم السريع في مجالات مختلفة."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "مساعد روبوت محادثة ذكي",
+      "description": "ذكاء اصطناعي للمحادثة مع قدرات معالجة اللغة الطبيعية و RAG للاستجابات السياقية.",
+      "technologies": "Python, FastAPI, LangChain, Vector DB, React, WebSockets",
+      "links": {
+        "live": "https://chatbot-assistant-frontend.vercel.app/signin",
+        "github": "https://github.com/BadrRibzat/chatbot-assistant",
+        "docs": "https://chatbot-backend-badr.fly.dev",
+        "redoc": "https://chatbot-backend-badr.fly.dev/redoc/"
+      }
+    },
+    {
+      "name": "منصة تعلم تكنولوجيا المعلومات",
+      "description": "منصة تكنولوجيا تعليمية مع إدارة الدورات، وميزات في الوقت الفعلي، وتحليلات.",
+      "technologies": "Node.js, Express, React, MongoDB, JWT, Socket.io",
+      "links": {
+        "live": "https://it-learning-pi.vercel.app/",
+        "github": "https://github.com/BadrRibzat/it-learning",
+        "docs": "https://it-learning-backend.fly.dev/api/docs/",
+        "health": "https://it-learning-backend.fly.dev/api/health"
+      }
+    },
+    {
+      "name": "نظام الكشف الطبي الحيوي",
+      "description": "تطبيق رعاية صحية مدعوم بالذكاء الاصطناعي مع قدرات تعلم الآلة للتنبؤات التشخيصية من الصور.",
+      "technologies": "Python, FastAPI, TensorFlow, React, PostgreSQL, Docker",
+      "links": {
+        "live": "https://biomedical-frontend.vercel.app/",
+        "github": "https://github.com/BadrRibzat/biomedical-detection",
+        "docs": "https://biomedical-detection.fly.dev/docs",
+        "redoc": "https://biomedical-detection.fly.dev/redoc"
+      }
     }
   ],
   "education": [
     {
-      "degree": "برنامج ALX لهندسة البرمجيات",
-      "institution": "ALX Africa",
+      "degree": "هندسة البرمجيات المتكاملة",
+      "institution": "ALX Africa (مدعوم من Holberton School)",
       "period": "2023 – 2024",
-      "score": "106.76 % (أداء استثنائي)",
-      "details": "برنامج تطوير متكامل مكثف لمدة 18 شهرًا"
+      "score": "106.76% (درجة أساسيات معتمدة)",
+      "details": "برنامج مكثف قائم على المشاريع لمدة 18 شهرًا يغطي البرمجة منخفضة المستوى والخوارزميات وهياكل البيانات وتطوير الويب المتكامل."
+    },
+    {
+      "degree": "شهادة السلك الإعدادي",
+      "institution": "إعدادية عبد الكريم الداودي، فاس",
+      "period": "أكملت عام 2008",
+      "score": null,
+      "details": "أعلى مستوى من التعليم الثانوي الرسمي تم تحقيقه قبل متابعة التعلم الذاتي والشهادات المهنية."
     }
   ],
   "certifications": [
-    {
-      "name": "شهادة ALX لهندسة البرمجيات",
-      "issuer": "ALX Africa",
-      "date": "2024",
-      "credential": "النقاط: 106.76 %"
-    }
+    { "name": "أساسيات الذكاء الاصطناعي", "issuer": "IBM SkillsBuild", "date": "سبتمبر 2025" },
+    { "name": "SQL", "issuer": "SoloLearn", "date": "مارس 2023" },
+    { "name": "مقدمة في لغة C", "issuer": "SoloLearn", "date": "مايو 2023" },
+    { "name": "بايثون للمبتدئين", "issuer": "SoloLearn", "date": "أغسطس 2022" },
+    { "name": "أساسيات بايثون", "issuer": "CodeStudio", "date": "يناير 2023" },
+    { "name": "أساسيات تطوير الويب", "issuer": "SoloLearn", "date": "يناير 2023" },
+    { "name": "تطوير الويب للمبتدئين", "issuer": "Cursa", "date": "نوفمبر 2022" },
+    { "name": "اللغة الإنجليزية للمستوى فوق المتوسط", "issuer": "Saylor Academy", "date": "يناير 2023" },
+    { "name": "أساسيات التسويق الرقمي", "issuer": "Google", "date": "ديسمبر 2020" },
+    { "name": "التغذية العلاجية", "issuer": "إدراك", "date": "ديسمبر 2020" },
+    { "name": "فنون الطهي وإعداد الطعام", "issuer": "إدراك", "date": "فبراير 2026" },
+    { "name": "تصفيف الشعر الاحترافي (رجال ونساء)", "issuer": "Ecole Univers Coiffure (معترف بها من الدولة)", "date": "أكتوبر 2014" }
+  ],
+  "practicalLicenses": [
+    "رخصة قيادة (الفئة ب)، المغرب",
+    "رخصة تشغيل رافعة شوكية (CACES R489 & R485)"
   ],
   "languages": [
-    { "language": "العربية", "level": "اللغة الأم", "certification": "" },
-    { "language": "الفرنسية", "level": "مهني (B2)", "certification": "" },
-    { "language": "الإنجليزية", "level": "مهني (B2)", "certification": "تقييم ذاتي" },
-    { "language": "الألمانية", "level": "أساسي (A1)", "certification": "قيد التعلم حاليًا" },
-    { "language": "الإسبانية", "level": "أساسي (A1)", "certification": "قيد التعلم حاليًا" }
+    { "language": "العربية", "level": "اللغة الأم" },
+    { "language": "الفرنسية", "level": "إتقان مهني" },
+    { "language": "الإنجليزية", "level": "فوق المتوسط (B2)" },
+    { "language": "الألمانية", "level": "مبتدئ (A1)" },
+    { "language": "الإسبانية", "level": "مبتدئ (A1)" },
+    { "language": "اليابانية", "level": "مبتدئ (قيد التعلم)" }
   ],
-  "additionalSkills": [
-    "رخصة قيادة مهنية (جميع الفئات)",
-    "عمل رافعة شوكية (CACES R489 & R485)",
-    "شهادة مهنية في تصفيف الشعر",
-    "أخصائي تغذية علاجية"
-  ],
-  "interests": ["مفتوح المصدر", "بحث الذكاء الاصطناعي", "تعلم اللغات", "ابتكار الرعاية الصحية"]
+  "interests": ["تطوير المصادر المفتوحة", "أبحاث الذكاء الاصطناعي", "تعلم اللغات", "تكنولوجيا الصحة والتغذية"]
 }

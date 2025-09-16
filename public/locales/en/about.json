@@ -3,36 +3,75 @@
     "title": "About Me",
     "description": "Discover the story behind Badr Ribzat, a self-taught full-stack engineer driven by passion, resilience, and a desire to solve complex problems."
   },
+  "hero": {
+    "title": "Badr Ribzat: A Journey of Resilience & Innovation",
+    "subtitle": "Self-Taught Full-Stack Engineer | Solving Real-World Problems with Technology",
+    "location": {
+      "title": "Global Availability",
+      "description": "Actively seeking opportunities worldwide with visa sponsorship for international relocation."
+    },
+    "focus": {
+      "title": "Specialized Focus",
+      "description": "Bridging gaps in Healthcare, AI, and Education through innovative software solutions."
+    },
+    "achievement": {
+      "title": "Proven Excellence",
+      "description": "Achieved 106.76% in the rigorous ALX Software Engineering program, consistently exceeding expectations."
+    },
+    "buttons": {
+      "contact": "Contact Me",
+      "viewResume": "View My Resume"
+    },
+    "stats": {
+      "languages": "Languages Spoken",
+      "certifications": "Certifications"
+    }
+  },
+  "story": {
+    "title": "My Story: Beyond the Code",
+    "subtitle": "A Testament to Persistence and Passion",
+    "p1": "My career began not in front of a screen, but with my hands—mastering trades like professional hairstyling, culinary arts, and operating heavy machinery. These roles taught me discipline, attention to detail, and the art of client satisfaction.",
+    "p2": "However, a deep-seated curiosity for how things work led me to the world of technology. I embarked on an intense journey of self-directed learning, dedicating thousands of hours to mastering software engineering from the ground up.",
+    "p3": "This culminated in my acceptance and outstanding performance in the ALX Software Engineering program, a rigorous 18-month curriculum where I solidified my skills in full-stack development, algorithms, and system design, finishing with a score of 106.76%."
+  },
+  "interests": {
+    "title": "Beyond the Screen",
+    "description": "When I'm not coding, I pursue interests that further enrich my perspective and problem-solving abilities.",
+    "items": {
+      "reading": "Learning & Reading",
+      "coffee": "Specialty Coffee",
+      "languages": "Language Acquisition",
+      "cooking": "Culinary Arts"
+    }
+  },
+  "certifications": {
+    "title": "My Credentials",
+    "subtitle": "Formal Recognitions & Specialized Training",
+    "technical": {
+      "title": "Technical Competencies"
+    },
+    "professional": {
+      "title": "Professional Expertise"
+    },
+    "languages": {
+      "title": "Language Proficiency"
+    },
+    "viewAll": "View All"
+  },
+  "cta": {
+    "title": "Ready to Collaborate?",
+    "description": "My unique background and proven resilience make me a valuable asset. Let's build something impactful together.",
+    "button": "Get in Touch"
+  },
   "title": "My Journey",
   "subtitle": "From Practical Trades to Advanced Technology",
   "philosophy": {
     "title": "My Philosophy",
     "content": "I believe that true innovation comes from a blend of diverse experiences. My path wasn't linear, and that's my greatest strength. I tackle problems with a unique perspective, combining practical, hands-on skills with deep technical knowledge."
   },
-  "story": {
-    "title": "My Story",
-    "p1": "My career began not in front of a screen, but with my hands—mastering trades like professional hairstyling, culinary arts, and operating heavy machinery. These roles taught me discipline, attention to detail, and the art of client satisfaction.",
-    "p2": "However, a deep-seated curiosity for how things work led me to the world of technology. I embarked on an intense journey of self-directed learning, dedicating thousands of hours to mastering software engineering from the ground up.",
-    "p3": "This culminated in my acceptance and outstanding performance in the ALX Software Engineering program, a rigorous 18-month curriculum where I solidified my skills in full-stack development, algorithms, and system design, finishing with a score of 106.76%."
-  },
-  "ambitions": {
-    "title": "My Ambitions & Opportunity Search",
-    "p1": "I am actively seeking a full-time position, internship, or training program (like an 'Ausbildung' in Germany) that offers visa sponsorship. My goal is to apply my diverse skills to a team that values innovation, hard work, and a unique perspective. I am particularly interested in roles within:",
-    "areas": {
-      "ai": "AI & Robotics",
-      "biomedical": "Biomedical Technology",
-      "edtech": "Educational Technology"
-    }
-  },
-  "journey": {
-    "title": "A Timeline of Growth"
-  },
   "timeline": {
-    "0": { "event": "Professional Driving", "description": "Obtained professional driving licenses, ensuring safety and reliability." },
-    "1": { "event": "Certified Hairstylist", "description": "Graduated with state-approved diplomas in men's and women's hairstyling." },
-    "2": { "event": "Digital Marketing", "description": "Achieved Google certification in Digital Marketing, my first step into the tech world." },
-    "3": { "event": "Forklift Operator", "description": "Certified (CACES R489 & R485) to operate heavy machinery, mastering precision and safety protocols." },
-    "4": { "event": "ALX Software Engineering", "description": "Began the intensive 18-month full-stack development program." },
-    "5": { "event": "Graduation & Specialization", "description": "Completed the ALX program with top scores and began specializing in AI and advanced backend systems." }
+    "selfTaught": { "title": "Full-Stack Engineer (Self-Directed)", "description": "Independent learning, project development, and open-source contributions focusing on AI, health-tech, and education." },
+    "business": { "title": "Multi-Skilled Professional (Diverse Industries)", "description": "Developed strong interpersonal, client-facing, and practical skills across logistics, service, and certified roles." },
+    "education": { "title": "Formal Education & Early Career", "description": "Completed preparatory education while balancing significant health challenges, leading to early professional experiences." }
   }
 }

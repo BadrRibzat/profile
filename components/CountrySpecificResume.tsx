@@ -1,835 +1,900 @@
 // components/CountrySpecificResume.tsx
 import React from 'react';
-import {
-  Document,
-  Page,
-  View,
-  Text,
-  StyleSheet,
-  Font,
-  Image,
-  Link,
-} from '@react-pdf/renderer';
+import { Document, Page, View, Text, StyleSheet, Font, Image, Link } from '@react-pdf/renderer';
+import { meImageBase64 } from '../data/resume/base64-image';
+// --- CORRECTED FONT REGISTRATION ---
+// Register fonts with explicit fontWeight as numbers, not strings
+try {
+  Font.register({
+    family: 'NotoSans',
+    fonts: [
+      { src: '/fonts/NotoSans-Regular.ttf', fontWeight: 400 }, // Use number, not 'normal'
+      { src: '/fonts/NotoSans-Bold.ttf', fontWeight: 700 },     // Use number, not 'bold'
+    ],
+  });
 
-/* --------------  FONT LOADING  -------------- */
-Font.register({
-  family: 'NotoSans',
-  fonts: [
-    { src: '/fonts/NotoSans-Regular.ttf' },
-    { src: '/fonts/NotoSans-Bold.ttf', fontWeight: 'bold' },
-  ],
-});
+  Font.register({
+    family: 'NotoSansArabic',
+    fonts: [
+      { src: '/fonts/NotoSansArabic-Regular.ttf', fontWeight: 400 },
+      { src: '/fonts/NotoSansArabic-Bold.ttf', fontWeight: 700 },
+    ],
+  });
 
-Font.register({
-  family: 'NotoSansArabic',
-  fonts: [
-    { src: '/fonts/NotoSansArabic-Regular.ttf' },
-    { src: '/fonts/NotoSansArabic-Bold.ttf', fontWeight: 'bold' },
-  ],
-});
-
-Font.register({
-  family: 'NotoSansJP',
-  fonts: [
-    { src: '/fonts/NotoSansJP-Regular.ttf' },
-    { src: '/fonts/NotoSansJP-Bold.ttf', fontWeight: 'bold' },
-  ],
-});
-
-/* --------------  TYPES  -------------- */
-interface ResumeData {
-  personalInfo: {
-    name: string;
-    nameKana?: string;
-    title: string;
-    location: string;
-    phone: string;
-    email: string;
-    github: string;
-    linkedin?: string;
-    portfolio: string;
-    birthDate?: string;
-    nationality?: string;
-    visaStatus: string;
-    photo?: string;
-  };
-  objective: string;
-  summary: string;
-  technicalSkills: {
-    languages: string[];
-    frontend: string[];
-    backend: string[];
-    databases: string[];
-    tools: string[];
-    cloud: string[];
-  };
-  projects: Array<{
-    name: string;
-    description: string;
-    technologies: string;
-    achievements: string[];
-    links: { live?: string; github?: string; docs?: string };
-  }>;
-  experience: Array<{
-    title: string;
-    company: string;
-    location: string;
-    period: string;
-    achievements: string[];
-  }>;
-  education: Array<{
-    degree: string;
-    institution: string;
-    period: string;
-    score?: string;
-    details?: string;
-  }>;
-  certifications: Array<{
-    name: string;
-    issuer: string;
-    date: string;
-    credential?: string;
-  }>;
-  languages: Array<{
-    language: string;
-    level: string;
-    certification?: string;
-  }>;
-  additionalSkills: string[];
-  interests?: string[];
+  Font.register({
+    family: 'NotoSansJP',
+    fonts: [
+      { src: '/fonts/NotoSansJP-Regular.ttf', fontWeight: 400 },
+      { src: '/fonts/NotoSansJP-Bold.ttf', fontWeight: 700 },
+    ],
+  });
+} catch (error) {
+  console.warn('Font registration failed:', error);
 }
 
-interface Props {
-  data: ResumeData;
-  locale: string;
-}
-
-/* --------------  HELPERS  -------------- */
-const t = (en: string, ja: string, de: string, fr: string, es: string, ar: string, locale: string) => {
-  if (locale === 'ja') return ja;
-  if (locale === 'de') return de;
-  if (locale === 'fr') return fr;
-  if (locale === 'es') return es;
-  if (locale === 'ar') return ar;
-  return en;
+// --- FIXED PHOTO URL FUNCTION ---
+const getPhotoUrl = () => {
+  // Use absolute URL for better compatibility
+  const baseUrl = typeof window !== 'undefined' 
+    ? window.location.origin 
+    : (process.env.NODE_ENV === 'production' ? 'https://badrribzat.dev' : 'http://localhost:3000');
+  
+  return `${baseUrl}/images/me.jpg`;
 };
 
-/* --------------  GERMAN Lebenslauf  -------------- */
-const GermanResume = ({ data }: { data: ResumeData }) => {
+const photoUrl = getPhotoUrl();
+
+// --- SHARED STYLES WITH CORRECTED FONT WEIGHTS ---
+const commonStyles = StyleSheet.create({
+  url: { color: '#007BFF', textDecoration: 'none' },
+  visaStatus: { 
+    marginTop: 8, 
+    paddingVertical: 4, 
+    paddingHorizontal: 6, 
+    backgroundColor: '#e6ffed', 
+    color: '#2f6f43', 
+    fontSize: 9, 
+    borderRadius: 4, 
+    textAlign: 'center' 
+  },
+  bullet: { flexDirection: 'row', marginBottom: 3, paddingRight: 10 },
+  bulletChar: { marginRight: 5, fontSize: 10, lineHeight: 1.4 },
+  bulletText: { flex: 1, fontSize: 10, lineHeight: 1.4 },
+});
+
+// --- TYPE DEFINITIONS ---
+interface PersonalInfo {
+  name: string;
+  nameKana?: string;
+  title: string;
+  location: string;
+  phone: string;
+  email: string;
+  github: string;
+  linkedin: string;
+  portfolio: string;
+  birthDate?: string;
+  nationality?: string;
+  visaStatus: string;
+  photo?: string;
+}
+
+interface Experience {
+  title: string;
+  company: string;
+  location: string;
+  period: string;
+  achievements: string[];
+}
+
+interface Education {
+  degree: string;
+  institution: string;
+  period: string;
+  score: string | null;
+  details?: string;
+}
+
+interface Project {
+  name: string;
+  description: string;
+  technologies: string;
+  links: { live: string; github: string; docs?: string; redoc?: string; health?: string; };
+}
+
+interface Certification {
+  name: string;
+  issuer: string;
+  date: string;
+}
+
+interface Language {
+  language: string;
+  level: string;
+}
+
+interface ResumeData {
+  personalInfo: PersonalInfo;
+  summary: string;
+  experience: Experience[];
+  projects: Project[];
+  education: Education[];
+  certifications: Certification[];
+  practicalLicenses: string[];
+  languages: Language[];
+  interests: string[];
+}
+
+interface Props { data: ResumeData; locale: string; }
+interface ResumeTemplateProps { data: ResumeData; }
+
+// --- 1. CORRECTED US/ENGLISH TEMPLATE ---
+const USResume: React.FC<ResumeTemplateProps> = ({ data }) => {
   const s = StyleSheet.create({
-    page: { padding: 35, fontFamily: 'NotoSans', fontSize: 11 },
-    header: { flexDirection: 'row', marginBottom: 20 },
-    photo: { width: 80, height: 100, border: '1 solid #000', marginRight: 20 },
-    name: { fontSize: 18, fontWeight: 'bold', marginBottom: 5 },
-    title: { fontSize: 14, color: '#666', marginBottom: 10 },
-    contact: { fontSize: 10, marginBottom: 3 },
-    section: { marginBottom: 15 },
-    sectionTitle: { fontSize: 14, fontWeight: 'bold', marginBottom: 8, borderBottom: '1 solid #333', paddingBottom: 3 },
-    timelineEntry: { marginBottom: 8 },
-    timelineHeader: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 3 },
-    timelineDate: { width: 120, fontWeight: 'bold' },
-    timelineTitle: { fontWeight: 'bold', flex: 1 },
-    timelineSubtitle: { fontStyle: 'italic', marginBottom: 3 },
-    bullet: { marginLeft: 10, marginBottom: 2 },
-    skillBadge: { backgroundColor: '#f0f0f0', padding: '3 6', borderRadius: 3, fontSize: 9, margin: 2 },
-    visaBox: { marginTop: 15, padding: 10, backgroundColor: '#fef3c7', borderRadius: 5 },
+    page: { 
+      fontFamily: 'NotoSans', 
+      fontSize: 10, 
+      color: '#2d3748', 
+      padding: '0.75in',
+      fontWeight: 400 // Explicit fontWeight
+    },
+    header: { textAlign: 'center', marginBottom: 20, borderBottom: '2px solid #2c5282', paddingBottom: 15 },
+    name: { 
+      fontFamily: 'NotoSans', 
+      fontSize: 24, 
+      fontWeight: 700, // Use number
+      color: '#1a202c', 
+      marginBottom: 4 
+    },
+    title: { 
+      fontFamily: 'NotoSans', 
+      fontSize: 14, 
+      color: '#2c5282', 
+      marginBottom: 8,
+      fontWeight: 400
+    },
+    contactInfo: { 
+      flexDirection: 'row', 
+      justifyContent: 'center', 
+      flexWrap: 'wrap', 
+      fontSize: 9, 
+      color: '#4a5568' 
+    },
+    contactItem: { marginHorizontal: 8 },
+    section: { marginBottom: 18 },
+    sectionTitle: { 
+      fontFamily: 'NotoSans', 
+      fontSize: 12, 
+      fontWeight: 700, // Use number
+      color: '#2c5282', 
+      backgroundColor: '#edf2f7',
+      padding: '4 8',
+      marginBottom: 12,
+      textTransform: 'uppercase'
+    },
+    subsectionTitle: { 
+      fontFamily: 'NotoSans', 
+      fontSize: 11, 
+      fontWeight: 700, // Use number
+      color: '#2d3748', 
+      marginBottom: 8 
+    },
+    entry: { marginBottom: 14 },
+    entryHeader: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 4 },
+    entryTitle: { 
+      fontFamily: 'NotoSans', 
+      fontWeight: 700, // Use number
+      fontSize: 11, 
+      color: '#1a202c' 
+    },
+    entryMeta: { fontSize: 9, color: '#718096' },
+    projectEntry: { 
+      marginBottom: 12, 
+      padding: 8, 
+      backgroundColor: '#f7fafc', 
+      borderLeft: '3px solid #2c5282' 
+    },
+    certGrid: { flexDirection: 'row', flexWrap: 'wrap' },
+    certItem: { 
+      fontSize: 8, 
+      backgroundColor: '#fed7d7', 
+      color: '#9b2c2c', 
+      padding: '2 4', 
+      margin: 1, 
+      borderRadius: 2 
+    },
   });
 
   return (
-    <Document>
-      <Page size="A4" style={s.page}>
-        <View style={s.header}>
-          <Image src="/images/me.jpg" style={s.photo} />
-          <View style={{ flex: 1 }}>
-            <Text style={s.name}>{data.personalInfo.name}</Text>
-            <Text style={s.title}>{data.personalInfo.title}</Text>
-            <Text style={s.contact}>{data.personalInfo.location}</Text>
-            <Text style={s.contact}>{data.personalInfo.phone}</Text>
-            <Text style={s.contact}>{data.personalInfo.email}</Text>
-            <Text style={s.contact}>{data.personalInfo.github}</Text>
-            <Text style={s.contact}>{data.personalInfo.linkedin}</Text>
-            <Text style={[s.contact, { color: '#059669', fontWeight: 'bold' }]}>{data.personalInfo.visaStatus}</Text>
+    <Page size="A4" style={s.page}>
+      {/* Header */}
+      <View style={s.header}>
+        <Text style={s.name}>{data.personalInfo.name}</Text>
+        <Text style={s.title}>{data.personalInfo.title}</Text>
+        <View style={s.contactInfo}>
+          <Text style={s.contactItem}>{data.personalInfo.location}</Text>
+          <Text style={s.contactItem}>•</Text>
+          <Text style={s.contactItem}>{data.personalInfo.phone}</Text>
+          <Text style={s.contactItem}>•</Text>
+          <Text style={s.contactItem}>{data.personalInfo.email}</Text>
+        </View>
+        <View style={s.contactInfo}>
+          <Text style={s.contactItem}>GitHub: {data.personalInfo.github}</Text>
+          <Text style={s.contactItem}>•</Text>
+          <Text style={s.contactItem}>Portfolio: {data.personalInfo.portfolio}</Text>
+        </View>
+        <Text style={[commonStyles.visaStatus, { marginTop: 8 }]}>{data.personalInfo.visaStatus}</Text>
+      </View>
+
+      {/* Professional Summary */}
+      <View style={s.section}>
+        <Text style={s.sectionTitle}>PROFESSIONAL SUMMARY</Text>
+        <Text style={{ lineHeight: 1.6, fontSize: 10 }}>{data.summary}</Text>
+      </View>
+
+      {/* Technical Skills */}
+      <View style={s.section}>
+        <Text style={s.sectionTitle}>TECHNICAL COMPETENCIES</Text>
+        <View style={{ flexDirection: 'row' }}>
+          <View style={{ width: '50%', paddingRight: 10 }}>
+            <Text style={s.subsectionTitle}>Programming Languages</Text>
+            <Text style={{ fontSize: 9, marginBottom: 6 }}>Python, JavaScript, TypeScript, SQL, C, Bash, HTML5/CSS3</Text>
+            
+            <Text style={s.subsectionTitle}>Backend Technologies</Text>
+            <Text style={{ fontSize: 9, marginBottom: 6 }}>FastAPI, Flask, Node.js, Express.js, RESTful APIs, Microservices</Text>
+          </View>
+          <View style={{ width: '50%' }}>
+            <Text style={s.subsectionTitle}>Frontend & UI</Text>
+            <Text style={{ fontSize: 9, marginBottom: 6 }}>React, Next.js, Tailwind CSS, Responsive Design, Progressive Web Apps</Text>
+            
+            <Text style={s.subsectionTitle}>Database & Cloud</Text>
+            <Text style={{ fontSize: 9, marginBottom: 6 }}>PostgreSQL, MongoDB, Docker, CI/CD, AWS, Git/GitHub</Text>
           </View>
         </View>
+      </View>
 
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Berufliche Zusammenfassung</Text>
-          <Text>{data.summary}</Text>
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Berufserfahrung</Text>
-          {data.experience.map((exp, i) => (
-            <View key={i} style={s.timelineEntry}>
-              <View style={s.timelineHeader}>
-                <Text style={s.timelineDate}>{exp.period}</Text>
-                <Text style={s.timelineTitle}>{exp.title}</Text>
-              </View>
-              <Text style={s.timelineSubtitle}>{exp.company} | {exp.location}</Text>
-              {exp.achievements.map((a, j) => (
-                <Text key={j} style={s.bullet}>• {a}</Text>
-              ))}
+      {/* Professional Experience */}
+      <View style={s.section}>
+        <Text style={s.sectionTitle}>PROFESSIONAL EXPERIENCE</Text>
+        {data.experience.map((exp, i) => (
+          <View key={i} style={s.entry}>
+            <View style={s.entryHeader}>
+              <Text style={s.entryTitle}>{exp.title}</Text>
+              <Text style={s.entryMeta}>{exp.period}</Text>
             </View>
+            <Text style={{ fontSize: 10, fontWeight: 700, marginBottom: 3 }}>{exp.company}</Text>
+            {exp.achievements.slice(0, 3).map((ach, j) => (
+              <View key={j} style={commonStyles.bullet}>
+                <Text style={commonStyles.bulletChar}>•</Text>
+                <Text style={commonStyles.bulletText}>{ach}</Text>
+              </View>
+            ))}
+          </View>
+        ))}
+      </View>
+
+      {/* Key Projects */}
+      <View style={s.section}>
+        <Text style={s.sectionTitle}>KEY PROJECTS</Text>
+        {data.projects.slice(0, 3).map((project, i) => (
+          <View key={i} style={s.projectEntry}>
+            <Text style={[s.entryTitle, { color: '#2c5282' }]}>{project.name}</Text>
+            <Text style={{ fontSize: 9, marginBottom: 4 }}>{project.description}</Text>
+            <Text style={{ fontSize: 8, color: '#4a5568' }}>Technologies: {project.technologies}</Text>
+            <Text style={{ fontSize: 8, color: '#2c5282' }}>Live Demo: {project.links.live}</Text>
+          </View>
+        ))}
+      </View>
+
+      {/* Education & Certifications */}
+      <View style={s.section}>
+        <Text style={s.sectionTitle}>EDUCATION & CERTIFICATIONS</Text>
+        {data.education.map((edu, i) => (
+          <View key={i} style={s.entry}>
+            <View style={s.entryHeader}>
+              <Text style={s.entryTitle}>{edu.degree}</Text>
+              <Text style={s.entryMeta}>{edu.period}</Text>
+            </View>
+            <Text style={{ fontSize: 10, marginBottom: 2 }}>{edu.institution}</Text>
+            {edu.score && <Text style={{ fontSize: 9 }}>Achievement: {edu.score}</Text>}
+          </View>
+        ))}
+        
+        <View style={s.certGrid}>
+          {data.certifications.slice(0, 8).map((cert, i) => (
+            <Text key={i} style={s.certItem}>{cert.name}</Text>
           ))}
         </View>
+      </View>
 
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Ausbildung</Text>
-          {data.education.map((edu, i) => (
-            <View key={i} style={s.timelineEntry}>
-              <View style={s.timelineHeader}>
-                <Text style={s.timelineDate}>{edu.period}</Text>
-                <Text style={s.timelineTitle}>{edu.degree}</Text>
-              </View>
-              <Text style={s.timelineSubtitle}>{edu.institution}</Text>
-              {edu.score && <Text>Note: {edu.score}</Text>}
-            </View>
-          ))}
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Technische Fähigkeiten</Text>
-          <Text style={{ fontWeight: 'bold', marginBottom: 5 }}>Programmiersprachen:</Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-            {data.technicalSkills.languages.map((l) => (
-              <Text style={s.skillBadge} key={l}>{l}</Text>
-            ))}
-          </View>
-          <Text style={{ fontWeight: 'bold', marginTop: 8, marginBottom: 5 }}>Frontend:</Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-            {data.technicalSkills.frontend.map((l) => (
-              <Text style={s.skillBadge} key={l}>{l}</Text>
-            ))}
-          </View>
-          <Text style={{ fontWeight: 'bold', marginTop: 8, marginBottom: 5 }}>Backend:</Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-            {data.technicalSkills.backend.map((l) => (
-              <Text style={s.skillBadge} key={l}>{l}</Text>
-            ))}
-          </View>
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Sprachen</Text>
-          {data.languages.map((l) => (
-            <Text key={l.language}>
-              <Text style={{ fontWeight: 'bold' }}>{l.language}:</Text> {l.level}
+      {/* Languages */}
+      <View style={s.section}>
+        <Text style={s.sectionTitle}>LANGUAGES</Text>
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
+          {data.languages.map((lang, i) => (
+            <Text key={i} style={{ fontSize: 9, marginRight: 15, marginBottom: 3 }}>
+              {lang.language}: {lang.level}
             </Text>
           ))}
         </View>
-
-        <View style={s.visaBox}>
-          <Text style={{ fontSize: 10, fontWeight: 'bold', color: '#92400e' }}>
-            Verfügbar für: Praktika • Einstiegspositionen • Ausbildung • Trainingsprogramme
-          </Text>
-          <Text style={{ fontSize: 9, color: '#78350f', marginTop: 3 }}>
-            Bereit, international mit geeigneter Visumsponsoring zu ziehen. Schneller Lerner mit langfristigem Wachstumswillen.
-          </Text>
-        </View>
-      </Page>
-    </Document>
+      </View>
+    </Page>
   );
 };
 
-/* --------------  JAPANESE RIREKISHO  -------------- */
-const JapaneseResume = ({ data }: { data: ResumeData }) => {
+// --- 2. CORRECTED GERMAN TEMPLATE WITH PHOTO ---
+const GermanResume: React.FC<ResumeTemplateProps> = ({ data }) => {
   const s = StyleSheet.create({
-    page: { padding: 20, fontFamily: 'NotoSansJP', fontSize: 10 },
-    header: { fontSize: 16, fontWeight: 'bold', textAlign: 'center', marginBottom: 10 },
-    section: { marginBottom: 8 },
-    sectionTitle: { fontSize: 12, fontWeight: 'bold', marginBottom: 5, borderBottom: '1 solid #000', paddingBottom: 2 },
-    row: { flexDirection: 'row', marginBottom: 4 },
-    label: { width: 80, fontWeight: 'bold' },
-    value: { flex: 1 },
-    date: { width: 60, textAlign: 'right', marginRight: 10 },
-    content: { flex: 1 },
-    photo: { position: 'absolute', top: 20, right: 20, width: 40, height: 50, border: '1 solid #000' },
+    page: { fontFamily: 'NotoSans', fontSize: 10, color: '#333', fontWeight: 400 },
+    container: { flexDirection: 'row', flex: 1 },
+    leftColumn: { width: '35%', backgroundColor: '#f4f4f4', padding: 20 },
+    rightColumn: { width: '65%', padding: '20 20 20 15' },
+    photo: { 
+      width: 100, 
+      height: 120, 
+      objectFit: 'cover', 
+      alignSelf: 'center', 
+      marginBottom: 15,
+      border: '1px solid #ddd'
+    },
+    name: { 
+      fontFamily: 'NotoSans', 
+      fontSize: 18, 
+      fontWeight: 700, 
+      textAlign: 'center', 
+      marginBottom: 5, 
+      color: '#1a202c' 
+    },
+    title: { 
+      fontFamily: 'NotoSans', 
+      fontSize: 12, 
+      textAlign: 'center', 
+      color: '#555', 
+      marginBottom: 20,
+      fontWeight: 400
+    },
+    sectionTitle: { 
+      fontFamily: 'NotoSans', 
+      fontSize: 14, 
+      fontWeight: 700, 
+      borderBottom: '1.5px solid #333', 
+      paddingBottom: 3, 
+      marginBottom: 10 
+    },
+    sidebarTitle: { 
+      fontFamily: 'NotoSans', 
+      fontSize: 12, 
+      fontWeight: 700, 
+      color: '#1a202c', 
+      marginBottom: 8 
+    },
+    contactItem: { fontSize: 9, marginBottom: 5 },
+    skill: { fontSize: 9, marginBottom: 4 },
+    entry: { marginBottom: 12 },
+    entryTitle: { fontFamily: 'NotoSans', fontWeight: 700, fontSize: 11 },
+    entryMeta: { fontSize: 9, color: '#666', marginBottom: 3 },
   });
 
-  const now = new Date();
-  const today = `${now.getFullYear()}年 ${now.getMonth() + 1}月 ${now.getDate()}日現在`;
+  return (
+    <Page size="A4" style={s.page}>
+      <View style={s.container}>
+        <View style={s.leftColumn}>
+          {/* Photo */}
+          <Image src={meImageBase64} style={s.photo} />
+          <Text style={s.name}>{data.personalInfo.name}</Text>
+          <Text style={s.title}>{data.personalInfo.title}</Text>
+          
+          <Text style={s.sidebarTitle}>Persönliche Daten</Text>
+          <Text style={s.contactItem}>📍 {data.personalInfo.location}</Text>
+          <Text style={s.contactItem}>📞 {data.personalInfo.phone}</Text>
+          <Text style={s.contactItem}>✉️ {data.personalInfo.email}</Text>
+          {data.personalInfo.birthDate && (
+            <Text style={s.contactItem}>🎂 Geburtsdatum: {data.personalInfo.birthDate}</Text>
+          )}
+          {data.personalInfo.nationality && (
+            <Text style={s.contactItem}>🌍 Nationalität: {data.personalInfo.nationality}</Text>
+          )}
+          
+          <View style={{ marginTop: 15 }}>
+            <Text style={[commonStyles.visaStatus, { fontSize: 8, textAlign: 'center' }]}>
+              {data.personalInfo.visaStatus}
+            </Text>
+          </View>
+          
+          <View style={{ marginTop: 20 }}>
+            <Text style={s.sidebarTitle}>Sprachen</Text>
+            {data.languages.map((l, i) => (
+              <Text key={i} style={s.skill}>{l.language} ({l.level})</Text>
+            ))}
+          </View>
+
+          <View style={{ marginTop: 20 }}>
+            <Text style={s.sidebarTitle}>Kernkompetenzen</Text>
+            <Text style={s.skill}>• Full-Stack Entwicklung</Text>
+            <Text style={s.skill}>• API Design & Integration</Text>
+            <Text style={s.skill}>• Datenbank Management</Text>
+            <Text style={s.skill}>• Docker & DevOps</Text>
+            <Text style={s.skill}>• KI & Machine Learning</Text>
+          </View>
+        </View>
+        
+        <View style={s.rightColumn}>
+          <Text style={s.sectionTitle}>Berufliche Zusammenfassung</Text>
+          <Text style={{ fontSize: 10, marginBottom: 15, lineHeight: 1.5 }}>{data.summary}</Text>
+
+          <Text style={s.sectionTitle}>Berufserfahrung</Text>
+          {data.experience.map((exp, i) => (
+            <View key={i} style={s.entry}>
+              <Text style={s.entryTitle}>{exp.title}</Text>
+              <Text style={s.entryMeta}>{exp.company} | {exp.period}</Text>
+              {exp.achievements.slice(0, 3).map((ach, j) => (
+                <View key={j} style={commonStyles.bullet}>
+                  <Text style={commonStyles.bulletChar}>•</Text>
+                  <Text style={commonStyles.bulletText}>{ach}</Text>
+                </View>
+              ))}
+            </View>
+          ))}
+          
+          <Text style={s.sectionTitle}>Bildungsweg</Text>
+          {data.education.map((edu, i) => (
+            <View key={i} style={s.entry}>
+              <Text style={s.entryTitle}>{edu.degree}</Text>
+              <Text style={s.entryMeta}>{edu.institution} | {edu.period}</Text>
+              {edu.score && <Text style={{ fontSize: 9 }}>Note: {edu.score}</Text>}
+            </View>
+          ))}
+
+          <Text style={s.sectionTitle}>Hauptprojekte</Text>
+          {data.projects.slice(0, 2).map((project, i) => (
+            <View key={i} style={s.entry}>
+              <Text style={s.entryTitle}>{project.name}</Text>
+              <Text style={{ fontSize: 9, marginBottom: 2 }}>{project.description}</Text>
+              <Text style={{ fontSize: 8, color: '#666' }}>Technologien: {project.technologies}</Text>
+            </View>
+          ))}
+        </View>
+      </View>
+    </Page>
+  );
+};
+
+// --- 3. CORRECTED JAPANESE TEMPLATE ---
+const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data }) => {
+  const s = StyleSheet.create({
+    page: { 
+      padding: 30, 
+      fontFamily: 'NotoSansJP', 
+      fontSize: 10, 
+      lineHeight: 1.5,
+      fontWeight: 400
+    },
+    header: { 
+      flexDirection: 'row', 
+      justifyContent: 'space-between', 
+      alignItems: 'flex-start', 
+      borderBottom: '2px solid black', 
+      paddingBottom: 10, 
+      marginBottom: 15 
+    },
+    headerTitle: { fontFamily: 'NotoSansJP', fontSize: 24, fontWeight: 700 },
+    headerDate: { fontSize: 10, paddingTop: 14 },
+    photo: { 
+      width: 85, 
+      height: 110, 
+      border: '1px solid #ccc', 
+      objectFit: 'cover' 
+    },
+    section: { marginBottom: 15 },
+    sectionTitle: { 
+      fontFamily: 'NotoSansJP', 
+      fontSize: 12, 
+      fontWeight: 700, 
+      borderBottom: '1px solid black', 
+      paddingBottom: 2, 
+      marginBottom: 8 
+    },
+    row: { flexDirection: 'row', borderBottom: '1px solid #eee', paddingVertical: 4 },
+    label: { width: 80, color: '#555' },
+    value: { flex: 1, fontWeight: 700 },
+    timelineRow: { flexDirection: 'row', marginBottom: 5 },
+    timelineDate: { width: 100 },
+    timelineContent: { flex: 1 },
+  });
+  
+  const today = new Date();
 
   return (
-    <Document>
-      <Page size="A4" style={s.page}>
-        <Image src="/images/me.jpg" style={s.photo} />
-        <Text style={s.header}>履 歴 書</Text>
-        <Text style={{ textAlign: 'right', marginBottom: 15 }}>{today}</Text>
-
-        <View style={s.section}>
+    <Page size="A4" style={s.page}>
+      <View style={s.header}>
+        <Text style={s.headerTitle}>履 歴 書</Text>
+        <Text style={s.headerDate}>{`${today.getFullYear()}年${today.getMonth() + 1}月${today.getDate()}日 現在`}</Text>
+      </View>
+      
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 15 }}>
+        <View style={{ flex: 1 }}>
           <View style={s.row}>
             <Text style={s.label}>ふりがな</Text>
-            <Text style={s.value}>{data.personalInfo.nameKana || data.personalInfo.name}</Text>
+            <Text style={s.value}>{data.personalInfo.nameKana || 'ばどる りぶざっと'}</Text>
           </View>
           <View style={s.row}>
             <Text style={s.label}>氏名</Text>
-            <Text style={s.value}>{data.personalInfo.name}</Text>
+            <Text style={[s.value, { fontSize: 14 }]}>{data.personalInfo.name}</Text>
           </View>
-        </View>
-
-        <View style={s.section}>
           <View style={s.row}>
             <Text style={s.label}>生年月日</Text>
-            <Text style={s.value}>{data.personalInfo.birthDate || '1990年12月14日生'}（満{now.getFullYear() - 1990}歳）</Text>
+            <Text style={s.value}>{data.personalInfo.birthDate || '1990年12月14日'}</Text>
           </View>
           <View style={s.row}>
-            <Text style={s.label}>国籍</Text>
-            <Text style={s.value}>{data.personalInfo.nationality || 'Moroccan'}</Text>
+            <Text style={s.label}>連絡先</Text>
+            <Text style={s.value}>{data.personalInfo.phone} / {data.personalInfo.email}</Text>
           </View>
         </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>学歴・職歴</Text>
-          <Text style={{ fontWeight: 'bold', marginBottom: 5 }}>学歴</Text>
-          {data.education.map((edu, i) => (
-            <View key={i} style={s.row}>
-              <Text style={s.date}>{edu.period}</Text>
-              <Text style={s.content}>{edu.institution} {edu.degree}</Text>
-            </View>
-          ))}
-          <Text style={{ fontWeight: 'bold', marginTop: 10, marginBottom: 5 }}>職歴</Text>
-          {data.experience.map((exp, i) => (
-            <View key={i} style={s.row}>
-              <Text style={s.date}>{exp.period}</Text>
-              <Text style={s.content}>{exp.company} {exp.title}</Text>
-            </View>
-          ))}
-          <View style={s.row}>
-            <Text style={s.date} />
-            <Text style={s.content}>以上</Text>
+        <View style={{ marginLeft: 20 }}>
+          <Image src={meImageBase64} style={s.photo} />
+        </View>
+      </View>
+      
+      <View style={s.section}>
+        <Text style={s.sectionTitle}>学歴・職歴</Text>
+        <Text style={{ fontWeight: 700, marginVertical: 4 }}>学歴</Text>
+        {data.education.map((edu, i) => (
+          <View key={i} style={s.timelineRow}>
+            <Text style={s.timelineDate}>{edu.period}</Text>
+            <Text style={s.timelineContent}>{edu.institution} - {edu.degree}</Text>
           </View>
+        ))}
+        <Text style={{ fontWeight: 700, marginVertical: 4, marginTop: 8 }}>職歴</Text>
+        {data.experience.map((exp, i) => (
+          <View key={i} style={s.timelineRow}>
+            <Text style={s.timelineDate}>{exp.period}</Text>
+            <Text style={s.timelineContent}>{exp.company} - {exp.title}</Text>
+          </View>
+        ))}
+        <View style={s.timelineRow}>
+          <Text style={s.timelineDate}></Text>
+          <Text style={s.timelineContent}>以上</Text>
         </View>
+      </View>
 
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>免許・資格</Text>
-          {data.certifications.map((c, i) => (
-            <View key={i} style={s.row}>
-              <Text style={s.date}>{c.date}</Text>
-              <Text style={s.content}>{c.name} – {c.issuer}</Text>
-            </View>
-          ))}
-        </View>
+      <View style={s.section}>
+        <Text style={s.sectionTitle}>免許・資格</Text>
+        {data.certifications.slice(0, 10).map((cert, i) => (
+          <View key={i} style={s.timelineRow}>
+            <Text style={s.timelineDate}>{cert.date}</Text>
+            <Text style={s.timelineContent}>{cert.name} ({cert.issuer})</Text>
+          </View>
+        ))}
+        {data.practicalLicenses.map((lic, i) => (
+          <View key={i} style={s.timelineRow}>
+            <Text style={s.timelineDate}></Text>
+            <Text style={s.timelineContent}>{lic}</Text>
+          </View>
+        ))}
+      </View>
+      
+      <View style={s.section}>
+        <Text style={s.sectionTitle}>自己PR</Text>
+        <Text style={{ lineHeight: 1.6 }}>{data.summary}</Text>
+      </View>
 
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>特技・自己PR</Text>
-          <Text>{data.summary}</Text>
-          <Text>プログラミング言語: {data.technicalSkills.languages.join(', ')}</Text>
-          <Text>フロントエンド: {data.technicalSkills.frontend.join(', ')}</Text>
-          <Text>バックエンド: {data.technicalSkills.backend.join(', ')}</Text>
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>本人希望記入欄</Text>
-          <Text>貴社の規定に従います。ビザスポンサーシップをお願いします。</Text>
-        </View>
-      </Page>
-    </Document>
+      <View style={s.section}>
+        <Text style={s.sectionTitle}>本人希望記入欄</Text>
+        <Text style={{ lineHeight: 1.6 }}>{data.personalInfo.visaStatus}</Text>
+      </View>
+    </Page>
   );
 };
 
-/* --------------  FRENCH CV  -------------- */
-const FrenchResume = ({ data }: { data: ResumeData }) => {
+// --- 4. CORRECTED MODERN TEMPLATE (French/Spanish) ---
+const ModernResume: React.FC<Props> = ({ data, locale }) => {
   const s = StyleSheet.create({
-    page: { padding: 30, fontFamily: 'NotoSans', fontSize: 11 },
-    header: { flexDirection: 'row', marginBottom: 20 },
-    photo: { width: 80, height: 100, border: '1 solid #000', marginRight: 20 },
-    name: { fontSize: 20, fontWeight: 'bold', marginBottom: 5 },
-    title: { fontSize: 14, color: '#666', marginBottom: 10 },
-    contact: { fontSize: 10, marginBottom: 3 },
-    section: { marginBottom: 15 },
-    sectionTitle: { fontSize: 14, fontWeight: 'bold', marginBottom: 8, borderBottom: '1 solid #333', paddingBottom: 3, color: '#1e40af' },
-    timelineEntry: { marginBottom: 10 },
-    timelineHeader: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 3 },
-    timelineDate: { width: 120, fontWeight: 'bold', color: '#666' },
-    timelineTitle: { fontWeight: 'bold', flex: 1 },
-    timelineSubtitle: { fontStyle: 'italic', marginBottom: 5, color: '#444' },
-    bullet: { marginLeft: 10, marginBottom: 2 },
-    skillBadge: { backgroundColor: '#eff6ff', padding: '3 6', borderRadius: 3, fontSize: 9, color: '#1e40af', margin: 2 },
-    visaBox: { marginTop: 15, padding: 10, backgroundColor: '#fef3c7', borderRadius: 5 },
+    page: { fontFamily: 'NotoSans', fontSize: 10, color: '#333', fontWeight: 400 },
+    container: { flexDirection: 'row', flex: 1 },
+    leftColumn: { width: '35%', backgroundColor: '#2c3e50', color: 'white', padding: 20 },
+    rightColumn: { width: '65%', padding: '20 20 20 15' },
+    photo: { 
+      width: 100, 
+      height: 120, 
+      objectFit: 'cover', 
+      alignSelf: 'center', 
+      marginBottom: 15, 
+      borderRadius: 4,
+      border: '2px solid white'
+    },
+    name: { 
+      fontFamily: 'NotoSans', 
+      fontSize: 20, 
+      fontWeight: 700, 
+      textAlign: 'center', 
+      marginBottom: 5 
+    },
+    title: { 
+      fontFamily: 'NotoSans', 
+      fontSize: 12, 
+      textAlign: 'center', 
+      color: '#ecf0f1', 
+      marginBottom: 20,
+      fontWeight: 400
+    },
+    sectionTitle: { 
+      fontFamily: 'NotoSans', 
+      fontSize: 14, 
+      fontWeight: 700, 
+      color: '#2c3e50', 
+      borderBottom: '1.5px solid #2c3e50', 
+      paddingBottom: 3, 
+      marginBottom: 10 
+    },
+    sidebarTitle: { 
+      fontFamily: 'NotoSans', 
+      fontSize: 12, 
+      fontWeight: 700, 
+      color: 'white', 
+      marginBottom: 8, 
+      borderBottom: '1px solid #7f8c8d', 
+      paddingBottom: 2 
+    },
+    contactItem: { fontSize: 9, marginBottom: 5, color: '#ecf0f1' },
+    skill: { fontSize: 9, marginBottom: 4, color: '#ecf0f1' },
+    entry: { marginBottom: 12 },
+    entryTitle: { fontFamily: 'NotoSans', fontWeight: 700, fontSize: 11 },
+    entryMeta: { fontSize: 9, color: '#666', marginBottom: 3 },
   });
 
+  const t = (en: string, fr: string, es: string) => {
+    if (locale === 'fr') return fr;
+    if (locale === 'es') return es;
+    return en;
+  };
+
   return (
-    <Document>
-      <Page size="A4" style={s.page}>
-        <View style={s.header}>
-          <Image src="/images/me.jpg" style={s.photo} />
-          <View style={{ flex: 1 }}>
-            <Text style={s.name}>{data.personalInfo.name}</Text>
-            <Text style={s.title}>{data.personalInfo.title}</Text>
-            <Text style={s.contact}>{data.personalInfo.location}</Text>
-            <Text style={s.contact}>{data.personalInfo.phone}</Text>
-            <Text style={s.contact}>{data.personalInfo.email}</Text>
-            <Text style={s.contact}>{data.personalInfo.github}</Text>
-            <Text style={s.contact}>{data.personalInfo.linkedin}</Text>
-            <Text style={[s.contact, { color: '#059669', fontWeight: 'bold' }]}>{data.personalInfo.visaStatus}</Text>
+    <Page size="A4" style={s.page}>
+      <View style={s.container}>
+        <View style={s.leftColumn}>
+          <Image src={meImageBase64} style={s.photo} />
+          <Text style={s.name}>{data.personalInfo.name}</Text>
+          <Text style={s.title}>{data.personalInfo.title}</Text>
+          
+          <Text style={s.sidebarTitle}>{t('Contact', 'Contact', 'Contacto')}</Text>
+          <Text style={s.contactItem}>📍 {data.personalInfo.location}</Text>
+          <Text style={s.contactItem}>📞 {data.personalInfo.phone}</Text>
+          <Text style={s.contactItem}>✉️ {data.personalInfo.email}</Text>
+          <Text style={s.contactItem}>🌐 Portfolio: {data.personalInfo.portfolio}</Text>
+          
+          <View style={{ marginTop: 15 }}>
+            <Text style={[commonStyles.visaStatus, { fontSize: 8, backgroundColor: '#3498db', color: 'white' }]}>
+              {data.personalInfo.visaStatus}
+            </Text>
+          </View>
+
+          <View style={{ marginTop: 20 }}>
+            <Text style={s.sidebarTitle}>{t('Languages', 'Langues', 'Idiomas')}</Text>
+            {data.languages.map((l, i) => (
+              <Text key={i} style={s.skill}>{l.language} ({l.level})</Text>
+            ))}
+          </View>
+
+          <View style={{ marginTop: 20 }}>
+            <Text style={s.sidebarTitle}>{t('Skills', 'Compétences', 'Habilidades')}</Text>
+            <Text style={s.skill}>• Full-Stack Development</Text>
+            <Text style={s.skill}>• API Design & Integration</Text>
+            <Text style={s.skill}>• Database Management</Text>
+            <Text style={s.skill}>• Docker & DevOps</Text>
+            <Text style={s.skill}>• AI & Machine Learning</Text>
           </View>
         </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Objectif Professionnel</Text>
-          <Text>{data.objective}</Text>
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Expérience Professionnelle</Text>
+        
+        <View style={s.rightColumn}>
+          <Text style={s.sectionTitle}>{t('Professional Summary', 'Résumé Professionnel', 'Resumen Profesional')}</Text>
+          <Text style={{ fontSize: 10, marginBottom: 15, lineHeight: 1.5 }}>{data.summary}</Text>
+          
+          <Text style={s.sectionTitle}>{t('Experience', 'Expérience', 'Experiencia')}</Text>
           {data.experience.map((exp, i) => (
-            <View key={i} style={s.timelineEntry}>
-              <View style={s.timelineHeader}>
-                <Text style={s.timelineDate}>{exp.period}</Text>
-                <Text style={s.timelineTitle}>{exp.title}</Text>
-              </View>
-              <Text style={s.timelineSubtitle}>{exp.company} | {exp.location}</Text>
-              {exp.achievements.map((a, j) => (
-                <Text key={j} style={s.bullet}>• {a}</Text>
+            <View key={i} style={s.entry}>
+              <Text style={s.entryTitle}>{exp.title}</Text>
+              <Text style={s.entryMeta}>{exp.company} | {exp.period}</Text>
+              {exp.achievements.slice(0, 3).map((ach, j) => (
+                <View key={j} style={commonStyles.bullet}>
+                  <Text style={commonStyles.bulletChar}>•</Text>
+                  <Text style={commonStyles.bulletText}>{ach}</Text>
+                </View>
               ))}
             </View>
           ))}
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Formation</Text>
+          
+          <Text style={s.sectionTitle}>{t('Education', 'Formation', 'Educación')}</Text>
           {data.education.map((edu, i) => (
-            <View key={i} style={s.timelineEntry}>
-              <View style={s.timelineHeader}>
-                <Text style={s.timelineDate}>{edu.period}</Text>
-                <Text style={s.timelineTitle}>{edu.degree}</Text>
-              </View>
-              <Text style={s.timelineSubtitle}>{edu.institution}</Text>
-              {edu.score && <Text>Note: {edu.score}</Text>}
+            <View key={i} style={s.entry}>
+              <Text style={s.entryTitle}>{edu.degree}</Text>
+              <Text style={s.entryMeta}>{edu.institution} | {edu.period}</Text>
+              {edu.score && <Text style={{ fontSize: 9 }}>Score: {edu.score}</Text>}
+            </View>
+          ))}
+
+          <Text style={s.sectionTitle}>{t('Key Projects', 'Projets Clés', 'Proyectos Clave')}</Text>
+          {data.projects.slice(0, 2).map((project, i) => (
+            <View key={i} style={s.entry}>
+              <Text style={s.entryTitle}>{project.name}</Text>
+              <Text style={{ fontSize: 9, marginBottom: 2 }}>{project.description}</Text>
+              <Text style={{ fontSize: 8, color: '#666' }}>{t('Tech', 'Tech', 'Tech')}: {project.technologies}</Text>
             </View>
           ))}
         </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Compétences Techniques</Text>
-          <Text style={{ fontWeight: 'bold', marginBottom: 5 }}>Langages de programmation:</Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-            {data.technicalSkills.languages.map((l) => (
-              <Text style={s.skillBadge} key={l}>{l}</Text>
-            ))}
-          </View>
-          <Text style={{ fontWeight: 'bold', marginTop: 8, marginBottom: 5 }}>Frontend:</Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-            {data.technicalSkills.frontend.map((l) => (
-              <Text style={s.skillBadge} key={l}>{l}</Text>
-            ))}
-          </View>
-          <Text style={{ fontWeight: 'bold', marginTop: 8, marginBottom: 5 }}>Backend:</Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-            {data.technicalSkills.backend.map((l) => (
-              <Text style={s.skillBadge} key={l}>{l}</Text>
-            ))}
-          </View>
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Langues</Text>
-          {data.languages.map((l) => (
-            <Text key={l.language}>
-              <Text style={{ fontWeight: 'bold' }}>{l.language}:</Text> {l.level}
-            </Text>
-          ))}
-        </View>
-
-        <View style={s.visaBox}>
-          <Text style={{ fontSize: 10, fontWeight: 'bold', color: '#92400e' }}>
-            Disponible pour : Stages • Postes débutants • Alternance (Ausbildung) • Programmes de formation
-          </Text>
-          <Text style={{ fontSize: 9, color: '#78350f', marginTop: 3 }}>
-            Prêt à déménager à l'international avec parrainage de visa approprié. Apprenant rapide, engagé dans une croissance à long terme.
-          </Text>
-        </View>
-      </Page>
-    </Document>
+      </View>
+    </Page>
   );
 };
 
-/* --------------  ARABIC RTL  -------------- */
-const ArabicResume = ({ data }: { data: ResumeData }) => {
+// --- 5. CORRECTED ARABIC TEMPLATE (RTL) ---
+const ArabicResume: React.FC<ResumeTemplateProps> = ({ data }) => {
   const s = StyleSheet.create({
-    page: { padding: 30, fontFamily: 'NotoSansArabic', fontSize: 11, direction: 'rtl' },
-    header: { flexDirection: 'row', marginBottom: 20, justifyContent: 'flex-end' },
-    photo: { width: 80, height: 100, border: '1 solid #000', marginLeft: 20 },
-    name: { fontSize: 20, fontWeight: 'bold', marginBottom: 5 },
-    title: { fontSize: 14, color: '#666', marginBottom: 10 },
-    contact: { fontSize: 10, marginBottom: 3, textAlign: 'right' },
-    section: { marginBottom: 15 },
-    sectionTitle: { fontSize: 14, fontWeight: 'bold', marginBottom: 8, borderBottom: '1 solid #333', paddingBottom: 3, color: '#1e40af', textAlign: 'right' },
-    timelineEntry: { marginBottom: 10 },
-    timelineHeader: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 3 },
-    timelineDate: { width: 120, fontWeight: 'bold', color: '#666' },
-    timelineTitle: { fontWeight: 'bold', flex: 1, textAlign: 'right' },
-    timelineSubtitle: { fontStyle: 'italic', marginBottom: 5, color: '#444', textAlign: 'right' },
-    bullet: { marginRight: 10, marginBottom: 2, textAlign: 'right' },
-    skillBadge: { backgroundColor: '#eff6ff', padding: '3 6', borderRadius: 3, fontSize: 9, color: '#1e40af', margin: 2 },
-    visaBox: { marginTop: 15, padding: 10, backgroundColor: '#fef3c7', borderRadius: 5 },
+    page: { 
+      fontFamily: 'NotoSansArabic', 
+      fontSize: 11, 
+      color: '#333', 
+      padding: 30,
+      fontWeight: 400
+    },
+    container: { flexDirection: 'row-reverse' }, // RTL layout
+    leftColumn: { width: '35%', backgroundColor: '#2c3e50', color: 'white', padding: 20 },
+    rightColumn: { width: '65%', padding: '20 20 20 15' },
+    photo: { 
+      width: 90, 
+      height: 110, 
+      borderRadius: 4, 
+      objectFit: 'cover',
+      alignSelf: 'center',
+      marginBottom: 15,
+      border: '2px solid white'
+    },
+    name: { 
+      fontFamily: 'NotoSansArabic', 
+      fontSize: 18, 
+      fontWeight: 700, 
+      textAlign: 'center', 
+      color: 'white',
+      marginBottom: 5
+    },
+    title: { 
+      fontFamily: 'NotoSansArabic', 
+      fontSize: 12, 
+      textAlign: 'center', 
+      color: '#ecf0f1', 
+      marginBottom: 20,
+      fontWeight: 400
+    },
+    sectionTitle: { 
+      fontFamily: 'NotoSansArabic', 
+      fontSize: 14, 
+      fontWeight: 700, 
+      color: '#2c3e50', 
+      borderBottom: '2px solid #2c3e50', 
+      paddingBottom: 4, 
+      marginBottom: 8,
+      textAlign: 'right'
+    },
+    sidebarTitle: { 
+      fontFamily: 'NotoSansArabic', 
+      fontSize: 11, 
+      fontWeight: 700, 
+      color: 'white', 
+      marginBottom: 8,
+      textAlign: 'center',
+      borderBottom: '1px solid #7f8c8d',
+      paddingBottom: 2
+    },
+    contactItem: { fontSize: 9, marginBottom: 5, color: '#ecf0f1', textAlign: 'center' },
+    entry: { marginBottom: 12, textAlign: 'right' },
+    entryTitle: { fontFamily: 'NotoSansArabic', fontWeight: 700, fontSize: 11 },
+    entryMeta: { fontSize: 9, color: '#6c757d', marginBottom: 3 },
   });
 
   return (
-    <Document>
-      <Page size="A4" style={s.page}>
-        <View style={s.header}>
-          <View style={{ flex: 1, alignItems: 'flex-end' }}>
-            <Text style={s.name}>{data.personalInfo.name}</Text>
-            <Text style={s.title}>{data.personalInfo.title}</Text>
-            <Text style={s.contact}>{data.personalInfo.location}</Text>
-            <Text style={s.contact}>{data.personalInfo.phone}</Text>
-            <Text style={s.contact}>{data.personalInfo.email}</Text>
-            <Text style={s.contact}>{data.personalInfo.github}</Text>
-            <Text style={s.contact}>{data.personalInfo.linkedin}</Text>
-            <Text style={[s.contact, { color: '#059669', fontWeight: 'bold' }]}>{data.personalInfo.visaStatus}</Text>
+    <Page size="A4" style={s.page}>
+      <View style={s.container}>
+        <View style={s.leftColumn}>
+          <Image src={meImageBase64} style={s.photo} />
+          <Text style={s.name}>{data.personalInfo.name}</Text>
+          <Text style={s.title}>{data.personalInfo.title}</Text>
+          
+          <Text style={s.sidebarTitle}>معلومات الاتصال</Text>
+          <Text style={s.contactItem}>📍 {data.personalInfo.location}</Text>
+          <Text style={s.contactItem}>📞 {data.personalInfo.phone}</Text>
+          <Text style={s.contactItem}>✉️ {data.personalInfo.email}</Text>
+          
+          <View style={{ marginTop: 15 }}>
+            <Text style={[commonStyles.visaStatus, { fontSize: 8, backgroundColor: '#3498db', color: 'white' }]}>
+              {data.personalInfo.visaStatus}
+            </Text>
           </View>
-          <Image src="/images/me.jpg" style={s.photo} />
+          
+          <View style={{ marginTop: 20 }}>
+            <Text style={s.sidebarTitle}>اللغات</Text>
+            {data.languages.map((l, i) => (
+              <Text key={i} style={s.contactItem}>{l.language} ({l.level})</Text>
+            ))}
+          </View>
+
+          <View style={{ marginTop: 20 }}>
+            <Text style={s.sidebarTitle}>المهارات التقنية</Text>
+            <Text style={s.contactItem}>• تطوير التطبيقات الشاملة</Text>
+            <Text style={s.contactItem}>• تصميم واجهات البرمجة</Text>
+            <Text style={s.contactItem}>• إدارة قواعد البيانات</Text>
+            <Text style={s.contactItem}>• الذكاء الاصطناعي</Text>
+          </View>
         </View>
 
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>الهدف المهني</Text>
-          <Text style={{ textAlign: 'right' }}>{data.objective}</Text>
-        </View>
+        <View style={s.rightColumn}>
+          <Text style={s.sectionTitle}>الملخص المهني</Text>
+          <Text style={{ lineHeight: 1.6, marginBottom: 15, textAlign: 'right' }}>{data.summary}</Text>
 
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>الخبرة المهنية</Text>
+          <Text style={s.sectionTitle}>الخبرة العملية</Text>
           {data.experience.map((exp, i) => (
-            <View key={i} style={s.timelineEntry}>
-              <View style={s.timelineHeader}>
-                <Text style={s.timelineDate}>{exp.period}</Text>
-                <Text style={s.timelineTitle}>{exp.title}</Text>
-              </View>
-              <Text style={s.timelineSubtitle}>{exp.company} | {exp.location}</Text>
-              {exp.achievements.map((a, j) => (
-                <Text key={j} style={s.bullet}>• {a}</Text>
+            <View key={i} style={s.entry}>
+              <Text style={s.entryTitle}>{exp.title} لدى {exp.company}</Text>
+              <Text style={s.entryMeta}>{exp.period}</Text>
+              {exp.achievements.slice(0, 3).map((ach, j) => (
+                <View key={j} style={[commonStyles.bullet, { flexDirection: 'row-reverse' }]}>
+                  <Text style={commonStyles.bulletChar}>•</Text>
+                  <Text style={[commonStyles.bulletText, { textAlign: 'right' }]}>{ach}</Text>
+                </View>
               ))}
             </View>
           ))}
-        </View>
 
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>التعليم</Text>
+          <Text style={s.sectionTitle}>التعليم والشهادات</Text>
           {data.education.map((edu, i) => (
-            <View key={i} style={s.timelineEntry}>
-              <View style={s.timelineHeader}>
-                <Text style={s.timelineDate}>{edu.period}</Text>
-                <Text style={s.timelineTitle}>{edu.degree}</Text>
-              </View>
-              <Text style={s.timelineSubtitle}>{edu.institution}</Text>
-              {edu.score && <Text style={{ textAlign: 'right' }}>النسبة: {edu.score}</Text>}
+            <View key={i} style={s.entry}>
+              <Text style={s.entryTitle}>{edu.degree} من {edu.institution}</Text>
+              <Text style={s.entryMeta}>{edu.period}</Text>
+              {edu.score && <Text style={{ fontSize: 10 }}>التقدير: {edu.score}</Text>}
+            </View>
+          ))}
+
+          <Text style={s.sectionTitle}>المشاريع الرئيسية</Text>
+          {data.projects.slice(0, 2).map((project, i) => (
+            <View key={i} style={s.entry}>
+              <Text style={s.entryTitle}>{project.name}</Text>
+              <Text style={{ fontSize: 10, marginBottom: 2, textAlign: 'right' }}>{project.description}</Text>
+              <Text style={{ fontSize: 9, color: '#666', textAlign: 'right' }}>التقنيات: {project.technologies}</Text>
             </View>
           ))}
         </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>المهارات التقنية</Text>
-          <Text style={{ fontWeight: 'bold', marginBottom: 5, textAlign: 'right' }}>لغات البرمجة:</Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-            {data.technicalSkills.languages.map((l) => (
-              <Text style={s.skillBadge} key={l}>{l}</Text>
-            ))}
-          </View>
-          <Text style={{ fontWeight: 'bold', marginTop: 8, marginBottom: 5, textAlign: 'right' }}>واجهة المستخدم:</Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-            {data.technicalSkills.frontend.map((l) => (
-              <Text style={s.skillBadge} key={l}>{l}</Text>
-            ))}
-          </View>
-          <Text style={{ fontWeight: 'bold', marginTop: 8, marginBottom: 5, textAlign: 'right' }}>الخادم:</Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-            {data.technicalSkills.backend.map((l) => (
-              <Text style={s.skillBadge} key={l}>{l}</Text>
-            ))}
-          </View>
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>اللغات</Text>
-          {data.languages.map((l) => (
-            <Text key={l.language} style={{ textAlign: 'right' }}>
-              <Text style={{ fontWeight: 'bold' }}>{l.language}:</Text> {l.level}
-            </Text>
-          ))}
-        </View>
-
-        <View style={s.visaBox}>
-          <Text style={{ fontSize: 10, fontWeight: 'bold', color: '#92400e', textAlign: 'right' }}>
-            متاح للتدريبات، الوظائف المبتدئة، التلمذة المهنية (Ausbildung)، وبرامج التدريب.
-          </Text>
-          <Text style={{ fontSize: 9, color: '#78350f', marginTop: 3, textAlign: 'right' }}>
-            مستعد للانتقال دوليًا مع رعاية تأشيرة مناسبة. متعلم سريع وملتزم بالنمو طويل الأمد.
-          </Text>
-        </View>
-      </Page>
-    </Document>
+      </View>
+    </Page>
   );
 };
 
-/* --------------  SPANISH CV  -------------- */
-const SpanishResume = ({ data }: { data: ResumeData }) => {
-  const s = StyleSheet.create({
-    page: { padding: 30, fontFamily: 'NotoSans', fontSize: 11 },
-    header: { flexDirection: 'row', marginBottom: 20 },
-    photo: { width: 80, height: 100, border: '1 solid #000', marginRight: 20 },
-    name: { fontSize: 20, fontWeight: 'bold', marginBottom: 5 },
-    title: { fontSize: 14, color: '#666', marginBottom: 10 },
-    contact: { fontSize: 10, marginBottom: 3 },
-    section: { marginBottom: 15 },
-    sectionTitle: { fontSize: 14, fontWeight: 'bold', marginBottom: 8, borderBottom: '1 solid #333', paddingBottom: 3, color: '#1e40af' },
-    timelineEntry: { marginBottom: 10 },
-    timelineHeader: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 3 },
-    timelineDate: { width: 120, fontWeight: 'bold', color: '#666' },
-    timelineTitle: { fontWeight: 'bold', flex: 1 },
-    timelineSubtitle: { fontStyle: 'italic', marginBottom: 5, color: '#444' },
-    bullet: { marginLeft: 10, marginBottom: 2 },
-    skillBadge: { backgroundColor: '#eff6ff', padding: '3 6', borderRadius: 3, fontSize: 9, color: '#1e40af', margin: 2 },
-    visaBox: { marginTop: 15, padding: 10, backgroundColor: '#fef3c7', borderRadius: 5 },
-  });
-
-  return (
-    <Document>
-      <Page size="A4" style={s.page}>
-        <View style={s.header}>
-          <Image src="/images/me.jpg" style={s.photo} />
-          <View style={{ flex: 1 }}>
-            <Text style={s.name}>{data.personalInfo.name}</Text>
-            <Text style={s.title}>{data.personalInfo.title}</Text>
-            <Text style={s.contact}>{data.personalInfo.location}</Text>
-            <Text style={s.contact}>{data.personalInfo.phone}</Text>
-            <Text style={s.contact}>{data.personalInfo.email}</Text>
-            <Text style={s.contact}>{data.personalInfo.github}</Text>
-            <Text style={s.contact}>{data.personalInfo.linkedin}</Text>
-            <Text style={[s.contact, { color: '#059669', fontWeight: 'bold' }]}>{data.personalInfo.visaStatus}</Text>
-          </View>
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Objetivo Profesional</Text>
-          <Text>{data.objective}</Text>
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Resumen Profesional</Text>
-          <Text>{data.summary}</Text>
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Experiencia Laboral</Text>
-          {data.experience.map((exp, i) => (
-            <View key={i} style={s.timelineEntry}>
-              <View style={s.timelineHeader}>
-                <Text style={s.timelineDate}>{exp.period}</Text>
-                <Text style={s.timelineTitle}>{exp.title}</Text>
-              </View>
-              <Text style={s.timelineSubtitle}>{exp.company} | {exp.location}</Text>
-              {exp.achievements.map((a, j) => (
-                <Text key={j} style={s.bullet}>• {a}</Text>
-              ))}
-            </View>
-          ))}
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Educación</Text>
-          {data.education.map((edu, i) => (
-            <View key={i} style={s.timelineEntry}>
-              <View style={s.timelineHeader}>
-                <Text style={s.timelineDate}>{edu.period}</Text>
-                <Text style={s.timelineTitle}>{edu.degree}</Text>
-              </View>
-              <Text style={s.timelineSubtitle}>{edu.institution}</Text>
-              {edu.score && <Text>Nota: {edu.score}</Text>}
-            </View>
-          ))}
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Habilidades Técnicas</Text>
-          <Text style={{ fontWeight: 'bold', marginBottom: 5 }}>Lenguajes de programación:</Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-            {data.technicalSkills.languages.map((l) => (
-              <Text style={s.skillBadge} key={l}>{l}</Text>
-            ))}
-          </View>
-          <Text style={{ fontWeight: 'bold', marginTop: 8, marginBottom: 5 }}>Frontend:</Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-            {data.technicalSkills.frontend.map((l) => (
-              <Text style={s.skillBadge} key={l}>{l}</Text>
-            ))}
-          </View>
-          <Text style={{ fontWeight: 'bold', marginTop: 8, marginBottom: 5 }}>Backend:</Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-            {data.technicalSkills.backend.map((l) => (
-              <Text style={s.skillBadge} key={l}>{l}</Text>
-            ))}
-          </View>
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Idiomas</Text>
-          {data.languages.map((l) => (
-            <Text key={l.language}>
-              <Text style={{ fontWeight: 'bold' }}>{l.language}:</Text> {l.level}
-            </Text>
-          ))}
-        </View>
-
-        <View style={s.visaBox}>
-          <Text style={{ fontSize: 10, fontWeight: 'bold', color: '#92400e' }}>
-            Disponible para: Pasantías • Puestos de nivel inicial • Aprendizajes (Ausbildung) • Programas de capacitación
-          </Text>
-          <Text style={{ fontSize: 9, color: '#78350f', marginTop: 3 }}>
-            Dispuesto a reubicarse internacionalmente con patrocinio de visa adecuado. Aprendiz rápido comprometido con el crecimiento a largo plazo.
-          </Text>
-        </View>
-      </Page>
-    </Document>
-  );
-};
-
-/* --------------  STANDARD / EN  -------------- */
-const StandardResume = ({ data }: { data: ResumeData }) => {
-  const s = StyleSheet.create({
-    page: { padding: 30, fontFamily: 'NotoSans', fontSize: 11 },
-    header: { flexDirection: 'row', marginBottom: 20 },
-    photo: { width: 80, height: 100, border: '1 solid #000', marginRight: 20 },
-    name: { fontSize: 20, fontWeight: 'bold', marginBottom: 5 },
-    title: { fontSize: 14, color: '#666', marginBottom: 10 },
-    contact: { fontSize: 10, marginBottom: 3 },
-    section: { marginBottom: 15 },
-    sectionTitle: { fontSize: 14, fontWeight: 'bold', marginBottom: 8, borderBottom: '1 solid #333', paddingBottom: 3, color: '#1e40af' },
-    timelineEntry: { marginBottom: 10 },
-    timelineHeader: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 3 },
-    timelineDate: { width: 120, fontWeight: 'bold', color: '#666' },
-    timelineTitle: { fontWeight: 'bold', flex: 1 },
-    timelineSubtitle: { fontStyle: 'italic', marginBottom: 5, color: '#444' },
-    bullet: { marginLeft: 10, marginBottom: 2 },
-    skillBadge: { backgroundColor: '#eff6ff', padding: '3 6', borderRadius: 3, fontSize: 9, color: '#1e40af', margin: 2 },
-    visaBox: { marginTop: 15, padding: 10, backgroundColor: '#fef3c7', borderRadius: 5 },
-  });
-
-  return (
-    <Document>
-      <Page size="A4" style={s.page}>
-        <View style={s.header}>
-          <Image src="/images/me.jpg" style={s.photo} />
-          <View style={{ flex: 1 }}>
-            <Text style={s.name}>{data.personalInfo.name}</Text>
-            <Text style={s.title}>{data.personalInfo.title}</Text>
-            <Text style={s.contact}>{data.personalInfo.location}</Text>
-            <Text style={s.contact}>{data.personalInfo.phone}</Text>
-            <Text style={s.contact}>{data.personalInfo.email}</Text>
-            <Text style={s.contact}>{data.personalInfo.github}</Text>
-            <Text style={s.contact}>{data.personalInfo.linkedin}</Text>
-            <Text style={[s.contact, { color: '#059669', fontWeight: 'bold' }]}>{data.personalInfo.visaStatus}</Text>
-          </View>
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Objective</Text>
-          <Text>{data.objective}</Text>
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Professional Summary</Text>
-          <Text>{data.summary}</Text>
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Experience</Text>
-          {data.experience.map((exp, i) => (
-            <View key={i} style={s.timelineEntry}>
-              <View style={s.timelineHeader}>
-                <Text style={s.timelineDate}>{exp.period}</Text>
-                <Text style={s.timelineTitle}>{exp.title}</Text>
-              </View>
-              <Text style={s.timelineSubtitle}>{exp.company} | {exp.location}</Text>
-              {exp.achievements.map((a, j) => (
-                <Text key={j} style={s.bullet}>• {a}</Text>
-              ))}
-            </View>
-          ))}
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Education</Text>
-          {data.education.map((edu, i) => (
-            <View key={i} style={s.timelineEntry}>
-              <View style={s.timelineHeader}>
-                <Text style={s.timelineDate}>{edu.period}</Text>
-                <Text style={s.timelineTitle}>{edu.degree}</Text>
-              </View>
-              <Text style={s.timelineSubtitle}>{edu.institution}</Text>
-              {edu.score && <Text>Score: {edu.score}</Text>}
-            </View>
-          ))}
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Technical Skills</Text>
-          <Text style={{ fontWeight: 'bold', marginBottom: 5 }}>Programming Languages:</Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-            {data.technicalSkills.languages.map((l) => (
-              <Text style={s.skillBadge} key={l}>{l}</Text>
-            ))}
-          </View>
-          <Text style={{ fontWeight: 'bold', marginTop: 8, marginBottom: 5 }}>Frontend:</Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-            {data.technicalSkills.frontend.map((l) => (
-              <Text style={s.skillBadge} key={l}>{l}</Text>
-            ))}
-          </View>
-          <Text style={{ fontWeight: 'bold', marginTop: 8, marginBottom: 5 }}>Backend:</Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-            {data.technicalSkills.backend.map((l) => (
-              <Text style={s.skillBadge} key={l}>{l}</Text>
-            ))}
-          </View>
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Languages</Text>
-          {data.languages.map((l) => (
-            <Text key={l.language}>
-              <Text style={{ fontWeight: 'bold' }}>{l.language}:</Text> {l.level}
-            </Text>
-          ))}
-        </View>
-
-        <View style={s.section}>
-          <Text style={s.sectionTitle}>Certifications</Text>
-          {data.certifications.map((c) => (
-            <Text key={c.name}>
-              <Text style={{ fontWeight: 'bold' }}>{c.name}</Text> – {c.issuer} ({c.date})
-            </Text>
-          ))}
-        </View>
-
-        <View style={s.visaBox}>
-          <Text style={{ fontSize: 10, fontWeight: 'bold', color: '#92400e' }}>
-            Available for: Internships • Entry-Level Positions • Apprenticeships (Ausbildung) • Training Programs
-          </Text>
-          <Text style={{ fontSize: 9, color: '#78350f', marginTop: 3 }}>
-            Willing to relocate internationally with appropriate visa sponsorship. Fast learner committed to long-term growth.
-          </Text>
-        </View>
-      </Page>
-    </Document>
-  );
-};
-
-/* --------------  MAIN EXPORT  -------------- */
+// --- MAIN EXPORT COMPONENT ---
 const CountrySpecificResume: React.FC<Props> = ({ data, locale }) => {
-  switch (locale) {
-    case 'de':
-      return <GermanResume data={data} />;
-    case 'ja':
-      return <JapaneseResume data={data} />;
-    case 'fr':
-      return <FrenchResume data={data} />;
-    case 'ar':
-      return <ArabicResume data={data} />;
-    case 'es':
-      return <SpanishResume data={data} />;
-    default:
-      return <StandardResume data={data} />;
-  }
+  const resumeDocument = () => {
+    switch (locale) {
+      case 'de':
+        return <GermanResume data={data} />;
+      case 'ja':
+        return <JapaneseResume data={data} />;
+      case 'ar':
+        return <ArabicResume data={data} />;
+      case 'en':
+        return <USResume data={data} />;
+      case 'fr':
+      case 'es':
+      default:
+        return <ModernResume data={data} locale={locale} />;
+    }
+  };
+
+  return (
+    <Document 
+      author="Badr Ribzat" 
+      title={`Resume - Badr Ribzat (${locale.toUpperCase()})`}
+      subject="Professional Resume"
+      keywords="Full-Stack Software Engineer, Visa Sponsorship, International Opportunities"
+    >
+      {resumeDocument()}
+    </Document>
+  );
 };
 
 export default CountrySpecificResume;

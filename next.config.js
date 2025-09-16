@@ -7,8 +7,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['github.com', 'vercel.app', 'fly.dev'],
-    unoptimized: true
+    domains: ['github.com', 'vercel.app', 'fly.dev', 'localhost'],
+    unoptimized: true,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   env: {
     CUSTOM_KEY: 'badr-ribzat-portfolio',
@@ -16,6 +18,20 @@ const nextConfig = {
   },
   async headers() {
     return [
+      {
+        source: '/fonts/:path*',
+        headers: [
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }
+        ]
+      },
+      {
+        source: '/images/:path*',
+        headers: [
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }
+        ]
+      },
       {
         source: '/resume/:path*',
         headers: [

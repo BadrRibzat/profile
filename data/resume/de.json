@@ -1,88 +1,120 @@
 {
   "personalInfo": {
     "name": "Badr Ribzat",
+    "nameKana": "バドル・リブザット",
     "title": "Full-Stack Softwareentwickler",
     "location": "Ksar El Kebir, Marokko",
     "phone": "+212 627-764176",
     "email": "badrribzat@gmail.com",
-    "github": "github.com/BadrRibzat",
-    "linkedin": "linkedin.com/in/badr-ribzat",
-    "portfolio": "badrribzat.vercel.app",
-    "birthDate": "1990-12-14",
+    "github": "https://github.com/BadrRibzat",
+    "linkedin": "https://linkedin.com/in/badr-ribzat",
+    "portfolio": "https://badrribzat.dev",
+    "birthDate": "14.12.1990",
     "nationality": "Marokkanisch",
-    "visaStatus": "Bereit, international mit geeigneter Visumsponsoring zu ziehen."
+    "visaStatus": "Sucht aktiv nach Möglichkeiten mit Visumsponsoring für einen internationalen Umzug.",
+    "photo": "/images/me.jpg"
   },
-  "objective": "Suche Einstiegsposition, Praktikum oder Ausbildung mit Visumspatenschaft in der Softwareentwicklung.",
-  "summary": "Selbstständig erlernter Full-Stack-Ingenieur mit außergewöhnlicher Leistung (106,76 %) im ALX-Programm.",
-  "technicalSkills": {
-    "languages": ["Python", "JavaScript", "TypeScript", "SQL", "HTML/CSS", "C", "Bash"],
-    "frontend": ["React", "Next.js", "Tailwind CSS", "Material-UI", "Framer Motion"],
-    "backend": ["FastAPI", "Flask", "Node.js", "Express.js", "RESTful APIs"],
-    "databases": ["PostgreSQL", "MongoDB", "SQLite", "Vector Databases"],
-    "tools": ["Git", "Docker", "Linux", "Postman", "Swagger"],
-    "cloud": ["Vercel", "Fly.io", "AWS (Basic)", "CI/CD", "GitHub Actions"]
-  },
-  "projects": [
-    {
-      "name": "Biomedical Detection System",
-      "description": "KI-gestützte Gesundheitsanwendung mit ML-Funktionen",
-      "technologies": "Python, FastAPI, TensorFlow, React, PostgreSQL, Docker",
-      "achievements": [
-        "ML-Modelle für biomedizinische Signalverarbeitung implementiert",
-        "RESTful APIs mit 100 % Dokumentationsabdeckung erstellt",
-        "Skalierbare Microservices-Architektur bereitgestellt",
-        "85 % Genauigkeit bei Diagnosevorhersagen erreicht"
-      ],
-      "links": {
-        "live": "https://biomedical-frontend.vercel.app",
-        "github": "github.com/BadrRibzat/biomedical-detection",
-        "docs": "https://biomedical-detection.fly.dev/docs"
-      }
-    }
-  ],
+  "summary": "Außergewöhnlich belastbarer und autodidaktischer Full-Stack-Softwareentwickler mit nachgewiesener Fähigkeit, komplexe Technologien zu meistern und End-to-End-Anwendungen in Produktionsqualität zu liefern. Erzielte eine herausragende Punktzahl von 106,76% im anspruchsvollen ALX Software Engineering Programm, was eine Fähigkeit zur konsequenten Übererfüllung von Erwartungen zeigt. Leidenschaftlich daran interessiert, Technologie zur Lösung sinnvoller Probleme in den Bereichen Gesundheitswesen, KI und Bildung einzusetzen und zu einem innovativen internationalen Team beizutragen.",
   "experience": [
     {
-      "title": "Full-Stack Softwareentwickler",
-      "company": "Selbstständig / Open-Source-Mitarbeiter",
+      "title": "Full-Stack-Entwickler (Autodidaktisch)",
+      "company": "Persönliche & Open-Source-Projekte",
       "location": "Remote",
-      "period": "2023 – heute",
+      "period": "2022 - Heute",
       "achievements": [
-        "3+ produktionsreife Full-Stack-Anwendungen entwickelt und bereitgestellt",
-        "Zu Open-Source-Projekten mit 50+ GitHub-Stars beigetragen",
-        "CI/CD-Pipelines implementiert, die Bereitstellungszeit um 40 % reduziert",
-        "Umfassende API-Dokumentation mit OpenAPI/Swagger erstellt"
+        "Architektur, Entwicklung und Bereitstellung von drei Full-Stack-Anwendungen von der Konzeption bis zur Produktion mit Fokus auf KI, Gesundheitswesen und Bildung.",
+        "Entwicklung umfassender RESTful-APIs mit 100%iger Dokumentationsabdeckung (Swagger/Redoc), Health-Check-Endpunkten und CI/CD-Pipelines für automatisierte Bereitstellungen.",
+        "Containerisierung von Anwendungen mit Docker zur Verbesserung von Portabilität und Skalierbarkeit sowie Bereitstellung auf Cloud-Plattformen wie Fly.io und Vercel."
       ]
+    },
+    {
+      "title": "Multitalentierter Fachmann",
+      "company": "Diverse Branchen (Logistik, Dienstleistung, Kundenkontakt)",
+      "location": "Marokko",
+      "period": "2008 – 2022",
+      "achievements": [
+        "Bewies außergewöhnliche Belastbarkeit und Anpassungsfähigkeit durch Erfolg in anspruchsvollen, hochbelasteten Umgebungen mit begrenzten Ressourcen.",
+        "Entwickelte starke zwischenmenschliche und kundenorientierte Fähigkeiten durch zertifizierte professionelle Rollen im Friseurhandwerk und in der Ernährung.",
+        "Meisterte praktische Fertigkeiten, einschließlich zertifizierter Gabelstaplerbedienung (CACES R489 & R485), was eine schnelle Lernfähigkeit in verschiedenen Bereichen beweist."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "KI-Chatbot-Assistent",
+      "description": "Intelligente Konversations-KI mit NLP- und RAG-Fähigkeiten für kontextbezogene Antworten.",
+      "technologies": "Python, FastAPI, LangChain, Vektor-DB, React, WebSockets",
+      "links": {
+        "live": "https://chatbot-assistant-frontend.vercel.app/signin",
+        "github": "https://github.com/BadrRibzat/chatbot-assistant",
+        "docs": "https://chatbot-backend-badr.fly.dev",
+        "redoc": "https://chatbot-backend-badr.fly.dev/redoc/"
+      }
+    },
+    {
+      "name": "IT-Lernplattform",
+      "description": "Bildungstechnologie-Plattform mit Kursmanagement, Echtzeitfunktionen und Analytik.",
+      "technologies": "Node.js, Express, React, MongoDB, JWT, Socket.io",
+      "links": {
+        "live": "https://it-learning-pi.vercel.app/",
+        "github": "https://github.com/BadrRibzat/it-learning",
+        "docs": "https://it-learning-backend.fly.dev/api/docs/",
+        "health": "https://it-learning-backend.fly.dev/api/health"
+      }
+    },
+    {
+      "name": "Biomedizinisches Erkennungssystem",
+      "description": "KI-gestützte Gesundheitsanwendung mit ML-Fähigkeiten für diagnostische Vorhersagen aus Bildern.",
+      "technologies": "Python, FastAPI, TensorFlow, React, PostgreSQL, Docker",
+      "links": {
+        "live": "https://biomedical-frontend.vercel.app/",
+        "github": "https://github.com/BadrRibzat/biomedical-detection",
+        "docs": "https://biomedical-detection.fly.dev/docs",
+        "redoc": "https://biomedical-detection.fly.dev/redoc"
+      }
     }
   ],
   "education": [
     {
-      "degree": "ALX Software Engineering Programm",
-      "institution": "ALX Africa",
+      "degree": "Full-Stack Software Engineering",
+      "institution": "ALX Africa (Powered by Holberton School)",
       "period": "2023 – 2024",
-      "score": "106,76 % (Außergewöhnliche Leistung)",
-      "details": "18-monatiges intensives Full-Stack-Entwicklungsprogramm"
+      "score": "106,76% (Validierte Grundlagen-Punktzahl)",
+      "details": "Anspruchsvolles 18-monatiges, projektbasiertes Programm, das Low-Level-Programmierung, Algorithmen, Datenstrukturen und Full-Stack-Webentwicklung abdeckt."
+    },
+    {
+      "degree": "Mittlerer Schulabschluss",
+      "institution": "Abdelkrim El Daoudi Mittelschule, Fes",
+      "period": "Abgeschlossen 2008",
+      "score": null,
+      "details": "Höchster formaler sekundärer Bildungsabschluss vor dem autodidaktischen Lernen und beruflichen Zertifizierungen."
     }
   ],
   "certifications": [
-    {
-      "name": "ALX Software Engineering Zertifikat",
-      "issuer": "ALX Africa",
-      "date": "2024",
-      "credential": "Punktzahl: 106,76 %"
-    }
+    { "name": "Grundlagen der Künstlichen Intelligenz", "issuer": "IBM SkillsBuild", "date": "Sep 2025" },
+    { "name": "SQL", "issuer": "SoloLearn", "date": "Mär 2023" },
+    { "name": "Einführung in C", "issuer": "SoloLearn", "date": "Mai 2023" },
+    { "name": "Python für Anfänger", "issuer": "SoloLearn", "date": "Aug 2022" },
+    { "name": "Grundlagen von Python", "issuer": "CodeStudio", "date": "Jan 2023" },
+    { "name": "Grundlagen der Webentwicklung", "issuer": "SoloLearn", "date": "Jan 2023" },
+    { "name": "Webentwicklung für Anfänger", "issuer": "Cursa", "date": "Nov 2022" },
+    { "name": "Englisch für Fortgeschrittene (ESL)", "issuer": "Saylor Academy", "date": "Jan 2023" },
+    { "name": "Grundlagen des digitalen Marketings", "issuer": "Google", "date": "Dez 2020" },
+    { "name": "Therapeutische Ernährung", "issuer": "Edraak", "date": "Dez 2020" },
+    { "name": "Kochkunst & Speisenzubereitung", "issuer": "Edraak", "date": "Feb 2026" },
+    { "name": "Professionelles Friseurhandwerk (Herren & Damen)", "issuer": "Ecole Univers Coiffure (Staatlich anerkannt)", "date": "Okt 2014" }
+  ],
+  "practicalLicenses": [
+    "Führerschein (Klasse B), Marokko",
+    "Gabelstaplerschein (CACES R489 & R485)"
   ],
   "languages": [
-    { "language": "Arabisch", "level": "Muttersprache", "certification": "" },
-    { "language": "Französisch", "level": "Beruflich (B2)", "certification": "" },
-    { "language": "Englisch", "level": "Beruflich (B2)", "certification": "Selbstbewertet" },
-    { "language": "Deutsch", "level": "Grundkenntnisse (A1)", "certification": "Aktuell lernend" },
-    { "language": "Spanisch", "level": "Grundkenntnisse (A1)", "certification": "Aktuell lernend" }
+    { "language": "Arabisch", "level": "Muttersprache" },
+    { "language": "Französisch", "level": "Verhandlungssicher" },
+    { "language": "Englisch", "level": "Fortgeschritten (B2)" },
+    { "language": "Deutsch", "level": "Anfänger (A1)" },
+    { "language": "Spanisch", "level": "Anfänger (A1)" },
+    { "language": "Japanisch", "level": "Anfänger (Lernend)" }
   ],
-  "additionalSkills": [
-    "Professioneller Führerschein (alle Kategorien)",
-    "Gabelstapler-Operation (CACES R489 & R485)",
-    "Professionelle Friseurzertifizierung",
-    "Ernährungsberater"
-  ],
-  "interests": ["Open Source", "KI-Forschung", "Sprachenlernen", "Gesundheitsinnovation"]
+  "interests": ["Open-Source-Entwicklung", "KI-Forschung", "Sprachenlernen", "Gesundheits- & Ernährungstechnologie"]
 }

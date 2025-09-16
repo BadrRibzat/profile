@@ -6,6 +6,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Layout from '../../components/Layout';
 import ResumeGenerator from '../../components/ResumeGenerator';
+import ErrorBoundary from '../../components/ErrorBoundary';
 import { motion } from 'framer-motion';
 import { Globe, Download, FileText, Star, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
@@ -128,7 +129,9 @@ const ResumePage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <ResumeGenerator />
+            <ErrorBoundary>
+              <ResumeGenerator />
+            </ErrorBoundary>
           </motion.div>
 
           {/* Additional Information */}
