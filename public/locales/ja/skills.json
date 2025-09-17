@@ -1,29 +1,29 @@
 {
   "title": "スキルと専門知識",
-  "subtitle": "技術能力、実践的な資格、多言語能力の包括的な概要",
+  "subtitle": "自主学習と実践経験を通じて培った技術的能力、実践的な資格、多言語能力の包括的な概要です。",
   "categories": {
     "programming": "プログラミング言語",
     "backend": "バックエンド開発",
     "frontend": "フロントエンド開発",
     "database": "データベースシステム",
     "aiml": "AI・機械学習",
-    "devops": "DevOps・インフラ"
+    "devops": "DevOps・インフラストラクチャ"
   },
   "technical": {
     "title": "技術スキル"
   },
   "practical": {
-    "title": "認定実践スキル",
+    "title": "認定された実践的スキル",
     "forklift": "フォークリフト操作",
-    "forkliftDesc": "安全認証を持つ重機操作",
-    "driving": "プロフェッショナル運転",
-    "drivingCert": "有効なモロッコ免許証（全カテゴリ）",
-    "drivingDesc": "優れた安全記録を持つプロフェッショナル運転",
-    "hairstyling": "プロフェッショナル美容",
-    "hairstylingCert": "国家認定資格",
-    "hairstylingDesc": "モダンテクニックによるフルサービススタイリング",
-    "culinary": "料理芸術",
-    "culinaryCert": "治療栄養スペシャリスト",
+    "forkliftDesc": "安全認定付きの重機操作",
+    "driving": "プロフェッショナルドライビング",
+    "drivingCert": "有効なモロッコ免許（全カテゴリー）",
+    "drivingDesc": "優れた安全記録を持つプロフェッショナルドライビング",
+    "hairstyling": "プロフェッショナルヘアスタイリング",
+    "hairstylingCert": "国家公認資格（男女対応）",
+    "hairstylingDesc": "最新技術によるフルサービススタイリング",
+    "culinary": "料理",
+    "culinaryCert": "治療的栄養スペシャリスト",
     "culinaryDesc": "健康重視の料理と栄養計画"
   },
   "languages": {
@@ -36,17 +36,17 @@
     "japanese": "日本語"
   },
   "levels": {
-    "native": "ネイティブ",
-    "professional": "プロフェッショナル",
+    "native": "母語",
+    "professional": "プロフェッショナルレベル",
     "upperIntermediate": "中上級",
     "intermediate": "中級",
     "basic": "初級"
   },
-  "proficiency": "習熟度レベル",
+  "proficiency": "習熟度",
   "cta": {
-    "title": "インパクトを与える準備ができています",
-    "description": "私の多様なスキルセットがあなたの次のプロジェクトにどのように貢献できるか話し合いましょう。",
+    "title": "インパクトを起こす準備ができています",
+    "description": "私の多様なスキルセットが、あなたの次のプロジェクトやチームにどのように貢献できるか、ぜひご相談ください。",
     "contact": "お問い合わせ",
-    "resume": "履歴書を見る"
+    "resume": "履歴書を表示"
   }
 }

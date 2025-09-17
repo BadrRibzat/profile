@@ -4,46 +4,46 @@
     "description": "Contacta a Badr Ribzat para oportunidades profesionales, colaboraciones o preguntas técnicas."
   },
   "title": "Conectemos",
-  "subtitle": "Listo para nuevos desafíos y oportunidades. Discutamos cómo puedo contribuir a tu equipo o proyecto.",
+  "subtitle": "Listo para nuevos desafíos y oportunidades. Hablemos de cómo puedo contribuir a tu equipo o proyecto.",
   "info": {
     "title": "Información de Contacto",
-    "email": "Correo Electrónico",
+    "email": "Correo electrónico",
     "phone": "Teléfono",
     "location": "Ubicación",
-    "timezone": "Zona Horaria"
+    "timezone": "Zona horaria"
   },
   "social": {
     "title": "Redes Sociales"
   },
   "availability": {
-    "status": "Disponible para Oportunidades",
-    "message": "Respuesta típica en 24h"
+    "status": "Disponible para oportunidades",
+    "message": "Generalmente responde en 24h"
   },
   "form": {
-    "title": "Enviar un Mensaje",
-    "name": "Nombre Completo",
+    "title": "Envía un mensaje",
+    "name": "Nombre completo",
     "namePlaceholder": "Tu nombre completo",
-    "email": "Correo",
-    "emailPlaceholder": "tu@correo.com",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "tu@email.com",
     "subject": "Asunto",
     "subjectPlaceholder": "Asunto de tu mensaje",
-    "opportunityType": "Tipo de Oportunidad",
+    "opportunityType": "Tipo de oportunidad",
     "selectOpportunity": "Selecciona un tipo",
     "opportunities": {
-      "fulltime": "Posición de Tiempo Completo",
+      "fulltime": "Puesto a tiempo completo",
       "internship": "Pasantía",
       "contract": "Contrato/Freelance",
       "training": "Formación/Mentoría",
       "collaboration": "Colaboración",
       "other": "Otro"
     },
-    "preferredLanguage": "Idioma Preferido",
+    "preferredLanguage": "Idioma preferido",
     "message": "Mensaje",
     "messagePlaceholder": "Comparte detalles sobre tu proyecto, oportunidad o preguntas...",
-    "send": "Enviar Mensaje",
+    "send": "Enviar mensaje",
     "sending": "Enviando...",
     "success": "¡Mensaje enviado con éxito!",
-    "error": "Error al enviar. Por favor intenta de nuevo.",
-    "responseTime": "Normalmente respondo en 24 horas"
+    "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+    "responseTime": "Generalmente respondo dentro de 24 horas"
   }
 }

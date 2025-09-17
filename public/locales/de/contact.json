@@ -3,8 +3,8 @@
     "title": "Kontakt - Badr Ribzat",
     "description": "Kontaktieren Sie Badr Ribzat für berufliche Möglichkeiten, Kooperationen oder technische Fragen."
   },
-  "title": "Lassen Sie uns verbinden",
-  "subtitle": "Bereit für neue Herausforderungen und Möglichkeiten. Lassen Sie uns besprechen, wie ich zu Ihrem Team oder Projekt beitragen kann.",
+  "title": "Kontaktieren Sie mich",
+  "subtitle": "Bereit für neue Herausforderungen und Chancen. Lassen Sie uns besprechen, wie ich zu Ihrem Team oder Projekt beitragen kann.",
   "info": {
     "title": "Kontaktinformationen",
     "email": "E-Mail",
@@ -17,33 +17,33 @@
   },
   "availability": {
     "status": "Verfügbar für Möglichkeiten",
-    "message": "Antwortet normalerweise innerhalb von 24h"
+    "message": "Antwortet typischerweise innerhalb von 24 Stunden"
   },
   "form": {
     "title": "Nachricht senden",
     "name": "Vollständiger Name",
     "namePlaceholder": "Ihr vollständiger Name",
     "email": "E-Mail",
-    "emailPlaceholder": "ihre@email.de",
+    "emailPlaceholder": "ihre@email.com",
     "subject": "Betreff",
     "subjectPlaceholder": "Betreff Ihrer Nachricht",
-    "opportunityType": "Art der Möglichkeit",
-    "selectOpportunity": "Typ auswählen",
+    "opportunityType": "Art der Gelegenheit",
+    "selectOpportunity": "Wählen Sie eine Art aus",
     "opportunities": {
       "fulltime": "Vollzeitstelle",
       "internship": "Praktikum",
-      "contract": "Vertrag/Freelance",
+      "contract": "Vertrag/Freiberuflich",
       "training": "Schulung/Mentoring",
       "collaboration": "Zusammenarbeit",
       "other": "Andere"
     },
     "preferredLanguage": "Bevorzugte Sprache",
     "message": "Nachricht",
-    "messagePlaceholder": "Teilen Sie Details über Ihr Projekt, Möglichkeit oder Fragen mit...",
+    "messagePlaceholder": "Teilen Sie Details zu Ihrem Projekt, Ihrer Gelegenheit oder Fragen...",
     "send": "Nachricht senden",
     "sending": "Senden...",
     "success": "Nachricht erfolgreich gesendet!",
-    "error": "Fehler beim Senden. Bitte versuchen Sie es erneut.",
-    "responseTime": "Ich antworte normalerweise innerhalb von 24 Stunden"
+    "error": "Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.",
+    "responseTime": "Ich antworte typischerweise innerhalb von 24 Stunden"
   }
 }

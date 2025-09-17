@@ -94,7 +94,7 @@ const Header: React.FC = () => {
                   Badr Ribzat
                 </div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">
-                  Full-Stack Engineer
+                  {t('header.logoSubtitle')}
                 </div>
               </div>
             </motion.div>

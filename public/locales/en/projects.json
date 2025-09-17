@@ -26,5 +26,26 @@
       "description": "International multilingual portfolio with ATS-optimized resume generation supporting 6+ languages"
     }
   },
-  "noResults": "No projects match the selected filter"
+  "noResults": "No projects match the selected filter",
+  "technicalStack": {
+    "title": "Production-Ready Technical Stack",
+    "items": [
+      {
+        "value": "100%",
+        "label": "API Documentation Coverage"
+      },
+      {
+        "value": "CI/CD",
+        "label": "Automated Deployments"
+      },
+      {
+        "value": "Docker",
+        "label": "Containerized Apps"
+      },
+      {
+        "value": "Scalable",
+        "label": "Cloud Architecture"
+      }
+    ]
+  }
 }

@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Accueil",
-    "about": "À propos",
+    "about": "À Propos",
     "projects": "Projets",
     "skills": "Compétences",
     "experience": "Expérience",
@@ -10,11 +10,31 @@
     "contact": "Contact"
   },
   "seo": {
-    "description": "Badr Ribzat - Ingénieur logiciel Full-Stack autodidacte spécialisé en IA, applications biomédicales et technologies éducatives. Basé au Maroc, disponible pour des opportunités à distance dans le monde entier."
+    "description": "Badr Ribzat - Ingénieur logiciel full-stack autodidacte spécialisé en IA, applications biomédicales et technologie éducative. Basé au Maroc, disponible pour des opportunités à distance dans le monde entier."
   },
   "footer": {
     "rights": "Tous droits réservés",
     "builtWith": "Construit avec",
-    "madeIn": "Fait avec ❤️ au Maroc"
+    "madeIn": "Fait avec ❤️ au Maroc",
+    "quickLinks": "Liens Rapides",
+    "featuredProjects": "Projets en Vedette",
+    "keyAchievements": "Réalisations Clés",
+    "availableStatus": "Disponible pour des opportunités"
+  },
+  "header": {
+    "logoSubtitle": "Ingénieur Full-Stack",
+    "toggleDark": "Activer le Mode Sombre",
+    "toggleLight": "Activer le Mode Clair",
+    "menu": "Menu",
+    "close": "Fermer"
+  },
+  "errorBoundary": {
+    "title": "Erreur de Génération du CV",
+    "fontError": "Problème de chargement des polices. Peut être dû à la connectivité réseau ou à l'accessibilité des fichiers de polices.",
+    "generalError": "Une erreur s'est produite lors de la génération du CV. Peut être due à des problèmes réseau ou de compatibilité du navigateur.",
+    "technicalDetails": "Détails Techniques",
+    "tryAgain": "Réessayer",
+    "reloadPage": "Recharger la Page",
+    "tip": "Astuce : Si l'erreur persiste, essayez un autre navigateur ou videz le cache. La génération du CV fonctionne mieux sur Chrome, Firefox ou Safari."
   }
 }

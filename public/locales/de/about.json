@@ -1,72 +1,86 @@
 {
   "seo": {
     "title": "Über Mich",
-    "description": "Entdecken Sie die Geschichte von Badr Ribzat, einem autodidaktischen Full-Stack-Ingenieur, angetrieben von Leidenschaft und dem Wunsch, komplexe Probleme zu lösen."
+    "description": "Entdecken Sie die Geschichte von Badr Ribzat, einem autodidaktischen Full-Stack-Ingenieur, angetrieben von Leidenschaft, Resilienz und dem Wunsch, komplexe Probleme zu lösen."
   },
   "hero": {
-    "title": "Mein Werdegang",
-    "subtitle": "Von praktischen Berufen zur fortgeschrittenen Technologie",
+    "title": "Badr Ribzat: Eine Reise der Resilienz und Innovation",
+    "subtitle": "Autodidaktischer Full-Stack-Ingenieur | Lösung realer Probleme mit Technologie",
     "location": {
-      "title": "Standort",
-      "description": "Ksar El Kebir, Marokko - Verfügbar für weltweite Remote-Arbeit"
+      "title": "Weltweite Verfügbarkeit",
+      "description": "Ich suche aktiv weltweit nach Möglichkeiten mit Visumsförderung für internationale Umsiedlung."
     },
     "focus": {
-      "title": "Spezialisierung",
-      "description": "Full-Stack-Entwicklung, KI, Biomedizinische Anwendungen"
+      "title": "Spezialisierte Schwerpunkte",
+      "description": "Schließen von Lücken im Gesundheitswesen, KI und Bildung durch innovative Softwarelösungen."
     },
     "achievement": {
-      "title": "Leistung",
-      "description": "106,76% im ALX Software Engineering Programm"
+      "title": "Bewährte Exzellenz",
+      "description": "Erzielte 106,76 % im anspruchsvollen ALX Software Engineering-Programm und übertraf damit konsequent die Erwartungen."
     },
     "buttons": {
-      "resume": "Lebenslauf Herunterladen",
-      "contact": "Kontaktieren"
+      "contact": "Kontaktieren Sie Mich",
+      "viewResume": "Meinen Lebenslauf Ansehen"
     },
     "stats": {
-      "languages": "Programmiersprachen",
-      "certifications": "Zertifikate"
+      "languages": "Gesprochene Sprachen",
+      "certifications": "Zertifizierungen"
     }
   },
   "story": {
-    "title": "Meine Geschichte",
-    "subtitle": "Eine Reise der Transformation von Herausforderungen zu Chancen"
-  },
-  "timeline": {
-    "selfTaught": {
-      "title": "Selbststudium Programmierung",
-      "description": "Begann meine Programmierreise autodidaktisch, widmete Tausende von Stunden dem Beherrschen moderner Technologien"
-    },
-    "business": {
-      "title": "Vielfältige Erfahrungen",
-      "description": "Arbeitete in verschiedenen Bereichen vom Friseurhandwerk bis zum digitalen Marketing"
-    },
-    "education": {
-      "title": "ALX Programm",
-      "description": "Absolvierte das intensive 18-monatige ALX-Programm mit außergewöhnlichem Ergebnis"
-    }
+    "title": "Meine Geschichte: Jenseits des Codes",
+    "subtitle": "Ein Zeugnis von Ausdauer und Leidenschaft",
+    "p1": "Meine Karriere begann nicht vor einem Bildschirm, sondern mit meinen Händen — ich beherrschte Berufe wie professionelles Friseurhandwerk, Kochkunst und den Betrieb schwerer Maschinen. Diese Rollen lehrten mich Disziplin, Detailgenauigkeit und die Kunst der Kundenzufriedenheit.",
+    "p2": "Eine tief verwurzelte Neugier, wie Dinge funktionieren, führte mich jedoch in die Welt der Technologie. Ich begab mich auf eine intensive Reise des selbstgesteuerten Lernens und widmete Tausende von Stunden dem Erlernen der Softwareentwicklung von Grund auf.",
+    "p3": "Dies gipfelte in meiner Aufnahme und herausragenden Leistung im ALX Software Engineering-Programm, einem anspruchsvollen 18-monatigen Lehrplan, in dem ich meine Fähigkeiten in Full-Stack-Entwicklung, Algorithmen und Systemdesign festigte und mit einer Punktzahl von 106,76 % abschloss."
   },
   "interests": {
-    "title": "Persönliche Interessen",
-    "description": "Ich glaube, dass Vielfalt in Interessen die technische Kreativität bereichert",
+    "title": "Jenseits des Bildschirms",
+    "description": "Wenn ich nicht programmiere, verfolge ich Interessen, die meine Perspektive und Problemlösungsfähigkeiten weiter bereichern.",
     "items": {
-      "reading": "Lesen",
-      "coffee": "Kaffee",
-      "languages": "Sprachen",
-      "cooking": "Kochen"
+      "reading": "Lernen & Lesen",
+      "coffee": "Spezialitätenkaffee",
+      "languages": "Spracherwerb",
+      "cooking": "Kochkunst"
     }
   },
   "certifications": {
-    "title": "Zertifikate und Qualifikationen",
-    "subtitle": "Eine vielfältige Sammlung technischer und praktischer Zertifikate",
+    "title": "Meine Qualifikationen",
+    "subtitle": "Formale Anerkennungen und Spezialschulungen",
     "technical": {
-      "title": "Technische Zertifikate"
+      "title": "Technische Kompetenzen"
     },
     "professional": {
-      "title": "Berufliche Zertifikate"
+      "title": "Berufliche Expertise"
     },
     "languages": {
-      "title": "Sprachen und Bildung"
+      "title": "Sprachkenntnisse"
     },
     "viewAll": "Alle Anzeigen"
+  },
+  "cta": {
+    "title": "Bereit zur Zusammenarbeit?",
+    "description": "Mein einzigartiger Hintergrund und meine bewährte Widerstandsfähigkeit machen mich zu einem wertvollen Vermögenswert. Lassen Sie uns gemeinsam etwas Wirkungsvolles aufbauen.",
+    "button": "Kontaktieren Sie Mich"
+  },
+  "title": "Meine Reise",
+  "subtitle": "Von Praktischen Berufen zur Fortschrittlichen Technologie",
+  "philosophy": {
+    "title": "Meine Philosophie",
+    "content": "Ich glaube, dass wahre Innovation aus einer Mischung verschiedener Erfahrungen entsteht. Mein Weg war nicht linear, und das ist meine größte Stärke. Ich gehe Probleme mit einer einzigartigen Perspektive an und kombiniere praktische, handfeste Fähigkeiten mit tiefem technischem Wissen."
+  },
+  "timeline": {
+    "selfTaught": {
+      "title": "Full-Stack-Ingenieur (Selbststudium)",
+      "description": "Eigenständiges Lernen, Projektentwicklung und Open-Source-Beiträge mit Fokus auf KI, Gesundheitstechnologie und Bildung."
+    },
+    "business": {
+      "title": "Vielseitiger Fachmann (Verschiedene Branchen)",
+      "description": "Entwicklung starker zwischenmenschlicher, kundenorientierter und praktischer Fähigkeiten in Logistik, Dienstleistungen und zertifizierten Rollen."
+    },
+    "education": {
+      "title": "Formale Ausbildung & Frühe Karriere",
+      "description": "Abschluss der Vorbereitungsausbildung unter gleichzeitiger Bewältigung erheblicher gesundheitlicher Herausforderungen, was zu frühen beruflichen Erfahrungen führte."
+    }
   }
 }

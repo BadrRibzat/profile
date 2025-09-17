@@ -1,6 +1,7 @@
 // components/ErrorBoundary.tsx
 import React from 'react';
 import { AlertCircle, RefreshCw } from 'lucide-react';
+import { useTranslation } from 'next-i18next';
 
 interface ErrorBoundaryState {
   hasError: boolean;
@@ -38,6 +39,8 @@ class ErrorBoundary extends React.Component<
   }
 
   render() {
+    const { t } = useTranslation('common');
+    
     if (this.state.hasError) {
       const FallbackComponent = this.props.fallback;
       
@@ -49,19 +52,23 @@ class ErrorBoundary extends React.Component<
         <div className="p-6 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
           <div className="flex items-center space-x-3 mb-4">
             <AlertCircle className="w-6 h-6 text-red-600" />
-            <h3 className="text-red-800 dark:text-red-300 font-medium text-lg">Resume Generation Error</h3>
+            <h3 className="text-red-800 dark:text-red-300 font-medium text-lg">
+              {t('errorBoundary.title')}
+            </h3>
           </div>
           
           <div className="space-y-3 mb-4">
             <p className="text-red-600 dark:text-red-400 text-sm">
               {this.state.errorInfo === 'font' 
-                ? 'Font loading issue detected. This may be due to network connectivity or font file accessibility.'
-                : 'There was an error generating the resume. This could be due to network issues or browser compatibility.'}
+                ? t('errorBoundary.fontError')
+                : t('errorBoundary.generalError')}
             </p>
             
             {this.state.error && (
               <details className="text-xs text-red-500 bg-red-100 dark:bg-red-900/30 p-2 rounded">
-                <summary className="cursor-pointer font-medium">Technical Details</summary>
+                <summary className="cursor-pointer font-medium">
+                  {t('errorBoundary.technicalDetails')}
+                </summary>
                 <pre className="mt-2 whitespace-pre-wrap">{this.state.error.message}</pre>
               </details>
             )}
@@ -73,20 +80,20 @@ class ErrorBoundary extends React.Component<
               className="flex items-center space-x-2 px-4 py-2 bg-red-600 text-white rounded-lg text-sm hover:bg-red-700 transition-colors duration-200"
             >
               <RefreshCw className="w-4 h-4" />
-              <span>Try Again</span>
+              <span>{t('errorBoundary.tryAgain')}</span>
             </button>
             
             <button 
               onClick={() => window.location.reload()}
               className="px-4 py-2 bg-gray-600 text-white rounded-lg text-sm hover:bg-gray-700 transition-colors duration-200"
             >
-              Reload Page
+              {t('errorBoundary.reloadPage')}
             </button>
           </div>
           
           <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded border border-blue-200 dark:border-blue-800">
             <p className="text-blue-700 dark:text-blue-300 text-xs">
-              <strong>Tip:</strong> If the error persists, try using a different browser or clearing your browser cache. The resume generation works best in Chrome, Firefox, or Safari.
+              <strong>{t('errorBoundary.tip')}</strong>
             </p>
           </div>
         </div>

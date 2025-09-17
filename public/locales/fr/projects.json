@@ -1,10 +1,10 @@
 {
   "seo": {
     "title": "Mes Projets",
-    "description": "Une collection de mes travaux démontrant mes compétences en développement full-stack, IA, et applications prêtes pour la production"
+    "description": "Une collection de mes travaux, mettant en valeur mes compétences en développement full-stack, IA, apprentissage automatique et conception d'applications prêtes pour la production."
   },
   "title": "Portfolio de Projets",
-  "subtitle": "Voici quelques projets que j'ai construits. Chacun était un défi qui m'a appris quelque chose de nouveau",
+  "subtitle": "Voici quelques-uns des projets que j'ai construits. Chacun a été un défi qui m'a appris quelque chose de nouveau, de la conception système à l'expérience utilisateur.",
   "filters": {
     "all": "Tous les Projets",
     "web": "Applications Web",
@@ -14,17 +14,37 @@
   },
   "projects": {
     "biomedical": {
-      "description": "Système de détection biomédicale alimenté par l'IA avec des capacités d'apprentissage automatique"
+      "description": "Système de détection biomédicale alimenté par l'IA avec des capacités d'apprentissage automatique pour les applications de santé et l'assistance au diagnostic."
     },
     "education": {
-      "description": "Plateforme éducative complète avec gestion des cours et analyses d'étudiants"
+      "description": "Plateforme technologique éducative complète avec gestion de cours, analyse des étudiants et modules d'apprentissage interactifs."
     },
     "chatbot": {
-      "description": "Assistant chatbot intelligent avec traitement du langage naturel"
+      "description": "Assistant chatbot intelligent avec traitement du langage naturel, réponses en temps réel et architecture évolutive."
     },
     "portfolio": {
-      "description": "Portfolio international multilingue avec génération de CV optimisé ATS"
-    }
+      "description": "Portfolio multilingue international avec génération de CV optimisé pour les systèmes de suivi de candidats, prenant en charge plus de 6 langues."
   },
-  "noResults": "Aucun projet ne correspond au filtre sélectionné"
+  "noResults": "Aucun projet ne correspond au filtre sélectionné",
+  "technicalStack": {
+    "title": "Stack Technique Prêt pour la Production",
+    "items": [
+      {
+        "value": "100%",
+        "label": "Couverture de Documentation API"
+      },
+      {
+        "value": "CI/CD",
+        "label": "Déploiements Automatisés"
+      },
+      {
+        "value": "Docker",
+        "label": "Applications Conteneurisées"
+      },
+      {
+        "value": "Évolutif",
+        "label": "Architecture Cloud"
+      }
+     ]
+   }
 }

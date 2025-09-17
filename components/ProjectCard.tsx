@@ -1,6 +1,7 @@
 // components/ProjectCard.tsx
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'next-i18next';
 import { 
   ExternalLink, 
   Github, 
@@ -46,6 +47,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   category,
   apiLinks = []
 }) => {
+  const { t } = useTranslation('common'); // ✅ Import translation hook
   const [isHovered, setIsHovered] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [showApiDocs, setShowApiDocs] = useState(false);
@@ -107,7 +109,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm text-gray-700 dark:text-gray-300 px-2 py-1 rounded-full text-xs font-medium shadow-lg hover:bg-white dark:hover:bg-gray-900 transition-all duration-300 flex items-center space-x-1"
           >
             <FileText className="w-3 h-3" />
-            <span>API Docs</span>
+            <span>{t('projectCard.apiDocs')}</span> {/* ✅ Use translation key */}
           </motion.button>
         </div>
       )}
@@ -192,7 +194,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               className="mb-4 p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg"
             >
               <h4 className="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wider">
-                Technical Documentation
+                {t('projectCard.technicalDocs')} {/* ✅ Use translation key */}
               </h4>
               <div className="space-y-2">
                 {apiLinks.map((link, index) => (
@@ -242,7 +244,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             className="flex-1 flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105"
           >
             <ExternalLink className="w-4 h-4" />
-            <span>Live Demo</span>
+            <span>{t('projectCard.liveDemo')}</span> {/* ✅ Use translation key */}
           </a>
           <a
             href={githubUrl}
@@ -251,7 +253,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             className="flex items-center justify-center space-x-2 border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300 py-2 px-4 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105"
           >
             <Github className="w-4 h-4" />
-            <span>Code</span>
+            <span>{t('projectCard.code')}</span> {/* ✅ Use translation key */}
           </a>
         </div>
 
@@ -259,15 +261,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="mt-4 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
           <div className="flex items-center space-x-1">
             <Zap className="w-3 h-3 text-yellow-500" />
-            <span>Production Ready</span>
+            <span>{t('projectCard.productionReady')}</span> {/* ✅ Use translation key */}
           </div>
           <div className="flex items-center space-x-1">
             <Database className="w-3 h-3 text-green-500" />
-            <span>Scalable</span>
+            <span>{t('projectCard.scalable')}</span> {/* ✅ Use translation key */}
           </div>
           <div className="flex items-center space-x-1">
             <Globe className="w-3 h-3 text-blue-500" />
-            <span>Deployed</span>
+            <span>{t('projectCard.deployed')}</span> {/* ✅ Use translation key */}
           </div>
         </div>
 
@@ -275,7 +277,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
           <div className="flex items-center justify-center space-x-1 text-xs text-green-600 dark:text-green-400">
             <Heart className="w-3 h-3" />
-            <span className="font-medium">Open to International Opportunities</span>
+            <span className="font-medium">{t('projectCard.openToOpportunities')}</span> {/* ✅ Use translation key */}
           </div>
         </div>
       </div>

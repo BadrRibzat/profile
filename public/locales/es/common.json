@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Inicio",
-    "about": "Acerca de",
+    "about": "Sobre Mí",
     "projects": "Proyectos",
     "skills": "Habilidades",
     "experience": "Experiencia",
@@ -10,11 +10,31 @@
     "contact": "Contacto"
   },
   "seo": {
-    "description": "Badr Ribzat - Ingeniero de Software Full-Stack autodidacta especializado en IA, aplicaciones biomédicas y tecnología educativa. Con sede en Marruecos, disponible para oportunidades remotas en todo el mundo."
+    "description": "Badr Ribzat - Ingeniero de software full-stack autodidacta especializado en IA, aplicaciones biomédicas y tecnología educativa. Basado en Marruecos, disponible para oportunidades remotas en todo el mundo."
   },
   "footer": {
     "rights": "Todos los derechos reservados",
     "builtWith": "Construido con",
-    "madeIn": "Hecho con ❤️ en Marruecos"
+    "madeIn": "Hecho con ❤️ en Marruecos",
+    "quickLinks": "Enlaces Rápidos",
+    "featuredProjects": "Proyectos Destacados",
+    "keyAchievements": "Logros Clave",
+    "availableStatus": "Disponible para oportunidades"
+  },
+  "header": {
+    "logoSubtitle": "Ingeniero Full-Stack",
+    "toggleDark": "Activar Modo Oscuro",
+    "toggleLight": "Activar Modo Claro",
+    "menu": "Menú",
+    "close": "Cerrar"
+  },
+  "errorBoundary": {
+    "title": "Error de Generación de Currículum",
+    "fontError": "Problema al cargar fuentes. Puede deberse a conectividad de red o accesibilidad de archivos de fuentes.",
+    "generalError": "Ocurrió un error al generar el currículum. Podría deberse a problemas de red o compatibilidad del navegador.",
+    "technicalDetails": "Detalles Técnicos",
+    "tryAgain": "Intentar de Nuevo",
+    "reloadPage": "Recargar Página",
+    "tip": "Consejo: Si el error persiste, prueba con otro navegador o borra la caché. La generación funciona mejor en Chrome, Firefox o Safari."
   }
 }

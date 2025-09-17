@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"components/ResumeGenerator.tsx -> ../data/resume/en.json\":{\"id\":\"components/ResumeGenerator.tsx -> ../data/resume/en.json\",\"files\":[\"static/chunks/data_resume_en_json.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST="{}"

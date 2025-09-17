@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
                 </span>
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                Self-taught Full-Stack Software Engineer specializing in AI, biomedical applications, and educational technology. Available for remote opportunities worldwide.
+                {t('seo.description')}
               </p>
               
               {/* Contact Info */}
@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
             >
               <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
-                Quick Links
+                {t('footer.quickLinks')}
               </h3>
               <ul className="space-y-2">
                 {quickLinks.map((link, index) => (
@@ -148,7 +148,7 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
             >
               <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
-                Featured Projects
+                {t('footer.featuredProjects')}
               </h3>
               <ul className="space-y-2">
                 {projectLinks.map((project, index) => (
@@ -177,7 +177,7 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
             >
               <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
-                Key Achievements
+                {t('footer.keyAchievements')}
               </h3>
               <div className="space-y-3">
                 {achievements.map((achievement, index) => (
@@ -196,7 +196,7 @@ const Footer: React.FC = () => {
               <div className="mt-4 flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="text-xs text-green-600 dark:text-green-400 font-medium">
-                  Available for opportunities
+                  {t('footer.availableStatus')}
                 </span>
               </div>
             </motion.div>

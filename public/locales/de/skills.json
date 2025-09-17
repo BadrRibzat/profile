@@ -1,29 +1,29 @@
 {
-  "title": "Fähigkeiten & Expertise",
-  "subtitle": "Ein umfassender Überblick über meine technischen Fähigkeiten, praktischen Zertifizierungen und mehrsprachigen Kompetenzen",
+  "title": "Fähigkeiten und Expertise",
+  "subtitle": "Ein umfassender Überblick über meine technischen Fähigkeiten, praktischen Zertifizierungen und mehrsprachigen Kompetenzen, die durch selbstgesteuertes Lernen und praktische Erfahrung entwickelt wurden.",
   "categories": {
     "programming": "Programmiersprachen",
     "backend": "Backend-Entwicklung",
     "frontend": "Frontend-Entwicklung",
     "database": "Datenbanksysteme",
-    "aiml": "KI & Maschinelles Lernen",
-    "devops": "DevOps & Infrastruktur"
+    "aiml": "KI und Maschinelles Lernen",
+    "devops": "DevOps und Infrastruktur"
   },
   "technical": {
     "title": "Technische Fähigkeiten"
   },
   "practical": {
     "title": "Zertifizierte Praktische Fähigkeiten",
-    "forklift": "Gabelstaplerbetrieb",
-    "forkliftDesc": "Schwermaschinenbetrieb mit Sicherheitszertifikaten",
-    "driving": "Professionelles Fahren",
-    "drivingCert": "Gültiger marokkanischer Führerschein (Alle Kategorien)",
-    "drivingDesc": "Professionelles Fahren mit ausgezeichneter Sicherheitsbilanz",
-    "hairstyling": "Professionelles Haarstyling",
-    "hairstylingCert": "Staatlich anerkannte Zertifizierung",
-    "hairstylingDesc": "Full-Service-Styling mit modernen Techniken",
-    "culinary": "Kulinarische Künste",
-    "culinaryCert": "Spezialist für therapeutische Ernährung",
+    "forklift": "Gabelstaplerbedienung",
+    "forkliftDesc": "Bedienung schwerer Maschinen mit Sicherheitszertifizierungen",
+    "driving": "Berufliches Fahren",
+    "drivingCert": "Gültiger Marokkanischer Führerschein (Alle Kategorien)",
+    "drivingDesc": "Berufliches Fahren mit hervorragender Sicherheitsbilanz",
+    "hairstyling": "Professionelle Friseurkunst",
+    "hairstylingCert": "Staatlich anerkannte Zertifizierung (Männer und Frauen)",
+    "hairstylingDesc": "Komplettservice-Styling mit modernen Techniken",
+    "culinary": "Kochkunst",
+    "culinaryCert": "Spezialist für Therapeutische Ernährung",
     "culinaryDesc": "Gesundheitsorientierte Küche und Ernährungsplanung"
   },
   "languages": {
@@ -37,16 +37,16 @@
   },
   "levels": {
     "native": "Muttersprache",
-    "professional": "Professionell",
-    "upperIntermediate": "Obere Mittelstufe",
+    "professional": "Berufsniveau",
+    "upperIntermediate": "Oberes Mittelstufe",
     "intermediate": "Mittelstufe",
     "basic": "Grundkenntnisse"
   },
   "proficiency": "Kompetenzniveau",
   "cta": {
-    "title": "Bereit für Impact",
-    "description": "Lassen Sie uns besprechen, wie meine vielfältigen Fähigkeiten zu Ihrem nächsten Projekt beitragen können.",
-    "contact": "Kontakt Aufnehmen",
+    "title": "Bereit, Wirkung zu Erzielen",
+    "description": "Lassen Sie uns besprechen, wie mein vielfältiges Fähigkeitsspektrum zu Ihrem nächsten Projekt oder Team beitragen kann.",
+    "contact": "Kontaktieren Sie Mich",
     "resume": "Lebenslauf Ansehen"
   }
 }

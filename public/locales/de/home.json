@@ -1,39 +1,39 @@
 {
   "seo": {
-    "title": "Badr Ribzat - Full-Stack Softwareingenieur",
-    "description": "Autodidaktischer Full-Stack-Softwareingenieur spezialisiert auf KI, biomedizinische Anwendungen und Bildungstechnologie. Ansässig in Marokko, verfügbar für Remote-Möglichkeiten weltweit."
+    "title": "Badr Ribzat - Full-Stack Software Ingenieur",
+    "description": "Autodidaktischer Full-Stack Software Ingenieur mit Spezialisierung auf KI, biomedizinische Anwendungen und Bildungstechnologie. Basiert in Marokko, verfügbar für Remote-Arbeit weltweit."
   },
   "hero": {
-    "subtitle": "Full-Stack Softwareingenieur",
+    "subtitle": "Full-Stack Software Ingenieur",
     "location": "Ksar El Kebir, Marokko",
     "availability": "Verfügbar für Remote-Arbeit",
     "highlights": {
       "selfTaught": "Autodidaktischer Experte",
       "aiExpert": "KI & ML Spezialist",
-      "resilient": "Widerstandsfähiger Problemlöser"
+      "resilient": "Belastbarer Problemlöser"
     },
     "cta": {
       "viewResume": "Lebenslauf Herunterladen",
-      "viewProjects": "Projekte Ansehen"
+      "viewProjects": "Projekte Anzeigen"
     }
   },
   "stats": {
     "alxScore": "ALX Programm Punktzahl",
-    "projects": "Live-Projekte",
+    "projects": "Live Projekte",
     "languages": "Programmiersprachen",
     "technologies": "Beherrschte Technologien"
   },
   "projects": {
     "title": "Ausgewählte Projekte",
-    "description": "Entdecken Sie meine neuesten Arbeiten, die Expertise in Full-Stack-Entwicklung, KI-Integration und produktionsreife Anwendungen zeigen.",
+    "description": "Entdecken Sie meine neuesten Arbeiten, die Expertise in Full-Stack-Entwicklung, KI-Integration und produktionsreifen Anwendungen zeigen.",
     "biomedical": {
-      "description": "KI-gestütztes biomedizinisches Erkennungssystem mit maschinellen Lernfähigkeiten für Gesundheitsanwendungen und Diagnosehilfe."
+      "description": "KI-gestütztes biomedizinisches Erkennungssystem mit Machine-Learning-Fähigkeiten für medizinische Anwendungen und Diagnoseunterstützung."
     },
     "education": {
-      "description": "Umfassende Bildungstechnologie-Plattform mit Kursverwaltung, Studentenanalysen und interaktiven Lernmodulen."
+      "description": "Umfassende Bildungstechnologie-Plattform mit Kursverwaltung, Schüleranalysen und interaktiven Lernmodulen."
     },
     "chatbot": {
-      "description": "Intelligenter Chatbot-Assistent mit natürlicher Sprachverarbeitung, Echtzeitantworten und skalierbarer Architektur."
+      "description": "Intelligenter Chatbot-Assistent mit natürlicher Sprachverarbeitung, Echtzeit-Antworten und skalierbarer Architektur."
     }
   }
 }

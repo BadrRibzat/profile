@@ -1,6 +1,6 @@
 {
   "title": "Currículum",
-  "subtitle": "Versión optimizada para ATS",
+  "subtitle": "Versión optimizada para ATS para",
   "pageTitle": "Currículum Profesional",
   "pageDescription": "Descarga mi currículum profesional optimizado para sistemas ATS y adaptado a estándares internacionales.",
   "active": "Activo",
@@ -25,26 +25,98 @@
   "personalInfo": {
     "title": "Ingeniero de Software Full-Stack"
   },
+  "summary": "Ingeniero de software full-stack autodidacta con experiencia demostrada en la creación e implementación de aplicaciones web escalables y sistemas impulsados por IA. Completó el programa intensivo de 18 meses ALX Software Engineering con un rendimiento excepcional (106.76%). Historial comprobado de desarrollo de aplicaciones listas para producción con tecnologías modernas como Python, JavaScript, React y plataformas de implementación en la nube. Fuerte experiencia en desarrollo de API, diseño de bases de datos y prácticas DevOps. Comprometido con el aprendizaje continuo y la excelencia en el desarrollo de software.",
+  "experience": {
+    "0": {
+      "title": "Ingeniero de Software Full-Stack",
+      "company": "Proyectos Independientes y Código Abierto",
+      "achievements": {
+        "0": "Desarrolló e implementó 3+ aplicaciones full-stack con stacks tecnológicos modernos",
+        "1": "Implementó API RESTful que sirven a 50+ usuarios concurrentes con rendimiento optimizado",
+        "2": "Construyó sistemas impulsados por IA que logran un 85% de precisión en reconocimiento de intención",
+        "3": "Creó documentación completa y especificaciones de API utilizando Swagger/OpenAPI",
+        "4": "Estableció pipelines de CI/CD que reducen el tiempo de implementación en un 40%"
+      }
+    },
+    "1": {
+      "title": "Consultor de Marketing Digital",
+      "company": "Freelance",
+      "achievements": {
+        "0": "Aumentó el compromiso del cliente en un 35% mediante estrategias de optimización basadas en datos",
+        "1": "Aplicó habilidades analíticas a la evaluación del rendimiento y mejora de procesos",
+        "2": "Colaboró con equipos multifuncionales en la optimización de pipelines de contenido",
+        "3": "Demostró adaptabilidad en un entorno rápido y orientado a resultados"
+      }
+    }
+  },
+  "projects": {
+    "biomedical": {
+      "description": "Sistema de detección biomédica con IA y capacidades de aprendizaje automático para aplicaciones médicas y asistencia diagnóstica.",
+      "highlights": {
+        "0": "Construyó preprocesamiento de señales/datos y bases de ML para prototipos de detectores",
+        "1": "Entregó experimentos reproducibles con documentación estructurada",
+        "2": "Implementó API RESTful con 100% de cobertura Swagger/OpenAPI"
+      }
+    },
+    "education": {
+      "description": "Plataforma educativa con gestión de cursos y seguimiento del progreso",
+      "highlights": {
+        "0": "Redució el tiempo de respuesta de la API en un 30% mediante optimización de consultas y caché",
+        "1": "Implementó pipelines de CI/CD que reducen el tiempo de implementación en un 40%",
+        "2": "Construyó un sistema de control de acceso basado en roles y gestión de usuarios"
+      }
+    },
+    "ai": {
+      "description": "Chatbot inteligente con capacidades de procesamiento de lenguaje natural",
+      "highlights": {
+        "0": "Logró un 85% de precisión en reconocimiento de intención utilizando clasificación ajustada al dominio",
+        "1": "Optimizado para manejar 50+ usuarios concurrentes con endpoints sin estado",
+        "2": "Implementó contenerización y observabilidad para implementación en producción"
+      }
+    }
+  },
+  "certifications": {
+    "alx": {
+      "details": "Programa intensivo de 18 meses que cubre desarrollo full-stack, algoritmos y diseño de sistemas"
+    }
+  },
+  "additionalSkills": {
+    "0": "Certificación de Peluquero Profesional (Hombres y Mujeres) - Escuela Aprobada por el Estado",
+    "1": "Certificación de Operador de Carretilla Elevadora (CACES R489 & R485)"
+  },
   "generating": "Generando...",
   "download": "Descargar PDF",
-  "preview": "Vista Previa",
+  "preview": "Vista previa",
+  "featuresList": {
+    "atsOptimized": "Optimizado para ATS",
+    "localized": "Localizado y adaptado culturalmente",
+    "professionalFormat": "Formato profesional estándar",
+    "japaneseFormat": "Formato japonés Rirekisho"
+  },
+  "specifications": "Especificaciones",
+  "specs": {
+    "format": "Formato",
+    "language": "Idioma",
+    "style": "Estilo",
+    "optimized": "Optimizado"
+  },
   "features": {
     "ats": {
       "title": "Optimización ATS",
-      "description": "Currículum formateado para Sistemas de Seguimiento de Candidatos con densidad de palabras clave adecuada."
+      "description": "Currículum formateado para sistemas de seguimiento de candidatos con densidad de palabras clave y estructura adecuadas."
     },
     "international": {
       "title": "Estándares Internacionales",
-      "description": "Adaptado para cumplir con los estándares de contratación de diferentes países y culturas."
+      "description": "Adaptado para cumplir con los estándares y expectativas de contratación en diferentes países y culturas."
     },
     "quality": {
       "title": "Garantía de Calidad",
-      "description": "Formateado profesionalmente con estilo consistente y contenido sin errores en todos los idiomas."
+      "description": "Formateado profesionalmente con estilo consistente y contenido libre de errores en todos los idiomas."
     }
   },
   "cta": {
     "title": "¿Listo para colaborar?",
-    "description": "Hablemos sobre oportunidades y proyectos.",
+    "description": "Hablemos de oportunidades y proyectos.",
     "button": "Contáctame"
   }
 }

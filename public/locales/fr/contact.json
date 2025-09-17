@@ -1,49 +1,49 @@
 {
   "seo": {
     "title": "Contact - Badr Ribzat",
-    "description": "Contactez Badr Ribzat pour des opportunités professionnelles, collaborations ou questions techniques."
+    "description": "Contactez Badr Ribzat pour des opportunités professionnelles, des collaborations ou des questions techniques."
   },
-  "title": "Prenons Contact",
-  "subtitle": "Prêt pour de nouveaux défis et opportunités. Discutons de la façon dont je peux contribuer à votre équipe ou projet.",
+  "title": "Connectons-nous",
+  "subtitle": "Prêt pour de nouveaux défis et opportunités. Discutons de la manière dont je peux contribuer à votre équipe ou projet.",
   "info": {
-    "title": "Informations de Contact",
+    "title": "Coordonnées",
     "email": "Email",
     "phone": "Téléphone",
     "location": "Localisation",
-    "timezone": "Fuseau Horaire"
+    "timezone": "Fuseau horaire"
   },
   "social": {
     "title": "Réseaux Sociaux"
   },
   "availability": {
-    "status": "Disponible pour Opportunités",
-    "message": "Réponse généralement sous 24h"
+    "status": "Disponible pour des opportunités",
+    "message": "Répond généralement sous 24h"
   },
   "form": {
-    "title": "Envoyez un Message",
-    "name": "Nom Complet",
+    "title": "Envoyez un message",
+    "name": "Nom complet",
     "namePlaceholder": "Votre nom complet",
     "email": "Email",
     "emailPlaceholder": "votre@email.com",
     "subject": "Sujet",
     "subjectPlaceholder": "Sujet de votre message",
-    "opportunityType": "Type d'Opportunité",
+    "opportunityType": "Type d'opportunité",
     "selectOpportunity": "Sélectionnez un type",
     "opportunities": {
-      "fulltime": "Emploi à Temps Plein",
+      "fulltime": "Poste à temps plein",
       "internship": "Stage",
       "contract": "Contrat/Freelance",
       "training": "Formation/Mentorat",
       "collaboration": "Collaboration",
       "other": "Autre"
     },
-    "preferredLanguage": "Langue Préférée",
+    "preferredLanguage": "Langue préférée",
     "message": "Message",
     "messagePlaceholder": "Partagez les détails de votre projet, opportunité ou questions...",
-    "send": "Envoyer Message",
-    "sending": "Envoi...",
-    "success": "Message envoyé avec succès!",
-    "error": "Erreur lors de l'envoi. Veuillez réessayer.",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé avec succès !",
+    "error": "Erreur lors de l'envoi du message. Veuillez réessayer.",
     "responseTime": "Je réponds généralement dans les 24 heures"
   }
 }

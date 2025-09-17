@@ -1,9 +1,9 @@
 {
-  "title": "Curriculum Vitae",
-  "subtitle": "Version optimisée ATS pour",
+  "title": "CV",
+  "subtitle": "Version optimisée pour les systèmes ATS pour",
   "pageTitle": "CV Professionnel",
-  "pageDescription": "Téléchargez mon CV professionnel optimisé pour les systèmes ATS et adapté aux standards internationaux.",
-  "active": "Actuel",
+  "pageDescription": "Téléchargez mon CV professionnel optimisé pour les systèmes ATS et adapté aux normes internationales.",
+  "active": "Actif",
   "navigation": {
     "back": "Retour à l'accueil"
   },
@@ -15,22 +15,83 @@
     "skills": "Compétences Techniques",
     "projects": "Projets Clés",
     "experience": "Expérience Professionnelle",
-    "education": "Formation & Certifications",
+    "education": "Formation et Certifications",
     "additional": "Qualifications Supplémentaires"
   },
   "subsections": {
     "languages": "Langues",
     "additionalSkills": "Compétences Supplémentaires"
   },
-  "generating": "Génération...",
-  "download": "Télécharger PDF",
+  "personalInfo": {
+    "title": "Ingénieur Logiciel Full-Stack"
+  },
+  "summary": "Ingénieur logiciel full-stack autodidacte avec une expertise démontrée dans la création et le déploiement d'applications web évolutives et de systèmes alimentés par l'IA. A terminé le programme intensif de 18 mois ALX Software Engineering avec des performances exceptionnelles (106,76 %). Bilan avéré de développement d'applications prêtes pour la production avec des technologies modernes, notamment Python, JavaScript, React et des plateformes de déploiement cloud. Solide expérience en développement d'API, conception de bases de données et pratiques DevOps. Engagé dans l'apprentissage continu et l'excellence en développement logiciel.",
+  "experience": {
+    "0": {
+      "title": "Ingénieur Logiciel Full-Stack",
+      "company": "Projets Indépendants & Open Source",
+      "achievements": {
+        "0": "Développé et déployé 3+ applications full-stack avec des stacks technologiques modernes",
+        "1": "Implémenté des API RESTful servant 50+ utilisateurs simultanés avec des performances optimisées",
+        "2": "Construit des systèmes alimentés par l'IA atteignant 85 % de précision en reconnaissance d'intention",
+        "3": "Créé une documentation complète et des spécifications d'API utilisant Swagger/OpenAPI",
+        "4": "Établi des pipelines CI/CD réduisant le temps de déploiement de 40 %"
+      }
+    },
+    "1": {
+      "title": "Consultant en Marketing Numérique",
+      "company": "Freelance",
+      "achievements": {
+        "0": "Augmenté l'engagement client de 35 % grâce à des stratégies d'optimisation basées sur les données",
+        "1": "Appliqué des compétences analytiques à l'évaluation des performances et à l'amélioration des processus",
+        "2": "Collaboré avec des équipes interfonctionnelles sur l'optimisation des pipelines de contenu",
+        "3": "Démontré une adaptabilité dans un environnement rapide et axé sur les résultats"
+      }
+    }
+  },
+  "projects": {
+    "biomedical": {
+      "description": "Système de détection biomédicale alimenté par l'IA avec des capacités d'apprentissage automatique pour les applications de santé et l'assistance au diagnostic.",
+      "highlights": {
+        "0": "Construit le prétraitement des signaux/données et les bases ML pour les prototypes de détecteurs",
+        "1": "Livré des expériences reproductibles avec une documentation structurée",
+        "2": "Implémenté des API RESTful avec 100 % de couverture Swagger/OpenAPI"
+      }
+    },
+    "education": {
+      "description": "Plateforme éducative avec gestion de cours et suivi des progrès",
+      "highlights": {
+        "0": "Réduit le temps de réponse de l'API de 30 % grâce à l'optimisation des requêtes et la mise en cache",
+        "1": "Implémenté des pipelines CI/CD réduisant le temps de déploiement de 40 %",
+        "2": "Construit un système de contrôle d'accès basé sur les rôles et de gestion des utilisateurs"
+      }
+    },
+    "ai": {
+      "description": "Chatbot intelligent avec capacités de traitement du langage naturel",
+      "highlights": {
+        "0": "Atteint 85 % de précision en reconnaissance d'intention en utilisant une classification adaptée au domaine",
+        "1": "Optimisé pour gérer 50+ utilisateurs simultanés avec des endpoints sans état",
+        "2": "Implémenté la conteneurisation et l'observabilité pour le déploiement en production"
+      }
+    }
+  },
+  "certifications": {
+    "alx": {
+      "details": "Programme intensif de 18 mois couvrant le développement full-stack, les algorithmes et la conception de systèmes"
+    }
+  },
+  "additionalSkills": {
+    "0": "Certification de Coiffeur Professionnel (Hommes et Femmes) - École Agréée par l'État",
+    "1": "Certification d'Opérateur de Chariot Élévateur (CACES R489 & R485)"
+  },
+  "generating": "Génération en cours...",
+  "download": "Télécharger le PDF",
   "preview": "Aperçu",
-  "features": "Fonctionnalités",
   "featuresList": {
-    "atsOptimized": "Optimisé ATS",
-    "localized": "Localisé et culturellement adapté",
+    "atsOptimized": "Optimisé pour ATS",
+    "localized": "Adapté localement et culturellement",
     "professionalFormat": "Format professionnel standard",
-    "japaneseFormat": "Format Rirekisho japonais"
+    "japaneseFormat": "Format japonais Rirekisho"
   },
   "specifications": "Spécifications",
   "specs": {
@@ -39,9 +100,23 @@
     "style": "Style",
     "optimized": "Optimisé"
   },
+  "features": {
+    "ats": {
+      "title": "Optimisation ATS",
+      "description": "CV formaté pour les systèmes de suivi des candidats avec une densité de mots-clés et une structure appropriées."
+    },
+    "international": {
+      "title": "Normes Internationales",
+      "description": "Adapté pour répondre aux normes et attentes de recrutement dans différents pays et cultures."
+    },
+    "quality": {
+      "title": "Assurance Qualité",
+      "description": "Formaté professionnellement avec un style cohérent et un contenu sans erreur dans toutes les langues."
+    }
+  },
   "cta": {
-    "title": "Prêt à collaborer?",
-    "description": "Contactez-moi pour discuter des opportunités et des projets.",
-    "button": "Contactez-moi"
+    "title": "Prêt à collaborer ?",
+    "description": "Discutons des opportunités et des projets.",
+    "button": "Me Contacter"
   }
 }

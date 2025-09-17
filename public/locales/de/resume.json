@@ -15,7 +15,7 @@
     "skills": "Technische Fähigkeiten",
     "projects": "Schlüsselprojekte",
     "experience": "Berufserfahrung",
-    "education": "Bildung & Zertifikate",
+    "education": "Ausbildung und Zertifizierungen",
     "additional": "Zusätzliche Qualifikationen"
   },
   "subsections": {
@@ -23,23 +23,95 @@
     "additionalSkills": "Zusätzliche Fähigkeiten"
   },
   "personalInfo": {
-    "title": "Full-Stack Softwareentwickler"
+    "title": "Full-Stack Software Ingenieur"
   },
-  "generating": "Generieren...",
+  "summary": "Autodidaktischer Full-Stack Software Ingenieur mit nachgewiesener Expertise in der Entwicklung und Bereitstellung skalierbarer Webanwendungen und KI-gestützter Systeme. Absolvierte das intensive 18-monatige ALX Software Engineering Programm mit außergewöhnlicher Leistung (106,76 %). Nachweisbare Erfolgsbilanz bei der Entwicklung produktionsreifer Anwendungen mit modernen Technologien wie Python, JavaScript, React und Cloud-Bereitstellungsplattformen. Starke Erfahrung in API-Entwicklung, Datenbankdesign und DevOps-Praktiken. Engagiert für kontinuierliches Lernen und Exzellenz in der Softwareentwicklung.",
+  "experience": {
+    "0": {
+      "title": "Full-Stack Software Ingenieur",
+      "company": "Unabhängige Projekte & Open Source",
+      "achievements": {
+        "0": "Entwickelte und implementierte 3+ Full-Stack-Anwendungen mit modernen Tech-Stacks",
+        "1": "Implementierte RESTful APIs, die 50+ gleichzeitige Nutzer mit optimierter Leistung bedienen",
+        "2": "Baute KI-gestützte Systeme mit 85 % Genauigkeit bei der Absichtserkennung",
+        "3": "Erstellte umfassende Dokumentation und API-Spezifikationen mit Swagger/OpenAPI",
+        "4": "Richtete CI/CD-Pipelines ein, die die Bereitstellungszeit um 40 % reduzierten"
+      }
+    },
+    "1": {
+      "title": "Digital Marketing Berater",
+      "company": "Freiberuflich",
+      "achievements": {
+        "0": "Steigerte das Kundenengagement um 35 % durch datengesteuerte Optimierungsstrategien",
+        "1": "Wandte analytische Fähigkeiten auf Leistungsbewertung und Prozessverbesserung an",
+        "2": "Kollaborierte mit funktionsübergreifenden Teams zur Optimierung von Content-Pipelines",
+        "3": "Zeigte Anpassungsfähigkeit in einer schnellen, ergebnisorientierten Umgebung"
+      }
+    }
+  },
+  "projects": {
+    "biomedical": {
+      "description": "KI-gestütztes biomedizinisches Erkennungssystem mit Machine-Learning-Fähigkeiten für medizinische Anwendungen und Diagnoseunterstützung.",
+      "highlights": {
+        "0": "Aufbau von Signal-/Daten-Vorverarbeitung und ML-Baselines für Prototyp-Detektoren",
+        "1": "Lieferung reproduzierbarer Experimente mit strukturierter Dokumentation",
+        "2": "Implementierung von RESTful APIs mit 100 % Swagger/OpenAPI-Abdeckung"
+      }
+    },
+    "education": {
+      "description": "Bildungsplattform mit Kursverwaltung und Fortschrittsverfolgung",
+      "highlights": {
+        "0": "Reduzierte API-Antwortzeit um 30 % durch Abfrageoptimierung und Caching",
+        "1": "Implementierte CI/CD-Pipelines, die die Bereitstellungszeit um 40 % verkürzten",
+        "2": "Aufbau eines rollenbasierten Zugriffskontroll- und Benutzerverwaltungssystems"
+      }
+    },
+    "ai": {
+      "description": "Intelligenter Chatbot mit Natural Language Processing-Fähigkeiten",
+      "highlights": {
+        "0": "Erreichte 85 % Absichtserkennungsgenauigkeit durch domänenspezifische Klassifizierung",
+        "1": "Optimiert für 50+ gleichzeitige Nutzer mit zustandslosen Endpunkten",
+        "2": "Implementierte Containerisierung und Observability für Produktionsbereitstellung"
+      }
+    }
+  },
+  "certifications": {
+    "alx": {
+      "details": "18-monatiges Intensivprogramm, das Full-Stack-Entwicklung, Algorithmen und Systemdesign abdeckt"
+    }
+  },
+  "additionalSkills": {
+    "0": "Professionelle Friseurzertifizierung (Männer & Frauen) - Staatlich anerkannte Schule",
+    "1": "Gabelstaplerführerschein (CACES R489 & R485)"
+  },
+  "generating": "Wird generiert...",
   "download": "PDF Herunterladen",
   "preview": "Vorschau",
+  "featuresList": {
+    "atsOptimized": "ATS-Optimiert",
+    "localized": "Lokalisiert und kulturell angepasst",
+    "professionalFormat": "Standard professionelles Format",
+    "japaneseFormat": "Japanisches Rirekisho-Format"
+  },
+  "specifications": "Spezifikationen",
+  "specs": {
+    "format": "Format",
+    "language": "Sprache",
+    "style": "Stil",
+    "optimized": "Optimiert"
+  },
   "features": {
     "ats": {
       "title": "ATS-Optimierung",
-      "description": "Lebenslauf formatiert für Applicant Tracking Systems mit korrekter Keyword-Dichte und Struktur."
+      "description": "Lebenslauf formatiert für Bewerbermanagementsysteme mit korrekter Keyword-Dichte und Struktur."
     },
     "international": {
       "title": "Internationale Standards",
-      "description": "Angepasst an Einstellungsstandards und Erwartungen verschiedener Länder und Kulturen."
+      "description": "Angepasst, um Einstellungsstandards und -erwartungen in verschiedenen Ländern und Kulturen zu erfüllen."
     },
     "quality": {
       "title": "Qualitätssicherung",
-      "description": "Professionell formatiert mit konsistentem Styling und fehlerfreiem Inhalt in allen Sprachen."
+      "description": "Professionell formatiert mit konsistentem Stil und fehlerfreiem Inhalt in allen Sprachen."
     }
   },
   "cta": {

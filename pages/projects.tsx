@@ -109,7 +109,7 @@ const ProjectsPage: React.FC = () => {
               className="inline-flex items-center space-x-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-4 py-2 rounded-full text-sm font-medium"
             >
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span>Available for Internships, Entry-Level Positions & Apprenticeships with Visa Sponsorship</span>
+              <span>{t('Available for Internships, Entry-Level Positions & Apprenticeships with Visa Sponsorship')}</span>
             </motion.div>
           </motion.div>
 
@@ -161,25 +161,22 @@ const ProjectsPage: React.FC = () => {
             className="mt-20 p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl"
           >
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-              Production-Ready Technical Stack
+              {t('projects:technicalStack.title')}
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">100%</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">API Documentation Coverage</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-600 dark:text-green-400">CI/CD</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Automated Deployments</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">Docker</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Containerized Apps</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-orange-600 dark:text-orange-400">Scalable</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Cloud Architecture</div>
-              </div>
+              {t('projects:technicalStack.items', { returnObjects: true }).map((item: any, index: number) => (
+                <div key={index} className="text-center">
+                  <div className={`text-3xl font-bold ${
+                    index === 0 ? 'text-blue-600 dark:text-blue-400' :
+                    index === 1 ? 'text-green-600 dark:text-green-400' :
+                    index === 2 ? 'text-purple-600 dark:text-purple-400' :
+                    'text-orange-600 dark:text-orange-400'
+                  }`}>
+                    {item.value}
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">{item.label}</div>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>

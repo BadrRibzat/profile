@@ -1,20 +1,40 @@
 {
   "nav": {
     "home": "Startseite",
-    "about": "Über mich",
+    "about": "Über Mich",
     "projects": "Projekte",
     "skills": "Fähigkeiten",
     "experience": "Erfahrung",
-    "certifications": "Zertifikate",
+    "certifications": "Zertifizierungen",
     "resume": "Lebenslauf",
     "contact": "Kontakt"
   },
   "seo": {
-    "description": "Badr Ribzat - Autodidaktischer Full-Stack-Softwareingenieur spezialisiert auf KI, biomedizinische Anwendungen und Bildungstechnologie. Ansässig in Marokko, verfügbar für Remote-Möglichkeiten weltweit."
+    "description": "Badr Ribzat - Autodidaktischer Full-Stack Software Ingenieur mit Spezialisierung auf KI, biomedizinische Anwendungen und Bildungstechnologie. Basiert in Marokko, verfügbar für Remote-Arbeit weltweit."
   },
   "footer": {
     "rights": "Alle Rechte vorbehalten",
     "builtWith": "Erstellt mit",
-    "madeIn": "Mit ❤️ in Marokko gemacht"
+    "madeIn": "Mit ❤️ in Marokko gemacht",
+    "quickLinks": "Schnelllinks",
+    "featuredProjects": "Ausgewählte Projekte",
+    "keyAchievements": "Wichtige Erfolge",
+    "availableStatus": "Verfügbar für Möglichkeiten"
+  },
+  "header": {
+    "logoSubtitle": "Full-Stack Ingenieur",
+    "toggleDark": "Dunkelmodus aktivieren",
+    "toggleLight": "Hellmodus aktivieren",
+    "menu": "Menü",
+    "close": "Schließen"
+  },
+  "errorBoundary": {
+    "title": "Fehler bei Lebenslaufgenerierung",
+    "fontError": "Schriftarten-Ladefehler. Kann durch Netzwerkprobleme oder unzugängliche Schriftartdateien verursacht werden.",
+    "generalError": "Ein Fehler ist bei der Lebenslaufgenerierung aufgetreten. Kann durch Netzwerkprobleme oder Browser-Inkompatibilität verursacht werden.",
+    "technicalDetails": "Technische Details",
+    "tryAgain": "Erneut versuchen",
+    "reloadPage": "Seite neu laden",
+    "tip": "Tipp: Falls der Fehler weiterhin besteht, versuchen Sie einen anderen Browser oder leeren Sie den Cache. Die Generierung funktioniert am besten mit Chrome, Firefox oder Safari."
   }
 }

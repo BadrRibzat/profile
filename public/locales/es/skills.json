@@ -1,11 +1,11 @@
 {
   "title": "Habilidades y Experiencia",
-  "subtitle": "Una visión completa de mis habilidades técnicas, certificaciones prácticas y capacidades multilingües",
+  "subtitle": "Una visión completa de mis habilidades técnicas, certificaciones prácticas y capacidades multilingües desarrolladas mediante aprendizaje autodirigido y experiencia práctica.",
   "categories": {
     "programming": "Lenguajes de Programación",
     "backend": "Desarrollo Backend",
     "frontend": "Desarrollo Frontend",
-    "database": "Sistemas de Base de Datos",
+    "database": "Sistemas de Bases de Datos",
     "aiml": "IA y Aprendizaje Automático",
     "devops": "DevOps e Infraestructura"
   },
@@ -14,17 +14,17 @@
   },
   "practical": {
     "title": "Habilidades Prácticas Certificadas",
-    "forklift": "Operación de Montacargas",
+    "forklift": "Operación de Carretilla Elevadora",
     "forkliftDesc": "Operación de maquinaria pesada con certificaciones de seguridad",
     "driving": "Conducción Profesional",
     "drivingCert": "Licencia Marroquí Válida (Todas las Categorías)",
     "drivingDesc": "Conducción profesional con excelente historial de seguridad",
     "hairstyling": "Peluquería Profesional",
-    "hairstylingCert": "Certificación Aprobada por el Estado",
-    "hairstylingDesc": "Servicio completo de estilismo con técnicas modernas",
+    "hairstylingCert": "Certificación Aprobada por el Estado (Hombres y Mujeres)",
+    "hairstylingDesc": "Estilismo completo con técnicas modernas",
     "culinary": "Artes Culinarias",
     "culinaryCert": "Especialista en Nutrición Terapéutica",
-    "culinaryDesc": "Cocina orientada a la salud y planificación nutricional"
+    "culinaryDesc": "Cocina enfocada en la salud y planificación nutricional"
   },
   "languages": {
     "title": "Dominio de Idiomas",
@@ -44,9 +44,9 @@
   },
   "proficiency": "Nivel de Competencia",
   "cta": {
-    "title": "Listo para Hacer Impacto",
-    "description": "Discutamos cómo mi conjunto diverso de habilidades puede contribuir a tu próximo proyecto.",
-    "contact": "Contactar",
-    "resume": "Ver Currículum"
+    "title": "Listo para Causar Impacto",
+    "description": "Hablemos de cómo mi conjunto diverso de habilidades puede contribuir a tu próximo proyecto o equipo.",
+    "contact": "Ponte en Contacto",
+    "resume": "Ver CV"
   }
 }

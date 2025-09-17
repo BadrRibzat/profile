@@ -1,10 +1,10 @@
 {
   "seo": {
     "title": "Mis Proyectos",
-    "description": "Una colección de mis trabajos mostrando habilidades en desarrollo full-stack, IA y aplicaciones listas para producción"
+    "description": "Una colección de mis trabajos, mostrando habilidades en desarrollo full-stack, IA, aprendizaje automático y diseño de aplicaciones listas para producción."
   },
-  "title": "Portfolio de Proyectos",
-  "subtitle": "Aquí están algunos proyectos que he construido. Cada uno fue un desafío que me enseñó algo nuevo",
+  "title": "Portafolio de Trabajos",
+  "subtitle": "Aquí están algunos de los proyectos que he construido. Cada uno fue un desafío que me enseñó algo nuevo, desde diseño de sistemas hasta experiencia de usuario.",
   "filters": {
     "all": "Todos los Proyectos",
     "web": "Aplicaciones Web",
@@ -14,17 +14,38 @@
   },
   "projects": {
     "biomedical": {
-      "description": "Sistema de detección biomédica impulsado por IA con capacidades de aprendizaje automático"
+      "description": "Sistema de detección biomédica con IA y capacidades de aprendizaje automático para aplicaciones médicas y asistencia diagnóstica."
     },
     "education": {
-      "description": "Plataforma educativa integral con gestión de cursos y análisis de estudiantes"
+      "description": "Plataforma tecnológica educativa integral con gestión de cursos, análisis de estudiantes y módulos de aprendizaje interactivo."
     },
     "chatbot": {
-      "description": "Asistente chatbot inteligente con procesamiento de lenguaje natural"
+      "description": "Asistente de chatbot inteligente con procesamiento de lenguaje natural, respuestas en tiempo real y arquitectura escalable."
     },
     "portfolio": {
-      "description": "Portfolio internacional multilingüe con generación de CV optimizada para ATS"
+      "description": "Portafolio internacional multilingüe con generación de currículum optimizado para ATS que admite más de 6 idiomas."
     }
   },
-  "noResults": "No hay proyectos que coincidan con el filtro seleccionado"
+  "noResults": "Ningún proyecto coincide con el filtro seleccionado",
+  "technicalStack": {
+    "title": "Stack Técnico Listo para Producción",
+    "items": [
+      {
+        "value": "100%",
+        "label": "Cobertura de Documentación API"
+      },
+      {
+        "value": "CI/CD",
+        "label": "Despliegues Automatizados"
+      },
+      {
+        "value": "Docker",
+        "label": "Aplicaciones Contenedorizadas"
+      },
+      {
+        "value": "Escalable",
+        "label": "Arquitectura en la Nube"
+      }
+    ]
+   }
 }

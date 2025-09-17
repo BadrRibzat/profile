@@ -15,6 +15,26 @@
   "footer": {
     "rights": "All rights reserved",
     "builtWith": "Built with",
-    "madeIn": "Made with ❤️ in Morocco"
+    "madeIn": "Made with ❤️ in Morocco",
+    "quickLinks": "Quick Links",
+    "featuredProjects": "Featured Projects",
+    "keyAchievements": "Key Achievements",
+    "availableStatus": "Available for opportunities"
+  },
+  "header": {
+    "logoSubtitle": "Full-Stack Engineer",
+    "toggleDark": "Toggle Dark Mode",
+    "toggleLight": "Toggle Light Mode",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "errorBoundary": {
+    "title": "Resume Generation Error",
+    "fontError": "Font loading issue detected. This may be due to network connectivity or font file accessibility.",
+    "generalError": "There was an error generating the resume. This could be due to network issues or browser compatibility.",
+    "technicalDetails": "Technical Details",
+    "tryAgain": "Try Again",
+    "reloadPage": "Reload Page",
+    "tip": "Tip: If the error persists, try using a different browser or clearing your browser cache. The resume generation works best in Chrome, Firefox, or Safari."
   }
 }

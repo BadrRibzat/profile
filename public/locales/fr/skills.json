@@ -1,13 +1,13 @@
 {
-  "title": "Compétences & Expertise",
-  "subtitle": "Un aperçu complet de mes capacités techniques, certifications pratiques et compétences multilingues développées par l'apprentissage autonome et l'expérience pratique.",
+  "title": "Compétences et Expertise",
+  "subtitle": "Un aperçu complet de mes compétences techniques, certifications pratiques et capacités multilingues développées grâce à l'apprentissage autonome et à l'expérience pratique.",
   "categories": {
     "programming": "Langages de Programmation",
     "backend": "Développement Backend",
-    "frontend": "Développement Frontend", 
+    "frontend": "Développement Frontend",
     "database": "Systèmes de Base de Données",
-    "aiml": "IA & Apprentissage Automatique",
-    "devops": "DevOps & Infrastructure"
+    "aiml": "IA et Apprentissage Automatique",
+    "devops": "DevOps et Infrastructure"
   },
   "technical": {
     "title": "Compétences Techniques"
@@ -15,13 +15,13 @@
   "practical": {
     "title": "Compétences Pratiques Certifiées",
     "forklift": "Conduite de Chariot Élévateur",
-    "forkliftDesc": "Opération de machinerie lourde avec certifications de sécurité",
-    "driving": "Conduite Professionnelle", 
+    "forkliftDesc": "Opération de machines lourdes avec certifications de sécurité",
+    "driving": "Conduite Professionnelle",
     "drivingCert": "Permis Marocain Valide (Toutes Catégories)",
-    "drivingDesc": "Conduite professionnelle avec excellent dossier de sécurité",
+    "drivingDesc": "Conduite professionnelle avec un excellent dossier de sécurité",
     "hairstyling": "Coiffure Professionnelle",
-    "hairstylingCert": "Certification Agréée par l'État (Hommes & Femmes)",
-    "hairstylingDesc": "Service complet de coiffure avec techniques modernes",
+    "hairstylingCert": "Certification Approuvée par l'État (Hommes et Femmes)",
+    "hairstylingDesc": "Coiffure complète avec techniques modernes",
     "culinary": "Arts Culinaires",
     "culinaryCert": "Spécialiste en Nutrition Thérapeutique",
     "culinaryDesc": "Cuisine axée sur la santé et planification nutritionnelle"
@@ -30,23 +30,23 @@
     "title": "Maîtrise des Langues",
     "arabic": "Arabe",
     "french": "Français",
-    "english": "Anglais", 
+    "english": "Anglais",
     "german": "Allemand",
     "spanish": "Espagnol",
     "japanese": "Japonais"
   },
   "levels": {
-    "native": "Natif",
+    "native": "Langue Maternelle",
     "professional": "Professionnel",
     "upperIntermediate": "Intermédiaire Supérieur",
     "intermediate": "Intermédiaire",
-    "basic": "Débutant"
+    "basic": "Élémentaire"
   },
-  "proficiency": "Niveau de Maîtrise",
+  "proficiency": "Niveau de Compétence",
   "cta": {
     "title": "Prêt à Avoir un Impact",
-    "description": "Discutons de la façon dont mes compétences diverses peuvent contribuer à votre prochain projet ou équipe.",
-    "contact": "Entrer en Contact",
-    "resume": "Voir CV"
+    "description": "Discutons de la manière dont mon ensemble de compétences diversifié peut contribuer à votre prochain projet ou équipe.",
+    "contact": "Me Contacter",
+    "resume": "Voir le CV"
   }
 }

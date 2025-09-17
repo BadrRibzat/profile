@@ -1,72 +1,86 @@
 {
   "seo": {
-    "title": "Acerca de Mí",
-    "description": "Descubre la historia de Badr Ribzat, un ingeniero full-stack autodidacta impulsado por la pasión y el deseo de resolver problemas complejos."
+    "title": "Sobre Mí",
+    "description": "Descubre la historia de Badr Ribzat, un ingeniero full-stack autodidacta impulsado por la pasión, la resiliencia y el deseo de resolver problemas complejos."
   },
   "hero": {
-    "title": "Mi Trayectoria",
-    "subtitle": "De oficios prácticos a tecnología avanzada",
+    "title": "Badr Ribzat: Un Viaje de Resiliencia e Innovación",
+    "subtitle": "Ingeniero Full-Stack Autodidacta | Resolviendo Problemas del Mundo Real con Tecnología",
     "location": {
-      "title": "Ubicación",
-      "description": "Ksar El Kebir, Marruecos - Disponible para trabajo remoto mundial"
+      "title": "Disponibilidad Global",
+      "description": "Busco activamente oportunidades en todo el mundo con patrocinio de visa para reubicación internacional."
     },
     "focus": {
-      "title": "Especialización",
-      "description": "Desarrollo Full-Stack, IA, Aplicaciones Biomédicas"
+      "title": "Enfoque Especializado",
+      "description": "Cerrando brechas en Salud, IA y Educación mediante soluciones de software innovadoras."
     },
     "achievement": {
-      "title": "Logro",
-      "description": "106.76% en el programa ALX Software Engineering"
+      "title": "Excelencia Comprobada",
+      "description": "Obtuve 106.76% en el riguroso programa ALX Software Engineering, superando constantemente las expectativas."
     },
     "buttons": {
-      "resume": "Descargar CV",
-      "contact": "Contactar"
+      "contact": "Contáctame",
+      "viewResume": "Ver Mi CV"
     },
     "stats": {
-      "languages": "Lenguajes",
+      "languages": "Idiomas Hablados",
       "certifications": "Certificaciones"
     }
   },
   "story": {
-    "title": "Mi Historia",
-    "subtitle": "Un viaje de transformación de desafíos a oportunidades"
-  },
-  "timeline": {
-    "selfTaught": {
-      "title": "Aprendizaje Autodidacta",
-      "description": "Comencé mi viaje en programación de forma autodidacta, dedicando miles de horas a dominar tecnologías modernas"
-    },
-    "business": {
-      "title": "Experiencias Diversas",
-      "description": "Trabajé en diversos campos desde peluquería hasta marketing digital"
-    },
-    "education": {
-      "title": "Programa ALX",
-      "description": "Completé el intensivo programa ALX de 18 meses con puntuación excepcional"
-    }
+    "title": "Mi Historia: Más Allá del Código",
+    "subtitle": "Un Testimonio de Persistencia y Pasión",
+    "p1": "Mi carrera comenzó no frente a una pantalla, sino con mis manos — dominando oficios como peluquería profesional, artes culinarias y operación de maquinaria pesada. Estos roles me enseñaron disciplina, atención al detalle y el arte de satisfacer al cliente.",
+    "p2": "Sin embargo, una curiosidad profunda por cómo funcionan las cosas me llevó al mundo de la tecnología. Me embarqué en un intenso viaje de aprendizaje autodirigido, dedicando miles de horas a dominar la ingeniería de software desde cero.",
+    "p3": "Esto culminó en mi aceptación y desempeño sobresaliente en el programa ALX Software Engineering, un currículo riguroso de 18 meses donde consolidé mis habilidades en desarrollo full-stack, algoritmos y diseño de sistemas, terminando con una puntuación de 106.76%."
   },
   "interests": {
-    "title": "Intereses Personales",
-    "description": "Creo que la diversidad de intereses enriquece la creatividad técnica",
+    "title": "Más Allá de la Pantalla",
+    "description": "Cuando no estoy programando, persigo intereses que enriquecen aún más mi perspectiva y habilidades para resolver problemas.",
     "items": {
-      "reading": "Lectura",
-      "coffee": "Café",
-      "languages": "Idiomas",
-      "cooking": "Cocina"
+      "reading": "Aprendizaje y Lectura",
+      "coffee": "Café de Especialidad",
+      "languages": "Adquisición de Idiomas",
+      "cooking": "Artes Culinarias"
     }
   },
   "certifications": {
-    "title": "Certificaciones y Calificaciones",
-    "subtitle": "Un conjunto diverso de certificaciones técnicas y prácticas",
+    "title": "Mis Credenciales",
+    "subtitle": "Reconocimientos Formales y Capacitación Especializada",
     "technical": {
-      "title": "Certificaciones Técnicas"
+      "title": "Competencias Técnicas"
     },
     "professional": {
-      "title": "Certificaciones Profesionales"
+      "title": "Experiencia Profesional"
     },
     "languages": {
-      "title": "Idiomas y Educación"
+      "title": "Competencia Lingüística"
     },
     "viewAll": "Ver Todo"
+  },
+  "cta": {
+    "title": "¿Listo para Colaborar?",
+    "description": "Mi trayectoria única y resiliencia comprobada me convierten en un activo valioso. Construyamos algo impactante juntos.",
+    "button": "Ponte en Contacto"
+  },
+  "title": "Mi Viaje",
+  "subtitle": "De Oficios Prácticos a Tecnología Avanzada",
+  "philosophy": {
+    "title": "Mi Filosofía",
+    "content": "Creo que la verdadera innovación proviene de una combinación de experiencias diversas. Mi camino no fue lineal, y esa es mi mayor fortaleza. Abordo los problemas con una perspectiva única, combinando habilidades prácticas y conocimientos técnicos profundos."
+  },
+  "timeline": {
+    "selfTaught": {
+      "title": "Ingeniero Full-Stack (Autoaprendizaje)",
+      "description": "Aprendizaje independiente, desarrollo de proyectos y contribuciones de código abierto centradas en IA, tecnología sanitaria y educación."
+    },
+    "business": {
+      "title": "Profesional Multidisciplinario (Industrias Diversas)",
+      "description": "Desarrollé sólidas habilidades interpersonales, orientadas al cliente y prácticas en logística, servicios y roles certificados."
+    },
+    "education": {
+      "title": "Educación Formal y Primeros Años Profesionales",
+      "description": "Completé la educación preparatoria mientras equilibraba importantes desafíos de salud, lo que llevó a mis primeras experiencias profesionales."
+    }
   }
 }

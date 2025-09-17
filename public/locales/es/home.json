@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Badr Ribzat - Ingeniero de Software Full-Stack",
-    "description": "Ingeniero de Software Full-Stack autodidacta especializado en IA, aplicaciones biomédicas y tecnología educativa. Con sede en Marruecos, disponible para oportunidades remotas en todo el mundo."
+    "description": "Ingeniero de software full-stack autodidacta especializado en IA, aplicaciones biomédicas y tecnología educativa. Basado en Marruecos, disponible para oportunidades remotas en todo el mundo."
   },
   "hero": {
     "subtitle": "Ingeniero de Software Full-Stack",
@@ -13,13 +13,13 @@
       "resilient": "Solucionador de Problemas Resiliente"
     },
     "cta": {
-      "viewResume": "Descargar Currículum",
+      "viewResume": "Descargar CV",
       "viewProjects": "Ver Proyectos"
     }
   },
   "stats": {
     "alxScore": "Puntuación Programa ALX",
-    "projects": "Proyectos en Vivo",
+    "projects": "Proyectos Activos",
     "languages": "Lenguajes de Programación",
     "technologies": "Tecnologías Dominadas"
   },
@@ -27,13 +27,13 @@
     "title": "Proyectos Destacados",
     "description": "Explora mis últimos trabajos que muestran experiencia en desarrollo full-stack, integración de IA y aplicaciones listas para producción.",
     "biomedical": {
-      "description": "Sistema de detección biomédica impulsado por IA con capacidades de aprendizaje automático para aplicaciones de salud y asistencia diagnóstica."
+      "description": "Sistema de detección biomédica con IA y capacidades de aprendizaje automático para aplicaciones médicas y asistencia diagnóstica."
     },
     "education": {
-      "description": "Plataforma integral de tecnología educativa con gestión de cursos, análisis de estudiantes y módulos de aprendizaje interactivos."
+      "description": "Plataforma educativa integral con gestión de cursos, análisis de estudiantes y módulos de aprendizaje interactivo."
     },
     "chatbot": {
-      "description": "Asistente chatbot inteligente con procesamiento de lenguaje natural, respuestas en tiempo real y arquitectura escalable."
+      "description": "Asistente de chatbot inteligente con procesamiento de lenguaje natural, respuestas en tiempo real y arquitectura escalable."
     }
   }
 }
