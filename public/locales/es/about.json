@@ -80,7 +80,14 @@
     },
     "education": {
       "title": "Educación Formal y Primeros Años Profesionales",
-      "description": "Completé la educación preparatoria mientras equilibraba importantes desafíos de salud, lo que llevó a mis primeras experiencias profesionales."
+      "description": "Completé la educación preparatoria mientras equilibraba importantes desafíos de salud, lo que llevó a mis primeras experiencias profesionales.",
+    "proofPack": {
+      "title": "Paquete de Documentos Oficiales",
+      "description": "Descarga todos mis diplomas, licencias y transcripciones certificadas en un solo PDF — perfecto para solicitudes de visa y verificación por empleadores.",
+      "download": "Descargar Documentos Certificados",
+      "downloadAria": "Descargar documentos oficiales de prueba en PDF",
+      "note": "Incluye transcripciones académicas, licencias profesionales y certificaciones de habilidades."
+      }
     }
   }
 }

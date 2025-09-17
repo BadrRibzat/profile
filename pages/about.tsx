@@ -1,8 +1,11 @@
+// pages/about.tsx
 import React from 'react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router'; // ✅ ADDED — this was missing
 import { motion } from 'framer-motion';
+import ProofPack from '../components/ProofPack';
 import Layout from '../components/Layout';
 import { 
   User, 
@@ -19,6 +22,8 @@ import {
 
 const AboutPage: React.FC = () => {
   const { t } = useTranslation(['common', 'about']);
+  const router = useRouter(); // ✅ Get router
+  const { locale } = router;  // ✅ Extract locale — this fixes the error
 
   // Career timeline data
   const timelineItems = [
@@ -424,6 +429,34 @@ const AboutPage: React.FC = () => {
               </div>
             </motion.div>
           </div>
+
+          {/* ✅ Proof Pack - Desktop Only */}
+          <ProofPack locale={locale} />
+
+          {/* Call to Action */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+            className="text-center mt-16"
+          >
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-4">
+                {t('about:cta.title')}
+              </h3>
+              <p className="text-lg mb-6 opacity-90">
+                {t('about:cta.description')}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+                >
+                  {t('about:cta.button')}
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </Layout>

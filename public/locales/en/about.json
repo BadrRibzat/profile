@@ -73,5 +73,12 @@
     "selfTaught": { "title": "Full-Stack Engineer (Self-Directed)", "description": "Independent learning, project development, and open-source contributions focusing on AI, health-tech, and education." },
     "business": { "title": "Multi-Skilled Professional (Diverse Industries)", "description": "Developed strong interpersonal, client-facing, and practical skills across logistics, service, and certified roles." },
     "education": { "title": "Formal Education & Early Career", "description": "Completed preparatory education while balancing significant health challenges, leading to early professional experiences." }
+  },
+  "proofPack": {
+    "title": "Official Document Pack",
+    "description": "Download all my certified diplomas, licenses, and transcripts in one PDF — perfect for visa applications and employer verification.",
+    "download": "Download Certified Documents",
+    "downloadAria": "Download official proof documents as PDF",
+    "note": "Includes academic transcripts, professional licenses, and skill certifications."
   }
 }

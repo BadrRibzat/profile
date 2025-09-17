@@ -80,7 +80,14 @@
     },
     "education": {
       "title": "Formation Scolaire et Débuts Professionnels",
-      "description": "J'ai terminé mes études préparatoires tout en gérant d'importants défis de santé, ce qui a conduit à mes premières expériences professionnelles."
+      "description": "J'ai terminé mes études préparatoires tout en gérant d'importants défis de santé, ce qui a conduit à mes premières expériences professionnelles.",
+      "proofPack": {
+        "title": "Dossier de Documents Officiels",
+        "description": "Téléchargez tous mes diplômes, licences et relevés de notes certifiés en un seul PDF — parfait pour les demandes de visa et la vérification par les employeurs.",
+        "download": "Télécharger les Documents Certifiés",
+        "downloadAria": "Télécharger les documents officiels de preuve au format PDF",
+        "note": "Inclut les relevés académiques, les licences professionnelles et les certifications de compétences."
+      }
     }
   }
 }
