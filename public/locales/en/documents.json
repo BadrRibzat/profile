@@ -1,0 +1,53 @@
+{
+  "pageTitle": "My Documents & Certificates",
+  "pageDescription": "View and download my official documents, certificates, and diplomas with multi-language translation support.",
+  "searchPlaceholder": "Search documents by title or description...",
+  "categories": {
+    "all": "All Documents",
+    "education": "Education",
+    "technical": "Technical",
+    "professional": "Professional"
+  },
+  "issuedOn": "Issued On",
+  "issuedBy": "Issuer",
+  "originalLanguage": "Original Language",
+  "languages": {
+    "en": "English",
+    "fr": "French",
+    "ar": "Arabic",
+    "de": "German",
+    "es": "Spanish",
+    "ja": "Japanese"
+  },
+  "viewWithTranslation": "View with Translation",
+  "downloadDirectly": "Download PDF",
+  "noResultsFound": "No Documents Found",
+  "tryDifferentSearch": "Try a different search term or filter",
+  "downloadPack": {
+    "title": "Download Complete Document Pack",
+    "description": "Get all my documents in a single, organized PDF file with translations."
+  },
+  "documentViewer": "Document Viewer",
+  "backToDocuments": "Back to Documents",
+  "translationNotice": {
+    "title": "Translation Assistance",
+    "description": "Enable translation mode to see key text elements translated. Document layout and design remain unchanged. For best results, increase zoom level."
+  },
+  "notFound": {
+    "title": "Document Not Found",
+    "description": "The document you requested could not be found.",
+    "button": "Browse All Documents"
+  },
+  "page": "Page",
+  "of": "of",
+  "showTranslation": "Show Translation",
+  "hideTranslation": "Hide Translation",
+  "showOverlay": "Show Overlay",
+  "hideOverlay": "Hide Overlay",
+  "download": "Download PDF",
+  "loading": "Loading document...",
+  "translating": "Translating...",
+  "processingTranslation": "Processing translations, please wait...",
+  "pdfError": "Error loading PDF",
+  "pdfErrorDesc": "The document could not be loaded. Please try downloading instead."
+}

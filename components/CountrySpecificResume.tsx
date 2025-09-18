@@ -33,16 +33,18 @@ try {
 }
 
 // --- FIXED PHOTO URL FUNCTION ---
-const getPhotoUrl = () => {
-  // Use absolute URL for better compatibility
-  const baseUrl = typeof window !== 'undefined' 
-    ? window.location.origin 
-    : (process.env.NODE_ENV === 'production' ? 'https://badrribzat.dev' : 'http://localhost:3000');
-  
-  return `${baseUrl}/images/me.jpg`;
+const getImageSource = () => {
+  try {
+    return { image: meImageBase64 };
+  } catch (error) {
+    console.error('Failed to load image:', error);
+    return { 
+      image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg==' 
+    };
+  }
 };
 
-const photoUrl = getPhotoUrl();
+const profileImage = getImageSource();
 
 // --- SHARED STYLES WITH CORRECTED FONT WEIGHTS ---
 const commonStyles = StyleSheet.create({
@@ -380,7 +382,7 @@ const GermanResume: React.FC<ResumeTemplateProps> = ({ data }) => {
       <View style={s.container}>
         <View style={s.leftColumn}>
           {/* Photo */}
-          <Image src={meImageBase64} style={s.photo} />
+          <Image src={...profileImage} style={s.photo} />
           <Text style={s.name}>{data.personalInfo.name}</Text>
           <Text style={s.title}>{data.personalInfo.title}</Text>
           
@@ -531,7 +533,7 @@ const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data }) => {
           </View>
         </View>
         <View style={{ marginLeft: 20 }}>
-          <Image src={meImageBase64} style={s.photo} />
+          <Image src={...profileImage} style={s.photo} />
         </View>
       </View>
       
@@ -652,7 +654,7 @@ const ModernResume: React.FC<Props> = ({ data, locale }) => {
     <Page size="A4" style={s.page}>
       <View style={s.container}>
         <View style={s.leftColumn}>
-          <Image src={meImageBase64} style={s.photo} />
+          <Image src={...profileImage} style={s.photo} />
           <Text style={s.name}>{data.personalInfo.name}</Text>
           <Text style={s.title}>{data.personalInfo.title}</Text>
           
@@ -794,7 +796,7 @@ const ArabicResume: React.FC<ResumeTemplateProps> = ({ data }) => {
     <Page size="A4" style={s.page}>
       <View style={s.container}>
         <View style={s.leftColumn}>
-          <Image src={meImageBase64} style={s.photo} />
+          <Image src={...profileImage} style={s.photo} />
           <Text style={s.name}>{data.personalInfo.name}</Text>
           <Text style={s.title}>{data.personalInfo.title}</Text>
           

@@ -60,8 +60,9 @@ const Header: React.FC = () => {
     { name: t('nav.home'), href: '/', icon: <Home className="w-4 h-4" /> },
     { name: t('nav.about'), href: '/about', icon: <User className="w-4 h-4" /> },
     { name: t('nav.projects'), href: '/projects', icon: <Briefcase className="w-4 h-4" /> },
+    { name: t('nav.documents'), href: '/documents', icon: <FileText className="w-4 h-4" /> },
     { name: t('nav.skills'), href: '/skills', icon: <Award className="w-4 h-4" /> },
-    { name: t('nav.resume'), href: '/resume/en', icon: <FileText className="w-4 h-4" /> },
+    { name: t('nav.resume'), href: `/resume/${router.locale || 'en'}`, icon: <FileText className="w-4 h-4" /> },
     { name: t('nav.contact'), href: '/contact', icon: <Mail className="w-4 h-4" /> },
   ];
 

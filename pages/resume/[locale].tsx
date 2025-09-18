@@ -246,3 +246,4 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
 };
 
 export default ResumePage;
+
