@@ -82,7 +82,7 @@ const documentsData: DocumentData[] = [
       ar: "ALX أفريقيا (مدرسة هولبرتون)",
       ja: "ALX アフリカ（ホルバートン・スクール）",
     },
-    thumbnail: "/images/education-project.jpg"
+    thumbnail: "/images/documents/alx-transcript.jpg"
   },
   {
     id: "driver-license",
@@ -113,7 +113,8 @@ const documentsData: DocumentData[] = [
       es: "Reino de Marruecos Ministerio de Transporte",
       ar: "وزارة النقل بالمملكة المغربية",
       ja: "モロッコ王国運輸省",
-    }
+    },
+    thumbnail: "/images/documents/driver-license.jpg"
   },
   {
     id: "hairstyling-diploma",
@@ -144,7 +145,8 @@ const documentsData: DocumentData[] = [
       es: "Ecole Univers Coiffure (Reconocida por el Estado)",
       ar: "مدرسة يونيفيرس كوافور (معترف بها من الدولة)",
       ja: "エコール・ユニヴェルス・クワフュール（国家認定）",
-    }
+    },
+    thumbnail: "/images/documents/hairstyling-diploma.jpg"
   },
   {
     id: "ibm-design",
@@ -176,7 +178,7 @@ const documentsData: DocumentData[] = [
       ar: "آي بي إم",
       ja: "IBM",
     },
-    thumbnail: "/images/portfolio-project.jpg"
+    thumbnail: "/images/documents/ibm-design-certificate.jpg"
   },
   {
     id: "software-engineering-certificates",
@@ -208,7 +210,7 @@ const documentsData: DocumentData[] = [
       ar: "منصات متنوعة عبر الإنترنت",
       ja: "さまざまなオンラインプラットフォーム",
     },
-    thumbnail: "/images/chatbot-project.jpg"
+    thumbnail: "/images/documents/software-engineering-certificates.jpg"
   },
   {
     id: "nutrition-certificates",
@@ -239,7 +241,8 @@ const documentsData: DocumentData[] = [
       es: "Edraak y Otras Plataformas",
       ar: "إدراك ومنصات أخرى",
       ja: "エドラアクおよびその他のプラットフォーム",
-    }
+    },
+    thumbnail: "/images/documents/nutrition-certificates.jpg"
   },
   {
     id: "english-certificates",
@@ -270,7 +273,8 @@ const documentsData: DocumentData[] = [
       es: "Saylor Academy y Otros",
       ar: "أكاديمية سايلور وغيرها",
       ja: "セイラーアカデミーおよびその他",
-    }
+    },
+    thumbnail: "/images/documents/english-certificates.jpg"
   },
   {
     id: "third-level-certificate",
@@ -301,7 +305,8 @@ const documentsData: DocumentData[] = [
       es: "Ministerio de Educación, Marruecos",
       ar: "وزارة التربية الوطنية، المغرب",
       ja: "モロッコ教育省",
-    }
+    },
+    thumbnail: "/images/documents/third-level-certificate.jpg"
   }
 ];
 
