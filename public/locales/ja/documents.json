@@ -1,0 +1,53 @@
+// public/locales/ja/documents.json
+{
+  "pageTitle": "私の書類と証明書",
+  "pageDescription": "多言語翻訳サポート付きで、私の公式文書、証明書、卒業証書を閲覧およびダウンロードできます。",
+  "searchPlaceholder": "タイトルまたは説明で文書を検索...",
+  "categories": {
+    "all": "すべての文書",
+    "education": "教育",
+    "technical": "技術",
+    "professional": "プロフェッショナル"
+  },
+  "issuedOn": "発行日",
+  "issuedBy": "発行元",
+  "originalLanguage": "原文の言語",
+  "languages": {
+    "en": "英語",
+    "fr": "フランス語",
+    "ar": "アラビア語",
+    "de": "ドイツ語",
+    "es": "スペイン語",
+    "ja": "日本語"
+  },
+  "viewWithTranslation": "翻訳付きで表示",
+  "downloadDirectly": "PDFをダウンロード",
+  "noResultsFound": "文書が見つかりません",
+  "tryDifferentSearch": "別の検索語またはフィルターを試してください",
+  "downloadPack": {
+    "title": "完全な文書パックをダウンロード",
+    "description": "翻訳付きで、すべての文書を1つの整理されたPDFファイルで入手できます。"
+  },
+  "documentViewer": "文書ビューア",
+  "backToDocuments": "文書に戻る",
+  "translationNotice": {
+    "title": "翻訳支援",
+    "description": "翻訳モードを有効にすると、重要なテキスト要素が翻訳されて表示されます。文書のレイアウトとデザインは変更されません。最良の結果を得るには、ズームレベルを上げてください。"
+  },
+  "notFound": {
+    "title": "文書が見つかりません",
+    "description": "ご希望の文書が見つかりませんでした。",
+    "button": "すべての文書を閲覧"
+  },
+  "errorLoading": "文書の読み込みエラー",
+  "page": "ページ",
+  "of": "の",
+  "loading": "読み込み中...",
+  "translating": "翻訳中...",
+  "processingTranslation": "翻訳を処理中...",
+  "hideTranslation": "翻訳を非表示",
+  "showTranslation": "翻訳を表示",
+  "hideOverlay": "オーバーレイを非表示",
+  "showOverlay": "オーバーレイを表示",
+  "download": "ダウンロード"
+}

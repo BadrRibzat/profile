@@ -1,13 +1,13 @@
 // pages/documents/[id].tsx
-import React from 'react';
+import React, { useState, useEffect } from 'react'; // Combined imports
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
-import dynamic from 'next/dynamic'; // Import dynamic here
-import { FileText, ArrowLeft, Globe, Info } from 'lucide-react';
+import dynamic from 'next/dynamic';
+import { FileText, ArrowLeft, Globe, Info, Loader } from 'lucide-react'; // Added Loader import
 import Link from 'next/link';
 
 // Dynamically import DocumentViewer with no SSR
@@ -67,7 +67,7 @@ const documentsData: DocumentData[] = [
       ja: "ALX ソフトウェアエンジニアリングプログラムを106.76%のスコアで修了したことを示す公式成績証明書",
     },
     category: "education",
-    pdfUrl: "/documents/education/alx-transcript.pdf", // Updated path
+    pdfUrl: "/documents/education/alx-transcript.pdf",
     originalLanguage: "en",
     dateIssued: "2023-12",
     issuer: {
@@ -98,7 +98,7 @@ const documentsData: DocumentData[] = [
       ja: "カテゴリBの車両のためのモロッコの運転免許証明書",
     },
     category: "professional",
-    pdfUrl: "/documents/professional/driver-license.pdf", // Updated path
+    pdfUrl: "/documents/professional/driver-license.pdf",
     originalLanguage: "ar",
     dateIssued: "2011-05",
     issuer: {
@@ -129,7 +129,7 @@ const documentsData: DocumentData[] = [
       ja: "男性と女性のヘアスタイリング技術に関する国家認定資格",
     },
     category: "professional",
-    pdfUrl: "/documents/professional/hairstyling-diploma.pdf", // Updated path
+    pdfUrl: "/documents/professional/hairstyling-diploma.pdf",
     originalLanguage: "ar",
     dateIssued: "2014-10",
     issuer: {
@@ -160,7 +160,7 @@ const documentsData: DocumentData[] = [
       ja: "人間中心設計と問題解決に対するIBMのアプローチにおける認定",
     },
     category: "technical",
-    pdfUrl: "/documents/technical/ibm-design-certificate.pdf", // Updated path
+    pdfUrl: "/documents/technical/ibm-design-certificate.pdf",
     originalLanguage: "en",
     dateIssued: "2025-09",
     issuer: {
@@ -192,7 +192,7 @@ const documentsData: DocumentData[] = [
       ja: "ソフトウェアエンジニアリングのさまざまな側面における独学で獲得した証明書のコレクション",
     },
     category: "technical",
-    pdfUrl: "/documents/technical/software-engineering-certificates.pdf", // Updated path
+    pdfUrl: "/documents/technical/software-engineering-certificates.pdf",
     originalLanguage: "en",
     dateIssued: "2022-2023",
     issuer: {
@@ -224,7 +224,7 @@ const documentsData: DocumentData[] = [
       ja: "治療栄養、健康管理、食品科学における自己学習認定",
     },
     category: "health",
-    pdfUrl: "/documents/health/nutrition-certificates.pdf", // Updated path
+    pdfUrl: "/documents/health/nutrition-certificates.pdf",
     originalLanguage: "ar",
     dateIssued: "2020-12",
     issuer: {
@@ -255,7 +255,7 @@ const documentsData: DocumentData[] = [
       ja: "中上級（B2）レベルの英語能力を示すさまざまな証明書",
     },
     category: "language",
-    pdfUrl: "/documents/language/english-certificates.pdf", // Updated path
+    pdfUrl: "/documents/language/english-certificates.pdf",
     originalLanguage: "en",
     dateIssued: "2023-01",
     issuer: {
@@ -286,7 +286,7 @@ const documentsData: DocumentData[] = [
       ja: "モロッコでの第三段階の準備教育修了を示す公式教育証明書",
     },
     category: "education",
-    pdfUrl: "/documents/education/third-level-certificate.pdf", // Updated path
+    pdfUrl: "/documents/education/third-level-certificate.pdf",
     originalLanguage: "ar",
     dateIssued: "2008",
     issuer: {
@@ -296,7 +296,7 @@ const documentsData: DocumentData[] = [
       es: "Ministerio de Educación, Marruecos",
       ar: "وزارة التربية الوطنية، المغرب",
       ja: "モロッコ教育省",
-    }
+    },
   }
 ];
 
@@ -304,17 +304,16 @@ const DocumentPage: React.FC = () => {
   const router = useRouter();
   const { t, i18n } = useTranslation('documents');
   const { id } = router.query;
-  
+
   // Find the current document
   const document = documentsData.find(doc => doc.id === id);
-  
+
   // Conditionally render DocumentViewer based on its dynamic import status
-  // You might want a loading state here if the dynamic import takes time
   const [isDocumentViewerLoaded, setIsDocumentViewerLoaded] = useState(true);
 
   useEffect(() => {
     // Only set to true if DocumentViewer has been dynamically loaded
-    if (DocumentViewer.displayName === 'DynamicDocumentViewer') { // Or some other check if needed
+    if (DocumentViewer.displayName === 'DynamicDocumentViewer') {
       setIsDocumentViewerLoaded(true);
     }
   }, []);
@@ -345,7 +344,7 @@ const DocumentPage: React.FC = () => {
       </Layout>
     );
   }
-  
+
   // Get localized document data
   const currentLocale = i18n.language as keyof typeof document.title;
   const localizedTitle = document.title[currentLocale] || document.title.en;
@@ -387,28 +386,23 @@ const DocumentPage: React.FC = () => {
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               {localizedTitle}
             </h1>
-            
             <div className="flex flex-wrap items-center gap-3 mb-6 text-sm">
               <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full">
                 {t(`categories.${document.category}`)}
               </span>
-              
               <span className="flex items-center space-x-1 text-gray-600 dark:text-gray-400">
                 <Globe className="w-4 h-4" />
                 <span>
                   {t('originalLanguage')}: {t(`languages.${document.originalLanguage}`)}
                 </span>
               </span>
-              
               <span className="text-gray-600 dark:text-gray-400">
                 {t('issuedOn')}: {document.dateIssued}
               </span>
-              
               <span className="text-gray-600 dark:text-gray-400">
                 {t('issuedBy')}: {localizedIssuer}
               </span>
             </div>
-            
             <p className="text-lg text-gray-700 dark:text-gray-300">
               {localizedDescription}
             </p>
@@ -442,7 +436,6 @@ const DocumentPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            {/* Render DocumentViewer only if dynamically loaded */}
             {isDocumentViewerLoaded ? (
               <DocumentViewer 
                 pdfUrl={document.pdfUrl}
@@ -465,14 +458,12 @@ const DocumentPage: React.FC = () => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const locales = ['en', 'fr', 'ar', 'de', 'es', 'ja'];
-  
   const paths = documentsData.flatMap(doc => 
     locales.map(locale => ({
       params: { id: doc.id },
       locale: locale
     }))
   );
-
   return {
     paths,
     fallback: false

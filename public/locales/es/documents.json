@@ -1,0 +1,53 @@
+// public/locales/es/documents.json
+{
+  "pageTitle": "Mis Documentos y Certificados",
+  "pageDescription": "Ver y descargar mis documentos oficiales, certificados y diplomas con soporte de traducción multilingüe.",
+  "searchPlaceholder": "Buscar documentos por título o descripción...",
+  "categories": {
+    "all": "Todos los Documentos",
+    "education": "Educación",
+    "technical": "Técnico",
+    "professional": "Profesional"
+  },
+  "issuedOn": "Emitido el",
+  "issuedBy": "Emisor",
+  "originalLanguage": "Idioma original",
+  "languages": {
+    "en": "Inglés",
+    "fr": "Francés",
+    "ar": "Árabe",
+    "de": "Alemán",
+    "es": "Español",
+    "ja": "Japonés"
+  },
+  "viewWithTranslation": "Ver con traducción",
+  "downloadDirectly": "Descargar PDF",
+  "noResultsFound": "No se encontraron documentos",
+  "tryDifferentSearch": "Prueba un término de búsqueda o filtro diferente",
+  "downloadPack": {
+    "title": "Descargar Paquete Completo de Documentos",
+    "description": "Obtén todos mis documentos en un solo archivo PDF organizado con traducciones."
+  },
+  "documentViewer": "Visor de Documentos",
+  "backToDocuments": "Volver a Documentos",
+  "translationNotice": {
+    "title": "Asistencia de traducción",
+    "description": "Habilita el modo de traducción para ver los elementos de texto clave traducidos. El diseño y la disposición del documento permanecen sin cambios. Para mejores resultados, aumenta el nivel de zoom."
+  },
+  "notFound": {
+    "title": "Documento no encontrado",
+    "description": "El documento que solicitaste no se pudo encontrar.",
+    "button": "Explorar todos los documentos"
+  },
+  "errorLoading": "Error al cargar el documento",
+  "page": "Página",
+  "of": "de",
+  "loading": "Cargando...",
+  "translating": "Traduciendo...",
+  "processingTranslation": "Procesando traducción...",
+  "hideTranslation": "Ocultar traducción",
+  "showTranslation": "Mostrar traducción",
+  "hideOverlay": "Ocultar superposición",
+  "showOverlay": "Mostrar superposición",
+  "download": "Descargar"
+}

@@ -37,3 +37,4 @@ scripts/encode-image.js
 
 # Public documents (if you don't want them tracked)
 public/documents/
+.next

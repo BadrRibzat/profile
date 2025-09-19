@@ -1,13 +1,13 @@
 // components/PDFViewer.tsx
-"use client"; // This directive is crucial for client-side rendering
-
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+"use client";
+import React, { useState, useEffect, useCallback } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
-//import 'react-pdf/dist/esm/Page/TextLayer.css';
+import { useTranslation } from 'next-i18next';
+import { Loader } from 'lucide-react';
 
-// Set up the pdf.js worker only in the browser environment
+// Fix the worker setup - use unpkg CDN which is more reliable
 if (typeof window !== 'undefined') {
-  pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+  pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 }
 
 interface TextItem {
@@ -27,11 +27,9 @@ interface PDFViewerProps {
   showOverlay: boolean;
   targetLanguage: string;
   originalLanguage: string;
-  // Callbacks passed from DocumentViewer
   onDocumentLoadSuccess: (pageCount: number) => void;
   onPageLoadSuccess: () => void;
-  // Added for re-triggering parent's loading state
-  setTranslationInProgress: (inProgress: boolean) => void;
+  isLoading?: boolean;
 }
 
 export const PDFViewer: React.FC<PDFViewerProps> = ({
@@ -44,23 +42,34 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
   originalLanguage,
   onDocumentLoadSuccess,
   onPageLoadSuccess,
-  setTranslationInProgress, // Now received as a prop
+  isLoading = false,
 }) => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const { t } = useTranslation('documents');
   const [textItems, setTextItems] = useState<TextItem[]>([]);
-  const [pdfDocumentInstance, setPdfDocumentInstance] = useState<any>(null); // Stores the loaded PDF document instance
+  const [pageWidth, setPageWidth] = useState<number>(0);
+  const [pageHeight, setPageHeight] = useState<number>(0);
+  const [error, setError] = useState<string | null>(null);
 
-  // A simplified translation function using a dictionary approach
-  // In a production environment, this would be replaced with an API call
+  // Basic translation function - simplified for now
+  const getTranslationOverlay = () => {
+    if (!isTranslateMode || !showOverlay) return null;
+    
+    // For now, show a simple translation indicator
+    return (
+      <div className="absolute top-2 left-2 bg-blue-600 text-white px-2 py-1 rounded text-sm z-10">
+        Translation Mode: {originalLanguage} → {targetLanguage}
+      </div>
+    );
+  };
+
+  // Simplified translation function
   const translateText = useCallback((text: string, targetLang: string, sourceLang: string): string | null => {
-    // Skip translation if target language is the same as original or text is empty
     if (targetLang === sourceLang || !text || text.trim() === '') {
       return null;
     }
     
-    // Dictionary for common translations
+    // Basic translation dictionary
     const translations: Record<string, Record<string, string>> = {
-      // Arabic to other languages
       "المملكة المغربية": {
         "en": "Kingdom of Morocco",
         "fr": "Royaume du Maroc",
@@ -75,140 +84,13 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
         "es": "Permiso de Conducir",
         "ja": "運転免許証"
       },
-      "وزارة النقل": {
-        "en": "Ministry of Transportation",
-        "fr": "Ministère du Transport",
-        "de": "Ministerium für Verkehr",
-        "es": "Ministerio de Transporte",
-        "ja": "運輸省"
+      "Certificate": {
+        "fr": "Certificat",
+        "de": "Zertifikat",
+        "es": "Certificado",
+        "ar": "شهادة",
+        "ja": "証明書"
       },
-      "الأصناف": { // Categories
-        "en": "Categories",
-        "fr": "Catégories",
-        "de": "Kategorien",
-        "es": "Categorías",
-        "ja": "カテゴリ"
-      },
-      "تاريخ التسليم": { // Date of Delivery/Issue
-        "en": "Date of Issuance",
-        "fr": "Date de délivrance",
-        "de": "Ausstellungsdatum",
-        "es": "Fecha de expedición",
-        "ja": "交付日"
-      },
-      "التقييدات": { // Restrictions
-        "en": "Restrictions",
-        "fr": "Restrictions",
-        "de": "Einschränkungen",
-        "es": "Restricciones",
-        "ja": "制限事項"
-      },
-      "تاريخ نهاية الصلاحية": { // Expiry Date
-        "en": "Expiry Date",
-        "fr": "Date de fin de validité",
-        "de": "Ablaufdatum",
-        "es": "Fecha de vencimiento",
-        "ja": "有効期限"
-      },
-      "الإسم الشخصى": { // First Name
-        "en": "First Name",
-        "fr": "Prénom",
-        "de": "Vorname",
-        "es": "Nombre",
-        "ja": "名"
-      },
-      "الإسم العائلي": { // Family Name / Last Name
-        "en": "Family Name",
-        "fr": "Nom",
-        "de": "Nachname",
-        "es": "Apellido",
-        "ja": "姓"
-      },
-      "تاريخ الولادة": { // Date of Birth
-        "en": "Date of Birth",
-        "fr": "Date de naissance",
-        "de": "Geburtsdatum",
-        "es": "Fecha de nacimiento",
-        "ja": "生年月日"
-      },
-      "رقم الرخصة": { // License Number
-        "en": "License Number",
-        "fr": "Numéro de permis",
-        "de": "Lizenznummer",
-        "es": "Número de licencia",
-        "ja": "免許証番号"
-      },
-      "في فاس": { // In Fes
-        "en": "in Fes",
-        "fr": "à Fès",
-        "de": "in Fes",
-        "es": "en Fez",
-        "ja": "フェズにて"
-      },
-      "المملكة المغربية": {
-        "en": "Kingdom of Morocco",
-        "fr": "Royaume du Maroc",
-        "de": "Königreich Marokko",
-        "es": "Reino de Marruecos",
-        "ja": "モロッコ王国"
-      },
-      "الأصناف": {
-        "en": "Categories",
-        "fr": "Catégories",
-        "de": "Kategorien",
-        "es": "Categorías",
-        "ja": "カテゴリ"
-      },
-      "تاريخ التسليم": {
-        "en": "Date of delivery",
-        "fr": "Date de délivrance",
-        "de": "Lieferdatum",
-        "es": "Fecha de entrega",
-        "ja": "配送日"
-      },
-      "التقييدات": {
-        "en": "Restrictions",
-        "fr": "Restrictions",
-        "de": "Beschränkungen",
-        "es": "Restricciones",
-        "ja": "制限事項"
-      },
-      "رخصة السياقة": {
-        "en": "Driving License",
-        "fr": "Permis de Conduire",
-        "de": "Führerschein",
-        "es": "Permiso de Conducir",
-        "ja": "運転免許証"
-      },
-      "شهادة اتمام مساق": {
-        "en": "Course Completion Certificate",
-        "fr": "Certificat de réussite du cours",
-        "de": "Kursabschlusszertifikat",
-        "es": "Certificado de finalización del curso",
-        "ja": "コース修了証明書"
-      },
-      "شهادة في أساسيات التسويق الرقمي": {
-        "en": "Digital Marketing Fundamentals Certificate",
-        "fr": "Certificat en Fondamentaux du Marketing Digital",
-        "de": "Zertifikat für Grundlagen des digitalen Marketings",
-        "es": "Certificado en Fundamentos de Marketing Digital",
-        "ja": "デジタルマーケティングの基礎証明書"
-      },
-      "بدر ربزات": {
-        "en": "Badr Ribzat",
-        "fr": "Badr Ribzat",
-        "de": "Badr Ribzat",
-        "es": "Badr Ribzat",
-        "ja": "バドル・リブザット"
-      },
-      "التقييدات": {
-        "en": "Restrictions",
-        "fr": "Restrictions",
-        "de": "Einschränkungen",
-        "es": "Restricciones",
-        "ja": "制限"
-      },
-      // English to other languages
       "Transcript": {
         "fr": "Relevé de notes",
         "de": "Transkript",
@@ -402,13 +284,6 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
         "es": "Diploma",
         "ar": "دبلوم",
         "ja": "ディプロマ"
-      },
-      "This is to certify that": {
-        "fr": "Ceci certifie que",
-        "de": "Dies bescheinigt, dass",
-        "es": "Esto certifica que",
-        "ar": "يشهد هذا بأن",
-        "ja": "これは、"
       },
       "Successfully obtained": {
         "fr": "Obtenu avec succès",
@@ -624,237 +499,176 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
       }
     };
     
-    // Check if we have a translation for this exact text
-    if (translations[text] && translations[text][targetLang]) {
-      return translations[text][targetLang];
+    return translations[text]?.[targetLang] || null;
+  }, []);
+
+  // Extract text from PDF page
+  const extractTextFromPage = useCallback(async (pdf: any, pageNum: number) => {
+    try {
+      const page = await pdf.getPage(pageNum);
+      const textContent = await page.getTextContent();
+      const viewport = page.getViewport({ scale });
+      
+      setPageWidth(viewport.width);
+      setPageHeight(viewport.height);
+
+      const items: TextItem[] = textContent.items.map((item: any) => ({
+        text: item.str,
+        translatedText: translateText(item.str, targetLanguage, originalLanguage),
+        x: item.transform[4],
+        y: viewport.height - item.transform[5],
+        width: item.width || 100,
+        height: item.height || 20,
+      }));
+
+      return items;
+    } catch (error) {
+      console.error('Error extracting text:', error);
+      return [];
     }
-    
-    // Try to find partial matches for longer text (especially for Arabic which can have prefixes/suffixes)
-    if (text.length > 10) { // Only attempt for longer strings to avoid over-matching common words
-      for (const [key, value] of Object.entries(translations)) {
-        if (text.includes(key) && value[targetLang]) {
-          // A more sophisticated partial replacement logic might be needed here
-          // For now, if a key is found as a substring, replace it.
-          // This might not be perfect for all cases but is a step up from exact match only.
-          return text.replace(key, value[targetLang]);
+  }, [scale, targetLanguage, originalLanguage, translateText]);
+
+  // Load text items when translation mode changes
+  useEffect(() => {
+    async function loadTextItems() {
+      if (isTranslateMode && typeof window !== 'undefined') {
+        try {
+          const pdf = await pdfjs.getDocument(pdfUrl).promise;
+          const items = await extractTextFromPage(pdf, pageNumber);
+          setTextItems(items);
+        } catch (error) {
+          console.error('Error loading text items:', error);
+          setTextItems([]);
         }
+      } else {
+        setTextItems([]);
       }
     }
     
-    // Return null if no translation found
-    return null;
-  }, [originalLanguage]);
+    loadTextItems();
+  }, [isTranslateMode, pageNumber, pdfUrl, extractTextFromPage]);
 
-  // Handle document load
   const handleDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
+    setError(null);
     onDocumentLoadSuccess(numPages);
-    // Ensure pdfjs.getDocument is called once and memoized
-    if (!pdfDocumentInstance) {
-      setPdfDocumentInstance(pdfjs.getDocument(pdfUrl).promise);
-    }
   };
 
-  // Load text when page or translation mode changes
-  useEffect(() => {
-    async function loadAndTranslateTextItems() {
-      if (pdfDocumentInstance) {
-        setTranslationInProgress(true); // Indicate translation is starting
-        const items = await extractTextFromPage(await pdfDocumentInstance, pageNumber);
-        setTextItems(items);
-        setTranslationInProgress(false); // Indicate translation is finished
-      }
-    }
-    
-    if (isTranslateMode) {
-      loadAndTranslateTextItems();
-    } else {
-      setTextItems([]); // Clear text items when translation mode is off
-    }
-  }, [pdfDocumentInstance, pageNumber, scale, isTranslateMode, extractTextFromPage, setTranslationInProgress]);
+  const handlePageLoadSuccess = () => {
+    setError(null);
+    onPageLoadSuccess();
+  };
+
+  const handleDocumentLoadError = (error: Error) => {
+    console.error('PDF load error:', error);
+    setError('Failed to load PDF document');
+  };
+
+  const handlePageLoadError = (error: Error) => {
+    console.error('Page load error:', error);
+    setError('Failed to load PDF page');
+  };
+
+  if (typeof window === 'undefined') {
+    return (
+      <div className="flex items-center justify-center h-[600px] bg-gray-100 dark:bg-gray-800 rounded-xl">
+        <Loader className="w-8 h-8 text-blue-600 animate-spin" />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-[600px] text-red-600 bg-red-50 dark:bg-red-900/20 rounded-xl">
+        <div className="text-center">
+          <p className="text-lg mb-2">Error Loading PDF</p>
+          <p className="text-sm">{error}</p>
+          <button 
+            onClick={() => setError(null)}
+            className="mt-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-      <div className="p-5 border-b border-gray-200 dark:border-gray-700">
-        <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-1">
-          {title}
-        </h3>
-        {description && (
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            {description}
-          </p>
-        )}
-      </div>
-
-      <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center bg-gray-50 dark:bg-gray-700">
-        {/* Page Navigation */}
-        <div className="flex items-center space-x-2">
-          <button
-            onClick={() => changePage(-1)}
-            disabled={pageNumber <= 1 || isLoading}
-            className={`p-2 rounded-full ${
-              pageNumber <= 1 || isLoading
-                ? 'text-gray-400 dark:text-gray-600 cursor-not-allowed' 
-                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-            }`}
-          >
-            <ArrowLeft className="w-5 h-5" />
-          </button>
-          <span className="text-sm text-gray-700 dark:text-gray-300">
-            {t('page')} {pageNumber} {t('of')} {numPages || '-'}
-          </span>
-          <button
-            onClick={() => changePage(1)}
-            disabled={pageNumber >= (numPages || 1) || isLoading}
-            className={`p-2 rounded-full ${
-              pageNumber >= (numPages || 1) || isLoading
-                ? 'text-gray-400 dark:text-gray-600 cursor-not-allowed'
-                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-            }`}
-          >
-            <ArrowRight className="w-5 h-5" />
-          </button>
-        </div>
-        
-        {/* Action Buttons */}
-        <div className="flex items-center space-x-3">
-          {/* Zoom Controls */}
-          <div className="flex items-center space-x-1 mr-2">
-            <button
-              onClick={() => handleZoom(-0.2)}
-              disabled={scale <= 0.5}
-              className={`p-2 rounded-full ${
-                scale <= 0.5
-                  ? 'text-gray-400 dark:text-gray-600 cursor-not-allowed'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-              }`}
-            >
-              <ZoomOut className="w-4 h-4" />
-            </button>
-            <span className="text-xs text-gray-600 dark:text-gray-400">
-              {Math.round(scale * 100)}%
-            </span>
-            <button
-              onClick={() => handleZoom(0.2)}
-              disabled={scale >= 3.0}
-              className={`p-2 rounded-full ${
-                scale >= 3.0
-                  ? 'text-gray-400 dark:text-gray-600 cursor-not-allowed'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-              }`}
-            >
-              <ZoomIn className="w-4 h-4" />
-            </button>
-          </div>
-          
-          {/* Translation Toggle */}
-          <motion.button
-            onClick={handleTranslationToggle}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            disabled={isLoading || translationInProgress}
-            className={`flex items-center space-x-1 px-3 py-1.5 rounded-md text-sm font-medium transition-colors duration-200 ${
-              isLoading || translationInProgress
-                ? 'bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-500 cursor-not-allowed'
-                : isTranslateMode
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-200 text-gray-700 dark:bg-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-500'
-            }`}
-          >
-            <Languages className="w-4 h-4" />
-            <span>
-              {translationInProgress 
-                ? t('translating') 
-                : isTranslateMode 
-                  ? t('hideTranslation') 
-                  : t('showTranslation')}
-            </span>
-          </motion.button>
-          
-          {/* Overlay Toggle (only visible in translation mode) */}
-          {isTranslateMode && (
-            <motion.button
-              onClick={() => setShowOverlay(!showOverlay)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`flex items-center space-x-1 px-3 py-1.5 rounded-md text-sm font-medium transition-colors duration-200 ${
-                showOverlay
-                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300'
-                  : 'bg-gray-200 text-gray-700 dark:bg-gray-600 dark:text-gray-300'
-              }`}
-            >
-              {showOverlay ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
-              <span>{showOverlay ? t('hideOverlay') : t('showOverlay')}</span>
-            </motion.button>
-          )}
-          
-          {/* Download Button */}
-          <a
-            href={pdfUrl}
-            download
-            className="flex items-center space-x-1 px-3 py-1.5 bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-500 text-gray-700 dark:text-gray-300 rounded-md text-sm font-medium transition-colors duration-200"
-          >
-            <Download className="w-4 h-4" />
-            <span>{t('download')}</span>
-          </a>
-        </div>
-      </div>
-      
-      {/* Translation Processing Notice */}
-      <AnimatePresence>
-        {translationInProgress && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="bg-blue-50 dark:bg-blue-900/30 border-b border-blue-100 dark:border-blue-800 p-2 text-center"
-          >
-            <div className="flex items-center justify-center space-x-2 text-blue-600 dark:text-blue-400">
-              <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
-              <span className="text-sm">{t('processingTranslation')}</span>
+    <div className="relative">
+      {getTranslationOverlay()}
+      <Document
+        file={pdfUrl}
+        onLoadSuccess={handleDocumentLoadSuccess}
+        onLoadError={handleDocumentLoadError}
+        loading={
+          <div className="flex items-center justify-center h-[600px]">
+            <div className="text-center">
+              <Loader className="w-8 h-8 text-blue-600 animate-spin mx-auto" />
+              <p className="mt-2 text-gray-600 dark:text-gray-400">Loading PDF...</p>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* PDF Viewer */}
-      <div className="relative bg-gray-100 dark:bg-gray-900 flex justify-center p-4 overflow-auto min-h-[600px]">
-        {/* Loading Overlay */}
-        <AnimatePresence>
-          {isLoading && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="absolute inset-0 flex items-center justify-center bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm z-10"
-            >
-              <div className="flex flex-col items-center">
-                <Loader className="w-8 h-8 text-blue-600 animate-spin" />
-                <p className="mt-2 text-gray-600 dark:text-gray-400">{t('loading')}</p>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* PDF Document */}
-        <div className="relative" style={{ transformOrigin: 'top center' }}>
-          {/* This is where the dynamic PDFViewer component will render */}
-          <PDFViewer 
-            pdfUrl={pdfUrl}
+          </div>
+        }
+        error={
+          <div className="flex items-center justify-center h-[600px] text-red-600 bg-red-50 dark:bg-red-900/20 rounded-xl">
+            <p>Error loading PDF document</p>
+          </div>
+        }
+        options={{
+          cMapUrl: `//unpkg.com/pdfjs-dist@${pdfjs.version}/cmaps/`,
+          cMapPacked: true,
+          standardFontDataUrl: `//unpkg.com/pdfjs-dist@${pdfjs.version}/standard_fonts/`,
+        }}
+      >
+        <div className="relative">
+          <Page
             pageNumber={pageNumber}
             scale={scale}
-            isTranslateMode={isTranslateMode}
-            showOverlay={showOverlay}
-            isLoading={isLoading}
-            targetLanguage={i18n.language}
-            originalLanguage={originalLanguage}
-            onDocumentLoadSuccess={handleDocumentLoadSuccess}
-            onPageLoadSuccess={handlePageLoadSuccess}
-            setTranslationInProgress={setTranslationInProgress} // Pass setter here
+            onLoadSuccess={handlePageLoadSuccess}
+            onLoadError={handlePageLoadError}
+            loading={
+              <div className="flex items-center justify-center h-[400px]">
+                <Loader className="w-6 h-6 text-blue-600 animate-spin" />
+              </div>
+            }
+            error={
+              <div className="flex items-center justify-center h-[400px] text-red-600">
+                <p>Error loading page</p>
+              </div>
+            }
           />
+          
+          {/* Translation overlay */}
+          {isTranslateMode && showOverlay && textItems.length > 0 && (
+            <div 
+              className="absolute top-0 left-0 pointer-events-none z-10"
+              style={{
+                width: pageWidth * scale,
+                height: pageHeight * scale,
+              }}
+            >
+              {textItems.map((item, index) => (
+                item.translatedText && (
+                  <div
+                    key={index}
+                    className="absolute text-xs bg-blue-600 text-white px-1 py-0.5 rounded shadow-lg opacity-90"
+                    style={{
+                      left: item.x * scale,
+                      top: item.y * scale,
+                      maxWidth: item.width * scale,
+                      fontSize: `${8 * scale}px`,
+                      lineHeight: '1.2',
+                    }}
+                  >
+                    {item.translatedText}
+                  </div>
+                )
+              ))}
+            </div>
+          )}
         </div>
-      </div>
+      </Document>
     </div>
   );
 };
 
-export default DocumentViewer;
+export default PDFViewer;

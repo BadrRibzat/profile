@@ -16,6 +16,16 @@ const nextConfig = {
     CUSTOM_KEY: 'badr-ribzat-portfolio',
     SITE_URL: 'https://badrribzat.dev'
   },
+  // Add webpack configuration for PDF.js
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        canvas: false,
+      };
+    }
+    return config;
+  },
   async headers() {
     return [
       {
@@ -37,6 +47,14 @@ const nextConfig = {
         headers: [
           { key: 'Content-Type', value: 'application/pdf' },
           { key: 'Cache-Control', value: 'public, max-age=31536000' }
+        ]
+      },
+      {
+        source: '/documents/:path*',
+        headers: [
+          { key: 'Content-Type', value: 'application/pdf' },
+          { key: 'Cache-Control', value: 'public, max-age=31536000' },
+          { key: 'Access-Control-Allow-Origin', value: '*' }
         ]
       }
     ];
