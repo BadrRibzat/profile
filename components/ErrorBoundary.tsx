@@ -1,90 +1,113 @@
-// components/ErrorBoundary.tsx
-import React from 'react';
-import { AlertCircle, RefreshCw } from 'lucide-react';
+// Enhanced error boundary - components/ErrorBoundary.tsx
+import React, { Component, ErrorInfo, ReactNode } from 'react';
+import { AlertTriangle, RefreshCw, Home, FileText } from 'lucide-react';
 
-interface ErrorBoundaryState {
-  hasError: boolean;
-  error?: Error;
-  errorInfo?: string;
+interface Props {
+  children: ReactNode;
+  fallback?: ReactNode;
+  onError?: (error: Error, errorInfo: ErrorInfo) => void;
 }
 
-class ErrorBoundary extends React.Component<
-  { children: React.ReactNode; fallback?: React.ComponentType<{ error: Error }> },
-  ErrorBoundaryState
-> {
-  constructor(props: any) {
-    super(props);
-    this.state = { hasError: false };
-  }
+interface State {
+  hasError: boolean;
+  error: Error | null;
+  errorInfo: ErrorInfo | null;
+}
 
-  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
-    return { 
-      hasError: true, 
-      error,
-      errorInfo: error.message.includes('fontWeight') ? 'font' : 'general'
+class ErrorBoundary extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      hasError: false,
+      error: null,
+      errorInfo: null
     };
   }
 
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('Resume generation error:', error, errorInfo);
+  static getDerivedStateFromError(error: Error): Partial<State> {
+    return {
+      hasError: true,
+      error
+    };
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    this.setState({
+      error,
+      errorInfo
+    });
+
+    // Log error to monitoring service
+    this.props.onError?.(error, errorInfo);
     
-    if (error.message.includes('fontWeight')) {
-      console.error('Font loading error - check font registration');
-    }
-    if (error.message.includes('Image')) {
-      console.error('Image loading error - check image path and accessibility');
+    // Log to console in development
+    if (process.env.NODE_ENV === 'development') {
+      console.error('ErrorBoundary caught an error:', error, errorInfo);
     }
   }
 
+  handleRetry = () => {
+    this.setState({
+      hasError: false,
+      error: null,
+      errorInfo: null
+    });
+  };
+
   render() {
     if (this.state.hasError) {
-      const FallbackComponent = this.props.fallback;
-      
-      if (FallbackComponent && this.state.error) {
-        return <FallbackComponent error={this.state.error} />;
+      if (this.props.fallback) {
+        return this.props.fallback;
       }
 
       return (
-        <div className="p-6 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
-          <div className="flex items-center space-x-3 mb-4">
-            <AlertCircle className="w-6 h-6 text-red-600" />
-            <h3 className="text-red-800 dark:text-red-300 font-medium text-lg">
-              Error generating resume
-            </h3>
-          </div>
-          
-          <div className="space-y-3 mb-4">
-            <p className="text-red-600 dark:text-red-400 text-sm">
-              {this.state.errorInfo === 'font' 
-                ? "There was a problem loading fonts needed for the resume."
-                : "There was a problem generating your resume."}
-            </p>
-            
-            {this.state.error && (
-              <details className="text-xs text-red-500 bg-red-100 dark:bg-red-900/30 p-2 rounded">
-                <summary className="cursor-pointer font-medium">
-                  Technical Details
+        <div className="min-h-[400px] flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700">
+          <div className="text-center max-w-md">
+            <div className="mb-6">
+              <AlertTriangle className="w-16 h-16 text-red-500 mx-auto mb-4" />
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                Something went wrong
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400">
+                We encountered an unexpected error. Please try refreshing the page.
+              </p>
+            </div>
+
+            {process.env.NODE_ENV === 'development' && this.state.error && (
+              <details className="mb-6 text-left bg-red-50 dark:bg-red-900/20 p-4 rounded border text-sm">
+                <summary className="cursor-pointer font-semibold text-red-700 dark:text-red-300 mb-2">
+                  Error Details (Development)
                 </summary>
-                <pre className="mt-2 whitespace-pre-wrap">{this.state.error.message}</pre>
+                <pre className="text-red-600 dark:text-red-400 overflow-auto">
+                  {this.state.error.toString()}
+                  {this.state.errorInfo?.componentStack}
+                </pre>
               </details>
             )}
-          </div>
-          
-          <div className="flex space-x-3">
-            <button 
-              onClick={() => this.setState({ hasError: false })}
-              className="flex items-center space-x-2 px-4 py-2 bg-red-600 text-white rounded-lg text-sm hover:bg-red-700 transition-colors duration-200"
-            >
-              <RefreshCw className="w-4 h-4" />
-              <span>Try Again</span>
-            </button>
-            
-            <button 
-              onClick={() => window.location.reload()}
-              className="px-4 py-2 bg-gray-600 text-white rounded-lg text-sm hover:bg-gray-700 transition-colors duration-200"
-            >
-              Reload Page
-            </button>
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <button
+                onClick={this.handleRetry}
+                className="flex items-center justify-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+              >
+                <RefreshCw className="w-4 h-4" />
+                <span>Try Again</span>
+              </button>
+              <a
+                href="/"
+                className="flex items-center justify-center space-x-2 px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg font-medium transition-colors"
+              >
+                <Home className="w-4 h-4" />
+                <span>Go Home</span>
+              </a>
+              <a
+                href="/documents"
+                className="flex items-center justify-center space-x-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors"
+              >
+                <FileText className="w-4 h-4" />
+                <span>Browse Documents</span>
+              </a>
+            </div>
           </div>
         </div>
       );

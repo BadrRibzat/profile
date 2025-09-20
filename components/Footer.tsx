@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { motion } from 'framer-motion';
+import Logo from './Logo';
 import { 
   Github, 
   Linkedin, 
@@ -85,8 +86,8 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
             >
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center text-white">
-                  <Code2 className="w-4 h-4" />
+                <div className="text-blue-600 dark:text-blue-400">
+                  <Logo size="md" variant="simple" />
                 </div>
                 <span className="font-bold text-gray-900 dark:text-white">
                   Badr Ribzat

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
+import Logo from './Logo';
 import { 
   Menu, 
   X, 
@@ -87,13 +88,17 @@ const Header: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               className="flex items-center space-x-2 cursor-pointer group"
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-lg group-hover:shadow-lg transition-shadow duration-300">
-                <Code2 className="w-5 h-5" />
+              <div className="text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300">
+                <Logo 
+                  size="lg" 
+                  variant="simple" 
+                  className="group-hover:scale-110 transition-transform duration-300" 
+                />
               </div>
               <div className="hidden sm:block">
                 <div className="font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                   Badr Ribzat
-                </div>
+               </div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">
                   {t('header.logoSubtitle')}
                 </div>
