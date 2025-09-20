@@ -1,0 +1,15 @@
+<svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .logo-stroke { stroke: #60a5fa; }
+    }
+    @media (prefers-color-scheme: light) {
+      .logo-stroke { stroke: #0ea5e9; }
+    }
+  </style>
+  <!-- Monogram BR -->
+  <path d="M23.0858 12C23.0858 10.8954 24 10 25.0909 10H32.0001H38.9092C39.9992 10 40.9143 10.8954 40.9143 12V22.5C40.9143 27.7467 36.8837 32 32.0001 32C27.1164 32 23.0858 27.7467 23.0858 22.5V12Z" class="logo-stroke" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M23.0858 41C23.0858 35.2288 27.1164 30.5 32.0001 30.5C36.8837 30.5 40.9143 35.2288 40.9143 41V52C40.9143 53.1046 39.9992 54 38.9092 54H32.0001" class="logo-stroke" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M23.0858 10V54" class="logo-stroke" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M32 31L44.5 50" class="logo-stroke" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
