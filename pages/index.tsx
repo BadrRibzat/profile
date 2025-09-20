@@ -20,6 +20,7 @@ import Layout from '../components/Layout';
 import ProjectCard from '../components/ProjectCard';
 import SkillBadge from '../components/SkillBadge';
 import AnimatedCounter from '../components/AnimatedCounter';
+import Logo from '../components/Logo';
 
 const HomePage: React.FC = () => {
   const { t } = useTranslation('home');
@@ -72,7 +73,7 @@ const HomePage: React.FC = () => {
         
         <div className="relative z-10 container mx-auto px-4 py-20">
           <div className="max-w-4xl mx-auto text-center">
-            {/* Profile Image */}
+            {/* Logo Display */}
             <motion.div
               initial={{ scale: 0, rotate: -180 }}
               animate={{ scale: 1, rotate: 0 }}
@@ -84,12 +85,14 @@ const HomePage: React.FC = () => {
               className="mb-8"
             >
               <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1 animate-pulse-slow">
-                  <img
-                    src="/images/badr-profile.jpg"
-                    alt="Badr Ribzat"
-                    className="w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800"
-                  />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-8 animate-pulse-slow">
+                  <div className="w-full h-full bg-white dark:bg-gray-800 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400">
+                    <Logo 
+                      size="xl" 
+                      variant="full" 
+                      className="drop-shadow-lg hover:scale-110 transition-transform duration-300" 
+                    />
+                  </div>
                 </div>
                 <div className="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full border-2 border-white animate-bounce-slow flex items-center justify-center">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
