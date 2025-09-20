@@ -1,53 +1,78 @@
-// public/locales/en/documents.json
 {
-  "pageTitle": "My Documents & Certificates",
-  "pageDescription": "View and download my official documents, certificates, and diplomas with multi-language translation support.",
-  "searchPlaceholder": "Search documents by title or description...",
+  "pageTitle": "Professional Documents",
+  "pageDescription": "Browse my verified certificates, transcripts, and professional credentials with multi-language translation support.",
+  "searchPlaceholder": "Search documents...",
   "categories": {
     "all": "All Documents",
     "education": "Education",
+    "professional": "Professional",
     "technical": "Technical",
-    "professional": "Professional"
+    "health": "Health & Nutrition",
+    "language": "Languages"
   },
-  "issuedOn": "Issued On",
-  "issuedBy": "Issuer",
   "originalLanguage": "Original Language",
+  "issuedOn": "Issued",
+  "issuedBy": "Issued By",
+  "viewWithTranslation": "View & Translate",
+  "downloadDirectly": "Download PDF",
+  "noResultsFound": "No documents found",
+  "tryDifferentSearch": "Try adjusting your search terms or filters",
+  "downloadPack": {
+    "title": "Complete Credentials Package",
+    "description": "Download all documents in your preferred language"
+  },
+  "documentViewer": "Document Viewer",
+  "backToDocuments": "← Back to Documents",
+  "notFound": {
+    "title": "Document Not Found",
+    "description": "The requested document could not be found.",
+    "button": "Browse All Documents"
+  },
+  "translationNotice": {
+    "title": "Translation Notice",
+    "description": "These are informal translations for informational purposes. Official certified translations may be required for formal procedures."
+  },
+  "page": "Page",
+  "of": "of",
+  "showTranslation": "Enable Translation",
+  "hideTranslation": "Disable Translation",
+  "showOverlay": "Show Overlay",
+  "hideOverlay": "Hide Overlay",
+  "download": "Download",
+  "share": "Share",
+  "loading": "Loading",
+  "loadingDocument": "Loading Document",
+  "loadingPage": "Loading Page",
+  "pleaseWait": "Please wait",
+  "extractingText": "Extracting text",
+  "translationsFound": "translations found",
+  "translationActive": "Translation Active",
+  "previousPage": "Previous Page",
+  "nextPage": "Next Page",
+  "zoomIn": "Zoom In",
+  "zoomOut": "Zoom Out", 
+  "resetZoom": "Reset Zoom",
+  "keyboardShortcuts": {
+    "title": "Keyboard Shortcuts",
+    "navigate": "Navigate pages",
+    "zoom": "Zoom in/out",
+    "translation": "Toggle translation"
+  },
   "languages": {
-    "en": "English",
-    "fr": "French",
     "ar": "Arabic",
+    "en": "English", 
+    "fr": "French",
     "de": "German",
     "es": "Spanish",
     "ja": "Japanese"
   },
-  "viewWithTranslation": "View with Translation",
-  "downloadDirectly": "Download PDF",
-  "noResultsFound": "No Documents Found",
-  "tryDifferentSearch": "Try a different search term or filter",
-  "downloadPack": {
-    "title": "Download Complete Document Pack",
-    "description": "Get all my documents in a single, organized PDF file with translations."
-  },
-  "documentViewer": "Document Viewer",
-  "backToDocuments": "Back to Documents",
-  "translationNotice": {
-    "title": "Translation Assistance",
-    "description": "Enable translation mode to see key text elements translated. Document layout and design remain unchanged. For best results, increase zoom level."
-  },
-  "notFound": {
-    "title": "Document Not Found",
-    "description": "The document you requested could not be found.",
-    "button": "Browse All Documents"
-  },
-  "errorLoading": "Error loading document",
-  "page": "Page",
-  "of": "of",
-  "loading": "Loading...",
-  "translating": "Translating...",
-  "processingTranslation": "Processing translation...",
-  "hideTranslation": "Hide Translation",
-  "showTranslation": "Show Translation",
-  "hideOverlay": "Hide Overlay",
-  "showOverlay": "Show Overlay",
-  "download": "Download"
+  "errors": {
+    "title": "Error Loading Document",
+    "pdfLoadFailed": "Failed to load PDF document",
+    "pageLoadFailed": "Failed to load page",
+    "documentLoadFailed": "Unable to load document",
+    "checkConnection": "Please check your internet connection",
+    "tryAnotherPage": "Try navigating to another page",
+    "retry": "Try Again"
+  }
 }
