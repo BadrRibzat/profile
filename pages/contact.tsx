@@ -18,9 +18,10 @@ import {
   Clock
 } from 'lucide-react';
 import Layout from '../components/Layout';
+import SEOHead from '../components/SEOHead';
 
 const ContactPage: React.FC = () => {
-  const { t } = useTranslation('contact');
+  const { t } = useTranslation(['contact', 'common']);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -37,12 +38,8 @@ const ContactPage: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission
       await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Here you would normally send the data to your backend
       console.log('Form submitted:', formData);
-      
       setSubmitStatus('success');
       setFormData({
         name: '',
@@ -69,25 +66,25 @@ const ContactPage: React.FC = () => {
   const contactInfo = [
     {
       icon: <Mail className="w-5 h-5" />,
-      label: t('info.email'),
+      label: t('contact:info.email', 'Email'),
       value: 'badrribzat@gmail.com',
       href: 'mailto:badrribzat@gmail.com'
     },
     {
       icon: <Phone className="w-5 h-5" />,
-      label: t('info.phone'),
+      label: t('contact:info.phone', 'Phone'),
       value: '+212 627-764176',
       href: 'tel:+212627764176'
     },
     {
       icon: <MapPin className="w-5 h-5" />,
-      label: t('info.location'),
+      label: t('contact:info.location', 'Location'),
       value: 'Ksar El Kebir, Morocco',
       href: '#'
     },
     {
       icon: <Clock className="w-5 h-5" />,
-      label: t('info.timezone'),
+      label: t('contact:info.timezone', 'Timezone'),
       value: 'GMT+1 (Morocco Time)',
       href: '#'
     }
@@ -96,29 +93,81 @@ const ContactPage: React.FC = () => {
   const socialLinks = [
     {
       icon: <Github className="w-5 h-5" />,
-      label: 'GitHub',
+      label: t('contact:social.github', 'GitHub'),
       href: 'https://github.com/BadrRibzat',
       color: 'hover:text-gray-900 dark:hover:text-white'
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
-      label: 'LinkedIn',
+      label: t('contact:social.linkedin', 'LinkedIn'),
       href: 'https://linkedin.com/in/badr-ribzat',
       color: 'hover:text-blue-600'
     },
     {
       icon: <Globe className="w-5 h-5" />,
-      label: 'Portfolio',
+      label: t('contact:social.portfolio', 'Portfolio'),
       href: 'https://badrribzat.dev',
       color: 'hover:text-purple-600'
     }
   ];
 
+  const opportunityTypes = [
+    { value: 'fulltime', label: t('contact:form.opportunities.fulltime', 'Full-Time Position') },
+    { value: 'internship', label: t('contact:form.opportunities.internship', 'Internship') },
+    { value: 'contract', label: t('contact:form.opportunities.contract', 'Contract Work') },
+    { value: 'training', label: t('contact:form.opportunities.training', 'Training Opportunity') },
+    { value: 'collaboration', label: t('contact:form.opportunities.collaboration', 'Collaboration') },
+    { value: 'other', label: t('contact:form.opportunities.other', 'Other') }
+  ];
+
+  const languages = [
+    { value: 'en', label: '🇺🇸 English', name: t('common:languages.en', 'English') },
+    { value: 'fr', label: '🇫🇷 Français', name: t('common:languages.fr', 'French') },
+    { value: 'ar', label: '🇲🇦 العربية', name: t('common:languages.ar', 'Arabic') },
+    { value: 'de', label: '🇩🇪 Deutsch', name: t('common:languages.de', 'German') },
+    { value: 'es', label: '🇪🇸 Español', name: t('common:languages.es', 'Spanish') },
+    { value: 'ja', label: '🇯🇵 日本語', name: t('common:languages.ja', 'Japanese') }
+  ];
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": t('contact:seo.title', 'Contact Badr Ribzat | Full-Stack Software Engineer'),
+    "description": t('contact:seo.description', 'Get in touch with Badr Ribzat for career opportunities, collaborations, or project discussions. Full-Stack Software Engineer available for remote work.'),
+    "url": "https://badrribzat.dev/contact",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Badr Ribzat",
+      "jobTitle": "Full-Stack Software Engineer",
+      "description": t('contact:availability.status', 'Available for Full-Time, Contract, and Collaboration Opportunities'),
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+212-627-764176",
+        "contactType": "Professional Contact",
+        "email": "badrribzat@gmail.com",
+        "availableLanguage": [
+          {"@type": "Language", "name": "English", "sameAs": "en"},
+          {"@type": "Language", "name": "French", "sameAs": "fr"},
+          {"@type": "Language", "name": "Arabic", "sameAs": "ar"}
+        ]
+      },
+      "sameAs": [
+        "https://linkedin.com/in/badr-ribzat",
+        "https://github.com/BadrRibzat"
+      ]
+    }
+  };
+
   return (
-    <Layout
-      title={t('seo.title')}
-      description={t('seo.description')}
-    >
+    <Layout>
+      <SEOHead
+        title={t('contact:seo.title', 'Contact | Badr Ribzat - Full-Stack Software Engineer')}
+        description={t('contact:seo.description', 'Connect with me for software development opportunities, collaborations, or technical discussions. Available for full-time, contract, and remote work.')}
+        keywords="contact, software engineer, full-stack developer, Morocco, job opportunities, collaborations, software development"
+        image="/images/contact-og.jpg"
+        structuredData={structuredData}
+      />
+      
       <div className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900">
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Header */}
@@ -129,10 +178,10 @@ const ContactPage: React.FC = () => {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-              {t('title')}
+              {t('contact:title', 'Get In Touch')}
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              {t('subtitle')}
+              {t('contact:subtitle', 'Whether you have a project idea, career opportunity, or just want to connect, I\'m always interested in meaningful collaborations.')}
             </p>
           </motion.div>
 
@@ -145,10 +194,9 @@ const ContactPage: React.FC = () => {
             >
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                  {t('info.title')}
+                  {t('contact:info.title', 'Contact Information')}
                 </h2>
 
-                {/* Contact Details */}
                 <div className="space-y-4 mb-8">
                   {contactInfo.map((info, index) => (
                     <motion.div
@@ -182,10 +230,9 @@ const ContactPage: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Social Links */}
                 <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    {t('social.title')}
+                    {t('contact:social.title', 'Connect With Me')}
                   </h3>
                   <div className="flex space-x-4">
                     {socialLinks.map((social, index) => (
@@ -207,7 +254,6 @@ const ContactPage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Availability Status */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -217,11 +263,11 @@ const ContactPage: React.FC = () => {
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                     <span className="text-green-700 dark:text-green-300 font-medium">
-                      {t('availability.status')}
+                      {t('contact:availability.status', 'Actively Seeking Opportunities')}
                     </span>
                   </div>
                   <p className="text-sm text-green-600 dark:text-green-400 mt-1">
-                    {t('availability.message')}
+                    {t('contact:availability.message', 'Available for Full-Time, Contract, Internship, and Collaboration opportunities with visa sponsorship support.')}
                   </p>
                 </motion.div>
               </div>
@@ -235,10 +281,9 @@ const ContactPage: React.FC = () => {
             >
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                  {t('form.title')}
+                  {t('contact:form.title', 'Send Message')}
                 </h2>
 
-                {/* Success/Error Messages */}
                 {submitStatus === 'success' && (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -248,7 +293,7 @@ const ContactPage: React.FC = () => {
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-5 h-5 text-green-600" />
                       <span className="text-green-700 dark:text-green-300 font-medium">
-                        {t('form.success')}
+                        {t('contact:form.success', 'Thank you! Your message has been sent successfully.')}
                       </span>
                     </div>
                   </motion.div>
@@ -263,18 +308,17 @@ const ContactPage: React.FC = () => {
                     <div className="flex items-center space-x-2">
                       <AlertCircle className="w-5 h-5 text-red-600" />
                       <span className="text-red-700 dark:text-red-300 font-medium">
-                        {t('form.error')}
+                        {t('contact:form.error', 'Sorry, there was an error sending your message. Please try again.')}
                       </span>
                     </div>
                   </motion.div>
                 )}
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Name and Email Row */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        {t('form.name')} *
+                        {t('contact:form.name', 'Full Name')} *
                       </label>
                       <input
                         type="text"
@@ -284,12 +328,12 @@ const ContactPage: React.FC = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                        placeholder={t('form.namePlaceholder')}
+                        placeholder={t('contact:form.namePlaceholder', 'Enter your full name')}
                       />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        {t('form.email')} *
+                        {t('contact:form.email', 'Email Address')} *
                       </label>
                       <input
                         type="email"
@@ -299,16 +343,15 @@ const ContactPage: React.FC = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                        placeholder={t('form.emailPlaceholder')}
+                        placeholder={t('contact:form.emailPlaceholder', 'your.email@example.com')}
                       />
                     </div>
                   </div>
 
-                  {/* Subject and Opportunity Type Row */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        {t('form.subject')} *
+                        {t('contact:form.subject', 'Subject')} *
                       </label>
                       <input
                         type="text"
@@ -318,12 +361,12 @@ const ContactPage: React.FC = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                        placeholder={t('form.subjectPlaceholder')}
+                        placeholder={t('contact:form.subjectPlaceholder', 'What would you like to discuss?')}
                       />
                     </div>
                     <div>
                       <label htmlFor="opportunityType" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        {t('form.opportunityType')}
+                        {t('contact:form.opportunityType', 'Opportunity Type')}
                       </label>
                       <select
                         id="opportunityType"
@@ -332,21 +375,19 @@ const ContactPage: React.FC = () => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                       >
-                        <option value="">{t('form.selectOpportunity')}</option>
-                        <option value="fulltime">{t('form.opportunities.fulltime')}</option>
-                        <option value="internship">{t('form.opportunities.internship')}</option>
-                        <option value="contract">{t('form.opportunities.contract')}</option>
-                        <option value="training">{t('form.opportunities.training')}</option>
-                        <option value="collaboration">{t('form.opportunities.collaboration')}</option>
-                        <option value="other">{t('form.opportunities.other')}</option>
+                        <option value="">{t('contact:form.selectOpportunity', 'Select an option')}</option>
+                        {opportunityTypes.map(type => (
+                          <option key={type.value} value={type.value}>
+                            {type.label}
+                          </option>
+                        ))}
                       </select>
                     </div>
                   </div>
 
-                  {/* Preferred Language */}
                   <div>
                     <label htmlFor="preferredLanguage" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      {t('form.preferredLanguage')}
+                      {t('contact:form.preferredLanguage', 'Preferred Communication Language')}
                     </label>
                     <select
                       id="preferredLanguage"
@@ -355,19 +396,17 @@ const ContactPage: React.FC = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                     >
-                      <option value="en">🇺🇸 English</option>
-                      <option value="fr">🇫🇷 Français</option>
-                      <option value="ar">🇲🇦 العربية</option>
-                      <option value="de">🇩🇪 Deutsch</option>
-                      <option value="es">🇪🇸 Español</option>
-                      <option value="ja">🇯🇵 日本語</option>
+                      {languages.map(lang => (
+                        <option key={lang.value} value={lang.value}>
+                          {lang.label}
+                        </option>
+                      ))}
                     </select>
                   </div>
 
-                  {/* Message */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      {t('form.message')} *
+                      {t('contact:form.message', 'Message')} *
                     </label>
                     <textarea
                       id="message"
@@ -377,11 +416,10 @@ const ContactPage: React.FC = () => {
                       required
                       rows={6}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-vertical"
-                      placeholder={t('form.messagePlaceholder')}
+                      placeholder={t('contact:form.messagePlaceholder', 'Tell me about your project, opportunity, or how I can help you...')}
                     />
                   </div>
 
-                  {/* Submit Button */}
                   <div>
                     <motion.button
                       type="submit"
@@ -395,22 +433,24 @@ const ContactPage: React.FC = () => {
                       }`}
                     >
                       {isSubmitting ? (
-                        <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
+                        <>
+                          <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
+                          <span>{t('contact:form.sending', 'Sending...')}</span>
+                        </>
                       ) : (
-                        <Send className="w-5 h-5" />
+                        <>
+                          <Send className="w-5 h-5" />
+                          <span>{t('contact:form.send', 'Send Message')}</span>
+                        </>
                       )}
-                      <span>
-                        {isSubmitting ? t('form.sending') : t('form.send')}
-                      </span>
                     </motion.button>
                   </div>
                 </form>
 
-                {/* Contact Preference Note */}
                 <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
                   <p className="text-sm text-blue-700 dark:text-blue-300">
                     <Calendar className="w-4 h-4 inline mr-1" />
-                    {t('form.responseTime')}
+                    {t('contact:form.responseTime', 'Response Time: Typically within 24-48 hours during business days')}
                   </p>
                 </div>
               </div>

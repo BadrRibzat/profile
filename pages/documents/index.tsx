@@ -16,7 +16,6 @@ import {
   Code
 } from 'lucide-react';
 
-// Document data structure
 interface DocumentData {
   id: string;
   title: {
@@ -50,7 +49,6 @@ interface DocumentData {
   thumbnail?: string;
 }
 
-// Our documents database (same as in [id].tsx)
 const documentsData: DocumentData[] = [
   {
     id: "alx-transcript",
@@ -66,12 +64,12 @@ const documentsData: DocumentData[] = [
       en: "Official transcript showing completion of the ALX Software Engineering program with a score of 106.76%",
       fr: "Relevé de notes officiel montrant l'achèvement du programme d'ingénierie logicielle ALX avec un score de 106.76%",
       de: "Offizielles Transcript, das den Abschluss des ALX Software Engineering-Programms mit einer Punktzahl von 106.76% zeigt",
-      es: "Transcripción oficial que muestra la finalización del programa de Ingeniería de Software ALX con una puntuación de 106.76%",
+      es: "Transcripción oficial que muestra la finalización del programa de Ingeniería de Software ALX mit einer Punktzahl von 106.76%",
       ar: "سجل درجات رسمي يوضح إتمام برنامج هندسة البرمجيات ALX بدرجة 106.76٪",
       ja: "ALX ソフトウェアエンジニアリングプログラムを106.76%のスコアで修了したことを示す公式成績証明書",
     },
     category: "education",
-    pdfUrl: "/documents/education/alx-transcript.pdf", // Updated path
+    pdfUrl: "/documents/education/alx-transcript.pdf",
     originalLanguage: "en",
     dateIssued: "2023-12",
     issuer: {
@@ -103,7 +101,7 @@ const documentsData: DocumentData[] = [
       ja: "カテゴリBの車両のためのモロッコの運転免許証明書",
     },
     category: "professional",
-    pdfUrl: "/documents/professional/driver-license.pdf", // Updated path
+    pdfUrl: "/documents/professional/driver-license.pdf",
     originalLanguage: "ar",
     dateIssued: "2011-05",
     issuer: {
@@ -135,7 +133,7 @@ const documentsData: DocumentData[] = [
       ja: "男性と女性のヘアスタイリング技術に関する国家認定資格",
     },
     category: "professional",
-    pdfUrl: "/documents/professional/hairstyling-diploma.pdf", // Updated path
+    pdfUrl: "/documents/professional/hairstyling-diploma.pdf",
     originalLanguage: "ar",
     dateIssued: "2014-10",
     issuer: {
@@ -167,7 +165,7 @@ const documentsData: DocumentData[] = [
       ja: "人間中心設計と問題解決に対するIBMのアプローチにおける認定",
     },
     category: "technical",
-    pdfUrl: "/documents/technical/ibm-design-certificate.pdf", // Updated path
+    pdfUrl: "/documents/technical/ibm-design-certificate.pdf",
     originalLanguage: "en",
     dateIssued: "2025-09",
     issuer: {
@@ -199,7 +197,7 @@ const documentsData: DocumentData[] = [
       ja: "ソフトウェアエンジニアリングのさまざまな側面における独学で獲得した証明書のコレクション",
     },
     category: "technical",
-    pdfUrl: "/documents/technical/software-engineering-certificates.pdf", // Updated path
+    pdfUrl: "/documents/technical/software-engineering-certificates.pdf",
     originalLanguage: "en",
     dateIssued: "2022-2023",
     issuer: {
@@ -231,7 +229,7 @@ const documentsData: DocumentData[] = [
       ja: "治療栄養、健康管理、食品科学における自己学習認定",
     },
     category: "health",
-    pdfUrl: "/documents/health/nutrition-certificates.pdf", // Updated path
+    pdfUrl: "/documents/health/nutrition-certificates.pdf",
     originalLanguage: "ar",
     dateIssued: "2020-12",
     issuer: {
@@ -263,7 +261,7 @@ const documentsData: DocumentData[] = [
       ja: "中上級（B2）レベルの英語能力を示すさまざまな証明書",
     },
     category: "language",
-    pdfUrl: "/documents/language/english-certificates.pdf", // Updated path
+    pdfUrl: "/documents/language/english-certificates.pdf",
     originalLanguage: "en",
     dateIssued: "2023-01",
     issuer: {
@@ -295,7 +293,7 @@ const documentsData: DocumentData[] = [
       ja: "モロッコでの第三段階の準備教育修了を示す公式教育証明書",
     },
     category: "education",
-    pdfUrl: "/documents/education/third-level-certificate.pdf", // Updated path
+    pdfUrl: "/documents/education/third-level-certificate.pdf",
     originalLanguage: "ar",
     dateIssued: "2008",
     issuer: {
@@ -315,10 +313,8 @@ const DocumentsPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   
-  // Get the current locale
   const currentLocale = i18n.language as keyof typeof documentsData[0]['title'];
   
-  // Filter documents based on search query and category
   const filteredDocuments = documentsData.filter(doc => {
     const titleMatch = doc.title[currentLocale].toLowerCase().includes(searchQuery.toLowerCase());
     const descMatch = doc.description[currentLocale].toLowerCase().includes(searchQuery.toLowerCase());
@@ -327,7 +323,6 @@ const DocumentsPage: React.FC = () => {
     return (titleMatch || descMatch) && categoryMatch;
   });
   
-  // Category counts
   const categoryCounts = {
     all: documentsData.length,
     education: documentsData.filter(doc => doc.category === 'education').length,
@@ -335,7 +330,6 @@ const DocumentsPage: React.FC = () => {
     technical: documentsData.filter(doc => doc.category === 'technical').length,
   };
   
-  // Get category icon
   const getCategoryIcon = (category: string) => {
     switch(category) {
       case 'education': return <GraduationCap className="w-5 h-5" />;
@@ -352,7 +346,6 @@ const DocumentsPage: React.FC = () => {
     >
       <div className="py-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900 min-h-screen">
         <div className="container mx-auto px-4">
-          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -367,7 +360,6 @@ const DocumentsPage: React.FC = () => {
             </p>
           </motion.div>
           
-          {/* Search and Filter */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -375,7 +367,6 @@ const DocumentsPage: React.FC = () => {
             className="mb-8"
           >
             <div className="flex flex-col md:flex-row gap-4 justify-between">
-              {/* Search */}
               <div className="relative flex-grow max-w-md">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <Search className="h-5 w-5 text-gray-400" />
@@ -389,7 +380,6 @@ const DocumentsPage: React.FC = () => {
                 />
               </div>
               
-              {/* Category Filter */}
               <div className="flex-shrink-0">
                 <div className="flex items-center space-x-4">
                   <Filter className="h-5 w-5 text-gray-500 dark:text-gray-400" />
@@ -413,7 +403,6 @@ const DocumentsPage: React.FC = () => {
             </div>
           </motion.div>
           
-          {/* Document Grid */}
           {filteredDocuments.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredDocuments.map((doc, index) => (
@@ -501,7 +490,6 @@ const DocumentsPage: React.FC = () => {
             </motion.div>
           )}
           
-          {/* Pack Download */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}

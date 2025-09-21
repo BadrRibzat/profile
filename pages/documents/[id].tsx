@@ -1,5 +1,5 @@
 // pages/documents/[id].tsx
-import React, { useState, useEffect } from 'react'; // Combined imports
+import React, { useState, useEffect } from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -7,13 +7,11 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
 import dynamic from 'next/dynamic';
-import { FileText, ArrowLeft, Globe, Info, Loader } from 'lucide-react'; // Added Loader import
+import { FileText, ArrowLeft, Globe, Info, Loader } from 'lucide-react';
 import Link from 'next/link';
 
-// Dynamically import DocumentViewer with no SSR
 const DocumentViewer = dynamic(() => import('../../components/DocumentViewer'), { ssr: false });
 
-// Document data structure
 interface DocumentData {
   id: string;
   title: {
@@ -46,7 +44,6 @@ interface DocumentData {
   };
 }
 
-// Our documents database with UPDATED PDF PATHS
 const documentsData: DocumentData[] = [
   {
     id: "alx-transcript",
@@ -311,14 +308,11 @@ const DocumentPage: React.FC = () => {
   const { t, i18n } = useTranslation('documents');
   const { id } = router.query;
 
-  // Find the current document
   const document = documentsData.find(doc => doc.id === id);
 
-  // Conditionally render DocumentViewer based on its dynamic import status
   const [isDocumentViewerLoaded, setIsDocumentViewerLoaded] = useState(true);
 
   useEffect(() => {
-    // Only set to true if DocumentViewer has been dynamically loaded
     if (DocumentViewer.displayName === 'DynamicDocumentViewer') {
       setIsDocumentViewerLoaded(true);
     }
@@ -351,7 +345,6 @@ const DocumentPage: React.FC = () => {
     );
   }
 
-  // Get localized document data
   const currentLocale = i18n.language as keyof typeof document.title;
   const localizedTitle = document.title[currentLocale] || document.title.en;
   const localizedDescription = document.description[currentLocale] || document.description.en;
@@ -364,7 +357,6 @@ const DocumentPage: React.FC = () => {
     >
       <div className="py-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900 min-h-screen">
         <div className="container mx-auto px-4">
-          {/* Navigation */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -382,7 +374,6 @@ const DocumentPage: React.FC = () => {
             </Link>
           </motion.div>
 
-          {/* Document Info */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -414,7 +405,6 @@ const DocumentPage: React.FC = () => {
             </p>
           </motion.div>
 
-          {/* Translation Notice */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -436,7 +426,6 @@ const DocumentPage: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Document Viewer */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

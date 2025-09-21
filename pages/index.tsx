@@ -21,14 +21,15 @@ import ProjectCard from '../components/ProjectCard';
 import SkillBadge from '../components/SkillBadge';
 import AnimatedCounter from '../components/AnimatedCounter';
 import Logo from '../components/Logo';
+import SEOHead from '../components/SEOHead';
 
 const HomePage: React.FC = () => {
-  const { t } = useTranslation('home');
+  const { t } = useTranslation(['home', 'common']);
 
   const projects = [
     {
-      title: 'Biomedical Detection System',
-      description: t('projects.biomedical.description'),
+      title: t('home:projects.biomedical.title', 'Biomedical Detection System'),
+      description: t('home:projects.biomedical.description', 'Advanced AI-powered biomedical detection system for healthcare applications'),
       image: '/images/biomedical-project.jpg',
       technologies: ['Python', 'FastAPI', 'Machine Learning', 'React', 'PostgreSQL'],
       liveUrl: 'https://biomedical-frontend.vercel.app/',
@@ -36,8 +37,8 @@ const HomePage: React.FC = () => {
       category: 'healthcare'
     },
     {
-      title: 'IT Learning Platform',
-      description: t('projects.education.description'),
+      title: t('home:projects.education.title', 'IT Learning Platform'),
+      description: t('home:projects.education.description', 'Interactive learning platform for IT and software engineering education'),
       image: '/images/education-project.jpg',
       technologies: ['Node.js', 'React', 'MongoDB', 'Express'],
       liveUrl: 'https://it-learning-pi.vercel.app/',
@@ -45,8 +46,8 @@ const HomePage: React.FC = () => {
       category: 'education'
     },
     {
-      title: 'AI Chatbot Assistant',
-      description: t('projects.chatbot.description'),
+      title: t('home:projects.chatbot.title', 'AI Chatbot Assistant'),
+      description: t('home:projects.chatbot.description', 'Intelligent AI chatbot with natural language processing capabilities'),
       image: '/images/chatbot-project.jpg',
       technologies: ['Python', 'NLP', 'Vector Databases', 'React'],
       liveUrl: 'https://chatbot-assistant-frontend.vercel.app/',
@@ -56,17 +57,45 @@ const HomePage: React.FC = () => {
   ];
 
   const stats = [
-    { number: 106.76, suffix: '%', label: t('stats.alxScore') },
-    { number: 3, suffix: '+', label: t('stats.projects') },
-    { number: 6, suffix: '', label: t('stats.languages') },
-    { number: 50, suffix: '+', label: t('stats.technologies') }
+    { number: 106.76, suffix: '%', label: t('home:stats.alxScore', 'ALX Score') },
+    { number: 3, suffix: '+', label: t('home:stats.projects', 'Projects') },
+    { number: 6, suffix: '', label: t('home:stats.languages', 'Languages') },
+    { number: 50, suffix: '+', label: t('home:stats.technologies', 'Technologies') }
   ];
 
+  // Structured data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Badr Ribzat",
+    "jobTitle": "Full-Stack Software Engineer",
+    "image": "https://badrribzat.dev/images/me.jpg",
+    "url": "https://badrribzat.dev",
+    "sameAs": [
+      "https://linkedin.com/in/badr-ribzat",
+      "https://github.com/BadrRibzat",
+      "https://twitter.com/badrribzat"
+    ],
+    "description": t('home:seo.description', 'Self-taught Full-Stack Software Engineer specializing in AI, biomedical applications, and educational technology.'),
+    "knowsAbout": ["Software Engineering", "Artificial Intelligence", "Full-Stack Development", "Web Development"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ksar El Kebir",
+      "addressCountry": "MA"
+    },
+    "email": "badrribzat@gmail.com"
+  };
+
   return (
-    <Layout 
-      title={t('seo.title')} 
-      description={t('seo.description')}
-    >
+    <Layout>
+      <SEOHead
+        title={t('home:seo.title', 'Badr Ribzat | Full-Stack Software Engineer')}
+        description={t('home:seo.description', 'Self-taught Full-Stack Software Engineer specializing in AI, biomedical applications, and educational technology.')}
+        keywords="software engineer, full-stack developer, AI, Morocco, ALX, portfolio, projects"
+        image="/images/og-image.jpg"
+        structuredData={structuredData}
+      />
+      
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-pattern">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 dark:from-blue-800/30 dark:to-purple-800/30"></div>
@@ -118,13 +147,13 @@ const HomePage: React.FC = () => {
               className="mb-6"
             >
               <h2 className="text-xl md:text-3xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                {t('hero.subtitle')}
+                {t('home:hero.subtitle', 'Full-Stack Software Engineer')}
               </h2>
               <div className="flex items-center justify-center space-x-2 text-sm md:text-base text-gray-600 dark:text-gray-400">
                 <Globe className="w-4 h-4" />
-                <span>{t('hero.location')}</span>
+                <span>{t('home:hero.location', 'Ksar El Kebir, Morocco')}</span>
                 <span>•</span>
-                <span>{t('hero.availability')}</span>
+                <span>{t('home:hero.availability', 'Open to Opportunities')}</span>
               </div>
             </motion.div>
 
@@ -137,15 +166,21 @@ const HomePage: React.FC = () => {
             >
               <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 border border-white/20 dark:border-gray-700/20">
                 <Code2 className="w-6 h-6 text-blue-600 mx-auto mb-2" />
-                <div className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('hero.highlights.selfTaught')}</div>
+                <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  {t('home:hero.highlights.selfTaught', 'Self-Taught Developer')}
+                </div>
               </div>
               <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 border border-white/20 dark:border-gray-700/20">
                 <Brain className="w-6 h-6 text-purple-600 mx-auto mb-2" />
-                <div className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('hero.highlights.aiExpert')}</div>
+                <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  {t('home:hero.highlights.aiExpert', 'AI & ML Specialist')}
+                </div>
               </div>
               <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 border border-white/20 dark:border-gray-700/20">
                 <Heart className="w-6 h-6 text-red-600 mx-auto mb-2" />
-                <div className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('hero.highlights.resilient')}</div>
+                <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  {t('home:hero.highlights.resilient', 'Resilient Problem Solver')}
+                </div>
               </div>
             </motion.div>
 
@@ -161,7 +196,7 @@ const HomePage: React.FC = () => {
                 className="group flex items-center space-x-2 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 font-semibold py-3 px-8 rounded-full border border-gray-200 dark:border-gray-700 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
               >
                 <ExternalLink className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
-                <span>{t('hero.cta.viewProjects')}</span>
+                <span>{t('home:hero.cta.viewProjects', 'View My Projects')}</span>
               </a>
             </motion.div>
 
@@ -208,10 +243,10 @@ const HomePage: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              {t('projects.title')}
+              {t('home:projects.title', 'Featured Projects')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              {t('projects.description')}
+              {t('home:projects.description', 'Explore my portfolio of real-world applications and innovative solutions')}
             </p>
           </motion.div>
 
