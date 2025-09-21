@@ -97,6 +97,18 @@ const nextConfig = {
       'pdfjs-dist/build/pdf.worker.entry': 'pdfjs-dist/build/pdf.worker.min.js',
     };
 
+    //webpack configuration
+    config.experiments = {
+      asyncWebAssembly: true,
+      layers: true,
+    };
+
+    // Add this to handle WASM files
+    config.module.rules.push({
+      test: /\.wasm$/,
+      type: 'webassembly/async',
+    });
+
     // Optimize imports
     config.optimization.splitChunks = {
       ...config.optimization.splitChunks,
