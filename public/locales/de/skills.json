@@ -1,6 +1,4 @@
 {
-  "title": "Fähigkeiten und Expertise",
-  "subtitle": "Ein umfassender Überblick über meine technischen Fähigkeiten, praktischen Zertifizierungen und mehrsprachigen Kompetenzen, die durch selbstgesteuertes Lernen und praktische Erfahrung entwickelt wurden.",
   "categories": {
     "programming": "Programmiersprachen",
     "backend": "Backend-Entwicklung",
@@ -9,22 +7,11 @@
     "aiml": "KI und Maschinelles Lernen",
     "devops": "DevOps und Infrastruktur"
   },
-  "technical": {
-    "title": "Technische Fähigkeiten"
-  },
-  "practical": {
-    "title": "Zertifizierte Praktische Fähigkeiten",
-    "forklift": "Gabelstaplerbedienung",
-    "forkliftDesc": "Bedienung schwerer Maschinen mit Sicherheitszertifizierungen",
-    "driving": "Berufliches Fahren",
-    "drivingCert": "Gültiger Marokkanischer Führerschein (Alle Kategorien)",
-    "drivingDesc": "Berufliches Fahren mit hervorragender Sicherheitsbilanz",
-    "hairstyling": "Professionelle Friseurkunst",
-    "hairstylingCert": "Staatlich anerkannte Zertifizierung (Männer und Frauen)",
-    "hairstylingDesc": "Komplettservice-Styling mit modernen Techniken",
-    "culinary": "Kochkunst",
-    "culinaryCert": "Spezialist für Therapeutische Ernährung",
-    "culinaryDesc": "Gesundheitsorientierte Küche und Ernährungsplanung"
+  "cta": {
+    "title": "Bereit, Wirkung zu Erzielen",
+    "description": "Lassen Sie uns besprechen, wie mein vielfältiges Fähigkeitsspektrum zu Ihrem nächsten Projekt oder Team beitragen kann.",
+    "contact": "Kontaktieren Sie Mich",
+    "resume": "Lebenslauf Ansehen"
   },
   "languages": {
     "title": "Sprachkenntnisse",
@@ -42,11 +29,24 @@
     "intermediate": "Mittelstufe",
     "basic": "Grundkenntnisse"
   },
+  "practical": {
+    "title": "Zertifizierte Praktische Fähigkeiten",
+    "forklift": "Gabelstaplerbedienung",
+    "forkliftDesc": "Bedienung schwerer Maschinen mit Sicherheitszertifizierungen",
+    "driving": "Berufliches Fahren",
+    "drivingCert": "Gültiger Marokkanischer Führerschein (Alle Kategorien)",
+    "drivingDesc": "Berufliches Fahren mit hervorragender Sicherheitsbilanz",
+    "hairstyling": "Professionelle Friseurkunst",
+    "hairstylingCert": "Staatlich anerkannte Zertifizierung (Männer und Frauen)",
+    "hairstylingDesc": "Komplettservice-Styling mit modernen Techniken",
+    "culinary": "Kochkunst",
+    "culinaryCert": "Spezialist für Therapeutische Ernährung",
+    "culinaryDesc": "Gesundheitsorientierte Küche und Ernährungsplanung"
+  },
   "proficiency": "Kompetenzniveau",
-  "cta": {
-    "title": "Bereit, Wirkung zu Erzielen",
-    "description": "Lassen Sie uns besprechen, wie mein vielfältiges Fähigkeitsspektrum zu Ihrem nächsten Projekt oder Team beitragen kann.",
-    "contact": "Kontaktieren Sie Mich",
-    "resume": "Lebenslauf Ansehen"
-  }
+  "subtitle": "Ein umfassender Überblick über meine technischen Fähigkeiten, praktischen Zertifizierungen und mehrsprachigen Kompetenzen, die durch selbstgesteuertes Lernen und praktische Erfahrung entwickelt wurden.",
+  "technical": {
+    "title": "Technische Fähigkeiten"
+  },
+  "title": "Fähigkeiten und Expertise"
 }

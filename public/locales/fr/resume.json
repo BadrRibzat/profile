@@ -1,31 +1,20 @@
 {
-  "title": "CV",
-  "subtitle": "Version optimisée pour les systèmes ATS pour",
-  "pageTitle": "CV Professionnel",
-  "pageDescription": "Téléchargez mon CV professionnel optimisé pour les systèmes ATS et adapté aux normes internationales.",
   "active": "Actif",
-  "navigation": {
-    "back": "Retour à l'accueil"
+  "additionalSkills": {
+    "0": "Certification de Coiffeur Professionnel (Hommes et Femmes) - École Agréée par l'État",
+    "1": "Certification d'Opérateur de Chariot Élévateur (CACES R489 & R485)"
   },
-  "languageSelector": {
-    "title": "Choisissez votre langue préférée"
+  "certifications": {
+    "alx": {
+      "details": "Programme intensif de 18 mois couvrant le développement full-stack, les algorithmes et la conception de systèmes"
+    }
   },
-  "sections": {
-    "summary": "Résumé Professionnel",
-    "skills": "Compétences Techniques",
-    "projects": "Projets Clés",
-    "experience": "Expérience Professionnelle",
-    "education": "Formation et Certifications",
-    "additional": "Qualifications Supplémentaires"
+  "cta": {
+    "title": "Prêt à collaborer ?",
+    "description": "Discutons des opportunités et des projets.",
+    "button": "Me Contacter"
   },
-  "subsections": {
-    "languages": "Langues",
-    "additionalSkills": "Compétences Supplémentaires"
-  },
-  "personalInfo": {
-    "title": "Ingénieur Logiciel Full-Stack"
-  },
-  "summary": "Ingénieur logiciel full-stack autodidacte avec une expertise démontrée dans la création et le déploiement d'applications web évolutives et de systèmes alimentés par l'IA. A terminé le programme intensif de 18 mois ALX Software Engineering avec des performances exceptionnelles (106,76 %). Bilan avéré de développement d'applications prêtes pour la production avec des technologies modernes, notamment Python, JavaScript, React et des plateformes de déploiement cloud. Solide expérience en développement d'API, conception de bases de données et pratiques DevOps. Engagé dans l'apprentissage continu et l'excellence en développement logiciel.",
+  "download": "Télécharger le PDF",
   "experience": {
     "0": {
       "title": "Ingénieur Logiciel Full-Stack",
@@ -49,6 +38,39 @@
       }
     }
   },
+  "features": {
+    "ats": {
+      "title": "Optimisation ATS",
+      "description": "CV formaté pour les systèmes de suivi des candidats avec une densité de mots-clés et une structure appropriées."
+    },
+    "international": {
+      "title": "Normes Internationales",
+      "description": "Adapté pour répondre aux normes et attentes de recrutement dans différents pays et cultures."
+    },
+    "quality": {
+      "title": "Assurance Qualité",
+      "description": "Formaté professionnellement avec un style cohérent et un contenu sans erreur dans toutes les langues."
+    }
+  },
+  "featuresList": {
+    "atsOptimized": "Optimisé pour ATS",
+    "localized": "Adapté localement et culturellement",
+    "professionalFormat": "Format professionnel standard",
+    "japaneseFormat": "Format japonais Rirekisho"
+  },
+  "generating": "Génération en cours...",
+  "languageSelector": {
+    "title": "Choisissez votre langue préférée"
+  },
+  "navigation": {
+    "back": "Retour à l'accueil"
+  },
+  "pageDescription": "Téléchargez mon CV professionnel optimisé pour les systèmes ATS et adapté aux normes internationales.",
+  "pageTitle": "CV Professionnel",
+  "personalInfo": {
+    "title": "Ingénieur Logiciel Full-Stack"
+  },
+  "preview": "Aperçu",
   "projects": {
     "biomedical": {
       "description": "Système de détection biomédicale alimenté par l'IA avec des capacités d'apprentissage automatique pour les applications de santé et l'assistance au diagnostic.",
@@ -75,23 +97,13 @@
       }
     }
   },
-  "certifications": {
-    "alx": {
-      "details": "Programme intensif de 18 mois couvrant le développement full-stack, les algorithmes et la conception de systèmes"
-    }
-  },
-  "additionalSkills": {
-    "0": "Certification de Coiffeur Professionnel (Hommes et Femmes) - École Agréée par l'État",
-    "1": "Certification d'Opérateur de Chariot Élévateur (CACES R489 & R485)"
-  },
-  "generating": "Génération en cours...",
-  "download": "Télécharger le PDF",
-  "preview": "Aperçu",
-  "featuresList": {
-    "atsOptimized": "Optimisé pour ATS",
-    "localized": "Adapté localement et culturellement",
-    "professionalFormat": "Format professionnel standard",
-    "japaneseFormat": "Format japonais Rirekisho"
+  "sections": {
+    "summary": "Résumé Professionnel",
+    "skills": "Compétences Techniques",
+    "projects": "Projets Clés",
+    "experience": "Expérience Professionnelle",
+    "education": "Formation et Certifications",
+    "additional": "Qualifications Supplémentaires"
   },
   "specifications": "Spécifications",
   "specs": {
@@ -100,23 +112,9 @@
     "style": "Style",
     "optimized": "Optimisé"
   },
-  "features": {
-    "ats": {
-      "title": "Optimisation ATS",
-      "description": "CV formaté pour les systèmes de suivi des candidats avec une densité de mots-clés et une structure appropriées."
-    },
-    "international": {
-      "title": "Normes Internationales",
-      "description": "Adapté pour répondre aux normes et attentes de recrutement dans différents pays et cultures."
-    },
-    "quality": {
-      "title": "Assurance Qualité",
-      "description": "Formaté professionnellement avec un style cohérent et un contenu sans erreur dans toutes les langues."
-    }
+  "subsections": {
+    "languages": "Langues",
+    "additionalSkills": "Compétences Supplémentaires"
   },
-  "cta": {
-    "title": "Prêt à collaborer ?",
-    "description": "Discutons des opportunités et des projets.",
-    "button": "Me Contacter"
-  }
+  "summary": "Ingénieur logiciel full-stack autodidacte avec une expertise démontrée dans la création et le déploiement d'applications web évolutives et de systèmes alimentés par l'IA. A terminé le programme intensif de 18 mois ALX Software Engineering avec des performances exceptionnelles (106,76 %). Bilan avéré de développement d'applications prêtes pour la production avec des technologies modernes, notamment Python, JavaScript, React et des plateformes de déploiement cloud. Solide expérience en développement d'API, conception de bases de données et pratiques DevOps. Engagé dans l'apprentissage continu et l'excellence en développement logiciel."
 }

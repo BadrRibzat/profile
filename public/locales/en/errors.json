@@ -1,0 +1,10 @@
+{
+  "checkConnection": "CheckConnection",
+  "documentLoadFailed": "DocumentLoadFailed",
+  "pageLoadFailed": "PageLoadFailed",
+  "pdfLoadFailed": "PdfLoadFailed",
+  "retry": "Retry",
+  "title": "Title",
+  "tryAnotherPage": "TryAnotherPage",
+  "unavailable": "Unavailable"
+}

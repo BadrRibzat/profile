@@ -1,0 +1,10 @@
+{
+  "checkConnection": "[JA] CheckConnection",
+  "documentLoadFailed": "[JA] DocumentLoadFailed",
+  "pageLoadFailed": "[JA] PageLoadFailed",
+  "pdfLoadFailed": "[JA] PdfLoadFailed",
+  "retry": "[JA] Retry",
+  "title": "[JA] Title",
+  "tryAnotherPage": "[JA] TryAnotherPage",
+  "unavailable": "[JA] Unavailable"
+}

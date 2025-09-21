@@ -1,0 +1,10 @@
+{
+  "optimization": "[AR] Optimization",
+  "optimizationDesc": "[AR] OptimizationDesc",
+  "purpose": "[AR] Purpose",
+  "purposeDesc": "[AR] PurposeDesc",
+  "style": "[AR] Style",
+  "styleValues": {
+    "${locale}": "[AR] StyleValues ${locale}"
+  }
+}

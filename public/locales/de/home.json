@@ -1,8 +1,4 @@
 {
-  "seo": {
-    "title": "Badr Ribzat - Full-Stack Software Ingenieur",
-    "description": "Autodidaktischer Full-Stack Software Ingenieur mit Spezialisierung auf KI, biomedizinische Anwendungen und Bildungstechnologie. Basiert in Marokko, verfügbar für Remote-Arbeit weltweit."
-  },
   "hero": {
     "subtitle": "Full-Stack Software Ingenieur",
     "location": "Ksar El Kebir, Marokko",
@@ -17,12 +13,6 @@
       "viewProjects": "Projekte Anzeigen"
     }
   },
-  "stats": {
-    "alxScore": "ALX Programm Punktzahl",
-    "projects": "Live Projekte",
-    "languages": "Programmiersprachen",
-    "technologies": "Beherrschte Technologien"
-  },
   "projects": {
     "title": "Ausgewählte Projekte",
     "description": "Entdecken Sie meine neuesten Arbeiten, die Expertise in Full-Stack-Entwicklung, KI-Integration und produktionsreifen Anwendungen zeigen.",
@@ -35,5 +25,15 @@
     "chatbot": {
       "description": "Intelligenter Chatbot-Assistent mit natürlicher Sprachverarbeitung, Echtzeit-Antworten und skalierbarer Architektur."
     }
+  },
+  "seo": {
+    "title": "Badr Ribzat - Full-Stack Software Ingenieur",
+    "description": "Autodidaktischer Full-Stack Software Ingenieur mit Spezialisierung auf KI, biomedizinische Anwendungen und Bildungstechnologie. Basiert in Marokko, verfügbar für Remote-Arbeit weltweit."
+  },
+  "stats": {
+    "alxScore": "ALX Programm Punktzahl",
+    "projects": "Live Projekte",
+    "languages": "Programmiersprachen",
+    "technologies": "Beherrschte Technologien"
   }
 }

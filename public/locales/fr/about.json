@@ -1,7 +1,22 @@
 {
-  "seo": {
-    "title": "À Propos de Moi",
-    "description": "Découvrez l'histoire de Badr Ribzat, un ingénieur full-stack autodidacte motivé par la passion, la résilience et le désir de résoudre des problèmes complexes."
+  "certifications": {
+    "title": "Mes Diplômes",
+    "subtitle": "Reconnaissances Formelles et Formations Spécialisées",
+    "technical": {
+      "title": "Compétences Techniques"
+    },
+    "professional": {
+      "title": "Expertise Professionnelle"
+    },
+    "languages": {
+      "title": "Maîtrise des Langues"
+    },
+    "viewAll": "Voir Tout"
+  },
+  "cta": {
+    "title": "Prêt à Collaborer ?",
+    "description": "Mon parcours unique et ma résilience éprouvée font de moi un atout précieux. Construisons ensemble quelque chose d'impactant.",
+    "button": "Contactez-Moi"
   },
   "hero": {
     "title": "Badr Ribzat : Un Parcours de Résilience et d'Innovation",
@@ -27,13 +42,6 @@
       "certifications": "Certifications"
     }
   },
-  "story": {
-    "title": "Mon Histoire : Au-Delà du Code",
-    "subtitle": "Un Testament de Persévérance et de Passion",
-    "p1": "Ma carrière a commencé non pas devant un écran, mais avec mes mains — en maîtrisant des métiers comme la coiffure professionnelle, les arts culinaires et la conduite de machines lourdes. Ces rôles m'ont appris la discipline, l'attention aux détails et l'art de la satisfaction client.",
-    "p2": "Cependant, une curiosité profonde pour le fonctionnement des choses m'a conduit vers le monde de la technologie. J'ai entrepris un intense parcours d'apprentissage autonome, consacrant des milliers d'heures à maîtriser l'ingénierie logicielle depuis les bases.",
-    "p3": "Cela a abouti à mon admission et à mes performances exceptionnelles dans le programme ALX Software Engineering, un cursus rigoureux de 18 mois où j'ai consolidé mes compétences en développement full-stack, algorithmes et conception de systèmes, en terminant avec un score de 106,76 %."
-  },
   "interests": {
     "title": "Au-Delà de l'Écran",
     "description": "Quand je ne code pas, je poursuis des intérêts qui enrichissent davantage ma perspective et mes capacités de résolution de problèmes.",
@@ -44,31 +52,23 @@
       "cooking": "Arts Culinaires"
     }
   },
-  "certifications": {
-    "title": "Mes Diplômes",
-    "subtitle": "Reconnaissances Formelles et Formations Spécialisées",
-    "technical": {
-      "title": "Compétences Techniques"
-    },
-    "professional": {
-      "title": "Expertise Professionnelle"
-    },
-    "languages": {
-      "title": "Maîtrise des Langues"
-    },
-    "viewAll": "Voir Tout"
-  },
-  "cta": {
-    "title": "Prêt à Collaborer ?",
-    "description": "Mon parcours unique et ma résilience éprouvée font de moi un atout précieux. Construisons ensemble quelque chose d'impactant.",
-    "button": "Contactez-Moi"
-  },
-  "title": "Mon Parcours",
-  "subtitle": "Des Métiers Pratiques à la Technologie Avancée",
   "philosophy": {
     "title": "Ma Philosophie",
     "content": "Je crois que la véritable innovation provient d'un mélange d'expériences diverses. Mon chemin n'a pas été linéaire, et c'est ma plus grande force. J'aborde les problèmes avec une perspective unique, combinant des compétences pratiques et concrètes à des connaissances techniques approfondies."
   },
+  "proofPack": "[TODO: Translate] [object Object]",
+  "seo": {
+    "title": "À Propos de Moi",
+    "description": "Découvrez l'histoire de Badr Ribzat, un ingénieur full-stack autodidacte motivé par la passion, la résilience et le désir de résoudre des problèmes complexes."
+  },
+  "story": {
+    "title": "Mon Histoire : Au-Delà du Code",
+    "subtitle": "Un Testament de Persévérance et de Passion",
+    "p1": "Ma carrière a commencé non pas devant un écran, mais avec mes mains — en maîtrisant des métiers comme la coiffure professionnelle, les arts culinaires et la conduite de machines lourdes. Ces rôles m'ont appris la discipline, l'attention aux détails et l'art de la satisfaction client.",
+    "p2": "Cependant, une curiosité profonde pour le fonctionnement des choses m'a conduit vers le monde de la technologie. J'ai entrepris un intense parcours d'apprentissage autonome, consacrant des milliers d'heures à maîtriser l'ingénierie logicielle depuis les bases.",
+    "p3": "Cela a abouti à mon admission et à mes performances exceptionnelles dans le programme ALX Software Engineering, un cursus rigoureux de 18 mois où j'ai consolidé mes compétences en développement full-stack, algorithmes et conception de systèmes, en terminant avec un score de 106,76 %."
+  },
+  "subtitle": "Des Métiers Pratiques à la Technologie Avancée",
   "timeline": {
     "selfTaught": {
       "title": "Ingénieur Full-Stack (Autoformation)",
@@ -89,5 +89,6 @@
         "note": "Inclut les relevés académiques, les licences professionnelles et les certifications de compétences."
       }
     }
-  }
+  },
+  "title": "Mon Parcours"
 }

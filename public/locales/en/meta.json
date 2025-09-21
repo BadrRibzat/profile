@@ -1,0 +1,10 @@
+{
+  "optimization": "Optimization",
+  "optimizationDesc": "OptimizationDesc",
+  "purpose": "Purpose",
+  "purposeDesc": "PurposeDesc",
+  "style": "Style",
+  "styleValues": {
+    "${locale}": "StyleValues ${locale}"
+  }
+}

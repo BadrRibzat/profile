@@ -1,0 +1,16 @@
+{
+  "${document": {
+    "originalLanguage}": "[FR] ${document OriginalLanguage}"
+  },
+  "${i18n": {
+    "language}": "[FR] ${i18n Language}"
+  },
+  "${originalLanguage}": "[FR] ${originalLanguage}",
+  "arabic": "[FR] Arabic",
+  "english": "[FR] English",
+  "french": "[FR] French",
+  "german": "[FR] German",
+  "japanese": "[FR] Japanese",
+  "spanish": "[FR] Spanish",
+  "title": "[FR] Title"
+}

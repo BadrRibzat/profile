@@ -9,7 +9,7 @@
     "availability": "Available for Remote Work",
     "highlights": {
       "selfTaught": "Self-Taught Expert",
-      "aiExpert": "AI & ML Specialist", 
+      "aiExpert": "AI & ML Specialist",
       "resilient": "Resilient Problem Solver"
     },
     "cta": {
@@ -20,7 +20,7 @@
   "stats": {
     "alxScore": "ALX Program Score",
     "projects": "Live Projects",
-    "languages": "Programming Languages", 
+    "languages": "Programming Languages",
     "technologies": "Technologies Mastered"
   },
   "projects": {

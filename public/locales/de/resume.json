@@ -1,31 +1,20 @@
 {
-  "title": "Lebenslauf",
-  "subtitle": "ATS-optimierte Version für",
-  "pageTitle": "Professioneller Lebenslauf",
-  "pageDescription": "Laden Sie meinen professionellen Lebenslauf herunter, optimiert für ATS-Systeme und angepasst an internationale Standards.",
   "active": "Aktiv",
-  "navigation": {
-    "back": "Zurück zur Startseite"
+  "additionalSkills": {
+    "0": "Professionelle Friseurzertifizierung (Männer & Frauen) - Staatlich anerkannte Schule",
+    "1": "Gabelstaplerführerschein (CACES R489 & R485)"
   },
-  "languageSelector": {
-    "title": "Wählen Sie Ihre bevorzugte Sprache"
+  "certifications": {
+    "alx": {
+      "details": "18-monatiges Intensivprogramm, das Full-Stack-Entwicklung, Algorithmen und Systemdesign abdeckt"
+    }
   },
-  "sections": {
-    "summary": "Berufliche Zusammenfassung",
-    "skills": "Technische Fähigkeiten",
-    "projects": "Schlüsselprojekte",
-    "experience": "Berufserfahrung",
-    "education": "Ausbildung und Zertifizierungen",
-    "additional": "Zusätzliche Qualifikationen"
+  "cta": {
+    "title": "Bereit zur Zusammenarbeit?",
+    "description": "Lassen Sie uns über Möglichkeiten und Projekte sprechen.",
+    "button": "Kontaktieren Sie mich"
   },
-  "subsections": {
-    "languages": "Sprachen",
-    "additionalSkills": "Zusätzliche Fähigkeiten"
-  },
-  "personalInfo": {
-    "title": "Full-Stack Software Ingenieur"
-  },
-  "summary": "Autodidaktischer Full-Stack Software Ingenieur mit nachgewiesener Expertise in der Entwicklung und Bereitstellung skalierbarer Webanwendungen und KI-gestützter Systeme. Absolvierte das intensive 18-monatige ALX Software Engineering Programm mit außergewöhnlicher Leistung (106,76 %). Nachweisbare Erfolgsbilanz bei der Entwicklung produktionsreifer Anwendungen mit modernen Technologien wie Python, JavaScript, React und Cloud-Bereitstellungsplattformen. Starke Erfahrung in API-Entwicklung, Datenbankdesign und DevOps-Praktiken. Engagiert für kontinuierliches Lernen und Exzellenz in der Softwareentwicklung.",
+  "download": "PDF Herunterladen",
   "experience": {
     "0": {
       "title": "Full-Stack Software Ingenieur",
@@ -49,6 +38,39 @@
       }
     }
   },
+  "features": {
+    "ats": {
+      "title": "ATS-Optimierung",
+      "description": "Lebenslauf formatiert für Bewerbermanagementsysteme mit korrekter Keyword-Dichte und Struktur."
+    },
+    "international": {
+      "title": "Internationale Standards",
+      "description": "Angepasst, um Einstellungsstandards und -erwartungen in verschiedenen Ländern und Kulturen zu erfüllen."
+    },
+    "quality": {
+      "title": "Qualitätssicherung",
+      "description": "Professionell formatiert mit konsistentem Stil und fehlerfreiem Inhalt in allen Sprachen."
+    }
+  },
+  "featuresList": {
+    "atsOptimized": "ATS-Optimiert",
+    "localized": "Lokalisiert und kulturell angepasst",
+    "professionalFormat": "Standard professionelles Format",
+    "japaneseFormat": "Japanisches Rirekisho-Format"
+  },
+  "generating": "Wird generiert...",
+  "languageSelector": {
+    "title": "Wählen Sie Ihre bevorzugte Sprache"
+  },
+  "navigation": {
+    "back": "Zurück zur Startseite"
+  },
+  "pageDescription": "Laden Sie meinen professionellen Lebenslauf herunter, optimiert für ATS-Systeme und angepasst an internationale Standards.",
+  "pageTitle": "Professioneller Lebenslauf",
+  "personalInfo": {
+    "title": "Full-Stack Software Ingenieur"
+  },
+  "preview": "Vorschau",
   "projects": {
     "biomedical": {
       "description": "KI-gestütztes biomedizinisches Erkennungssystem mit Machine-Learning-Fähigkeiten für medizinische Anwendungen und Diagnoseunterstützung.",
@@ -75,23 +97,13 @@
       }
     }
   },
-  "certifications": {
-    "alx": {
-      "details": "18-monatiges Intensivprogramm, das Full-Stack-Entwicklung, Algorithmen und Systemdesign abdeckt"
-    }
-  },
-  "additionalSkills": {
-    "0": "Professionelle Friseurzertifizierung (Männer & Frauen) - Staatlich anerkannte Schule",
-    "1": "Gabelstaplerführerschein (CACES R489 & R485)"
-  },
-  "generating": "Wird generiert...",
-  "download": "PDF Herunterladen",
-  "preview": "Vorschau",
-  "featuresList": {
-    "atsOptimized": "ATS-Optimiert",
-    "localized": "Lokalisiert und kulturell angepasst",
-    "professionalFormat": "Standard professionelles Format",
-    "japaneseFormat": "Japanisches Rirekisho-Format"
+  "sections": {
+    "summary": "Berufliche Zusammenfassung",
+    "skills": "Technische Fähigkeiten",
+    "projects": "Schlüsselprojekte",
+    "experience": "Berufserfahrung",
+    "education": "Ausbildung und Zertifizierungen",
+    "additional": "Zusätzliche Qualifikationen"
   },
   "specifications": "Spezifikationen",
   "specs": {
@@ -100,23 +112,9 @@
     "style": "Stil",
     "optimized": "Optimiert"
   },
-  "features": {
-    "ats": {
-      "title": "ATS-Optimierung",
-      "description": "Lebenslauf formatiert für Bewerbermanagementsysteme mit korrekter Keyword-Dichte und Struktur."
-    },
-    "international": {
-      "title": "Internationale Standards",
-      "description": "Angepasst, um Einstellungsstandards und -erwartungen in verschiedenen Ländern und Kulturen zu erfüllen."
-    },
-    "quality": {
-      "title": "Qualitätssicherung",
-      "description": "Professionell formatiert mit konsistentem Stil und fehlerfreiem Inhalt in allen Sprachen."
-    }
+  "subsections": {
+    "languages": "Sprachen",
+    "additionalSkills": "Zusätzliche Fähigkeiten"
   },
-  "cta": {
-    "title": "Bereit zur Zusammenarbeit?",
-    "description": "Lassen Sie uns über Möglichkeiten und Projekte sprechen.",
-    "button": "Kontaktieren Sie mich"
-  }
+  "summary": "Autodidaktischer Full-Stack Software Ingenieur mit nachgewiesener Expertise in der Entwicklung und Bereitstellung skalierbarer Webanwendungen und KI-gestützter Systeme. Absolvierte das intensive 18-monatige ALX Software Engineering Programm mit außergewöhnlicher Leistung (106,76 %). Nachweisbare Erfolgsbilanz bei der Entwicklung produktionsreifer Anwendungen mit modernen Technologien wie Python, JavaScript, React und Cloud-Bereitstellungsplattformen. Starke Erfahrung in API-Entwicklung, Datenbankdesign und DevOps-Praktiken. Engagiert für kontinuierliches Lernen und Exzellenz in der Softwareentwicklung."
 }

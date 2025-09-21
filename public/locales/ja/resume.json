@@ -1,31 +1,20 @@
 {
-  "title": "履歴書",
-  "subtitle": "ATS最適化版",
-  "pageTitle": "プロフェッショナル履歴書",
-  "pageDescription": "ATSシステムに最適化され、国際基準に適合したプロフェッショナルな履歴書をダウンロードできます。",
   "active": "有効",
-  "navigation": {
-    "back": "ホームに戻る"
+  "additionalSkills": {
+    "0": "プロフェッショナルヘアスタイリスト資格（男女対応）- 国家公認学校",
+    "1": "フォークリフト操作資格（CACES R489 & R485）"
   },
-  "languageSelector": {
-    "title": "希望する言語を選択してください"
+  "certifications": {
+    "alx": {
+      "details": "フルスタック開発、アルゴリズム、システム設計を網羅する18ヶ月間の集中プログラム"
+    }
   },
-  "sections": {
-    "summary": "職務要約",
-    "skills": "技術スキル",
-    "projects": "主要プロジェクト",
-    "experience": "職務経歴",
-    "education": "教育・資格",
-    "additional": "追加資格"
+  "cta": {
+    "title": "協力の準備はできていますか？",
+    "description": "機会とプロジェクトについて話し合いましょう。",
+    "button": "お問い合わせ"
   },
-  "subsections": {
-    "languages": "言語",
-    "additionalSkills": "追加スキル"
-  },
-  "personalInfo": {
-    "title": "フルスタックソフトウェアエンジニア"
-  },
-  "summary": "スケーラブルなWebアプリケーションおよびAI駆動システムの構築・展開において実績のある独学のフルスタックソフトウェアエンジニア。18ヶ月間の集中型ALXソフトウェアエンジニアリングプログラムを優秀な成績（106.76%）で修了。Python、JavaScript、React、クラウド展開プラットフォームなどの最新技術を用いた本番環境対応アプリケーションの開発実績あり。API開発、データベース設計、DevOps実践において豊富な経験を持つ。ソフトウェア開発における継続的な学習と卓越性にコミット。",
+  "download": "PDFをダウンロード",
   "experience": {
     "0": {
       "title": "フルスタックソフトウェアエンジニア",
@@ -49,6 +38,39 @@
       }
     }
   },
+  "features": {
+    "ats": {
+      "title": "ATS最適化",
+      "description": "適切なキーワード密度と構造で、応募者追跡システム向けにフォーマットされた履歴書。"
+    },
+    "international": {
+      "title": "国際基準",
+      "description": "異なる国や文化での採用基準と期待に応えるように適合。"
+    },
+    "quality": {
+      "title": "品質保証",
+      "description": "すべての言語で一貫したスタイルとエラーのないコンテンツを備えたプロフェッショナルなフォーマット。"
+    }
+  },
+  "featuresList": {
+    "atsOptimized": "ATS最適化",
+    "localized": "ローカライズされ文化的に適合",
+    "professionalFormat": "標準的なプロフェッショナルフォーマット",
+    "japaneseFormat": "日本式履歴書フォーマット"
+  },
+  "generating": "生成中...",
+  "languageSelector": {
+    "title": "希望する言語を選択してください"
+  },
+  "navigation": {
+    "back": "ホームに戻る"
+  },
+  "pageDescription": "ATSシステムに最適化され、国際基準に適合したプロフェッショナルな履歴書をダウンロードできます。",
+  "pageTitle": "プロフェッショナル履歴書",
+  "personalInfo": {
+    "title": "フルスタックソフトウェアエンジニア"
+  },
+  "preview": "プレビュー",
   "projects": {
     "biomedical": {
       "description": "医療アプリケーションと診断支援のための機械学習機能を備えたAI搭載生体医療検出システム。",
@@ -75,23 +97,13 @@
       }
     }
   },
-  "certifications": {
-    "alx": {
-      "details": "フルスタック開発、アルゴリズム、システム設計を網羅する18ヶ月間の集中プログラム"
-    }
-  },
-  "additionalSkills": {
-    "0": "プロフェッショナルヘアスタイリスト資格（男女対応）- 国家公認学校",
-    "1": "フォークリフト操作資格（CACES R489 & R485）"
-  },
-  "generating": "生成中...",
-  "download": "PDFをダウンロード",
-  "preview": "プレビュー",
-  "featuresList": {
-    "atsOptimized": "ATS最適化",
-    "localized": "ローカライズされ文化的に適合",
-    "professionalFormat": "標準的なプロフェッショナルフォーマット",
-    "japaneseFormat": "日本式履歴書フォーマット"
+  "sections": {
+    "summary": "職務要約",
+    "skills": "技術スキル",
+    "projects": "主要プロジェクト",
+    "experience": "職務経歴",
+    "education": "教育・資格",
+    "additional": "追加資格"
   },
   "specifications": "仕様",
   "specs": {
@@ -100,23 +112,9 @@
     "style": "スタイル",
     "optimized": "最適化"
   },
-  "features": {
-    "ats": {
-      "title": "ATS最適化",
-      "description": "適切なキーワード密度と構造で、応募者追跡システム向けにフォーマットされた履歴書。"
-    },
-    "international": {
-      "title": "国際基準",
-      "description": "異なる国や文化での採用基準と期待に応えるように適合。"
-    },
-    "quality": {
-      "title": "品質保証",
-      "description": "すべての言語で一貫したスタイルとエラーのないコンテンツを備えたプロフェッショナルなフォーマット。"
-    }
+  "subsections": {
+    "languages": "言語",
+    "additionalSkills": "追加スキル"
   },
-  "cta": {
-    "title": "協力の準備はできていますか？",
-    "description": "機会とプロジェクトについて話し合いましょう。",
-    "button": "お問い合わせ"
-  }
+  "summary": "スケーラブルなWebアプリケーションおよびAI駆動システムの構築・展開において実績のある独学のフルスタックソフトウェアエンジニア。18ヶ月間の集中型ALXソフトウェアエンジニアリングプログラムを優秀な成績（106.76%）で修了。Python、JavaScript、React、クラウド展開プラットフォームなどの最新技術を用いた本番環境対応アプリケーションの開発実績あり。API開発、データベース設計、DevOps実践において豊富な経験を持つ。ソフトウェア開発における継続的な学習と卓越性にコミット。"
 }

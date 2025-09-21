@@ -1,31 +1,20 @@
 {
-  "title": "Currículum",
-  "subtitle": "Versión optimizada para ATS para",
-  "pageTitle": "Currículum Profesional",
-  "pageDescription": "Descarga mi currículum profesional optimizado para sistemas ATS y adaptado a estándares internacionales.",
   "active": "Activo",
-  "navigation": {
-    "back": "Volver al inicio"
+  "additionalSkills": {
+    "0": "Certificación de Peluquero Profesional (Hombres y Mujeres) - Escuela Aprobada por el Estado",
+    "1": "Certificación de Operador de Carretilla Elevadora (CACES R489 & R485)"
   },
-  "languageSelector": {
-    "title": "Elige tu idioma preferido"
+  "certifications": {
+    "alx": {
+      "details": "Programa intensivo de 18 meses que cubre desarrollo full-stack, algoritmos y diseño de sistemas"
+    }
   },
-  "sections": {
-    "summary": "Resumen Profesional",
-    "skills": "Habilidades Técnicas",
-    "projects": "Proyectos Clave",
-    "experience": "Experiencia Profesional",
-    "education": "Educación y Certificaciones",
-    "additional": "Calificaciones Adicionales"
+  "cta": {
+    "title": "¿Listo para colaborar?",
+    "description": "Hablemos de oportunidades y proyectos.",
+    "button": "Contáctame"
   },
-  "subsections": {
-    "languages": "Idiomas",
-    "additionalSkills": "Habilidades Adicionales"
-  },
-  "personalInfo": {
-    "title": "Ingeniero de Software Full-Stack"
-  },
-  "summary": "Ingeniero de software full-stack autodidacta con experiencia demostrada en la creación e implementación de aplicaciones web escalables y sistemas impulsados por IA. Completó el programa intensivo de 18 meses ALX Software Engineering con un rendimiento excepcional (106.76%). Historial comprobado de desarrollo de aplicaciones listas para producción con tecnologías modernas como Python, JavaScript, React y plataformas de implementación en la nube. Fuerte experiencia en desarrollo de API, diseño de bases de datos y prácticas DevOps. Comprometido con el aprendizaje continuo y la excelencia en el desarrollo de software.",
+  "download": "Descargar PDF",
   "experience": {
     "0": {
       "title": "Ingeniero de Software Full-Stack",
@@ -49,6 +38,39 @@
       }
     }
   },
+  "features": {
+    "ats": {
+      "title": "Optimización ATS",
+      "description": "Currículum formateado para sistemas de seguimiento de candidatos con densidad de palabras clave y estructura adecuadas."
+    },
+    "international": {
+      "title": "Estándares Internacionales",
+      "description": "Adaptado para cumplir con los estándares y expectativas de contratación en diferentes países y culturas."
+    },
+    "quality": {
+      "title": "Garantía de Calidad",
+      "description": "Formateado profesionalmente con estilo consistente y contenido libre de errores en todos los idiomas."
+    }
+  },
+  "featuresList": {
+    "atsOptimized": "Optimizado para ATS",
+    "localized": "Localizado y adaptado culturalmente",
+    "professionalFormat": "Formato profesional estándar",
+    "japaneseFormat": "Formato japonés Rirekisho"
+  },
+  "generating": "Generando...",
+  "languageSelector": {
+    "title": "Elige tu idioma preferido"
+  },
+  "navigation": {
+    "back": "Volver al inicio"
+  },
+  "pageDescription": "Descarga mi currículum profesional optimizado para sistemas ATS y adaptado a estándares internacionales.",
+  "pageTitle": "Currículum Profesional",
+  "personalInfo": {
+    "title": "Ingeniero de Software Full-Stack"
+  },
+  "preview": "Vista previa",
   "projects": {
     "biomedical": {
       "description": "Sistema de detección biomédica con IA y capacidades de aprendizaje automático para aplicaciones médicas y asistencia diagnóstica.",
@@ -75,23 +97,13 @@
       }
     }
   },
-  "certifications": {
-    "alx": {
-      "details": "Programa intensivo de 18 meses que cubre desarrollo full-stack, algoritmos y diseño de sistemas"
-    }
-  },
-  "additionalSkills": {
-    "0": "Certificación de Peluquero Profesional (Hombres y Mujeres) - Escuela Aprobada por el Estado",
-    "1": "Certificación de Operador de Carretilla Elevadora (CACES R489 & R485)"
-  },
-  "generating": "Generando...",
-  "download": "Descargar PDF",
-  "preview": "Vista previa",
-  "featuresList": {
-    "atsOptimized": "Optimizado para ATS",
-    "localized": "Localizado y adaptado culturalmente",
-    "professionalFormat": "Formato profesional estándar",
-    "japaneseFormat": "Formato japonés Rirekisho"
+  "sections": {
+    "summary": "Resumen Profesional",
+    "skills": "Habilidades Técnicas",
+    "projects": "Proyectos Clave",
+    "experience": "Experiencia Profesional",
+    "education": "Educación y Certificaciones",
+    "additional": "Calificaciones Adicionales"
   },
   "specifications": "Especificaciones",
   "specs": {
@@ -100,23 +112,9 @@
     "style": "Estilo",
     "optimized": "Optimizado"
   },
-  "features": {
-    "ats": {
-      "title": "Optimización ATS",
-      "description": "Currículum formateado para sistemas de seguimiento de candidatos con densidad de palabras clave y estructura adecuadas."
-    },
-    "international": {
-      "title": "Estándares Internacionales",
-      "description": "Adaptado para cumplir con los estándares y expectativas de contratación en diferentes países y culturas."
-    },
-    "quality": {
-      "title": "Garantía de Calidad",
-      "description": "Formateado profesionalmente con estilo consistente y contenido libre de errores en todos los idiomas."
-    }
+  "subsections": {
+    "languages": "Idiomas",
+    "additionalSkills": "Habilidades Adicionales"
   },
-  "cta": {
-    "title": "¿Listo para colaborar?",
-    "description": "Hablemos de oportunidades y proyectos.",
-    "button": "Contáctame"
-  }
+  "summary": "Ingeniero de software full-stack autodidacta con experiencia demostrada en la creación e implementación de aplicaciones web escalables y sistemas impulsados por IA. Completó el programa intensivo de 18 meses ALX Software Engineering con un rendimiento excepcional (106.76%). Historial comprobado de desarrollo de aplicaciones listas para producción con tecnologías modernas como Python, JavaScript, React y plataformas de implementación en la nube. Fuerte experiencia en desarrollo de API, diseño de bases de datos y prácticas DevOps. Comprometido con el aprendizaje continuo y la excelencia en el desarrollo de software."
 }

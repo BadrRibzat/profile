@@ -1,0 +1,12 @@
+{
+  "${category}": "[JA] ${category}",
+  "${document": {
+    "category}": "[JA] ${document Category}"
+  },
+  "aiml": "[JA] Aiml",
+  "backend": "[JA] Back",
+  "database": "[JA] Database",
+  "devops": "[JA] Devops",
+  "frontend": "[JA] Frontend",
+  "programming": "[JA] Programming"
+}

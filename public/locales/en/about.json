@@ -1,11 +1,11 @@
 {
   "seo": {
     "title": "About Me",
-    "description": "Discover the story behind Badr Ribzat, a self-taught full-stack engineer driven by passion, resilience, and a desire to solve complex problems."
+    "description": "Discover the story behind Badr Ribzat, a self‑taught full‑stack engineer driven by passion, resilience, and a desire to solve complex problems."
   },
   "hero": {
     "title": "Badr Ribzat: A Journey of Resilience & Innovation",
-    "subtitle": "Self-Taught Full-Stack Engineer | Solving Real-World Problems with Technology",
+    "subtitle": "Self‑Taught Full‑Stack Engineer | Solving Real‑World Problems with Technology",
     "location": {
       "title": "Global Availability",
       "description": "Actively seeking opportunities worldwide with visa sponsorship for international relocation."
@@ -31,12 +31,12 @@
     "title": "My Story: Beyond the Code",
     "subtitle": "A Testament to Persistence and Passion",
     "p1": "My career began not in front of a screen, but with my hands—mastering trades like professional hairstyling, culinary arts, and operating heavy machinery. These roles taught me discipline, attention to detail, and the art of client satisfaction.",
-    "p2": "However, a deep-seated curiosity for how things work led me to the world of technology. I embarked on an intense journey of self-directed learning, dedicating thousands of hours to mastering software engineering from the ground up.",
-    "p3": "This culminated in my acceptance and outstanding performance in the ALX Software Engineering program, a rigorous 18-month curriculum where I solidified my skills in full-stack development, algorithms, and system design, finishing with a score of 106.76%."
+    "p2": "However, a deep‑seated curiosity for how things work led me to the world of technology. I embarked on an intense journey of self‑directed learning, dedicating thousands of hours to mastering software engineering from the ground up.",
+    "p3": "This culminated in my acceptance and outstanding performance in the ALX Software Engineering program, a rigorous 18‑month curriculum where I solidified my skills in full‑stack development, algorithms, and system design, finishing with a score of 106.76%."
   },
   "interests": {
     "title": "Beyond the Screen",
-    "description": "When I'm not coding, I pursue interests that further enrich my perspective and problem-solving abilities.",
+    "description": "When I'm not coding, I pursue interests that further enrich my perspective and problem‑solving abilities.",
     "items": {
       "reading": "Learning & Reading",
       "coffee": "Specialty Coffee",
@@ -67,12 +67,21 @@
   "subtitle": "From Practical Trades to Advanced Technology",
   "philosophy": {
     "title": "My Philosophy",
-    "content": "I believe that true innovation comes from a blend of diverse experiences. My path wasn't linear, and that's my greatest strength. I tackle problems with a unique perspective, combining practical, hands-on skills with deep technical knowledge."
+    "content": "I believe that true innovation comes from a blend of diverse experiences. My path wasn't linear, and that's my greatest strength. I tackle problems with a unique perspective, combining practical, hands‑on skills with deep technical knowledge."
   },
   "timeline": {
-    "selfTaught": { "title": "Full-Stack Engineer (Self-Directed)", "description": "Independent learning, project development, and open-source contributions focusing on AI, health-tech, and education." },
-    "business": { "title": "Multi-Skilled Professional (Diverse Industries)", "description": "Developed strong interpersonal, client-facing, and practical skills across logistics, service, and certified roles." },
-    "education": { "title": "Formal Education & Early Career", "description": "Completed preparatory education while balancing significant health challenges, leading to early professional experiences." }
+    "selfTaught": {
+      "title": "Full‑Stack Engineer (Self‑Directed)",
+      "description": "Independent learning, project development, and open‑source contributions focusing on AI, health‑tech, and education."
+    },
+    "business": {
+      "title": "Multi‑Skilled Professional (Diverse Industries)",
+      "description": "Developed strong interpersonal, client‑facing, and practical skills across logistics, service, and certified roles."
+    },
+    "education": {
+      "title": "Formal Education & Early Career",
+      "description": "Completed preparatory education while balancing significant health challenges, leading to early professional experiences."
+    }
   },
   "proofPack": {
     "title": "Official Document Pack",

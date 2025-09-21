@@ -1,8 +1,4 @@
 {
-  "seo": {
-    "title": "Badr Ribzat - Ingeniero de Software Full-Stack",
-    "description": "Ingeniero de software full-stack autodidacta especializado en IA, aplicaciones biomédicas y tecnología educativa. Basado en Marruecos, disponible para oportunidades remotas en todo el mundo."
-  },
   "hero": {
     "subtitle": "Ingeniero de Software Full-Stack",
     "location": "Ksar El Kebir, Marruecos",
@@ -17,12 +13,6 @@
       "viewProjects": "Ver Proyectos"
     }
   },
-  "stats": {
-    "alxScore": "Puntuación Programa ALX",
-    "projects": "Proyectos Activos",
-    "languages": "Lenguajes de Programación",
-    "technologies": "Tecnologías Dominadas"
-  },
   "projects": {
     "title": "Proyectos Destacados",
     "description": "Explora mis últimos trabajos que muestran experiencia en desarrollo full-stack, integración de IA y aplicaciones listas para producción.",
@@ -35,5 +25,15 @@
     "chatbot": {
       "description": "Asistente de chatbot inteligente con procesamiento de lenguaje natural, respuestas en tiempo real y arquitectura escalable."
     }
+  },
+  "seo": {
+    "title": "Badr Ribzat - Ingeniero de Software Full-Stack",
+    "description": "Ingeniero de software full-stack autodidacta especializado en IA, aplicaciones biomédicas y tecnología educativa. Basado en Marruecos, disponible para oportunidades remotas en todo el mundo."
+  },
+  "stats": {
+    "alxScore": "Puntuación Programa ALX",
+    "projects": "Proyectos Activos",
+    "languages": "Lenguajes de Programación",
+    "technologies": "Tecnologías Dominadas"
   }
 }

@@ -1,6 +1,4 @@
 {
-  "title": "Resume",
-  "subtitle": "ATS-optimized version for",
   "pageTitle": "Professional Resume",
   "pageDescription": "Download my professional resume optimized for ATS systems and adapted to international standards.",
   "active": "Active",
@@ -12,7 +10,7 @@
   },
   "sections": {
     "summary": "Professional Summary",
-    "skills": "Technical Skills", 
+    "skills": "Technical Skills",
     "projects": "Key Projects",
     "experience": "Professional Experience",
     "education": "Education & Certifications",
@@ -23,38 +21,38 @@
     "additionalSkills": "Additional Skills"
   },
   "personalInfo": {
-    "title": "Full-Stack Software Engineer"
+    "title": "Full‑Stack Software Engineer"
   },
-  "summary": "Self-taught Full-Stack Software Engineer with demonstrated expertise in building and deploying scalable web applications and AI-powered systems. Completed intensive 18-month ALX Software Engineering program with exceptional performance (106.76%). Proven track record of developing production-ready applications with modern technologies including Python, JavaScript, React, and cloud deployment platforms. Strong background in API development, database design, and DevOps practices. Committed to continuous learning and excellence in software development.",
+  "summary": "Self‑taught Full‑Stack Software Engineer with demonstrated expertise in building and deploying scalable web applications and AI‑powered systems. Completed intensive 18‑month ALX Software Engineering program with exceptional performance (106.76%). Proven track record of developing production‑ready applications with modern technologies including Python, JavaScript, React, and cloud deployment platforms. Strong background in API development, database design, and DevOps practices. Committed to continuous learning and excellence in software development.",
   "experience": {
     "0": {
-      "title": "Full-Stack Software Engineer",
+      "title": "Full‑Stack Software Engineer",
       "company": "Independent Projects & Open Source",
       "achievements": {
-        "0": "Developed and deployed 3+ full-stack applications with modern tech stacks",
-        "1": "Implemented RESTful APIs serving 50+ concurrent users with optimized performance", 
-        "2": "Built AI-powered systems achieving 85% accuracy in intent recognition",
+        "0": "Developed and deployed 3+ full‑stack applications with modern tech stacks",
+        "1": "Implemented RESTful APIs serving 50+ concurrent users with optimized performance",
+        "2": "Built AI‑powered systems achieving 85% accuracy in intent recognition",
         "3": "Created comprehensive documentation and API specifications using Swagger/OpenAPI",
         "4": "Established CI/CD pipelines reducing deployment time by 40%"
       }
     },
     "1": {
-      "title": "Digital Marketing Consultant", 
+      "title": "Digital Marketing Consultant",
       "company": "Freelance",
       "achievements": {
-        "0": "Increased client engagement by 35% through data-driven optimization strategies",
+        "0": "Increased client engagement by 35% through data‑driven optimization strategies",
         "1": "Applied analytical skills to performance assessment and process improvement",
-        "2": "Collaborated with cross-functional teams on content pipeline optimization",
-        "3": "Demonstrated adaptability in fast-paced, results-oriented environment"
+        "2": "Collaborated with cross‑functional teams on content pipeline optimization",
+        "3": "Demonstrated adaptability in fast‑paced, results‑oriented environment"
       }
     }
   },
   "projects": {
     "biomedical": {
-      "description": "AI-powered biomedical detection system with machine learning capabilities for healthcare applications and diagnostic assistance.",
+      "description": "AI‑powered biomedical detection system with machine learning capabilities for healthcare applications and diagnostic assistance.",
       "highlights": {
         "0": "Built signal/data preprocessing and ML baselines for prototype detectors",
-        "1": "Delivered reproducible experiments with structured documentation", 
+        "1": "Delivered reproducible experiments with structured documentation",
         "2": "Implemented RESTful APIs with 100% Swagger/OpenAPI coverage"
       }
     },
@@ -63,13 +61,13 @@
       "highlights": {
         "0": "Reduced API response time by 30% through query optimization and caching",
         "1": "Implemented CI/CD pipelines cutting deployment time by 40%",
-        "2": "Built role-based access control and user management system"
+        "2": "Built role‑based access control and user management system"
       }
     },
     "ai": {
       "description": "Intelligent chatbot with natural language processing capabilities",
       "highlights": {
-        "0": "Achieved 85% intent recognition accuracy using domain-tuned classification", 
+        "0": "Achieved 85% intent recognition accuracy using domain‑tuned classification",
         "1": "Optimized to handle 50+ concurrent users with stateless endpoints",
         "2": "Implemented containerization and observability for production deployment"
       }
@@ -77,7 +75,7 @@
   },
   "certifications": {
     "alx": {
-      "details": "18-month intensive program covering full-stack development, algorithms, and system design"
+      "details": "18‑month intensive program covering full‑stack development, algorithms, and system design"
     }
   },
   "additionalSkills": {
@@ -94,26 +92,12 @@
     "professionalFormat": "Standard professional format",
     "japaneseFormat": "Japanese Rirekisho format"
   },
-  "specifications": "Specifications", 
+  "specifications": "Specifications",
   "specs": {
     "format": "Format",
     "language": "Language",
     "style": "Style",
     "optimized": "Optimized"
-  },
-  "features": {
-    "ats": {
-      "title": "ATS Optimization",
-      "description": "Resume formatted for Applicant Tracking Systems with proper keyword density and structure."
-    },
-    "international": {
-      "title": "International Standards", 
-      "description": "Adapted to meet hiring standards and expectations across different countries and cultures."
-    },
-    "quality": {
-      "title": "Quality Assurance",
-      "description": "Professionally formatted with consistent styling and error-free content across all languages."
-    }
   },
   "cta": {
     "title": "Ready to collaborate?",

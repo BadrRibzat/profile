@@ -1,6 +1,4 @@
 {
-  "title": "Habilidades y Experiencia",
-  "subtitle": "Una visión completa de mis habilidades técnicas, certificaciones prácticas y capacidades multilingües desarrolladas mediante aprendizaje autodirigido y experiencia práctica.",
   "categories": {
     "programming": "Lenguajes de Programación",
     "backend": "Desarrollo Backend",
@@ -9,22 +7,11 @@
     "aiml": "IA y Aprendizaje Automático",
     "devops": "DevOps e Infraestructura"
   },
-  "technical": {
-    "title": "Habilidades Técnicas"
-  },
-  "practical": {
-    "title": "Habilidades Prácticas Certificadas",
-    "forklift": "Operación de Carretilla Elevadora",
-    "forkliftDesc": "Operación de maquinaria pesada con certificaciones de seguridad",
-    "driving": "Conducción Profesional",
-    "drivingCert": "Licencia Marroquí Válida (Todas las Categorías)",
-    "drivingDesc": "Conducción profesional con excelente historial de seguridad",
-    "hairstyling": "Peluquería Profesional",
-    "hairstylingCert": "Certificación Aprobada por el Estado (Hombres y Mujeres)",
-    "hairstylingDesc": "Estilismo completo con técnicas modernas",
-    "culinary": "Artes Culinarias",
-    "culinaryCert": "Especialista en Nutrición Terapéutica",
-    "culinaryDesc": "Cocina enfocada en la salud y planificación nutricional"
+  "cta": {
+    "title": "Listo para Causar Impacto",
+    "description": "Hablemos de cómo mi conjunto diverso de habilidades puede contribuir a tu próximo proyecto o equipo.",
+    "contact": "Ponte en Contacto",
+    "resume": "Ver CV"
   },
   "languages": {
     "title": "Dominio de Idiomas",
@@ -42,11 +29,24 @@
     "intermediate": "Intermedio",
     "basic": "Básico"
   },
+  "practical": {
+    "title": "Habilidades Prácticas Certificadas",
+    "forklift": "Operación de Carretilla Elevadora",
+    "forkliftDesc": "Operación de maquinaria pesada con certificaciones de seguridad",
+    "driving": "Conducción Profesional",
+    "drivingCert": "Licencia Marroquí Válida (Todas las Categorías)",
+    "drivingDesc": "Conducción profesional con excelente historial de seguridad",
+    "hairstyling": "Peluquería Profesional",
+    "hairstylingCert": "Certificación Aprobada por el Estado (Hombres y Mujeres)",
+    "hairstylingDesc": "Estilismo completo con técnicas modernas",
+    "culinary": "Artes Culinarias",
+    "culinaryCert": "Especialista en Nutrición Terapéutica",
+    "culinaryDesc": "Cocina enfocada en la salud y planificación nutricional"
+  },
   "proficiency": "Nivel de Competencia",
-  "cta": {
-    "title": "Listo para Causar Impacto",
-    "description": "Hablemos de cómo mi conjunto diverso de habilidades puede contribuir a tu próximo proyecto o equipo.",
-    "contact": "Ponte en Contacto",
-    "resume": "Ver CV"
-  }
+  "subtitle": "Una visión completa de mis habilidades técnicas, certificaciones prácticas y capacidades multilingües desarrolladas mediante aprendizaje autodirigido y experiencia práctica.",
+  "technical": {
+    "title": "Habilidades Técnicas"
+  },
+  "title": "Habilidades y Experiencia"
 }

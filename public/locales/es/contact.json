@@ -1,20 +1,4 @@
 {
-  "seo": {
-    "title": "Contacto - Badr Ribzat",
-    "description": "Contacta a Badr Ribzat para oportunidades profesionales, colaboraciones o preguntas técnicas."
-  },
-  "title": "Conectemos",
-  "subtitle": "Listo para nuevos desafíos y oportunidades. Hablemos de cómo puedo contribuir a tu equipo o proyecto.",
-  "info": {
-    "title": "Información de Contacto",
-    "email": "Correo electrónico",
-    "phone": "Teléfono",
-    "location": "Ubicación",
-    "timezone": "Zona horaria"
-  },
-  "social": {
-    "title": "Redes Sociales"
-  },
   "availability": {
     "status": "Disponible para oportunidades",
     "message": "Generalmente responde en 24h"
@@ -45,5 +29,21 @@
     "success": "¡Mensaje enviado con éxito!",
     "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo.",
     "responseTime": "Generalmente respondo dentro de 24 horas"
-  }
+  },
+  "info": {
+    "title": "Información de Contacto",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "location": "Ubicación",
+    "timezone": "Zona horaria"
+  },
+  "seo": {
+    "title": "Contacto - Badr Ribzat",
+    "description": "Contacta a Badr Ribzat para oportunidades profesionales, colaboraciones o preguntas técnicas."
+  },
+  "social": {
+    "title": "Redes Sociales"
+  },
+  "subtitle": "Listo para nuevos desafíos y oportunidades. Hablemos de cómo puedo contribuir a tu equipo o proyecto.",
+  "title": "Conectemos"
 }

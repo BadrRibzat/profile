@@ -1,6 +1,4 @@
 {
-  "title": "Compétences et Expertise",
-  "subtitle": "Un aperçu complet de mes compétences techniques, certifications pratiques et capacités multilingues développées grâce à l'apprentissage autonome et à l'expérience pratique.",
   "categories": {
     "programming": "Langages de Programmation",
     "backend": "Développement Backend",
@@ -9,22 +7,11 @@
     "aiml": "IA et Apprentissage Automatique",
     "devops": "DevOps et Infrastructure"
   },
-  "technical": {
-    "title": "Compétences Techniques"
-  },
-  "practical": {
-    "title": "Compétences Pratiques Certifiées",
-    "forklift": "Conduite de Chariot Élévateur",
-    "forkliftDesc": "Opération de machines lourdes avec certifications de sécurité",
-    "driving": "Conduite Professionnelle",
-    "drivingCert": "Permis Marocain Valide (Toutes Catégories)",
-    "drivingDesc": "Conduite professionnelle avec un excellent dossier de sécurité",
-    "hairstyling": "Coiffure Professionnelle",
-    "hairstylingCert": "Certification Approuvée par l'État (Hommes et Femmes)",
-    "hairstylingDesc": "Coiffure complète avec techniques modernes",
-    "culinary": "Arts Culinaires",
-    "culinaryCert": "Spécialiste en Nutrition Thérapeutique",
-    "culinaryDesc": "Cuisine axée sur la santé et planification nutritionnelle"
+  "cta": {
+    "title": "Prêt à Avoir un Impact",
+    "description": "Discutons de la manière dont mon ensemble de compétences diversifié peut contribuer à votre prochain projet ou équipe.",
+    "contact": "Me Contacter",
+    "resume": "Voir le CV"
   },
   "languages": {
     "title": "Maîtrise des Langues",
@@ -42,11 +29,24 @@
     "intermediate": "Intermédiaire",
     "basic": "Élémentaire"
   },
+  "practical": {
+    "title": "Compétences Pratiques Certifiées",
+    "forklift": "Conduite de Chariot Élévateur",
+    "forkliftDesc": "Opération de machines lourdes avec certifications de sécurité",
+    "driving": "Conduite Professionnelle",
+    "drivingCert": "Permis Marocain Valide (Toutes Catégories)",
+    "drivingDesc": "Conduite professionnelle avec un excellent dossier de sécurité",
+    "hairstyling": "Coiffure Professionnelle",
+    "hairstylingCert": "Certification Approuvée par l'État (Hommes et Femmes)",
+    "hairstylingDesc": "Coiffure complète avec techniques modernes",
+    "culinary": "Arts Culinaires",
+    "culinaryCert": "Spécialiste en Nutrition Thérapeutique",
+    "culinaryDesc": "Cuisine axée sur la santé et planification nutritionnelle"
+  },
   "proficiency": "Niveau de Compétence",
-  "cta": {
-    "title": "Prêt à Avoir un Impact",
-    "description": "Discutons de la manière dont mon ensemble de compétences diversifié peut contribuer à votre prochain projet ou équipe.",
-    "contact": "Me Contacter",
-    "resume": "Voir le CV"
-  }
+  "subtitle": "Un aperçu complet de mes compétences techniques, certifications pratiques et capacités multilingues développées grâce à l'apprentissage autonome et à l'expérience pratique.",
+  "technical": {
+    "title": "Compétences Techniques"
+  },
+  "title": "Compétences et Expertise"
 }

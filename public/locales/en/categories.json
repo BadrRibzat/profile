@@ -1,0 +1,12 @@
+{
+  "${category}": "${category}",
+  "${document": {
+    "category}": "${document Category}"
+  },
+  "aiml": "Aiml",
+  "backend": "Back",
+  "database": "Database",
+  "devops": "Devops",
+  "frontend": "Frontend",
+  "programming": "Programming"
+}

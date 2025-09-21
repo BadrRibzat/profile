@@ -1,6 +1,4 @@
 {
-  "title": "スキルと専門知識",
-  "subtitle": "自主学習と実践経験を通じて培った技術的能力、実践的な資格、多言語能力の包括的な概要です。",
   "categories": {
     "programming": "プログラミング言語",
     "backend": "バックエンド開発",
@@ -9,22 +7,11 @@
     "aiml": "AI・機械学習",
     "devops": "DevOps・インフラストラクチャ"
   },
-  "technical": {
-    "title": "技術スキル"
-  },
-  "practical": {
-    "title": "認定された実践的スキル",
-    "forklift": "フォークリフト操作",
-    "forkliftDesc": "安全認定付きの重機操作",
-    "driving": "プロフェッショナルドライビング",
-    "drivingCert": "有効なモロッコ免許（全カテゴリー）",
-    "drivingDesc": "優れた安全記録を持つプロフェッショナルドライビング",
-    "hairstyling": "プロフェッショナルヘアスタイリング",
-    "hairstylingCert": "国家公認資格（男女対応）",
-    "hairstylingDesc": "最新技術によるフルサービススタイリング",
-    "culinary": "料理",
-    "culinaryCert": "治療的栄養スペシャリスト",
-    "culinaryDesc": "健康重視の料理と栄養計画"
+  "cta": {
+    "title": "インパクトを起こす準備ができています",
+    "description": "私の多様なスキルセットが、あなたの次のプロジェクトやチームにどのように貢献できるか、ぜひご相談ください。",
+    "contact": "お問い合わせ",
+    "resume": "履歴書を表示"
   },
   "languages": {
     "title": "言語能力",
@@ -42,11 +29,24 @@
     "intermediate": "中級",
     "basic": "初級"
   },
+  "practical": {
+    "title": "認定された実践的スキル",
+    "forklift": "フォークリフト操作",
+    "forkliftDesc": "安全認定付きの重機操作",
+    "driving": "プロフェッショナルドライビング",
+    "drivingCert": "有効なモロッコ免許（全カテゴリー）",
+    "drivingDesc": "優れた安全記録を持つプロフェッショナルドライビング",
+    "hairstyling": "プロフェッショナルヘアスタイリング",
+    "hairstylingCert": "国家公認資格（男女対応）",
+    "hairstylingDesc": "最新技術によるフルサービススタイリング",
+    "culinary": "料理",
+    "culinaryCert": "治療的栄養スペシャリスト",
+    "culinaryDesc": "健康重視の料理と栄養計画"
+  },
   "proficiency": "習熟度",
-  "cta": {
-    "title": "インパクトを起こす準備ができています",
-    "description": "私の多様なスキルセットが、あなたの次のプロジェクトやチームにどのように貢献できるか、ぜひご相談ください。",
-    "contact": "お問い合わせ",
-    "resume": "履歴書を表示"
-  }
+  "subtitle": "自主学習と実践経験を通じて培った技術的能力、実践的な資格、多言語能力の包括的な概要です。",
+  "technical": {
+    "title": "技術スキル"
+  },
+  "title": "スキルと専門知識"
 }

@@ -1,0 +1,12 @@
+{
+  "${category}": "[FR] ${category}",
+  "${document": {
+    "category}": "[FR] ${document Category}"
+  },
+  "aiml": "[FR] Aiml",
+  "backend": "[FR] Back",
+  "database": "[FR] Database",
+  "devops": "[FR] Devops",
+  "frontend": "[FR] Frontend",
+  "programming": "[FR] Programming"
+}

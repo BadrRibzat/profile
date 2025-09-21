@@ -1,0 +1,10 @@
+{
+  "checkConnection": "[AR] CheckConnection",
+  "documentLoadFailed": "[AR] DocumentLoadFailed",
+  "pageLoadFailed": "[AR] PageLoadFailed",
+  "pdfLoadFailed": "[AR] PdfLoadFailed",
+  "retry": "[AR] Retry",
+  "title": "[AR] Title",
+  "tryAnotherPage": "[AR] TryAnotherPage",
+  "unavailable": "[AR] Unavailable"
+}
