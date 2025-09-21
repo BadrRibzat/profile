@@ -1,4 +1,4 @@
-// SEO and Performance optimization - components/SEOHead.tsx
+// components/SEOHead.tsx
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -13,9 +13,9 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
-  title = 'Badr Ribzat - Full-Stack Software Engineer',
-  description = 'Professional portfolio of Badr Ribzat, featuring verified certificates, projects, and multilingual resume generation.',
-  keywords = 'software engineer, full-stack developer, Morocco, ALX, portfolio, certificates, multilingual resume',
+  title = t('seo.title', 'Badr Ribzat - Full-Stack Software Engineer'),
+  description = t('seo.description', 'Professional portfolio of Badr Ribzat, featuring verified certificates, projects, and multilingual resume generation.'),
+  keywords = t('seo.keywords', 'software engineer, full-stack developer, Morocco, ALX, portfolio, certificates, multilingual resume'),
   image = '/images/me.jpg',
   canonical,
   noindex = false,

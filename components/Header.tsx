@@ -27,7 +27,6 @@ const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
@@ -58,13 +57,13 @@ const Header: React.FC = () => {
   };
 
   const navigation = [
-    { name: t('nav.home'), href: '/', icon: <Home className="w-4 h-4" /> },
-    { name: t('nav.about'), href: '/about', icon: <User className="w-4 h-4" /> },
-    { name: t('nav.projects'), href: '/projects', icon: <Briefcase className="w-4 h-4" /> },
-    { name: t('nav.documents'), href: '/documents', icon: <FileText className="w-4 h-4" /> },
-    { name: t('nav.skills'), href: '/skills', icon: <Award className="w-4 h-4" /> },
-    { name: t('nav.resume'), href: `/resume/${router.locale || 'en'}`, icon: <FileText className="w-4 h-4" /> },
-    { name: t('nav.contact'), href: '/contact', icon: <Mail className="w-4 h-4" /> },
+    { name: t('common:nav.home', 'Home'), href: '/', icon: <Home className="w-4 h-4" /> },
+    { name: t('common:nav.about', 'About'), href: '/about', icon: <User className="w-4 h-4" /> },
+    { name: t('common:nav.projects', 'Projects'), href: '/projects', icon: <Briefcase className="w-4 h-4" /> },
+    { name: t('common:nav.documents', 'Documents'), href: '/documents', icon: <FileText className="w-4 h-4" /> },
+    { name: t('common:nav.skills', 'Skills'), href: '/skills', icon: <Award className="w-4 h-4" /> },
+    { name: t('common:nav.resume', 'Resume'), href: `/resume/${router.locale || 'en'}`, icon: <FileText className="w-4 h-4" /> },
+    { name: t('common:nav.contact', 'Contact'), href: '/contact', icon: <Mail className="w-4 h-4" /> },
   ];
 
   const isActive = (path: string) => {
@@ -81,7 +80,6 @@ const Header: React.FC = () => {
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <Link href="/">
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -100,13 +98,12 @@ const Header: React.FC = () => {
                   Badr Ribzat
                </div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">
-                  {t('header.logoSubtitle')}
+                  {t('common:header.logoSubtitle', 'Full-Stack Engineer')}
                 </div>
               </div>
             </motion.div>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
             {navigation.map((item, index) => (
               <Link key={item.name} href={item.href}>
@@ -129,14 +126,13 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Right Side Actions */}
           <div className="flex items-center space-x-3">
-            {/* Theme Toggle */}
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={toggleDarkMode}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
+              aria-label={isDarkMode ? t('common:theme.light', 'Light mode') : t('common:theme.dark', 'Dark mode')}
             >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
@@ -151,12 +147,12 @@ const Header: React.FC = () => {
               </AnimatePresence>
             </motion.button>
 
-            {/* Mobile Menu Button */}
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
+              aria-label={isMenuOpen ? t('common:menu.close', 'Close menu') : t('common:menu.open', 'Open menu')}
             >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
@@ -173,7 +169,6 @@ const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div

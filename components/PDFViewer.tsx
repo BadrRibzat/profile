@@ -8,7 +8,8 @@ import { translateText } from '../data/document-translations';
 
 // Enhanced worker setup with fallbacks
 if (typeof window !== 'undefined') {
-  pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+  const workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+  pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 }
 
 interface TextItem {
@@ -63,7 +64,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
         <div className="flex items-center space-x-2">
           <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
           <span>
-            Translation: {originalLanguage.toUpperCase()} → {targetLanguage.toUpperCase()}
+            {t('translationActive')}: {originalLanguage.toUpperCase()} → {targetLanguage.toUpperCase()}
           </span>
         </div>
       </div>
@@ -143,12 +144,12 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
 
   const handleDocumentLoadError = (error: Error) => {
     console.error('PDF load error:', error);
-    setError('Failed to load PDF document');
+    setError(t('errors.pdfLoadFailed'));
   };
 
   const handlePageLoadError = (error: Error) => {
     console.error('Page load error:', error);
-    setError('Failed to load PDF page');
+    setError(t('errors.pageLoadFailed'));
   };
 
   // SSR protection
@@ -166,7 +167,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
       <div className="flex items-center justify-center h-[600px] text-red-600 bg-red-50 dark:bg-red-900/20 rounded-xl">
         <div className="text-center p-6">
           <div className="text-4xl mb-4">⚠️</div>
-          <p className="text-lg font-semibold mb-2">Error Loading PDF</p>
+          <p className="text-lg font-semibold mb-2">{t('errors.title')}</p>
           <p className="text-sm mb-4">{error}</p>
           <button 
             onClick={() => {
@@ -175,7 +176,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
             }}
             className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
           >
-            Try Again
+            {t('errors.retry')}
           </button>
         </div>
       </div>
@@ -189,7 +190,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
       {/* Loading text overlay */}
       {loadingText && (
         <div className="absolute top-12 left-2 bg-yellow-500 text-white px-2 py-1 rounded text-xs z-10">
-          Extracting text...
+          {t('extractingText')}...
         </div>
       )}
 
@@ -205,10 +206,10 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
                 <div className="absolute inset-0 w-12 h-12 border-4 border-blue-200 rounded-full"></div>
               </div>
               <p className="mt-4 text-gray-600 dark:text-gray-400 font-medium">
-                Loading Document...
+                {t('loadingDocument')}...
               </p>
               <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">
-                Please wait...
+                {t('pleaseWait')}
               </p>
             </div>
           </div>
@@ -217,8 +218,8 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
           <div className="flex items-center justify-center h-[600px] text-red-600 bg-red-50 dark:bg-red-900/20 rounded-xl">
             <div className="text-center p-6">
               <div className="text-4xl mb-4">📄❌</div>
-              <p className="text-lg font-semibold">Failed to load document</p>
-              <p className="text-sm text-gray-600 mt-2">Please check your connection</p>
+              <p className="text-lg font-semibold">{t('errors.documentLoadFailed')}</p>
+              <p className="text-sm text-gray-600 mt-2">{t('errors.checkConnection')}</p>
             </div>
           </div>
         }
@@ -227,6 +228,9 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
           cMapPacked: true,
           standardFontDataUrl: `//unpkg.com/pdfjs-dist@${pdfjs.version}/standard_fonts/`,
           disableWorker: false,
+          isEvalSupported: false,
+          disableRange: false,
+          disableStream: false,
         }}
       >
         <div className="relative">
@@ -240,7 +244,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
                 <div className="text-center">
                   <Loader className="w-8 h-8 text-blue-600 animate-spin mx-auto" />
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                    Loading page {pageNumber}...
+                    {t('loadingPage')} {pageNumber}...
                   </p>
                 </div>
               </div>
@@ -248,8 +252,8 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
             error={
               <div className="flex items-center justify-center h-[400px] text-red-600 bg-red-50 dark:bg-red-900/20">
                 <div className="text-center">
-                  <p className="font-semibold">Failed to load page</p>
-                  <p className="text-sm">Try another page</p>
+                  <p className="font-semibold">{t('errors.pageLoadFailed')}</p>
+                  <p className="text-sm">{t('errors.tryAnotherPage')}</p>
                 </div>
               </div>
             }
@@ -280,7 +284,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
                     backdropFilter: 'blur(1px)',
                     border: '1px solid rgba(255,255,255,0.2)',
                   }}
-                  title={`Original: ${item.text}`}
+                  title={`${t('originalText')}: ${item.text}`}
                 >
                   <span className="font-medium">
                     {item.translatedText}
@@ -293,7 +297,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
           {/* Translation stats */}
           {isTranslateMode && showOverlay && (
             <div className="absolute bottom-2 right-2 bg-black/70 text-white px-2 py-1 rounded text-xs z-10">
-              {textItems.length} translations found
+              {textItems.length} {t('translationsFound')}
             </div>
           )}
         </div>

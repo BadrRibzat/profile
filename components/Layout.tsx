@@ -28,7 +28,7 @@ const Layout: React.FC<LayoutProps> = ({
   const { locale } = router;
 
   const isRTL = locale === 'ar';
-  const pageTitle = title ? `${title} | Badr Ribzat` : 'Badr Ribzat | Full-Stack Software Engineer';
+  const pageTitle = title ? `${title} | ${t('seo.title', 'Badr Ribzat')}` : t('seo.title', 'Badr Ribzat | Full-Stack Software Engineer');
   const pageDescription = description || t('seo.description');
 
   return (

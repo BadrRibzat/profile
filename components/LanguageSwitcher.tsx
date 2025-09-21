@@ -3,18 +3,20 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Globe, ChevronDown, Check } from 'lucide-react';
+import { useTranslation } from 'next-i18next';
 
 const LanguageSwitcher: React.FC = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation('common');
 
   const languages = [
-    { code: 'en', name: 'English', flag: '🇺🇸', nativeName: 'English' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷', nativeName: 'Français' },
-    { code: 'ar', name: 'العربية', flag: '🇲🇦', nativeName: 'العربية' },
-    { code: 'de', name: 'Deutsch', flag: '🇩🇪', nativeName: 'Deutsch' },
-    { code: 'es', name: 'Español', flag: '🇪🇸', nativeName: 'Español' },
-    { code: 'ja', name: '日本語', flag: '🇯🇵', nativeName: '日本語' }
+    { code: 'en', name: t('languages.en', 'English'), flag: '🇺🇸', nativeName: 'English' },
+    { code: 'fr', name: t('languages.fr', 'Français'), flag: '🇫🇷', nativeName: 'Français' },
+    { code: 'ar', name: t('languages.ar', 'العربية'), flag: '🇲🇦', nativeName: 'العربية' },
+    { code: 'de', name: t('languages.de', 'Deutsch'), flag: '🇩🇪', nativeName: 'Deutsch' },
+    { code: 'es', name: t('languages.es', 'Español'), flag: '🇪🇸', nativeName: 'Español' },
+    { code: 'ja', name: t('languages.ja', '日本語'), flag: '🇯🇵', nativeName: '日本語' }
   ];
 
   const currentLanguage = languages.find(lang => lang.code === router.locale) || languages[0];
@@ -50,7 +52,6 @@ const LanguageSwitcher: React.FC = () => {
         <AnimatePresence>
           {isOpen && (
             <>
-              {/* Backdrop */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -58,8 +59,6 @@ const LanguageSwitcher: React.FC = () => {
                 onClick={() => setIsOpen(false)}
                 className="fixed inset-0 -z-10"
               />
-              
-              {/* Dropdown Menu */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 10 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}

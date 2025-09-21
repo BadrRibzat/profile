@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
       color: 'hover:text-blue-600'
     },
     {
-      name: 'Email',
+      name: t('common:footer.email', 'Email'),
       href: 'mailto:badrribzat@gmail.com',
       icon: <Mail className="w-5 h-5" />,
       color: 'hover:text-red-500'
@@ -43,41 +43,39 @@ const Footer: React.FC = () => {
   ];
 
   const quickLinks = [
-    { name: t('nav.home'), href: '/' },
-    { name: t('nav.about'), href: '/about' },
-    { name: t('nav.projects'), href: '/projects' },
-    { name: t('nav.skills'), href: '/skills' },
-    { name: t('nav.contact'), href: '/contact' }
+    { name: t('common:nav.home', 'Home'), href: '/' },
+    { name: t('common:nav.about', 'About'), href: '/about' },
+    { name: t('common:nav.projects', 'Projects'), href: '/projects' },
+    { name: t('common:nav.skills', 'Skills'), href: '/skills' },
+    { name: t('common:nav.contact', 'Contact'), href: '/contact' }
   ];
 
   const projectLinks = [
     {
-      name: 'Biomedical Detection',
+      name: t('common:footer.projects.biomedical', 'Biomedical Detection'),
       href: 'https://biomedical-frontend.vercel.app/',
     },
     {
-      name: 'IT Learning Platform',
+      name: t('common:footer.projects.education', 'IT Learning Platform'),
       href: 'https://it-learning-pi.vercel.app/',
     },
     {
-      name: 'AI Chatbot Assistant',
+      name: t('common:footer.projects.chatbot', 'AI Chatbot Assistant'),
       href: 'https://chatbot-assistant-frontend.vercel.app/',
     }
   ];
 
   const achievements = [
-    { label: 'ALX Score', value: '106.76%' },
-    { label: 'Projects', value: '3+' },
-    { label: 'Certifications', value: '10+' },
-    { label: 'Languages', value: '6' }
+    { label: t('common:footer.achievements.alxScore', 'ALX Score'), value: '106.76%' },
+    { label: t('common:footer.achievements.projects', 'Projects'), value: '3+' },
+    { label: t('common:footer.achievements.certifications', 'Certifications'), value: '10+' },
+    { label: t('common:footer.achievements.languages', 'Languages'), value: '6' }
   ];
 
   return (
     <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
       <div className="container mx-auto px-4 py-12">
-        {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* About Section */}
           <div className="lg:col-span-1">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -94,14 +92,13 @@ const Footer: React.FC = () => {
                 </span>
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                {t('seo.description')}
+                {t('common:seo.description', 'Self-taught Full-Stack Software Engineer specializing in AI, biomedical applications, and educational technology.')}
               </p>
               
-              {/* Contact Info */}
               <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                 <div className="flex items-center space-x-2">
                   <MapPin className="w-4 h-4" />
-                  <span>Ksar El Kebir, Morocco</span>
+                  <span>{t('common:footer.location', 'Ksar El Kebir, Morocco')}</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Phone className="w-4 h-4" />
@@ -115,7 +112,6 @@ const Footer: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -124,7 +120,7 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
             >
               <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
-                {t('footer.quickLinks')}
+                {t('common:footer.quickLinks', 'Quick Links')}
               </h3>
               <ul className="space-y-2">
                 {quickLinks.map((link, index) => (
@@ -140,7 +136,6 @@ const Footer: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Featured Projects */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -149,7 +144,7 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
             >
               <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
-                {t('footer.featuredProjects')}
+                {t('common:footer.featuredProjects', 'Featured Projects')}
               </h3>
               <ul className="space-y-2">
                 {projectLinks.map((project, index) => (
@@ -169,7 +164,6 @@ const Footer: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Achievements */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -178,7 +172,7 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
             >
               <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
-                {t('footer.keyAchievements')}
+                {t('common:footer.keyAchievements', 'Key Achievements')}
               </h3>
               <div className="space-y-3">
                 {achievements.map((achievement, index) => (
@@ -193,18 +187,16 @@ const Footer: React.FC = () => {
                 ))}
               </div>
               
-              {/* Status Indicator */}
               <div className="mt-4 flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="text-xs text-green-600 dark:text-green-400 font-medium">
-                  {t('footer.availableStatus')}
+                  {t('common:footer.availableStatus', 'Available for Opportunities')}
                 </span>
               </div>
             </motion.div>
           </div>
         </div>
 
-        {/* Social Links */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -229,7 +221,6 @@ const Footer: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Bottom Bar */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -239,11 +230,11 @@ const Footer: React.FC = () => {
         >
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-400">
-              <span>© {currentYear} Badr Ribzat. {t('footer.rights')}.</span>
+              <span>© {currentYear} Badr Ribzat. {t('common:footer.rights', 'All rights reserved')}.</span>
             </div>
             
             <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
-              <span>{t('footer.builtWith')}</span>
+              <span>{t('common:footer.builtWith', 'Built with')}</span>
               <div className="flex items-center space-x-2">
                 <span className="text-blue-600 dark:text-blue-400 font-medium">Next.js</span>
                 <span>•</span>
@@ -254,7 +245,7 @@ const Footer: React.FC = () => {
             </div>
             
             <div className="flex items-center space-x-2 text-sm">
-              <span className="text-gray-600 dark:text-gray-400">{t('footer.madeIn')}</span>
+              <span className="text-gray-600 dark:text-gray-400">{t('common:footer.madeWith', 'Made with')}</span>
               <Heart className="w-4 h-4 text-red-500 animate-pulse" />
             </div>
           </div>
