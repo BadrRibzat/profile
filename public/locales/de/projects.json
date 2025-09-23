@@ -1,0 +1,88 @@
+{
+  "seo": {
+    "title": "Projekte - Badr Ribzat | Full-Stack-Entwickler",
+    "description": "Portfolio von produktionsreifen Anwendungen in den Bereichen KI, Gesundheit und Bildungstechnologie."
+  },
+  "hero": {
+    "status": "Für Beschäftigung verfügbar",
+    "location": "Bereit für eine Umzugsbereitschaft",
+    "title1": "Produktionsreif",
+    "title2": "Softwarelösungen",
+    "subtitle": "Portfolio mit unternehmensfähigen Anwendungen, die mit modernen Technologien und skalierbarer Architektur entwickelt wurden.",
+    "age": "34 Jahre",
+    "seeking": "Auf der Suche nach Möglichkeiten",
+    "experience": "Autodidaktischer Entwickler"
+  },
+  "filters": {
+    "all": "Alle Projekte",
+    "web": "Webanwendungen",
+    "healthcare": "Gesundheitswesen",
+    "ai": "KI/ML",
+    "education": "Bildung"
+  },
+  "projects": {
+    "biomedical": {
+      "title": "KI-gestütztes biomedizinisches Erkennungssystem",
+      "description": "Erweiterte KI-gestützte Gesundheitsplattform, die maschinelles Lernen mit medizinischer Diagnostik kombiniert.",
+      "impact": "Löst kritische Gesundheitsprobleme durch KI-gestützte diagnostische Unterstützung"
+    },
+    "education": {
+      "title": "Umfassende IT-Lernplattform",
+      "description": "Full-Stack Bildungstechnologie-Lösung mit erweiterter Kursverwaltung und Echtzeit-Analysen.",
+      "impact": "Demokratisiert den Zugang zu hochwertiger technischer Bildung"
+    },
+    "chatbot": {
+      "title": "Intelligenter KI-Chatbot-Assistent",
+      "description": "Sophistizierte konversationsbasierte KI-Plattform mit natürlicher Sprachverarbeitung und Kontextbewusstsein.",
+      "impact": "Verbessert die Benutzerinteraktion durch intelligente Konversationen"
+    },
+    "portfolio": {
+      "title": "Internationales mehrsprachiges Portfolio",
+      "description": "Umfassendes berufliches Portfolio mit ATS-optimierter Lebenslaufgenerierung in 6 Sprachen.",
+      "impact": "Überwindet sprachliche Barrieren für internationale Jobchancen"
+    }
+  },
+  "achievements": {
+    "coverage": "API-Dokumentationsabdeckung",
+    "coverageDesc": "Vollständige OpenAPI-Dokumentation für alle Endpunkte",
+    "deployment": "Automatisierte Bereitstellung",
+    "deploymentDesc": "Continuous Integration und Deployment-Pipelines",
+    "containerization": "Containerisierte Anwendungen",
+    "containerizationDesc": "Produktionsreife Container-Orchestrierung",
+    "uptime": "Dienstverfügbarkeit",
+    "uptimeDesc": "Zuverlässige, skalierbare Infrastruktur auf Cloud-Plattformen"
+  },
+  "featured": {
+    "title": "Ausgewählte Anwendungen",
+    "subtitle": "Flaggschiff-Projekte, die technische Fähigkeiten in den Bereichen Gesundheit, Bildung und KI demonstrieren.",
+    "badge": "EMPFOHLEN",
+    "cta": {
+      "title": "Bereit, Beizutragen",
+      "description": "Produktionsreife Lösungen, die reale Probleme lösen.",
+      "contact": "Möglichkeiten besprechen",
+      "resume": "Meinen Lebenslauf ansehen"
+    }
+  },
+  "all": {
+    "title": "Vollständiges Portfolio",
+    "subtitle": "Entdecken Sie Anwendungen in verschiedenen Bereichen, die mit Skalierbarkeit und Benutzererfahrung im Fokus entwickelt wurden."
+  },
+  "noResults": {
+    "title": "Keine Projekte gefunden",
+    "description": "Versuchen Sie, Ihre Filterauswahl anzupassen."
+  },
+  "excellence": {
+    "title": "Technische Standards",
+    "subtitle": "Jedes Projekt entspricht den Branchenbest Practices.",
+    "architecture": {
+      "title": "Skalierbare Architektur",
+      "item1": "Microservices-Designmuster",
+      "item2": "RESTful-API-Architektur"
+    },
+    "quality": {
+      "title": "Code-Qualität",
+      "item1": "Umfassende API-Dokumentation",
+      "item2": "Typsicherheit mit TypeScript"
+    }
+  }
+}

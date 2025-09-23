@@ -1,12 +1,28 @@
 {
+  "seo": {
+    "title": "お問い合わせ - バドル・リブザット",
+    "description": "職業上の機会、共同プロジェクト、技術的なご質問についてはバドル・リブザットまでお問い合わせください。"
+  },
+  "title": "ご連絡ください",
+  "subtitle": "新たな挑戦と機会に備えています。私のスキルが貴社のチームやプロジェクトにどのように貢献できるか、ぜひご相談ください。",
+  "info": {
+    "title": "連絡先情報",
+    "email": "メール",
+    "phone": "電話",
+    "location": "所在地",
+    "timezone": "タイムゾーン"
+  },
+  "social": {
+    "title": "ソーシャルネットワーク"
+  },
   "availability": {
-    "status": "機会を募集しています",
-    "message": "通常24時間以内に返信します"
+    "status": "機会を歓迎",
+    "message": "通常24時間以内にご返信いたします"
   },
   "form": {
     "title": "メッセージを送信",
     "name": "氏名",
-    "namePlaceholder": "あなたの氏名",
+    "namePlaceholder": "氏名を入力してください",
     "email": "メールアドレス",
     "emailPlaceholder": "your@email.com",
     "subject": "件名",
@@ -16,34 +32,18 @@
     "opportunities": {
       "fulltime": "正社員",
       "internship": "インターンシップ",
-      "contract": "契約/フリーランス",
-      "training": "トレーニング/指導",
-      "collaboration": "コラボレーション",
+      "contract": "契約・フリーランス",
+      "training": "トレーニング・メンタリング",
+      "collaboration": "共同プロジェクト",
       "other": "その他"
     },
     "preferredLanguage": "希望言語",
     "message": "メッセージ",
     "messagePlaceholder": "プロジェクト、機会、質問の詳細をご記入ください...",
-    "send": "メッセージ送信",
+    "send": "送信",
     "sending": "送信中...",
     "success": "メッセージを送信しました！",
     "error": "メッセージの送信に失敗しました。再度お試しください。",
-    "responseTime": "通常24時間以内に返信いたします"
-  },
-  "info": {
-    "title": "連絡先情報",
-    "email": "メール",
-    "phone": "電話",
-    "location": "所在地",
-    "timezone": "タイムゾーン"
-  },
-  "seo": {
-    "title": "お問い合わせ - バドル・リブザット",
-    "description": "プロフェッショナルな機会、コラボレーション、技術的な質問についてはバドル・リブザットまでご連絡ください。"
-  },
-  "social": {
-    "title": "ソーシャルネットワーク"
-  },
-  "subtitle": "新しいチャレンジと機会に備えています。あなたのチームやプロジェクトにどのように貢献できるか、ぜひご相談ください。",
-  "title": "つながりましょう"
+    "responseTime": "通常24時間以内にご返信いたします"
+  }
 }

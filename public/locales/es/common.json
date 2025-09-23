@@ -1,0 +1,423 @@
+{
+  "loadingPDFViewer": "Cargando visor PDF...",
+  "categories": {
+    "programming": "Lenguajes de Programación",
+    "backend": "Desarrollo Backend",
+    "frontend": "Desarrollo Frontend",
+    "database": "Sistemas de Bases de Datos",
+    "aiml": "IA y Aprendizaje Automático",
+    "devops": "DevOps e Infraestructura"
+  },
+  "configurationError": "Error de Configuración",
+  "documentIdRequired": "Se requiere ID del documento",
+  "reloadPage": "Recargar Página",
+  "languages": {
+    "originalLanguage": "Idioma Original",
+    "en": "Inglés",
+    "fr": "Francés",
+    "ar": "Árabe",
+    "de": "Alemán",
+    "es": "Español",
+    "ja": "Japonés"
+  },
+  "documentId": "ID del Documento",
+  "keyboardShortcuts": {
+    "title": "Atajos de Teclado",
+    "navigate": "Navegar páginas",
+    "zoom": "Acercar/alejar",
+    "translation": "Alternar traducción",
+    "close": "Cerrar superposición"
+  },
+  "errors": {
+    "title": "Error al Cargar Documento",
+    "pdfLoadFailed": "No se pudo cargar el documento PDF",
+    "pageLoadFailed": "No se pudo cargar la página",
+    "documentLoadFailed": "No se pudo cargar el documento",
+    "checkConnection": "Por favor, verifica tu conexión a internet",
+    "tryAnotherPage": "Intenta navegar a otra página",
+    "retry": "Intentar de Nuevo"
+  },
+  "translationNotice": {
+    "description": "Estas son traducciones informales con fines informativos. Pueden requerirse traducciones certificadas oficiales para trámites formales."
+  },
+  "documents": {
+    "pageTitle": "Documentos Profesionales",
+    "pageDescription": "Explora mis certificados, transcripciones y credenciales profesionales verificadas con soporte de traducción multilingüe.",
+    "searchPlaceholder": "Buscar documentos...",
+    "categories": {
+      "all": "Todos los Documentos",
+      "education": "Educación",
+      "professional": "Profesional",
+      "technical": "Técnico",
+      "health": "Salud y Nutrición",
+      "language": "Idiomas"
+    },
+    "originalLanguage": "Idioma Original",
+    "issuedOn": "Emitido",
+    "issuedBy": "Emitido Por",
+    "viewWithTranslation": "Ver y Traducir",
+    "downloadDirectly": "Descargar PDF",
+    "noResultsFound": "No se encontraron documentos",
+    "tryDifferentSearch": "Intenta ajustar tus términos de búsqueda o filtros",
+    "downloadPack": {
+      "title": "Paquete Completo de Credenciales",
+      "description": "Descarga todos los documentos en tu idioma preferido"
+    },
+    "documentViewer": "Visor de Documentos",
+    "backToDocuments": "← Volver a Documentos",
+    "notFound": {
+      "title": "Documento No Encontrado",
+      "description": "No se pudo encontrar el documento solicitado.",
+      "button": "Explorar Todos los Documentos"
+    }
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Explora mi trabajo más reciente, que muestra experiencia en desarrollo full-stack, integración de IA y aplicaciones listas para producción.",
+    "filters": {
+      "all": "Todos los Proyectos",
+      "web": "Aplicaciones Web",
+      "healthcare": "Salud",
+      "ai": "IA/ML",
+      "education": "Educación"
+    },
+    "projects": {
+      "biomedical": {
+        "description": "Sistema de detección biomédica impulsado por IA con capacidades de aprendizaje automático para aplicaciones sanitarias y asistencia diagnóstica."
+      },
+      "education": {
+        "description": "Plataforma tecnológica educativa integral con gestión de cursos, análisis de estudiantes y módulos de aprendizaje interactivo."
+      },
+      "chatbot": {
+        "description": "Asistente de chatbot inteligente con procesamiento de lenguaje natural, respuestas en tiempo real y arquitectura escalable."
+      },
+      "portfolio": {
+        "description": "Portafolio internacional multilingüe con generación de currículum optimizado para ATS que soporta 6+ idiomas"
+      }
+    },
+    "seo": {
+      "title": "Proyectos – Badr Ribzat",
+      "description": "Una colección de mi trabajo, mostrando habilidades en desarrollo full-stack, IA, aprendizaje automático y diseño de aplicaciones listas para producción."
+    },
+    "technicalStack": {
+      "title": "Pila Técnica Lista para Producción",
+      "items": [
+        { "value": "100%", "label": "Cobertura de Documentación API" },
+        { "value": "CI/CD", "label": "Despliegues Automatizados" },
+        { "value": "Docker", "label": "Aplicaciones Contenedorizadas" },
+        { "value": "Scalable", "label": "Arquitectura en la Nube" }
+      ]
+    }
+  },
+  "resume": {
+    "pageTitle": "Currículum Profesional",
+    "pageDescription": "Descarga mi currículum profesional optimizado para sistemas ATS y adaptado a estándares internacionales.",
+    "active": "Activo",
+    "navigation": {
+      "back": "Volver al inicio"
+    },
+    "languageSelector": {
+      "title": "Elige tu idioma preferido"
+    },
+    "sections": {
+      "summary": "Resumen Profesional",
+      "skills": "Habilidades Técnicas",
+      "projects": "Proyectos Clave",
+      "experience": "Experiencia Profesional",
+      "education": "Educación y Certificaciones",
+      "additional": "Cualificaciones Adicionales"
+    },
+    "subsections": {
+      "languages": "Idiomas",
+      "additionalSkills": "Habilidades Adicionales"
+    },
+    "personalInfo": {
+      "title": "Ingeniero de Software Full-Stack"
+    },
+    "summary": "Ingeniero de Software Full-Stack autodidacta con experiencia demostrada en construir e implementar aplicaciones web escalables y sistemas potenciados por IA. Completé el programa intensivo de 18 meses de ALX en Ingeniería de Software con un rendimiento excepcional (106.76%). Historial comprobado de desarrollo de aplicaciones listas para producción con tecnologías modernas como Python, JavaScript, React y plataformas de despliegue en la nube. Sólida experiencia en desarrollo de API, diseño de bases de datos y prácticas DevOps. Comprometido con el aprendizaje continuo y la excelencia en el desarrollo de software.",
+    "experience": {
+      "0": {
+        "title": "Ingeniero de Software Full-Stack",
+        "company": "Proyectos Independientes y Código Abierto",
+        "achievements": {
+          "0": "Desarrollé e implementé 3+ aplicaciones full-stack con pilas tecnológicas modernas",
+          "1": "Implementé APIs RESTful que sirven a 50+ usuarios concurrentes con rendimiento optimizado",
+          "2": "Construí sistemas potenciados por IA que logran un 85% de precisión en reconocimiento de intenciones",
+          "3": "Creé documentación completa y especificaciones de API usando Swagger/OpenAPI",
+          "4": "Establecí pipelines CI/CD que redujeron el tiempo de despliegue en un 40%"
+        }
+      },
+      "1": {
+        "title": "Consultor de Marketing Digital",
+        "company": "Freelance",
+        "achievements": {
+          "0": "Aumenté el compromiso del cliente en un 35% mediante estrategias de optimización basadas en datos",
+          "1": "Apliqué habilidades analíticas para evaluación de rendimiento y mejora de procesos",
+          "2": "Colaboré con equipos multifuncionales en la optimización de pipelines de contenido",
+          "3": "Demostré adaptabilidad en entornos rápidos y orientados a resultados"
+        }
+      }
+    },
+    "projects": {
+      "biomedical": {
+        "description": "Sistema de detección biomédica impulsado por IA con capacidades de aprendizaje automático para aplicaciones sanitarias y asistencia diagnóstica.",
+        "highlights": {
+          "0": "Construí preprocesamiento de señales/datos y líneas base de ML para detectores prototipo",
+          "1": "Entregué experimentos reproducibles con documentación estructurada",
+          "2": "Implementé APIs RESTful con 100% de cobertura Swagger/OpenAPI"
+        }
+      },
+      "education": {
+        "description": "Plataforma educativa con gestión de cursos y seguimiento del progreso",
+        "highlights": {
+          "0": "Reduje el tiempo de respuesta de la API en un 30% mediante optimización de consultas y caché",
+          "1": "Implementé pipelines CI/CD que redujeron el tiempo de despliegue en un 40%",
+          "2": "Construí un sistema de control de acceso basado en roles y gestión de usuarios"
+        }
+      },
+      "ai": {
+        "description": "Chatbot inteligente con capacidades de procesamiento de lenguaje natural",
+        "highlights": {
+          "0": "Logré un 85% de precisión en reconocimiento de intenciones usando clasificación ajustada al dominio",
+          "1": "Optimizado para manejar 50+ usuarios concurrentes con endpoints sin estado",
+          "2": "Implementé contenedorización y observabilidad para despliegue en producción"
+        }
+      }
+    },
+    "certifications": {
+      "alx": {
+        "details": "Programa intensivo de 18 meses que cubre desarrollo full-stack, algoritmos y diseño de sistemas"
+      }
+    },
+    "additionalSkills": {
+      "0": "Certificación Profesional de Peluquería (Hombres y Mujeres) - Escuela Aprobada por el Estado",
+      "1": "Certificación de Operación de Carretilla Elevadora (CACES R489 y R485)"
+    },
+    "generating": "Generando...",
+    "download": "Descargar PDF",
+    "preview": "Vista Previa",
+    "features": "Características",
+    "featuresList": {
+      "atsOptimized": "Optimizado para ATS",
+      "localized": "Localizado y adaptado culturalmente",
+      "professionalFormat": "Formato profesional estándar",
+      "japaneseFormat": "Formato japonés Rirekisho"
+    },
+    "specifications": "Especificaciones",
+    "specs": {
+      "format": "Formato",
+      "language": "Idioma",
+      "style": "Estilo",
+      "optimized": "Optimizado"
+    },
+    "cta": {
+      "title": "¿Listo para colaborar?",
+      "description": "Hablemos sobre oportunidades y proyectos.",
+      "button": "Contáctame"
+    }
+  },
+  "skills": {
+    "title": "Habilidades y Experiencia",
+    "subtitle": "Una visión completa de mis habilidades técnicas, certificaciones prácticas y capacidades multilingües desarrolladas mediante aprendizaje autodirigido y experiencia práctica.",
+    "categories": {
+      "programming": "Lenguajes de Programación",
+      "backend": "Desarrollo Backend",
+      "frontend": "Desarrollo Frontend",
+      "database": "Sistemas de Bases de Datos",
+      "aiml": "IA y Aprendizaje Automático",
+      "devops": "DevOps e Infraestructura"
+    },
+    "technical": {
+      "title": "Habilidades Técnicas"
+    },
+    "practical": {
+      "title": "Habilidades Prácticas Certificadas",
+      "forklift": "Operación de Carretilla Elevadora",
+      "forkliftDesc": "Operación de maquinaria pesada con certificaciones de seguridad",
+      "driving": "Conducción Profesional",
+      "drivingCert": "Licencia Marroquí Válida (Todas las Categorías)",
+      "drivingDesc": "Conducción profesional con excelente historial de seguridad",
+      "hairstyling": "Peluquería Profesional",
+      "hairstylingCert": "Certificación Aprobada por el Estado (Hombres y Mujeres)",
+      "hairstylingDesc": "Estilismo completo con técnicas modernas",
+      "culinary": "Artes Culinarias",
+      "culinaryCert": "Especialista en Nutrición Terapéutica",
+      "culinaryDesc": "Cocina centrada en la salud y planificación nutricional"
+    },
+    "footer": {
+      "madeWith": "Hecho con",
+      "builtWith": "Construido con",
+      "copyright": "Badr Ribzat. Todos los derechos reservados.",
+      "availableForOpportunities": "Disponible para pasantías, puestos de nivel inicial y aprendizajes con patrocinio de visa"
+    },
+    "achievements": {
+      "alxScore": "Puntuación ALX",
+      "projects": "Proyectos",
+      "certifications": "Certificaciones",
+      "languages": "Idiomas"
+    },
+    "projectCard": {
+      "scalable": "Escalable",
+      "docker": "Docker",
+      "ciCd": "CI/CD",
+      "openToOpportunities": "Disponible para oportunidades",
+      "liveDemo": "Demostración en vivo",
+      "code": "Código",
+      "apiDocs": "Documentación API",
+      "deployed": "Desplegado",
+      "productionReady": "Listo para producción",
+      "openToOpportunities": "Abierto a oportunidades"
+    },
+    "social": {
+      "email": "Correo",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+    "navigation": {
+      "home": "Inicio",
+      "about": "Sobre mí",
+      "projects": "Proyectos",
+      "skills": "Habilidades",
+      "resume": "Currículum",
+      "contact": "Contacto",
+      "documents": "Documentos"
+    },
+    "languageSelector": {
+      "ar": "Árabe",
+      "es": "Español",
+      "de": "Alemán",
+      "fr": "Francés",
+      "ja": "Japonés",
+      "en": "Inglés"
+    },
+    "languages": {
+      "title": "Dominio de Idiomas",
+      "arabic": "Árabe",
+      "french": "Francés",
+      "english": "Inglés",
+      "german": "Alemán",
+      "spanish": "Español",
+      "japanese": "Japonés"
+    },
+    "levels": {
+      "native": "Nativo",
+      "professional": "Profesional",
+      "upperIntermediate": "Intermedio Alto",
+      "intermediate": "Intermedio",
+      "basic": "Básico"
+    },
+    "proficiency": "Nivel de Dominio",
+    "cta": {
+      "title": "Listo para Causar Impacto",
+      "description": "Hablemos sobre cómo mi conjunto diverso de habilidades puede contribuir a tu próximo proyecto o equipo.",
+      "contact": "Ponte en Contacto",
+      "resume": "Ver Currículum"
+    }
+  },
+  "home": {
+    "seo": {
+      "title": "Sobre Badr Ribzat | Ingeniero Full-Stack Resiliente Buscando Oportunidades Internacionales",
+      "description": "Conoce a Badr Ribzat: un ingeniero full-stack autodidacta que superó desafíos importantes para lograr excelencia técnica. Disponible para oportunidades internacionales con patrocinio de visa."
+  },
+    "hero": {
+      "subtitle": "Ingeniero de Software Full-Stack",
+      "location": "Ksar El Kebir, Marruecos",
+      "availability": "Disponible para Trabajo Remoto",
+      "highlights": {
+        "selfTaught": "Experto Autodidacta",
+        "aiExpert": "Especialista en IA y ML",
+        "resilient": "Solucionador de Problemas Resiliente"
+      },
+      "cta": {
+        "viewResume": "Descargar Currículum",
+        "viewProjects": "Ver Proyectos"
+      }
+    },
+    "stats": {
+      "alxScore": "Puntuación del Programa ALX",
+      "projects": "Proyectos Activos",
+      "languages": "Lenguajes de Programación",
+      "technologies": "Tecnologías Dominadas"
+    },
+    "projects": {
+      "title": "Proyectos Destacados",
+      "description": "Explora mi trabajo más reciente que muestra experiencia en desarrollo full-stack, integración de IA y aplicaciones listas para producción.",
+      "biomedical": {
+        "description": "Sistema de detección biomédica impulsado por IA con capacidades de aprendizaje automático para aplicaciones sanitarias y asistencia diagnóstica."
+      },
+      "education": {
+        "description": "Plataforma tecnológica educativa integral con gestión de cursos, análisis de estudiantes y módulos de aprendizaje interactivo."
+      },
+      "chatbot": {
+        "description": "Asistente de chatbot inteligente con procesamiento de lenguaje natural, respuestas en tiempo real y arquitectura escalable."
+      }
+    },
+    "about": {
+      "title": "Sobre Mí",
+      "subtitle": "Ingeniero Full-Stack Autodidacta | Resolviendo Problemas del Mundo Real con Tecnología"
+    },
+    "contact": {
+      "title": "Contacto",
+      "subtitle": "Listo para nuevos desafíos y oportunidades."
+    }
+  },
+  "buttons": {
+    "generating": "Generando...",
+    "error": "Error",
+    "loadingLink": "Cargando..."
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "documents": "Documentos",
+    "skills": "Habilidades",
+    "resume": "Currículum",
+    "contact": "Contacto"
+  },
+  "header": {
+    "logoSubtitle": "Ingeniero Full-Stack"
+  },
+  "theme": {
+    "dark": "Modo oscuro",
+    "light": "Modo claro"
+  },
+  "menu": {
+    "open": "Abrir menú",
+    "close": "Cerrar menú"
+  },
+  "footer": {
+    "bio": "Descubre la historia detrás de Badr Ribzat, un ingeniero full-stack autodidacta impulsado por la pasión, la resiliencia y el deseo de resolver problemas complejos.",
+    "email": "Correo",
+    "location": "Ksar El Kebir, Marruecos",
+    "quickLinks": "Enlaces Rápidos",
+    "featuredProjects": "Proyectos Destacados",
+    "projects": {
+      "biomedical": "Detección Biomédica",
+      "education": "Plataforma de Aprendizaje IT",
+      "chatbot": "Asistente de Chatbot IA"
+    },
+    "keyAchievements": "Logros Clave",
+    "achievements": {
+      "alxScore": "Puntuación ALX",
+      "projects": "Proyectos",
+      "certifications": "Certificaciones",
+      "languages": "Idiomas"
+    },
+    "availableStatus": "Disponible para Oportunidades",
+    "rights": "Todos los derechos reservados",
+    "builtWith": "Construido con",
+    "madeWith": "Hecho con"
+  },
+  "projectCard": {
+    "apiDocs": "Docs API",
+    "technicalDocs": "Docs Técnicas",
+    "liveDemo": "Demo en Vivo",
+    "code": "Código",
+    "productionReady": "Listo para Producción",
+    "scalable": "Escalable",
+    "deployed": "Desplegado",
+    "openToOpportunities": "Abierto a Oportunidades"
+  },
+  "fallbackNotice": "Por favor, revisa los marcadores de posición de traducción."
+}

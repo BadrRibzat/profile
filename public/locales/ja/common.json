@@ -1,0 +1,377 @@
+{
+  "loadingPDFViewer": "PDFビューアを読み込み中...",
+  "categories": {
+    "programming": "プログラミング言語",
+    "backend": "バックエンド開発",
+    "frontend": "フロントエンド開発",
+    "database": "データベースシステム",
+    "aiml": "AI・機械学習",
+    "devops": "DevOps・インフラ"
+  },
+  "configurationError": "設定エラー",
+  "documentIdRequired": "ドキュメントIDが必要です",
+  "reloadPage": "ページを再読み込み",
+  "languages": {
+    "originalLanguage": "原文の言語",
+    "en": "英語",
+    "fr": "フランス語",
+    "ar": "アラビア語",
+    "de": "ドイツ語",
+    "es": "スペイン語",
+    "ja": "日本語"
+  },
+  "documentId": "ドキュメントID",
+  "keyboardShortcuts": {
+    "title": "キーボードショートカット",
+    "navigate": "ページ移動",
+    "zoom": "拡大/縮小",
+    "translation": "翻訳の切り替え",
+    "close": "オーバーレイを閉じる"
+  },
+  "errors": {
+    "title": "ドキュメントの読み込みエラー",
+    "pdfLoadFailed": "PDFドキュメントの読み込みに失敗しました",
+    "pageLoadFailed": "ページの読み込みに失敗しました",
+    "documentLoadFailed": "ドキュメントを読み込めません",
+    "checkConnection": "インターネット接続をご確認ください",
+    "tryAnotherPage": "別のページに移動してみてください",
+    "retry": "再試行"
+  },
+  "translationNotice": {
+    "description": "これは情報提供を目的とした非公式翻訳です。正式な手続きには、公的に認定された翻訳が必要な場合があります。"
+  },
+  "documents": {
+    "pageTitle": "職務関連書類",
+    "pageDescription": "多言語翻訳機能付きで、認定済みの証明書、成績証明書、職務資格をご覧いただけます。",
+    "searchPlaceholder": "書類を検索...",
+    "categories": {
+      "all": "すべての書類",
+      "education": "教育",
+      "professional": "職務",
+      "technical": "技術",
+      "health": "健康・栄養",
+      "language": "言語"
+    },
+    "originalLanguage": "原文の言語",
+    "issuedOn": "発行日",
+    "issuedBy": "発行元",
+    "viewWithTranslation": "表示・翻訳",
+    "downloadDirectly": "PDFダウンロード",
+    "noResultsFound": "該当する書類が見つかりません",
+    "tryDifferentSearch": "検索条件やフィルターを調整してみてください",
+    "downloadPack": {
+      "title": "完全資格パック",
+      "description": "希望言語で全書類をダウンロード"
+    },
+    "documentViewer": "ドキュメントビューア",
+    "backToDocuments": "← 書類一覧に戻る",
+    "notFound": {
+      "title": "書類が見つかりません",
+      "description": "リクエストされた書類が見つかりませんでした。",
+      "button": "すべての書類を閲覧"
+    }
+  },
+  "projects": {
+    "title": "代表的なプロジェクト",
+    "subtitle": "フルスタック開発、AI統合、本番環境対応アプリケーションにおける専門性を示す最新作をご覧ください。",
+    "filters": {
+      "all": "すべてのプロジェクト",
+      "web": "Webアプリケーション",
+      "healthcare": "医療",
+      "ai": "AI/ML",
+      "education": "教育"
+    },
+    "projects": {
+      "biomedical": {
+        "description": "医療アプリケーションおよび診断支援向けに機械学習機能を備えたAI搭載生体医療検出システム。"
+      },
+      "education": {
+        "description": "コース管理、生徒分析、インタラクティブ学習モジュールを備えた包括的な教育テクノロジープラットフォーム。"
+      },
+      "chatbot": {
+        "description": "自然言語処理、リアルタイム応答、スケーラブルなアーキテクチャを備えたインテリジェントチャットボットアシスタント。"
+      },
+      "portfolio": {
+        "description": "6言語以上対応のATS最適化履歴書生成機能付き国際的多言語ポートフォリオ"
+      }
+    },
+    "seo": {
+      "title": "プロジェクト – バドル・リブザット",
+      "description": "フルスタック開発、AI、機械学習、本番環境対応アプリケーション設計におけるスキルを示す作品集。"
+    },
+    "technicalStack": {
+      "title": "本番環境対応技術スタック",
+      "items": [
+        { "value": "100%", "label": "APIドキュメント網羅率" },
+        { "value": "CI/CD", "label": "自動デプロイ" },
+        { "value": "Docker", "label": "コンテナ化アプリ" },
+        { "value": "Scalable", "label": "クラウドアーキテクチャ" }
+      ]
+    }
+  },
+  "resume": {
+    "pageTitle": "職務経歴書",
+    "pageDescription": "ATSシステム最適化、国際基準に準拠したプロフェッショナルな履歴書をダウンロードできます。",
+    "active": "アクティブ",
+    "navigation": {
+      "back": "ホームに戻る"
+    },
+    "languageSelector": {
+      "title": "希望言語を選択"
+    },
+    "sections": {
+      "summary": "職務要約",
+      "skills": "技術スキル",
+      "projects": "主要プロジェクト",
+      "experience": "職務経験",
+      "education": "教育・資格",
+      "additional": "追加資格"
+    },
+    "subsections": {
+      "languages": "言語",
+      "additionalSkills": "追加スキル"
+    },
+    "personalInfo": {
+      "title": "フルスタックソフトウェアエンジニア"
+    },
+    "summary": "スケーラブルなWebアプリケーションおよびAI搭載システムの構築・デプロイにおいて実績のある、独学のフルスタックソフトウェアエンジニア。18か月にわたる集中型ALXソフトウェアエンジニアリングプログラムを優秀な成績（106.76%）で修了。Python、JavaScript、React、クラウドデプロイプラットフォームなど最新技術を用いた本番環境対応アプリケーション開発の実績あり。API開発、データベース設計、DevOps実践における豊富な経験。ソフトウェア開発における継続的学習と卓越性にコミットしています。",
+    "experience": {
+      "0": {
+        "title": "フルスタックソフトウェアエンジニア",
+        "company": "個人プロジェクト・オープンソース",
+        "achievements": {
+          "0": "最新技術スタックを用いたフルスタックアプリケーションを3件以上開発・デプロイ",
+          "1": "50人以上の同時ユーザーに対応するパフォーマンス最適化RESTful APIを実装",
+          "2": "意図認識精度85%を達成するAIシステムを構築",
+          "3": "Swagger/OpenAPIを用いた包括的なドキュメントおよびAPI仕様を作成",
+          "4": "デプロイ時間を40%短縮するCI/CDパイプラインを構築"
+        }
+      },
+      "1": {
+        "title": "デジタルマーケティングコンサルタント",
+        "company": "フリーランス",
+        "achievements": {
+          "0": "データ駆動型最適化戦略により顧客エンゲージメントを35%向上",
+          "1": "パフォーマンス評価およびプロセス改善に分析スキルを適用",
+          "2": "コンテンツパイプライン最適化のために他職種チームと協力",
+          "3": "迅速かつ成果重視の環境における適応力を実証"
+        }
+      }
+    },
+    "projects": {
+      "biomedical": {
+        "description": "医療アプリケーションおよび診断支援向けに機械学習機能を備えたAI搭載生体医療検出システム。",
+        "highlights": {
+          "0": "プロトタイプ検出器向けに信号/データ前処理およびMLベースラインを構築",
+          "1": "構造化されたドキュメントによる再現可能な実験を提供",
+          "2": "Swagger/OpenAPIカバレッジ100%のRESTful APIを実装"
+        }
+      },
+      "education": {
+        "description": "コース管理および進捗追跡機能を備えた教育プラットフォーム",
+        "highlights": {
+          "0": "クエリ最適化およびキャッシュによりAPI応答時間を30%短縮",
+          "1": "デプロイ時間を40%短縮するCI/CDパイプラインを実装",
+          "2": "役割ベースアクセス制御およびユーザー管理システムを構築"
+        }
+      },
+      "ai": {
+        "description": "自然言語処理機能を備えたインテリジェントチャットボット",
+        "highlights": {
+          "0": "ドメイン調整型分類を用いて意図認識精度85%を達成",
+          "1": "ステートレスエンドポイントで50人以上の同時ユーザーに対応するよう最適化",
+          "2": "本番環境デプロイのためのコンテナ化および可観測性を実装"
+        }
+      }
+    },
+    "certifications": {
+      "alx": {
+        "details": "フルスタック開発、アルゴリズム、システム設計を網羅する18か月集中プログラム"
+      }
+    },
+    "additionalSkills": {
+      "0": "プロフェッショナル理容師資格（男女対応）— 国家認定校",
+      "1": "フォークリフト操作資格（CACES R489 & R485）"
+    },
+    "generating": "生成中...",
+    "download": "PDFダウンロード",
+    "preview": "プレビュー",
+    "features": "特徴",
+    "featuresList": {
+      "atsOptimized": "ATS最適化済み",
+      "localized": "ローカライズ・文化に適応",
+      "professionalFormat": "標準的なプロフェッショナル形式",
+      "japaneseFormat": "日本式履歴書（履歴書）形式"
+    },
+    "specifications": "仕様",
+    "specs": {
+      "format": "形式",
+      "language": "言語",
+      "style": "スタイル",
+      "optimized": "最適化済み"
+    },
+    "cta": {
+      "title": "ご協力をお待ちしています",
+      "description": "ぜひ、新たな機会やプロジェクトについてお話しましょう。",
+      "button": "お問い合わせ"
+    }
+  },
+  "skills": {
+    "title": "スキルと専門性",
+    "subtitle": "独学と実践的経験を通じて培った、技術的能力、実践的資格、多言語能力の包括的な概要。",
+    "categories": {
+      "programming": "プログラミング言語",
+      "backend": "バックエンド開発",
+      "frontend": "フロントエンド開発",
+      "database": "データベースシステム",
+      "aiml": "AI・機械学習",
+      "devops": "DevOps・インフラ"
+    },
+    "technical": {
+      "title": "技術スキル"
+    },
+    "practical": {
+      "title": "認定実務スキル",
+      "forklift": "フォークリフト操作",
+      "forkliftDesc": "安全資格付き重機操作",
+      "driving": "プロフェッショナルドライバー",
+      "drivingCert": "有効なモロッコ運転免許（全カテゴリー）",
+      "drivingDesc": "優れた安全記録を持つプロフェッショナルドライバー",
+      "hairstyling": "プロフェッショナル理容",
+      "hairstylingCert": "国家認定資格（男女対応）",
+      "hairstylingDesc": "最新技術によるフルサービススタイリング",
+      "culinary": "料理",
+      "culinaryCert": "治療的栄養スペシャリスト",
+      "culinaryDesc": "健康志向の料理と栄養計画"
+    },
+    "languages": {
+      "title": "言語能力",
+      "arabic": "アラビア語",
+      "french": "フランス語",
+      "english": "英語",
+      "german": "ドイツ語",
+      "spanish": "スペイン語",
+      "japanese": "日本語"
+    },
+    "levels": {
+      "native": "母語",
+      "professional": "ビジネスレベル",
+      "upperIntermediate": "中上級",
+      "intermediate": "中級",
+      "basic": "初級"
+    },
+    "proficiency": "習熟度",
+    "cta": {
+      "title": "インパクトを生み出す準備ができています",
+      "description": "私の多様なスキルセットが、次のプロジェクトやチームにどのように貢献できるか、ぜひご相談ください。",
+      "contact": "お問い合わせ",
+      "resume": "履歴書を表示"
+    }
+  },
+  "home": {
+    "seo": {
+      "title": "バドル・リブザット – フルスタックエンジニア",
+      "description": "AI、生体医療アプリケーション、教育テクノロジーを専門とする独学のフルスタックソフトウェアエンジニア。モロッコ在住、世界中のリモート機会に対応可能。"
+    },
+    "hero": {
+      "subtitle": "フルスタックソフトウェアエンジニア",
+      "location": "ケサル・エル・ケビール、モロッコ",
+      "availability": "リモート勤務対応",
+      "highlights": {
+        "selfTaught": "独学のエキスパート",
+        "aiExpert": "AI・MLスペシャリスト",
+        "resilient": "しなやかな問題解決者"
+      },
+      "cta": {
+        "viewResume": "履歴書をダウンロード",
+        "viewProjects": "プロジェクトを表示"
+      }
+    },
+    "stats": {
+      "alxScore": "ALXプログラム得点",
+      "projects": "稼働中プロジェクト",
+      "languages": "プログラミング言語",
+      "technologies": "習得済み技術"
+    },
+    "projects": {
+      "title": "代表的なプロジェクト",
+      "description": "フルスタック開発、AI統合、本番環境対応アプリケーションにおける専門性を示す最新作をご覧ください。",
+      "biomedical": {
+        "description": "医療アプリケーションおよび診断支援向けに機械学習機能を備えたAI搭載生体医療検出システム。"
+      },
+      "education": {
+        "description": "コース管理、生徒分析、インタラクティブ学習モジュールを備えた包括的な教育テクノロジープラットフォーム。"
+      },
+      "chatbot": {
+        "description": "自然言語処理、リアルタイム応答、スケーラブルなアーキテクチャを備えたインテリジェントチャットボットアシスタント。"
+      }
+    },
+    "about": {
+      "title": "自己紹介",
+      "subtitle": "独学のフルスタックエンジニア｜テクノロジーで現実の課題を解決"
+    },
+    "contact": {
+      "title": "お問い合わせ",
+      "subtitle": "新たな挑戦と機会に備えています。"
+    }
+  },
+  "buttons": {
+    "generating": "生成中...",
+    "error": "エラー",
+    "loadingLink": "読み込み中..."
+  },
+  "nav": {
+    "home": "ホーム",
+    "about": "自己紹介",
+    "projects": "プロジェクト",
+    "documents": "書類",
+    "skills": "スキル",
+    "resume": "履歴書",
+    "contact": "お問い合わせ"
+  },
+  "header": {
+    "logoSubtitle": "フルスタックエンジニア"
+  },
+  "theme": {
+    "dark": "ダークモード",
+    "light": "ライトモード"
+  },
+  "menu": {
+    "open": "メニューを開く",
+    "close": "メニューを閉じる"
+  },
+  "footer": {
+    "bio": "情熱、回復力、そして複雑な問題を解決したいという願望に駆られた、独学のフルスタックエンジニア、バドル・リブザットの物語をご覧ください。",
+    "email": "メール",
+    "location": "ケサル・エル・ケビール、モロッコ",
+    "quickLinks": "クイックリンク",
+    "featuredProjects": "注目プロジェクト",
+    "projects": {
+      "biomedical": "バイオ医療検出",
+      "education": "IT学習プラットフォーム",
+      "chatbot": "AIチャットボットアシスタント"
+    },
+    "keyAchievements": "主な実績",
+    "achievements": {
+      "alxScore": "ALXスコア",
+      "projects": "プロジェクト",
+      "certifications": "資格",
+      "languages": "言語"
+    },
+    "availableStatus": "機会に対応可能",
+    "rights": "すべての権利を保有",
+    "builtWith": "構築技術",
+    "madeWith": "心を込めて制作"
+  },
+  "projectCard": {
+    "apiDocs": "APIドキュメント",
+    "technicalDocs": "技術ドキュメント",
+    "liveDemo": "ライブデモ",
+    "code": "コード",
+    "productionReady": "本番環境対応",
+    "scalable": "スケーラブル",
+    "deployed": "デプロイ済み",
+    "openToOpportunities": "機会を歓迎"
+  },
+  "fallbackNotice": "翻訳プレースホルダーをご確認ください。"
+}

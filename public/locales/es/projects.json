@@ -1,0 +1,88 @@
+{
+  "seo": {
+    "title": "Proyectos - Badr Ribzat | Desarrollador Full-Stack",
+    "description": "Portafolio de aplicaciones listas para producción en tecnologías de IA, salud y educación."
+  },
+  "hero": {
+    "status": "Disponible para Empleo",
+    "location": "Abierto a Reubicación",
+    "title1": "Listas para Producción",
+    "title2": "Soluciones de Software",
+    "subtitle": "Portafolio que muestra aplicaciones de nivel empresarial construidas con tecnologías modernas y arquitectura escalable.",
+    "age": "34 Años",
+    "seeking": "Buscando Oportunidades",
+    "experience": "Desarrollador Autodidacta"
+  },
+  "filters": {
+    "all": "Todos los Proyectos",
+    "web": "Aplicaciones Web",
+    "healthcare": "Salud",
+    "ai": "IA/ML",
+    "education": "Educación"
+  },
+  "projects": {
+    "biomedical": {
+      "title": "Sistema de Detección Biomédica con IA",
+      "description": "Plataforma avanzada de salud impulsada por IA que combina aprendizaje automático con diagnóstico médico.",
+      "impact": "Aborda desafíos críticos en salud mediante asistencia diagnóstica impulsada por IA"
+    },
+    "education": {
+      "title": "Plataforma Integral de Aprendizaje IT",
+      "description": "Solución tecnológica educativa full-stack con gestión avanzada de cursos y análisis en tiempo real.",
+      "impact": "Democratiza el acceso a la educación técnica de calidad"
+    },
+    "chatbot": {
+      "title": "Asistente Inteligente de Chatbot de IA",
+      "description": "Plataforma de inteligencia artificial conversacional con procesamiento del lenguaje natural y conciencia de contexto.",
+      "impact": "Mejora la interacción del usuario mediante conversaciones inteligentes"
+    },
+    "portfolio": {
+      "title": "Portafolio Internacional Multilingüe",
+      "description": "Portafolio profesional integral con generación de currículum optimizado para ATS que soporta 6 idiomas.",
+      "impact": "Superar barreras lingüísticas para oportunidades laborales internacionales"
+    }
+  },
+  "achievements": {
+    "coverage": "Cobertura de Documentación API",
+    "coverageDesc": "Documentación OpenAPI completa para todos los endpoints",
+    "deployment": "Despliegue Automatizado",
+    "deploymentDesc": "Pipeline de integración y despliegue continuo",
+    "containerization": "Aplicaciones Contenerizadas",
+    "containerizationDesc": "Orquestación de contenedores lista para producción",
+    "uptime": "Disponibilidad del Servicio",
+    "uptimeDesc": "Infraestructura confiable y escalable en plataformas en la nube"
+  },
+  "featured": {
+    "title": "Aplicaciones Destacadas",
+    "subtitle": "Proyectos insignia que demuestran capacidades técnicas en salud, educación y dominios de IA.",
+    "badge": "DESTACADO",
+    "cta": {
+      "title": "Listo para Contribuir",
+      "description": "Soluciones listas para producción que resuelven problemas del mundo real.",
+      "contact": "Discutir Oportunidades",
+      "resume": "Ver Mi Currículum"
+    }
+  },
+  "all": {
+    "title": "Portafolio Completo",
+    "subtitle": "Explora aplicaciones en diversos dominios, construidas con escalabilidad y experiencia de usuario en mente."
+  },
+  "noResults": {
+    "title": "No se encontraron proyectos",
+    "description": "Prueba ajustando tu selección de filtro."
+  },
+  "excellence": {
+    "title": "Estándares Técnicos",
+    "subtitle": "Cada proyecto cumple con las mejores prácticas de la industria.",
+    "architecture": {
+      "title": "Arquitectura Escalable",
+      "item1": "Patrones de diseño de microservicios",
+      "item2": "Arquitectura de API RESTful"
+    },
+    "quality": {
+      "title": "Calidad del Código",
+      "item1": "Documentación completa de la API",
+      "item2": "Seguridad de tipos con TypeScript"
+    }
+  }
+}

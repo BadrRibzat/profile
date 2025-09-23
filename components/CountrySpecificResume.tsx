@@ -1,9 +1,9 @@
 // components/CountrySpecificResume.tsx
 import React from 'react';
-import { Document, Page, View, Text, StyleSheet, Font, Image, Link } from '@react-pdf/renderer';
+import { Document, Page, View, Text, StyleSheet, Font, Image } from '@react-pdf/renderer';
 import { meImageBase64 } from '../data/resume/base64-image';
 
-// --- CORRECTED FONT REGISTRATION ---
+// --- FONT REGISTRATION ---
 try {
   Font.register({
     family: 'NotoSans',
@@ -12,7 +12,6 @@ try {
       { src: '/fonts/NotoSans-Bold.ttf', fontWeight: 700 },
     ],
   });
-
   Font.register({
     family: 'NotoSansArabic',
     fonts: [
@@ -20,7 +19,6 @@ try {
       { src: '/fonts/NotoSansArabic-Bold.ttf', fontWeight: 700 },
     ],
   });
-
   Font.register({
     family: 'NotoSansJP',
     fonts: [
@@ -32,7 +30,7 @@ try {
   console.warn('Font registration failed:', error);
 }
 
-// --- FIXED PHOTO URL FUNCTION ---
+// --- IMAGE SOURCE ---
 const getImageSource = () => {
   try {
     return { image: meImageBase64 };
@@ -64,7 +62,7 @@ const commonStyles = StyleSheet.create({
   bulletText: { flex: 1, fontSize: 10, lineHeight: 1.4 },
 });
 
-// --- TYPE DEFINITIONS ---
+// --- TYPES ---
 interface PersonalInfo {
   name: string;
   nameKana?: string;
@@ -127,11 +125,19 @@ interface ResumeData {
   interests: string[];
 }
 
-interface Props { data: ResumeData; locale: string; }
-interface ResumeTemplateProps { data: ResumeData; }
+interface Props {
+  data: ResumeData;
+  locale: string;
+  translatedStrings: Record<string, string>;
+}
+
+interface ResumeTemplateProps {
+  data: ResumeData;
+  translatedStrings: Record<string, string>;
+}
 
 // --- 1. US/ENGLISH TEMPLATE ---
-const USResume: React.FC<ResumeTemplateProps> = ({ data }) => {
+const USResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) => {
   const s = StyleSheet.create({
     page: { 
       fontFamily: 'NotoSans', 
@@ -230,26 +236,24 @@ const USResume: React.FC<ResumeTemplateProps> = ({ data }) => {
 
       {/* Professional Summary */}
       <View style={s.section}>
-        <Text style={s.sectionTitle}>{t('resume:summary.title', 'PROFESSIONAL SUMMARY')}</Text>
+        <Text style={s.sectionTitle}>{translatedStrings.summaryTitle}</Text>
         <Text style={{ lineHeight: 1.6, fontSize: 10 }}>{data.summary}</Text>
       </View>
 
       {/* Technical Skills */}
       <View style={s.section}>
-        <Text style={s.sectionTitle}>{t('resume:skills.title', 'TECHNICAL COMPETENCIES')}</Text>
+        <Text style={s.sectionTitle}>{translatedStrings.skillsTitle}</Text>
         <View style={{ flexDirection: 'row' }}>
           <View style={{ width: '50%', paddingRight: 10 }}>
-            <Text style={s.subsectionTitle}>{t('resume:skills.programming', 'Programming Languages')}</Text>
+            <Text style={s.subsectionTitle}>{translatedStrings.programming}</Text>
             <Text style={{ fontSize: 9, marginBottom: 6 }}>Python, JavaScript, TypeScript, SQL, C, Bash, HTML5/CSS3</Text>
-            
-            <Text style={s.subsectionTitle}>{t('resume:skills.backend', 'Backend Technologies')}</Text>
+            <Text style={s.subsectionTitle}>{translatedStrings.backend}</Text>
             <Text style={{ fontSize: 9, marginBottom: 6 }}>FastAPI, Flask, Node.js, Express.js, RESTful APIs, Microservices</Text>
           </View>
           <View style={{ width: '50%' }}>
-            <Text style={s.subsectionTitle}>{t('resume:skills.frontend', 'Frontend & UI')}</Text>
+            <Text style={s.subsectionTitle}>{translatedStrings.frontend}</Text>
             <Text style={{ fontSize: 9, marginBottom: 6 }}>React, Next.js, Tailwind CSS, Responsive Design, Progressive Web Apps</Text>
-            
-            <Text style={s.subsectionTitle}>{t('resume:skills.database', 'Database & Cloud')}</Text>
+            <Text style={s.subsectionTitle}>{translatedStrings.database}</Text>
             <Text style={{ fontSize: 9, marginBottom: 6 }}>PostgreSQL, MongoDB, Docker, CI/CD, AWS, Git/GitHub</Text>
           </View>
         </View>
@@ -257,7 +261,7 @@ const USResume: React.FC<ResumeTemplateProps> = ({ data }) => {
 
       {/* Professional Experience */}
       <View style={s.section}>
-        <Text style={s.sectionTitle}>{t('resume:experience.title', 'PROFESSIONAL EXPERIENCE')}</Text>
+        <Text style={s.sectionTitle}>{translatedStrings.experienceTitle}</Text>
         {data.experience.map((exp, i) => (
           <View key={i} style={s.entry}>
             <View style={s.entryHeader}>
@@ -277,20 +281,20 @@ const USResume: React.FC<ResumeTemplateProps> = ({ data }) => {
 
       {/* Key Projects */}
       <View style={s.section}>
-        <Text style={s.sectionTitle}>{t('resume:projects.title', 'KEY PROJECTS')}</Text>
+        <Text style={s.sectionTitle}>{translatedStrings.projectsTitle}</Text>
         {data.projects.slice(0, 3).map((project, i) => (
           <View key={i} style={s.projectEntry}>
             <Text style={[s.entryTitle, { color: '#2c5282' }]}>{project.name}</Text>
             <Text style={{ fontSize: 9, marginBottom: 4 }}>{project.description}</Text>
-            <Text style={{ fontSize: 8, color: '#4a5568' }}>{t('resume:projects.tech', 'Technologies')}: {project.technologies}</Text>
-            <Text style={{ fontSize: 8, color: '#2c5282' }}>{t('resume:projects.liveDemo', 'Live Demo')}: {project.links.live}</Text>
+            <Text style={{ fontSize: 8, color: '#4a5568' }}>{translatedStrings.tech}: {project.technologies}</Text>
+            <Text style={{ fontSize: 8, color: '#2c5282' }}>{translatedStrings.liveDemo}: {project.links.live}</Text>
           </View>
         ))}
       </View>
 
       {/* Education & Certifications */}
       <View style={s.section}>
-        <Text style={s.sectionTitle}>{t('resume:education.title', 'EDUCATION & CERTIFICATIONS')}</Text>
+        <Text style={s.sectionTitle}>{translatedStrings.educationTitle}</Text>
         {data.education.map((edu, i) => (
           <View key={i} style={s.entry}>
             <View style={s.entryHeader}>
@@ -298,10 +302,9 @@ const USResume: React.FC<ResumeTemplateProps> = ({ data }) => {
               <Text style={s.entryMeta}>{edu.period}</Text>
             </View>
             <Text style={{ fontSize: 10, marginBottom: 2 }}>{edu.institution}</Text>
-            {edu.score && <Text style={{ fontSize: 9 }}>{t('resume:education.achievement', 'Achievement')}: {edu.score}</Text>}
+            {edu.score && <Text style={{ fontSize: 9 }}>{translatedStrings.achievement}: {edu.score}</Text>}
           </View>
         ))}
-        
         <View style={s.certGrid}>
           {data.certifications.slice(0, 8).map((cert, i) => (
             <Text key={i} style={s.certItem}>{cert.name}</Text>
@@ -311,7 +314,7 @@ const USResume: React.FC<ResumeTemplateProps> = ({ data }) => {
 
       {/* Languages */}
       <View style={s.section}>
-        <Text style={s.sectionTitle}>{t('resume:languages.title', 'LANGUAGES')}</Text>
+        <Text style={s.sectionTitle}>{translatedStrings.languagesTitle}</Text>
         <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
           {data.languages.map((lang, i) => (
             <Text key={i} style={{ fontSize: 9, marginRight: 15, marginBottom: 3 }}>
@@ -325,7 +328,7 @@ const USResume: React.FC<ResumeTemplateProps> = ({ data }) => {
 };
 
 // --- 2. GERMAN TEMPLATE ---
-const GermanResume: React.FC<ResumeTemplateProps> = ({ data }) => {
+const GermanResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) => {
   const s = StyleSheet.create({
     page: { fontFamily: 'NotoSans', fontSize: 10, color: '#333', fontWeight: 400 },
     container: { flexDirection: 'row', flex: 1 },
@@ -381,49 +384,43 @@ const GermanResume: React.FC<ResumeTemplateProps> = ({ data }) => {
     <Page size="A4" style={s.page}>
       <View style={s.container}>
         <View style={s.leftColumn}>
-          <Image src={...profileImage} style={s.photo} />
+          <Image src={profileImage.image} style={s.photo} />
           <Text style={s.name}>{data.personalInfo.name}</Text>
           <Text style={s.title}>{data.personalInfo.title}</Text>
-          
-          <Text style={s.sidebarTitle}>{t('resume:german.contact', 'Persönliche Daten')}</Text>
+          <Text style={s.sidebarTitle}>{translatedStrings.germanContact}</Text>
           <Text style={s.contactItem}>📍 {data.personalInfo.location}</Text>
           <Text style={s.contactItem}>📞 {data.personalInfo.phone}</Text>
           <Text style={s.contactItem}>✉️ {data.personalInfo.email}</Text>
           {data.personalInfo.birthDate && (
-            <Text style={s.contactItem}>🎂 {t('resume:german.birth', 'Geburtsdatum')}: {data.personalInfo.birthDate}</Text>
+            <Text style={s.contactItem}>🎂 {translatedStrings.germanBirth}: {data.personalInfo.birthDate}</Text>
           )}
           {data.personalInfo.nationality && (
-            <Text style={s.contactItem}>🌍 {t('resume:german.nationality', 'Nationalität')}: {data.personalInfo.nationality}</Text>
+            <Text style={s.contactItem}>🌍 {translatedStrings.germanNationality}: {data.personalInfo.nationality}</Text>
           )}
-          
           <View style={{ marginTop: 15 }}>
             <Text style={[commonStyles.visaStatus, { fontSize: 8, textAlign: 'center' }]}>
               {data.personalInfo.visaStatus}
             </Text>
           </View>
-          
           <View style={{ marginTop: 20 }}>
-            <Text style={s.sidebarTitle}>{t('resume:german.languages', 'Sprachen')}</Text>
+            <Text style={s.sidebarTitle}>{translatedStrings.germanLanguages}</Text>
             {data.languages.map((l, i) => (
               <Text key={i} style={s.skill}>{l.language} ({l.level})</Text>
             ))}
           </View>
-
           <View style={{ marginTop: 20 }}>
-            <Text style={s.sidebarTitle}>{t('resume:german.skills', 'Kernkompetenzen')}</Text>
-            <Text style={s.skill}>• {t('resume:german.skill1', 'Full-Stack Entwicklung')}</Text>
-            <Text style={s.skill}>• {t('resume:german.skill2', 'API Design & Integration')}</Text>
-            <Text style={s.skill}>• {t('resume:german.skill3', 'Datenbank Management')}</Text>
-            <Text style={s.skill}>• {t('resume:german.skill4', 'Docker & DevOps')}</Text>
-            <Text style={s.skill}>• {t('resume:german.skill5', 'KI & Machine Learning')}</Text>
+            <Text style={s.sidebarTitle}>{translatedStrings.germanSkills}</Text>
+            <Text style={s.skill}>• {translatedStrings.germanSkill1}</Text>
+            <Text style={s.skill}>• {translatedStrings.germanSkill2}</Text>
+            <Text style={s.skill}>• {translatedStrings.germanSkill3}</Text>
+            <Text style={s.skill}>• {translatedStrings.germanSkill4}</Text>
+            <Text style={s.skill}>• {translatedStrings.germanSkill5}</Text>
           </View>
         </View>
-        
         <View style={s.rightColumn}>
-          <Text style={s.sectionTitle}>{t('resume:german.summary', 'Berufliche Zusammenfassung')}</Text>
+          <Text style={s.sectionTitle}>{translatedStrings.germanSummary}</Text>
           <Text style={{ fontSize: 10, marginBottom: 15, lineHeight: 1.5 }}>{data.summary}</Text>
-
-          <Text style={s.sectionTitle}>{t('resume:german.experience', 'Berufserfahrung')}</Text>
+          <Text style={s.sectionTitle}>{translatedStrings.germanExperience}</Text>
           {data.experience.map((exp, i) => (
             <View key={i} style={s.entry}>
               <Text style={s.entryTitle}>{exp.title}</Text>
@@ -436,22 +433,20 @@ const GermanResume: React.FC<ResumeTemplateProps> = ({ data }) => {
               ))}
             </View>
           ))}
-          
-          <Text style={s.sectionTitle}>{t('resume:german.education', 'Bildungsweg')}</Text>
+          <Text style={s.sectionTitle}>{translatedStrings.germanEducation}</Text>
           {data.education.map((edu, i) => (
             <View key={i} style={s.entry}>
               <Text style={s.entryTitle}>{edu.degree}</Text>
               <Text style={s.entryMeta}>{edu.institution} | {edu.period}</Text>
-              {edu.score && <Text style={{ fontSize: 9 }}>{t('resume:german.score', 'Note')}: {edu.score}</Text>}
+              {edu.score && <Text style={{ fontSize: 9 }}>{translatedStrings.germanScore}: {edu.score}</Text>}
             </View>
           ))}
-
-          <Text style={s.sectionTitle}>{t('resume:german.projects', 'Hauptprojekte')}</Text>
+          <Text style={s.sectionTitle}>{translatedStrings.germanProjects}</Text>
           {data.projects.slice(0, 2).map((project, i) => (
             <View key={i} style={s.entry}>
               <Text style={s.entryTitle}>{project.name}</Text>
               <Text style={{ fontSize: 9, marginBottom: 2 }}>{project.description}</Text>
-              <Text style={{ fontSize: 8, color: '#666' }}>{t('resume:german.tech', 'Technologien')}: {project.technologies}</Text>
+              <Text style={{ fontSize: 8, color: '#666' }}>{translatedStrings.germanTech}: {project.technologies}</Text>
             </View>
           ))}
         </View>
@@ -461,7 +456,7 @@ const GermanResume: React.FC<ResumeTemplateProps> = ({ data }) => {
 };
 
 // --- 3. JAPANESE TEMPLATE ---
-const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data }) => {
+const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) => {
   const s = StyleSheet.create({
     page: { 
       padding: 30, 
@@ -502,50 +497,48 @@ const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data }) => {
     timelineDate: { width: 100 },
     timelineContent: { flex: 1 },
   });
-  
+
   const today = new Date();
 
   return (
     <Page size="A4" style={s.page}>
       <View style={s.header}>
-        <Text style={s.headerTitle}>{t('resume:japanese.title', '履 歴 書')}</Text>
+        <Text style={s.headerTitle}>{translatedStrings.japaneseTitle}</Text>
         <Text style={s.headerDate}>{`${today.getFullYear()}年${today.getMonth() + 1}月${today.getDate()}日 現在`}</Text>
       </View>
-      
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 15 }}>
         <View style={{ flex: 1 }}>
           <View style={s.row}>
-            <Text style={s.label}>{t('resume:japanese.kana', 'ふりがな')}</Text>
+            <Text style={s.label}>{translatedStrings.japaneseKana}</Text>
             <Text style={s.value}>{data.personalInfo.nameKana || 'ばどる りぶざっと'}</Text>
           </View>
           <View style={s.row}>
-            <Text style={s.label}>{t('resume:japanese.name', '氏名')}</Text>
+            <Text style={s.label}>{translatedStrings.japaneseName}</Text>
             <Text style={[s.value, { fontSize: 14 }]}>{data.personalInfo.name}</Text>
           </View>
           <View style={s.row}>
-            <Text style={s.label}>{t('resume:japanese.birth', '生年月日')}</Text>
+            <Text style={s.label}>{translatedStrings.japaneseBirth}</Text>
             <Text style={s.value}>{data.personalInfo.birthDate || '1990年12月14日'}</Text>
           </View>
           <View style={s.row}>
-            <Text style={s.label}>{t('resume:japanese.contact', '連絡先')}</Text>
+            <Text style={s.label}>{translatedStrings.japaneseContact}</Text>
             <Text style={s.value}>{data.personalInfo.phone} / {data.personalInfo.email}</Text>
           </View>
         </View>
         <View style={{ marginLeft: 20 }}>
-          <Image src={...profileImage} style={s.photo} />
+          <Image src={profileImage.image} style={s.photo} />
         </View>
       </View>
-      
       <View style={s.section}>
-        <Text style={s.sectionTitle}>{t('resume:japanese.educationWork', '学歴・職歴')}</Text>
-        <Text style={{ fontWeight: 700, marginVertical: 4 }}>{t('resume:japanese.education', '学歴')}</Text>
+        <Text style={s.sectionTitle}>{translatedStrings.japaneseEducationWork}</Text>
+        <Text style={{ fontWeight: 700, marginVertical: 4 }}>{translatedStrings.japaneseEducation}</Text>
         {data.education.map((edu, i) => (
           <View key={i} style={s.timelineRow}>
             <Text style={s.timelineDate}>{edu.period}</Text>
             <Text style={s.timelineContent}>{edu.institution} - {edu.degree}</Text>
           </View>
         ))}
-        <Text style={{ fontWeight: 700, marginVertical: 4, marginTop: 8 }}>{t('resume:japanese.work', '職歴')}</Text>
+        <Text style={{ fontWeight: 700, marginVertical: 4, marginTop: 8 }}>{translatedStrings.japaneseWork}</Text>
         {data.experience.map((exp, i) => (
           <View key={i} style={s.timelineRow}>
             <Text style={s.timelineDate}>{exp.period}</Text>
@@ -554,12 +547,11 @@ const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data }) => {
         ))}
         <View style={s.timelineRow}>
           <Text style={s.timelineDate}></Text>
-          <Text style={s.timelineContent}>{t('resume:japanese.end', '以上')}</Text>
+          <Text style={s.timelineContent}>{translatedStrings.japaneseEnd}</Text>
         </View>
       </View>
-
       <View style={s.section}>
-        <Text style={s.sectionTitle}>{t('resume:japanese.certifications', '免許・資格')}</Text>
+        <Text style={s.sectionTitle}>{translatedStrings.japaneseCertifications}</Text>
         {data.certifications.slice(0, 10).map((cert, i) => (
           <View key={i} style={s.timelineRow}>
             <Text style={s.timelineDate}>{cert.date}</Text>
@@ -573,14 +565,12 @@ const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data }) => {
           </View>
         ))}
       </View>
-      
       <View style={s.section}>
-        <Text style={s.sectionTitle}>{t('resume:japanese.pr', '自己PR')}</Text>
+        <Text style={s.sectionTitle}>{translatedStrings.japanesePR}</Text>
         <Text style={{ lineHeight: 1.6 }}>{data.summary}</Text>
       </View>
-
       <View style={s.section}>
-        <Text style={s.sectionTitle}>{t('resume:japanese.hopes', '本人希望記入欄')}</Text>
+        <Text style={s.sectionTitle}>{translatedStrings.japaneseHopes}</Text>
         <Text style={{ lineHeight: 1.6 }}>{data.personalInfo.visaStatus}</Text>
       </View>
     </Page>
@@ -588,7 +578,7 @@ const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data }) => {
 };
 
 // --- 4. MODERN TEMPLATE (French/Spanish) ---
-const ModernResume: React.FC<Props> = ({ data, locale }) => {
+const ModernResume: React.FC<Props> = ({ data, locale, translatedStrings }) => {
   const s = StyleSheet.create({
     page: { fontFamily: 'NotoSans', fontSize: 10, color: '#333', fontWeight: 400 },
     container: { flexDirection: 'row', flex: 1 },
@@ -643,54 +633,42 @@ const ModernResume: React.FC<Props> = ({ data, locale }) => {
     entryMeta: { fontSize: 9, color: '#666', marginBottom: 3 },
   });
 
-  const t = (en: string, fr: string, es: string) => {
-    if (locale === 'fr') return fr;
-    if (locale === 'es') return es;
-    return en;
-  };
-
   return (
     <Page size="A4" style={s.page}>
       <View style={s.container}>
         <View style={s.leftColumn}>
-          <Image src={...profileImage} style={s.photo} />
+          <Image src={profileImage.image} style={s.photo} />
           <Text style={s.name}>{data.personalInfo.name}</Text>
           <Text style={s.title}>{data.personalInfo.title}</Text>
-          
-          <Text style={s.sidebarTitle}>{t('resume:modern.contact', 'Contact', 'Contacto')}</Text>
+          <Text style={s.sidebarTitle}>{translatedStrings.modernContact}</Text>
           <Text style={s.contactItem}>📍 {data.personalInfo.location}</Text>
           <Text style={s.contactItem}>📞 {data.personalInfo.phone}</Text>
           <Text style={s.contactItem}>✉️ {data.personalInfo.email}</Text>
-          <Text style={s.contactItem}>🌐 {t('resume:modern.portfolio', 'Portfolio', 'Portafolio')}: {data.personalInfo.portfolio}</Text>
-          
+          <Text style={s.contactItem}>🌐 {translatedStrings.modernPortfolio}: {data.personalInfo.portfolio}</Text>
           <View style={{ marginTop: 15 }}>
             <Text style={[commonStyles.visaStatus, { fontSize: 8, backgroundColor: '#3498db', color: 'white' }]}>
               {data.personalInfo.visaStatus}
             </Text>
           </View>
-
           <View style={{ marginTop: 20 }}>
-            <Text style={s.sidebarTitle}>{t('resume:modern.languages', 'Languages', 'Idiomas')}</Text>
+            <Text style={s.sidebarTitle}>{translatedStrings.modernLanguages}</Text>
             {data.languages.map((l, i) => (
               <Text key={i} style={s.skill}>{l.language} ({l.level})</Text>
             ))}
           </View>
-
           <View style={{ marginTop: 20 }}>
-            <Text style={s.sidebarTitle}>{t('resume:modern.skills', 'Skills', 'Habilidades')}</Text>
-            <Text style={s.skill}>• {t('resume:modern.skill1', 'Full-Stack Development', 'Desarrollo Full-Stack')}</Text>
-            <Text style={s.skill}>• {t('resume:modern.skill2', 'API Design & Integration', 'Diseño e Integración de APIs')}</Text>
-            <Text style={s.skill}>• {t('resume:modern.skill3', 'Database Management', 'Gestión de Bases de Datos')}</Text>
-            <Text style={s.skill}>• {t('resume:modern.skill4', 'Docker & DevOps', 'Docker & DevOps')}</Text>
-            <Text style={s.skill}>• {t('resume:modern.skill5', 'AI & Machine Learning', 'IA y Aprendizaje Automático')}</Text>
+            <Text style={s.sidebarTitle}>{translatedStrings.modernSkills}</Text>
+            <Text style={s.skill}>• {translatedStrings.modernSkill1}</Text>
+            <Text style={s.skill}>• {translatedStrings.modernSkill2}</Text>
+            <Text style={s.skill}>• {translatedStrings.modernSkill3}</Text>
+            <Text style={s.skill}>• {translatedStrings.modernSkill4}</Text>
+            <Text style={s.skill}>• {translatedStrings.modernSkill5}</Text>
           </View>
         </View>
-        
         <View style={s.rightColumn}>
-          <Text style={s.sectionTitle}>{t('resume:modern.summary', 'Professional Summary', 'Resumen Profesional')}</Text>
+          <Text style={s.sectionTitle}>{translatedStrings.modernSummary}</Text>
           <Text style={{ fontSize: 10, marginBottom: 15, lineHeight: 1.5 }}>{data.summary}</Text>
-          
-          <Text style={s.sectionTitle}>{t('resume:modern.experience', 'Experience', 'Experiencia')}</Text>
+          <Text style={s.sectionTitle}>{translatedStrings.modernExperience}</Text>
           {data.experience.map((exp, i) => (
             <View key={i} style={s.entry}>
               <Text style={s.entryTitle}>{exp.title}</Text>
@@ -703,22 +681,20 @@ const ModernResume: React.FC<Props> = ({ data, locale }) => {
               ))}
             </View>
           ))}
-          
-          <Text style={s.sectionTitle}>{t('resume:modern.education', 'Education', 'Educación')}</Text>
+          <Text style={s.sectionTitle}>{translatedStrings.modernEducation}</Text>
           {data.education.map((edu, i) => (
             <View key={i} style={s.entry}>
               <Text style={s.entryTitle}>{edu.degree}</Text>
               <Text style={s.entryMeta}>{edu.institution} | {edu.period}</Text>
-              {edu.score && <Text style={{ fontSize: 9 }}>{t('resume:modern.score', 'Score', 'Puntuación')}: {edu.score}</Text>}
+              {edu.score && <Text style={{ fontSize: 9 }}>{translatedStrings.modernScore}: {edu.score}</Text>}
             </View>
           ))}
-
-          <Text style={s.sectionTitle}>{t('resume:modern.projects', 'Key Projects', 'Proyectos Clave')}</Text>
+          <Text style={s.sectionTitle}>{translatedStrings.modernProjects}</Text>
           {data.projects.slice(0, 2).map((project, i) => (
             <View key={i} style={s.entry}>
               <Text style={s.entryTitle}>{project.name}</Text>
               <Text style={{ fontSize: 9, marginBottom: 2 }}>{project.description}</Text>
-              <Text style={{ fontSize: 8, color: '#666' }}>{t('resume:modern.tech', 'Tech', 'Tecnologías')}: {project.technologies}</Text>
+              <Text style={{ fontSize: 8, color: '#666' }}>{translatedStrings.modernTech}: {project.technologies}</Text>
             </View>
           ))}
         </View>
@@ -728,7 +704,7 @@ const ModernResume: React.FC<Props> = ({ data, locale }) => {
 };
 
 // --- 5. ARABIC TEMPLATE ---
-const ArabicResume: React.FC<ResumeTemplateProps> = ({ data }) => {
+const ArabicResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) => {
   const s = StyleSheet.create({
     page: { 
       fontFamily: 'NotoSansArabic', 
@@ -795,42 +771,36 @@ const ArabicResume: React.FC<ResumeTemplateProps> = ({ data }) => {
     <Page size="A4" style={s.page}>
       <View style={s.container}>
         <View style={s.leftColumn}>
-          <Image src={...profileImage} style={s.photo} />
+          <Image src={profileImage.image} style={s.photo} />
           <Text style={s.name}>{data.personalInfo.name}</Text>
           <Text style={s.title}>{data.personalInfo.title}</Text>
-          
-          <Text style={s.sidebarTitle}>{t('resume:arabic.contact', 'معلومات الاتصال')}</Text>
+          <Text style={s.sidebarTitle}>{translatedStrings.arabicContact}</Text>
           <Text style={s.contactItem}>📍 {data.personalInfo.location}</Text>
           <Text style={s.contactItem}>📞 {data.personalInfo.phone}</Text>
           <Text style={s.contactItem}>✉️ {data.personalInfo.email}</Text>
-          
           <View style={{ marginTop: 15 }}>
             <Text style={[commonStyles.visaStatus, { fontSize: 8, backgroundColor: '#3498db', color: 'white' }]}>
               {data.personalInfo.visaStatus}
             </Text>
           </View>
-          
           <View style={{ marginTop: 20 }}>
-            <Text style={s.sidebarTitle}>{t('resume:arabic.languages', 'اللغات')}</Text>
+            <Text style={s.sidebarTitle}>{translatedStrings.arabicLanguages}</Text>
             {data.languages.map((l, i) => (
               <Text key={i} style={s.contactItem}>{l.language} ({l.level})</Text>
             ))}
           </View>
-
           <View style={{ marginTop: 20 }}>
-            <Text style={s.sidebarTitle}>{t('resume:arabic.skills', 'المهارات التقنية')}</Text>
-            <Text style={s.contactItem}>• {t('resume:arabic.skill1', 'تطوير التطبيقات الشاملة')}</Text>
-            <Text style={s.contactItem}>• {t('resume:arabic.skill2', 'تصميم واجهات البرمجة')}</Text>
-            <Text style={s.contactItem}>• {t('resume:arabic.skill3', 'إدارة قواعد البيانات')}</Text>
-            <Text style={s.contactItem}>• {t('resume:arabic.skill4', 'الذكاء الاصطناعي')}</Text>
+            <Text style={s.sidebarTitle}>{translatedStrings.arabicSkills}</Text>
+            <Text style={s.contactItem}>• {translatedStrings.arabicSkill1}</Text>
+            <Text style={s.contactItem}>• {translatedStrings.arabicSkill2}</Text>
+            <Text style={s.contactItem}>• {translatedStrings.arabicSkill3}</Text>
+            <Text style={s.contactItem}>• {translatedStrings.arabicSkill4}</Text>
           </View>
         </View>
-
         <View style={s.rightColumn}>
-          <Text style={s.sectionTitle}>{t('resume:arabic.summary', 'الملخص المهني')}</Text>
+          <Text style={s.sectionTitle}>{translatedStrings.arabicSummary}</Text>
           <Text style={{ lineHeight: 1.6, marginBottom: 15, textAlign: 'right' }}>{data.summary}</Text>
-
-          <Text style={s.sectionTitle}>{t('resume:arabic.experience', 'الخبرة العملية')}</Text>
+          <Text style={s.sectionTitle}>{translatedStrings.arabicExperience}</Text>
           {data.experience.map((exp, i) => (
             <View key={i} style={s.entry}>
               <Text style={s.entryTitle}>{exp.title} لدى {exp.company}</Text>
@@ -843,22 +813,20 @@ const ArabicResume: React.FC<ResumeTemplateProps> = ({ data }) => {
               ))}
             </View>
           ))}
-
-          <Text style={s.sectionTitle}>{t('resume:arabic.education', 'التعليم والشهادات')}</Text>
+          <Text style={s.sectionTitle}>{translatedStrings.arabicEducation}</Text>
           {data.education.map((edu, i) => (
             <View key={i} style={s.entry}>
               <Text style={s.entryTitle}>{edu.degree} من {edu.institution}</Text>
               <Text style={s.entryMeta}>{edu.period}</Text>
-              {edu.score && <Text style={{ fontSize: 10 }}>{t('resume:arabic.score', 'التقدير')}: {edu.score}</Text>}
+              {edu.score && <Text style={{ fontSize: 10 }}>{translatedStrings.arabicScore}: {edu.score}</Text>}
             </View>
           ))}
-
-          <Text style={s.sectionTitle}>{t('resume:arabic.projects', 'المشاريع الرئيسية')}</Text>
+          <Text style={s.sectionTitle}>{translatedStrings.arabicProjects}</Text>
           {data.projects.slice(0, 2).map((project, i) => (
             <View key={i} style={s.entry}>
               <Text style={s.entryTitle}>{project.name}</Text>
               <Text style={{ fontSize: 10, marginBottom: 2, textAlign: 'right' }}>{project.description}</Text>
-              <Text style={{ fontSize: 9, color: '#666', textAlign: 'right' }}>{t('resume:arabic.tech', 'التقنيات')}: {project.technologies}</Text>
+              <Text style={{ fontSize: 9, color: '#666', textAlign: 'right' }}>{translatedStrings.arabicTech}: {project.technologies}</Text>
             </View>
           ))}
         </View>
@@ -868,21 +836,21 @@ const ArabicResume: React.FC<ResumeTemplateProps> = ({ data }) => {
 };
 
 // --- MAIN EXPORT COMPONENT ---
-const CountrySpecificResume: React.FC<Props> = ({ data, locale }) => {
+const CountrySpecificResume: React.FC<Props> = ({ data, locale, translatedStrings }) => {
   const resumeDocument = () => {
     switch (locale) {
       case 'de':
-        return <GermanResume data={data} />;
+        return <GermanResume data={data} translatedStrings={translatedStrings} />;
       case 'ja':
-        return <JapaneseResume data={data} />;
+        return <JapaneseResume data={data} translatedStrings={translatedStrings} />;
       case 'ar':
-        return <ArabicResume data={data} />;
+        return <ArabicResume data={data} translatedStrings={translatedStrings} />;
       case 'en':
-        return <USResume data={data} />;
+        return <USResume data={data} translatedStrings={translatedStrings} />;
       case 'fr':
       case 'es':
       default:
-        return <ModernResume data={data} locale={locale} />;
+        return <ModernResume data={data} locale={locale} translatedStrings={translatedStrings} />;
     }
   };
 

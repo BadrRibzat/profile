@@ -1,49 +1,49 @@
 {
+  "seo": {
+    "title": "Contact - Badr Ribzat",
+    "description": "Contactez Badr Ribzat pour des opportunités professionnelles, des collaborations ou des questions techniques."
+  },
+  "title": "Restons en Contact",
+  "subtitle": "Prêt pour de nouveaux défis et opportunités. Discutons de la manière dont je peux contribuer à votre équipe ou projet.",
+  "info": {
+    "title": "Coordonnées",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "location": "Localisation",
+    "timezone": "Fuseau Horaire"
+  },
+  "social": {
+    "title": "Réseaux Sociaux"
+  },
   "availability": {
-    "status": "Disponible pour des opportunités",
-    "message": "Répond généralement sous 24h"
+    "status": "Disponible pour des Opportunités",
+    "message": "Réponse typique sous 24h"
   },
   "form": {
-    "title": "Envoyez un message",
-    "name": "Nom complet",
+    "title": "Envoyer un Message",
+    "name": "Nom Complet",
     "namePlaceholder": "Votre nom complet",
-    "email": "Email",
+    "email": "E-mail",
     "emailPlaceholder": "votre@email.com",
-    "subject": "Sujet",
-    "subjectPlaceholder": "Sujet de votre message",
-    "opportunityType": "Type d'opportunité",
-    "selectOpportunity": "Sélectionnez un type",
+    "subject": "Objet",
+    "subjectPlaceholder": "Objet de votre message",
+    "opportunityType": "Type d'Opportunité",
+    "selectOpportunity": "Sélectionner un type",
     "opportunities": {
-      "fulltime": "Poste à temps plein",
+      "fulltime": "Poste à Temps Plein",
       "internship": "Stage",
       "contract": "Contrat/Freelance",
       "training": "Formation/Mentorat",
       "collaboration": "Collaboration",
       "other": "Autre"
     },
-    "preferredLanguage": "Langue préférée",
+    "preferredLanguage": "Langue Préférée",
     "message": "Message",
     "messagePlaceholder": "Partagez les détails de votre projet, opportunité ou questions...",
-    "send": "Envoyer le message",
+    "send": "Envoyer le Message",
     "sending": "Envoi en cours...",
     "success": "Message envoyé avec succès !",
     "error": "Erreur lors de l'envoi du message. Veuillez réessayer.",
-    "responseTime": "Je réponds généralement dans les 24 heures"
-  },
-  "info": {
-    "title": "Coordonnées",
-    "email": "Email",
-    "phone": "Téléphone",
-    "location": "Localisation",
-    "timezone": "Fuseau horaire"
-  },
-  "seo": {
-    "title": "Contact - Badr Ribzat",
-    "description": "Contactez Badr Ribzat pour des opportunités professionnelles, des collaborations ou des questions techniques."
-  },
-  "social": {
-    "title": "Réseaux Sociaux"
-  },
-  "subtitle": "Prêt pour de nouveaux défis et opportunités. Discutons de la manière dont je peux contribuer à votre équipe ou projet.",
-  "title": "Connectons-nous"
+    "responseTime": "Je réponds généralement sous 24 heures"
+  }
 }

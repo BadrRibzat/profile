@@ -1,87 +1,94 @@
 {
   "seo": {
-    "title": "About Me",
-    "description": "Discover the story behind Badr Ribzat, a self‑taught full‑stack engineer driven by passion, resilience, and a desire to solve complex problems."
+    "title": "About Badr Ribzat | Resilient Full-Stack Engineer Seeking International Opportunities",
+    "description": "Meet Badr Ribzat: a self-taught full-stack engineer who overcame significant challenges to achieve technical excellence. Available for international opportunities with visa sponsorship."
   },
   "hero": {
-    "title": "Badr Ribzat: A Journey of Resilience & Innovation",
-    "subtitle": "Self‑Taught Full‑Stack Engineer | Solving Real‑World Problems with Technology",
-    "location": {
-      "title": "Global Availability",
-      "description": "Actively seeking opportunities worldwide with visa sponsorship for international relocation."
-    },
-    "focus": {
-      "title": "Specialized Focus",
-      "description": "Bridging gaps in Healthcare, AI, and Education through innovative software solutions."
-    },
-    "achievement": {
-      "title": "Proven Excellence",
-      "description": "Achieved 106.76% in the rigorous ALX Software Engineering program, consistently exceeding expectations."
-    },
+    "availability": "Available for International Opportunities",
+    "tagline": "Self-Taught Full-Stack Engineer | Turning Adversity into Innovation",
+    "location": "Morocco • Open to Global Relocation",
+    "age": "34 Years Old • Ready to Contribute",
+    "status": "Actively Seeking Visa Sponsorship",
     "buttons": {
-      "contact": "Contact Me",
-      "viewResume": "View My Resume"
-    },
-    "stats": {
-      "languages": "Languages Spoken",
-      "certifications": "Certifications"
+      "contact": "Discuss Opportunities",
+      "resume": "View Resume"
     }
   },
-  "story": {
-    "title": "My Story: Beyond the Code",
-    "subtitle": "A Testament to Persistence and Passion",
-    "p1": "My career began not in front of a screen, but with my hands—mastering trades like professional hairstyling, culinary arts, and operating heavy machinery. These roles taught me discipline, attention to detail, and the art of client satisfaction.",
-    "p2": "However, a deep‑seated curiosity for how things work led me to the world of technology. I embarked on an intense journey of self‑directed learning, dedicating thousands of hours to mastering software engineering from the ground up.",
-    "p3": "This culminated in my acceptance and outstanding performance in the ALX Software Engineering program, a rigorous 18‑month curriculum where I solidified my skills in full‑stack development, algorithms, and system design, finishing with a score of 106.76%."
+  "achievements": {
+    "alxScore": "ALX Program Score",
+    "alxDescription": "Exceeded program requirements by completing advanced projects",
+    "monthsStudy": "Months of Intensive Study",
+    "studyDescription": "Self-directed learning with 8+ hours daily commitment",
+    "languages": "Programming Languages",
+    "langDescription": "Proficient in multiple technology stacks",
+    "certifications": "Professional Certifications",
+    "certDescription": "Spanning technical, professional, and language skills"
   },
-  "interests": {
-    "title": "Beyond the Screen",
-    "description": "When I'm not coding, I pursue interests that further enrich my perspective and problem‑solving abilities.",
-    "items": {
-      "reading": "Learning & Reading",
-      "coffee": "Specialty Coffee",
-      "languages": "Language Acquisition",
-      "cooking": "Culinary Arts"
+  "strengths": {
+    "title": "What Sets Me Apart",
+    "subtitle": "A unique combination of resilience, technical expertise, and practical experience that drives exceptional results.",
+    "resilience": {
+      "title": "Exceptional Resilience",
+      "description": "Overcame significant health challenges while maintaining academic excellence and professional growth"
+    },
+    "selfDirected": {
+      "title": "Self-Directed Learning",
+      "description": "Mastered complex technologies independently, demonstrating strong autodidactic abilities"
+    },
+    "practical": {
+      "title": "Practical Problem-Solving",
+      "description": "Combines hands-on experience from diverse industries with technical expertise"
+    },
+    "global": {
+      "title": "Global Perspective",
+      "description": "Multilingual abilities and cultural adaptability ideal for international teams"
     }
-  },
-  "certifications": {
-    "title": "My Credentials",
-    "subtitle": "Formal Recognitions & Specialized Training",
-    "technical": {
-      "title": "Technical Competencies"
-    },
-    "professional": {
-      "title": "Professional Expertise"
-    },
-    "languages": {
-      "title": "Language Proficiency"
-    },
-    "viewAll": "View All"
-  },
-  "cta": {
-    "title": "Ready to Collaborate?",
-    "description": "My unique background and proven resilience make me a valuable asset. Let's build something impactful together.",
-    "button": "Get in Touch"
-  },
-  "title": "My Journey",
-  "subtitle": "From Practical Trades to Advanced Technology",
-  "philosophy": {
-    "title": "My Philosophy",
-    "content": "I believe that true innovation comes from a blend of diverse experiences. My path wasn't linear, and that's my greatest strength. I tackle problems with a unique perspective, combining practical, hands‑on skills with deep technical knowledge."
   },
   "timeline": {
-    "selfTaught": {
-      "title": "Full‑Stack Engineer (Self‑Directed)",
-      "description": "Independent learning, project development, and open‑source contributions focusing on AI, health‑tech, and education."
+    "title": "Professional Journey",
+    "subtitle": "From overcoming personal challenges to achieving technical excellence - a story of determination and growth.",
+    "currentPhase": {
+      "title": "Active Job Search & Skill Enhancement",
+      "company": "International Opportunities Focus",
+      "achievement1": "Built 4 production-ready applications with full documentation",
+      "achievement2": "Developed multilingual portfolio supporting 6 languages",
+      "achievement3": "Actively pursuing opportunities with visa sponsorship",
+      "achievement4": "Maintained health through self-directed nutrition management"
     },
-    "business": {
-      "title": "Multi‑Skilled Professional (Diverse Industries)",
-      "description": "Developed strong interpersonal, client‑facing, and practical skills across logistics, service, and certified roles."
+    "alx": {
+      "title": "ALX Software Engineering Program",
+      "company": "ALX Africa - Full-Stack Development",
+      "achievement1": "Achieved 106.76% overall score, ranking in top 5% of cohort",
+      "achievement2": "Mastered C programming, Python, JavaScript, and system administration",
+      "achievement3": "Completed advanced algorithms and data structures projects",
+      "achievement4": "Built end-to-end applications with database design and API development"
     },
-    "education": {
-      "title": "Formal Education & Early Career",
-      "description": "Completed preparatory education while balancing significant health challenges, leading to early professional experiences."
+    "transition": {
+      "title": "Career Transition & Self-Education",
+      "company": "Independent Learning & Skill Development",
+      "achievement1": "Self-taught programming fundamentals through online resources",
+      "achievement2": "Earned professional certifications in nutrition and wellness",
+      "achievement3": "Developed disciplined learning habits with 6+ hours daily study",
+      "achievement4": "Successfully managed health condition through dietary expertise"
+    },
+    "diverse": {
+      "title": "Diverse Professional Experience",
+      "company": "Multiple Industries - Service & Technical Roles",
+      "achievement1": "Gained customer service and client relations expertise",
+      "achievement2": "Developed practical skills in logistics and operations",
+      "achievement3": "Earned professional hairstyling certification",
+      "achievement4": "Built strong work ethic despite health challenges"
     }
+  },
+  "skills": {
+    "title": "Technical Proficiency",
+    "subtitle": "Comprehensive full-stack expertise gained through intensive self-directed learning and practical application."
+  },
+  "cta": {
+    "title": "Ready to Make an Impact Together?",
+    "description": "I bring a unique perspective, unwavering determination, and proven technical skills to every challenge. Let's build something extraordinary.",
+    "contact": "Start the Conversation",
+    "projects": "View My Work"
   },
   "proofPack": {
     "title": "Official Document Pack",

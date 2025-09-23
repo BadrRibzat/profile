@@ -1,87 +1,100 @@
 {
-  "certifications": {
-    "title": "Meine Qualifikationen",
-    "subtitle": "Formale Anerkennungen und Spezialschulungen",
-    "technical": {
-      "title": "Technische Kompetenzen"
-    },
-    "professional": {
-      "title": "Berufliche Expertise"
-    },
-    "languages": {
-      "title": "Sprachkenntnisse"
-    },
-    "viewAll": "Alle Anzeigen"
-  },
-  "cta": {
-    "title": "Bereit zur Zusammenarbeit?",
-    "description": "Mein einzigartiger Hintergrund und meine bewährte Widerstandsfähigkeit machen mich zu einem wertvollen Vermögenswert. Lassen Sie uns gemeinsam etwas Wirkungsvolles aufbauen.",
-    "button": "Kontaktieren Sie Mich"
+  "seo": {
+    "title": "Über Badr Ribzat | Resilienter Full-Stack-Ingenieur auf der Suche nach internationalen Möglichkeiten",
+    "description": "Lernen Sie Badr Ribzat kennen: einen autodidaktischen Full-Stack-Ingenieur, der erhebliche Herausforderungen überwunden hat, um technische Exzellenz zu erreichen. Verfügbar für internationale Stellen mit Visumsponsorship."
   },
   "hero": {
-    "title": "Badr Ribzat: Eine Reise der Resilienz und Innovation",
-    "subtitle": "Autodidaktischer Full-Stack-Ingenieur | Lösung realer Probleme mit Technologie",
-    "location": {
-      "title": "Weltweite Verfügbarkeit",
-      "description": "Ich suche aktiv weltweit nach Möglichkeiten mit Visumsförderung für internationale Umsiedlung."
-    },
-    "focus": {
-      "title": "Spezialisierte Schwerpunkte",
-      "description": "Schließen von Lücken im Gesundheitswesen, KI und Bildung durch innovative Softwarelösungen."
-    },
-    "achievement": {
-      "title": "Bewährte Exzellenz",
-      "description": "Erzielte 106,76 % im anspruchsvollen ALX Software Engineering-Programm und übertraf damit konsequent die Erwartungen."
-    },
+    "availability": "Verfügbar für internationale Möglichkeiten",
+    "tagline": "Autodidaktischer Full-Stack-Ingenieur | Aus Widrigkeiten Innovation schaffen",
+    "location": "Marokko • Offen für globale Umzüge",
+    "age": "34 Jahre • Bereit, beizutragen",
+    "status": "Aktiv auf der Suche nach Visumsponsorship",
     "buttons": {
-      "contact": "Kontaktieren Sie Mich",
-      "viewResume": "Meinen Lebenslauf Ansehen"
+      "contact": "Möglichkeiten besprechen",
+      "resume": "Meinen Lebenslauf ansehen"
+    }
+  },
+  "achievements": {
+    "alxScore": "ALX-Programm-Bewertung",
+    "alxDescription": "Übertraf die Anforderungen des Programms durch Abschluss fortgeschrittener Projekte",
+    "monthsStudy": "Monate intensiven Lernens",
+    "studyDescription": "Autodidaktisches Lernen mit 8+ Stunden täglichem Engagement",
+    "languages": "Programmiersprachen",
+    "langDescription": "Versiert in mehreren Technologiestacks",
+    "certifications": "Professionelle Zertifizierungen",
+    "certDescription": "Decken technische, berufliche und sprachliche Fähigkeiten ab"
+  },
+  "strengths": {
+    "title": "Was Mich Auszeichnet",
+    "subtitle": "Eine einzigartige Kombination aus Resilienz, technischer Expertise und praktischer Erfahrung, die außergewöhnliche Ergebnisse ermöglicht.",
+    "resilience": {
+      "title": "Außergewöhnliche Resilienz",
+      "description": "Überwand erhebliche Gesundheitsherausforderungen, während akademische Exzellenz und berufliches Wachstum aufrechterhalten wurden"
     },
-    "stats": {
-      "languages": "Gesprochene Sprachen",
-      "certifications": "Zertifizierungen"
+    "selfDirected": {
+      "title": "Autodidaktisches Lernen",
+      "description": "Erlangte komplexe Technologien unabhängig, zeigte starke autodidaktische Fähigkeiten"
+    },
+    "practical": {
+      "title": "Praktische Problemlösung",
+      "description": "Kombiniert praktische Erfahrung aus diversen Branchen mit technischer Expertise"
+    },
+    "global": {
+      "title": "Globale Perspektive",
+      "description": "Mehrsprachigkeit und kulturelle Anpassungsfähigkeit ideal für internationale Teams"
     }
   },
-  "interests": {
-    "title": "Jenseits des Bildschirms",
-    "description": "Wenn ich nicht programmiere, verfolge ich Interessen, die meine Perspektive und Problemlösungsfähigkeiten weiter bereichern.",
-    "items": {
-      "reading": "Lernen & Lesen",
-      "coffee": "Spezialitätenkaffee",
-      "languages": "Spracherwerb",
-      "cooking": "Kochkunst"
-    }
-  },
-  "philosophy": {
-    "title": "Meine Philosophie",
-    "content": "Ich glaube, dass wahre Innovation aus einer Mischung verschiedener Erfahrungen entsteht. Mein Weg war nicht linear, und das ist meine größte Stärke. Ich gehe Probleme mit einer einzigartigen Perspektive an und kombiniere praktische, handfeste Fähigkeiten mit tiefem technischem Wissen."
-  },
-  "proofPack": "[TODO: Translate] [object Object]",
-  "seo": {
-    "title": "Über Mich",
-    "description": "Entdecken Sie die Geschichte von Badr Ribzat, einem autodidaktischen Full-Stack-Ingenieur, angetrieben von Leidenschaft, Resilienz und dem Wunsch, komplexe Probleme zu lösen."
-  },
-  "story": {
-    "title": "Meine Geschichte: Jenseits des Codes",
-    "subtitle": "Ein Zeugnis von Ausdauer und Leidenschaft",
-    "p1": "Meine Karriere begann nicht vor einem Bildschirm, sondern mit meinen Händen — ich beherrschte Berufe wie professionelles Friseurhandwerk, Kochkunst und den Betrieb schwerer Maschinen. Diese Rollen lehrten mich Disziplin, Detailgenauigkeit und die Kunst der Kundenzufriedenheit.",
-    "p2": "Eine tief verwurzelte Neugier, wie Dinge funktionieren, führte mich jedoch in die Welt der Technologie. Ich begab mich auf eine intensive Reise des selbstgesteuerten Lernens und widmete Tausende von Stunden dem Erlernen der Softwareentwicklung von Grund auf.",
-    "p3": "Dies gipfelte in meiner Aufnahme und herausragenden Leistung im ALX Software Engineering-Programm, einem anspruchsvollen 18-monatigen Lehrplan, in dem ich meine Fähigkeiten in Full-Stack-Entwicklung, Algorithmen und Systemdesign festigte und mit einer Punktzahl von 106,76 % abschloss."
-  },
-  "subtitle": "Von Praktischen Berufen zur Fortschrittlichen Technologie",
   "timeline": {
-    "selfTaught": {
-      "title": "Full-Stack-Ingenieur (Selbststudium)",
-      "description": "Eigenständiges Lernen, Projektentwicklung und Open-Source-Beiträge mit Fokus auf KI, Gesundheitstechnologie und Bildung."
+    "title": "Beruflicher Werdegang",
+    "subtitle": "Vom Überwinden persönlicher Herausforderungen bis zur Erreichung technischer Exzellenz – eine Geschichte von Entschlossenheit und Wachstum.",
+    "currentPhase": {
+      "title": "Aktive Stellensuche & Kompetenzverbesserung",
+      "company": "Fokus auf internationale Möglichkeiten",
+      "achievement1": "4 produktionsreife Anwendungen mit vollständiger Dokumentation entwickelt",
+      "achievement2": "Mehrsprachiges Portfolio mit Unterstützung für 6 Sprachen entwickelt",
+      "achievement3": "Aktiv nach Möglichkeiten mit Visumsponsorship suchend",
+      "achievement4": "Gesundheit durch selbstgesteuerte Ernährungsmanagement aufrechterhalten"
     },
-    "business": {
-      "title": "Vielseitiger Fachmann (Verschiedene Branchen)",
-      "description": "Entwicklung starker zwischenmenschlicher, kundenorientierter und praktischer Fähigkeiten in Logistik, Dienstleistungen und zertifizierten Rollen."
+    "alx": {
+      "title": "ALX-Software-Engineering-Programm",
+      "company": "ALX Afrika - Full-Stack-Entwicklung",
+      "achievement1": "Erzielte 106,76 % Gesamtpunktzahl, unter den Top 5 % der Cohorte",
+      "achievement2": "Beherrschte C-Programmierung, Python, JavaScript und Systemadministration",
+      "achievement3": "Absolvierte fortgeschrittene Algorithmen- und Datenstrukturen-Projekte",
+      "achievement4": "End-to-End-Anwendungen mit Datenbankdesign und API-Entwicklung gebaut"
     },
-    "education": {
-      "title": "Formale Ausbildung & Frühe Karriere",
-      "description": "Abschluss der Vorbereitungsausbildung unter gleichzeitiger Bewältigung erheblicher gesundheitlicher Herausforderungen, was zu frühen beruflichen Erfahrungen führte."
+    "transition": {
+      "title": "Beruflicher Wechsel & Selbststudium",
+      "company": "Unabhängiges Lernen & Kompetenzentwicklung",
+      "achievement1": "Programmiergrundlagen durch Online-Ressourcen selbst erlernt",
+      "achievement2": "Professionelle Zertifizierungen in Ernährung und Wellness erworben",
+      "achievement3": "Disziplinierte Lerngewohnheiten mit 6+ Stunden täglichem Studium entwickelt",
+      "achievement4": "Gesundheitszustand erfolgreich durch diätetische Expertise gemanagt"
+    },
+    "diverse": {
+      "title": "Vielfältige Berufserfahrung",
+      "company": "Mehrere Branchen – Service- und technische Rollen",
+      "achievement1": "Expertise im Kundenservice und Kundenbeziehungen erworben",
+      "achievement2": "Praktische Fähigkeiten in Logistik und Operationen entwickelt",
+      "achievement3": "Professionelle Frisörzertifizierung erworben",
+      "achievement4": "Starke Arbeitsmoral trotz Gesundheitsherausforderungen aufgebaut"
     }
   },
-  "title": "Meine Reise"
+  "skills": {
+    "title": "Technische Kompetenzen",
+    "subtitle": "Umfassende Full-Stack-Expertise durch intensives autodidaktisches Lernen und praktische Anwendung erworben."
+  },
+  "cta": {
+    "title": "Bereit, gemeinsam Wirkung zu erzielen?",
+    "description": "Ich bringe eine einzigartige Perspektive, unerschütterliche Entschlossenheit und nachgewiesene technische Fähigkeiten in jede Herausforderung ein. Lasst uns etwas Außergewöhnliches aufbauen.",
+    "contact": "Gespräch beginnen",
+    "projects": "Meine Projekte ansehen"
+  },
+  "proofPack": {
+    "title": "Offizielles Dokumentenpaket",
+    "description": "Laden Sie alle meine zertifizierten Diplome, Lizenzen und Zeugnisse in einer PDF-Datei herunter — ideal für Visaanträge und Arbeitgeberverifikation.",
+    "download": "Zertifizierte Dokumente herunterladen",
+    "downloadAria": "Offizielle Nachweisdokumente als PDF herunterladen",
+    "note": "Enthält akademische Zeugnisse, berufliche Lizenzen und Qualifikationszertifikate."
+  }
 }

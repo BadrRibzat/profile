@@ -1,0 +1,31 @@
+{
+  "pageTitle": "Professional Documents",
+  "pageDescription": "Browse my verified certificates, transcripts, and professional credentials with multi-language translation support.",
+  "searchPlaceholder": "Search documents...",
+  "categories": {
+    "all": "All Documents",
+    "education": "Education",
+    "professional": "Professional",
+    "technical": "Technical",
+    "health": "Health & Nutrition",
+    "language": "Languages"
+  },
+  "originalLanguage": "Original Language",
+  "issuedOn": "Issued",
+  "issuedBy": "Issued By",
+  "viewWithTranslation": "View & Translate",
+  "downloadDirectly": "Download PDF",
+  "noResultsFound": "No documents found",
+  "tryDifferentSearch": "Try adjusting your search terms or filters",
+  "downloadPack": {
+    "title": "Complete Credentials Package",
+    "description": "Download all documents in your preferred language"
+  },
+  "documentViewer": "Document Viewer",
+  "backToDocuments": "← Back to Documents",
+  "notFound": {
+    "title": "Document Not Found",
+    "description": "The requested document could not be found.",
+    "button": "Browse All Documents"
+  }
+}

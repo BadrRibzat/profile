@@ -1,0 +1,31 @@
+{
+  "pageTitle": "職務関連書類",
+  "pageDescription": "多言語翻訳機能付きで、認定済みの証明書、成績証明書、職務資格をご覧いただけます。",
+  "searchPlaceholder": "書類を検索...",
+  "categories": {
+    "all": "すべての書類",
+    "education": "教育",
+    "professional": "職務",
+    "technical": "技術",
+    "health": "健康・栄養",
+    "language": "言語"
+  },
+  "originalLanguage": "原文の言語",
+  "issuedOn": "発行日",
+  "issuedBy": "発行元",
+  "viewWithTranslation": "表示・翻訳",
+  "downloadDirectly": "PDFダウンロード",
+  "noResultsFound": "該当する書類が見つかりません",
+  "tryDifferentSearch": "検索条件やフィルターを調整してみてください",
+  "downloadPack": {
+    "title": "完全資格パック",
+    "description": "希望言語で全書類をダウンロード"
+  },
+  "documentViewer": "ドキュメントビューア",
+  "backToDocuments": "← 書類一覧に戻る",
+  "notFound": {
+    "title": "書類が見つかりません",
+    "description": "リクエストされた書類が見つかりませんでした。",
+    "button": "すべての書類を閲覧"
+  }
+}

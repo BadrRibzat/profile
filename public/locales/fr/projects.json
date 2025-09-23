@@ -1,0 +1,88 @@
+{
+  "seo": {
+    "title": "Projets - Badr Ribzat | Développeur Full-Stack",
+    "description": "Portfolio d'applications prêtes pour la production dans les domaines de l'IA, de la santé et de l'éducation."
+  },
+  "hero": {
+    "status": "Disponible pour l'emploi",
+    "location": "Ouvert à la relocalisation",
+    "title1": "Prêtes pour la Production",
+    "title2": "Solutions Logicielles",
+    "subtitle": "Portfolio présentant des applications de qualité professionnelle construites avec des technologies modernes et une architecture évolutive.",
+    "age": "34 ans",
+    "seeking": "À la recherche d'opportunités",
+    "experience": "Développeur autodidacte"
+  },
+  "filters": {
+    "all": "Tous les Projets",
+    "web": "Applications Web",
+    "healthcare": "Santé",
+    "ai": "IA/ML",
+    "education": "Éducation"
+  },
+  "projects": {
+    "biomedical": {
+      "title": "Système de Détection Biomédicale par IA",
+      "description": "Plateforme avancée de santé pilotée par l'IA combinant l'apprentissage automatique et le diagnostic médical.",
+      "impact": "Résout des défis critiques en santé grâce à une assistance diagnostique pilotée par l'IA"
+    },
+    "education": {
+      "title": "Plateforme Complète d'Apprentissage IT",
+      "description": "Solution technologique éducative full-stack avec gestion avancée des cours et analyse en temps réel.",
+      "impact": "Démocratise l'accès à une éducation technique de qualité"
+    },
+    "chatbot": {
+      "title": "Assistant Chatbot Intelligent par IA",
+      "description": "Plateforme de conversation intelligente dotée de traitement du langage naturel et de prise de contexte.",
+      "impact": "Améliore l'interaction utilisateur grâce à des conversations intelligentes"
+    },
+    "portfolio": {
+      "title": "Portefeuille International Multilingue",
+      "description": "Portefeuille professionnel complet avec génération de CV optimisé pour les ATS, supportant 6 langues.",
+      "impact": "Surmonte les barrières linguistiques pour les opportunités d'emploi internationales"
+    }
+  },
+  "achievements": {
+    "coverage": "Couverture de Documentation API",
+    "coverageDesc": "Documentation OpenAPI complète pour tous les points de terminaison",
+    "deployment": "Déploiement Automatisé",
+    "deploymentDesc": "Pipelines d'intégration et déploiement continus",
+    "containerization": "Applications Conteneurisées",
+    "containerizationDesc": "Orchestration de conteneurs prête pour la production",
+    "uptime": "Disponibilité du Service",
+    "uptimeDesc": "Infrastructures fiables et évolutives sur des plateformes cloud"
+  },
+  "featured": {
+    "title": "Applications En Vedette",
+    "subtitle": "Projets phares démontrant des compétences techniques dans les domaines de la santé, de l'éducation et de l'IA.",
+    "badge": "EN VEDETTE",
+    "cta": {
+      "title": "Prêt à Contribuer",
+      "description": "Des solutions prêtes pour la production qui résolvent des problèmes du monde réel.",
+      "contact": "Discuter des Opportunités",
+      "resume": "Voir Mon CV"
+    }
+  },
+  "all": {
+    "title": "Portefeuille Complet",
+    "subtitle": "Explorez des applications dans différents domaines, conçues avec l'évolutivité et l'expérience utilisateur à l'esprit."
+  },
+  "noResults": {
+    "title": "Aucun Projet Trouvé",
+    "description": "Essayez d'ajuster votre sélection de filtre."
+  },
+  "excellence": {
+    "title": "Standards Techniques",
+    "subtitle": "Chaque projet respecte les meilleures pratiques de l'industrie.",
+    "architecture": {
+      "title": "Architecture Évolutive",
+      "item1": "Modèles de conception de microservices",
+      "item2": "Architecture d'API RESTful"
+    },
+    "quality": {
+      "title": "Qualité du Code",
+      "item1": "Documentation complète de l'API",
+      "item2": "Sécurité des types avec TypeScript"
+    }
+  }
+}

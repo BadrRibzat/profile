@@ -1,0 +1,31 @@
+{
+  "pageTitle": "المستندات المهنية",
+  "pageDescription": "تصفح شهاداتي وسجلاتي ومؤهلاتي المهنية الموثقة مع دعم الترجمة متعددة اللغات.",
+  "searchPlaceholder": "ابحث في المستندات...",
+  "categories": {
+    "all": "جميع المستندات",
+    "education": "التعليم",
+    "professional": "المهنية",
+    "technical": "التقنية",
+    "health": "الصحة والتغذية",
+    "language": "اللغات"
+  },
+  "originalLanguage": "اللغة الأصلية",
+  "issuedOn": "صادر في",
+  "issuedBy": "صادر من",
+  "viewWithTranslation": "عرض وترجمة",
+  "downloadDirectly": "تنزيل PDF",
+  "noResultsFound": "لم يتم العثور على مستندات",
+  "tryDifferentSearch": "حاول تعديل مصطلحات البحث أو الفلاتر",
+  "downloadPack": {
+    "title": "حزمة المؤهلات الكاملة",
+    "description": "قم بتنزيل جميع المستندات باللغة التي تفضلها"
+  },
+  "documentViewer": "عارض المستندات",
+  "backToDocuments": "← العودة إلى المستندات",
+  "notFound": {
+    "title": "لم يتم العثور على المستند",
+    "description": "تعذر العثور على المستند المطلوب.",
+    "button": "تصفح جميع المستندات"
+  }
+}

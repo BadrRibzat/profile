@@ -1,7 +1,7 @@
 {
-  "description": "[AR]  Description",
-  "download": "[AR] Download",
-  "downloadAria": "[AR] DownloadAria",
-  "note": "[AR] Note",
-  "title": "[AR] Title"
+  "title": "حزمة المستندات الرسمية",
+  "description": "قم بتنزيل جميع شهاداتي ورخصي وسجلاتي الأكاديمية في ملف PDF واحد — مثالي لطلبات التأشيرة والتحقق من صاحب العمل.",
+  "download": "تنزيل المستندات المعتمدة",
+  "downloadAria": "تنزيل مستندات الإثبات الرسمية كملف PDF",
+  "note": "يشمل السجلات الأكاديمية، والرخص المهنية، وشهادات المهارات."
 }

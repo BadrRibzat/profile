@@ -26,6 +26,8 @@ const Header: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const currentLocale = router.locale || 'en';
+
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -62,7 +64,7 @@ const Header: React.FC = () => {
     { name: t('common:nav.projects', 'Projects'), href: '/projects', icon: <Briefcase className="w-4 h-4" /> },
     { name: t('common:nav.documents', 'Documents'), href: '/documents', icon: <FileText className="w-4 h-4" /> },
     { name: t('common:nav.skills', 'Skills'), href: '/skills', icon: <Award className="w-4 h-4" /> },
-    { name: t('common:nav.resume', 'Resume'), href: `/resume/${router.locale || 'en'}`, icon: <FileText className="w-4 h-4" /> },
+    { name: t('common:nav.resume', 'Resume'), href: `/resume/${currentLocale}`, icon: <FileText className="w-4 h-4" /> },
     { name: t('common:nav.contact', 'Contact'), href: '/contact', icon: <Mail className="w-4 h-4" /> },
   ];
 

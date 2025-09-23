@@ -1,0 +1,88 @@
+{
+  "seo": {
+    "title": "Projects - Badr Ribzat | Full-Stack Developer",
+    "description": "Portfolio of production-ready applications in AI, healthcare, and education technologies."
+  },
+  "hero": {
+    "status": "Available for Employment",
+    "location": "Open to Relocation",
+    "title1": "Production-Ready",
+    "title2": "Software Solutions",
+    "subtitle": "Portfolio showcasing enterprise-grade applications built with modern technologies and scalable architecture.",
+    "age": "34 Years Old",
+    "seeking": "Seeking Opportunities",
+    "experience": "Self-Taught Developer"
+  },
+  "filters": {
+    "all": "All Projects",
+    "web": "Web Applications",
+    "healthcare": "Healthcare",
+    "ai": "AI/ML",
+    "education": "Education"
+  },
+  "projects": {
+    "biomedical": {
+      "title": "AI Biomedical Detection System",
+      "description": "Advanced AI-powered healthcare platform combining machine learning with medical diagnostics.",
+      "impact": "Addresses critical healthcare challenges through AI-driven diagnostic assistance"
+    },
+    "education": {
+      "title": "Comprehensive IT Learning Platform",
+      "description": "Full-stack educational technology solution with advanced course management and real-time analytics.",
+      "impact": "Democratizes access to quality technical education"
+    },
+    "chatbot": {
+      "title": "Intelligent AI Chatbot Assistant",
+      "description": "Sophisticated conversational AI platform with natural language processing and context awareness.",
+      "impact": "Enhances user interaction through intelligent conversation"
+    },
+    "portfolio": {
+      "title": "International Multilingual Portfolio",
+      "description": "Comprehensive professional portfolio with ATS-optimized resume generation in 6 languages.",
+      "impact": "Bridges language barriers for international job opportunities"
+    }
+  },
+  "achievements": {
+    "coverage": "API Documentation Coverage",
+    "coverageDesc": "Complete OpenAPI documentation for all endpoints",
+    "deployment": "Automated Deployment",
+    "deploymentDesc": "Continuous integration and deployment pipelines",
+    "containerization": "Containerized Applications",
+    "containerizationDesc": "Production-ready container orchestration",
+    "uptime": "Service Uptime",
+    "uptimeDesc": "Reliable, scalable infrastructure on cloud platforms"
+  },
+  "featured": {
+    "title": "Featured Applications",
+    "subtitle": "Flagship projects demonstrating technical capabilities across healthcare, education, and AI domains.",
+    "badge": "FEATURED",
+    "cta": {
+      "title": "Ready to Contribute",
+      "description": "Production-ready solutions that solve real-world problems.",
+      "contact": "Discuss Opportunities",
+      "resume": "View Resume"
+    }
+  },
+  "all": {
+    "title": "Complete Portfolio",
+    "subtitle": "Explore applications across different domains, built with scalability and user experience in mind."
+  },
+  "noResults": {
+    "title": "No Projects Found",
+    "description": "Try adjusting your filter selection."
+  },
+  "excellence": {
+    "title": "Technical Standards",
+    "subtitle": "Every project adheres to industry best practices.",
+    "architecture": {
+      "title": "Scalable Architecture",
+      "item1": "Microservices design patterns",
+      "item2": "RESTful API architecture"
+    },
+    "quality": {
+      "title": "Code Quality",
+      "item1": "Comprehensive API documentation",
+      "item2": "Type safety with TypeScript"
+    }
+  }
+}

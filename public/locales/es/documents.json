@@ -1,0 +1,31 @@
+{
+  "pageTitle": "Documentos Profesionales",
+  "pageDescription": "Explora mis certificados, transcripciones y credenciales profesionales verificadas con soporte de traducción multilingüe.",
+  "searchPlaceholder": "Buscar documentos...",
+  "categories": {
+    "all": "Todos los Documentos",
+    "education": "Educación",
+    "professional": "Profesional",
+    "technical": "Técnico",
+    "health": "Salud y Nutrición",
+    "language": "Idiomas"
+  },
+  "originalLanguage": "Idioma Original",
+  "issuedOn": "Emitido",
+  "issuedBy": "Emitido Por",
+  "viewWithTranslation": "Ver y Traducir",
+  "downloadDirectly": "Descargar PDF",
+  "noResultsFound": "No se encontraron documentos",
+  "tryDifferentSearch": "Intenta ajustar tus términos de búsqueda o filtros",
+  "downloadPack": {
+    "title": "Paquete Completo de Credenciales",
+    "description": "Descarga todos los documentos en tu idioma preferido"
+  },
+  "documentViewer": "Visor de Documentos",
+  "backToDocuments": "← Volver a Documentos",
+  "notFound": {
+    "title": "Documento No Encontrado",
+    "description": "No se pudo encontrar el documento solicitado.",
+    "button": "Explorar Todos los Documentos"
+  }
+}

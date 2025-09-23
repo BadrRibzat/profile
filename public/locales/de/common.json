@@ -1,0 +1,423 @@
+{
+  "loadingPDFViewer": "PDF-Viewer wird geladen...",
+  "categories": {
+    "programming": "Programmiersprachen",
+    "backend": "Backend-Entwicklung",
+    "frontend": "Frontend-Entwicklung",
+    "database": "Datenbanksysteme",
+    "aiml": "KI & Maschinelles Lernen",
+    "devops": "DevOps & Infrastruktur"
+  },
+  "configurationError": "Konfigurationsfehler",
+  "documentIdRequired": "Dokument-ID erforderlich",
+  "reloadPage": "Seite neu laden",
+  "languages": {
+    "originalLanguage": "Originalsprache",
+    "en": "Englisch",
+    "fr": "Französisch",
+    "ar": "Arabisch",
+    "de": "Deutsch",
+    "es": "Spanisch",
+    "ja": "Japanisch"
+  },
+  "documentId": "Dokument-ID",
+  "keyboardShortcuts": {
+    "title": "Tastenkombinationen",
+    "navigate": "Seiten navigieren",
+    "zoom": "Ein-/Auszoomen",
+    "translation": "Übersetzung umschalten",
+    "close": "Overlay schließen"
+  },
+  "errors": {
+    "title": "Fehler beim Laden des Dokuments",
+    "pdfLoadFailed": "PDF-Dokument konnte nicht geladen werden",
+    "pageLoadFailed": "Seite konnte nicht geladen werden",
+    "documentLoadFailed": "Dokument konnte nicht geladen werden",
+    "checkConnection": "Bitte überprüfen Sie Ihre Internetverbindung",
+    "tryAnotherPage": "Versuchen Sie, zu einer anderen Seite zu navigieren",
+    "retry": "Erneut versuchen"
+  },
+  "translationNotice": {
+    "description": "Dies sind informelle Übersetzungen zu Informationszwecken. Für formelle Verfahren können offizielle zertifizierte Übersetzungen erforderlich sein."
+  },
+  "documents": {
+    "pageTitle": "Berufliche Dokumente",
+    "pageDescription": "Durchsuchen Sie meine verifizierten Zertifikate, Zeugnisse und beruflichen Qualifikationen mit mehrsprachiger Übersetzungsfunktion.",
+    "searchPlaceholder": "Dokumente durchsuchen...",
+    "categories": {
+      "all": "Alle Dokumente",
+      "education": "Bildung",
+      "professional": "Beruflich",
+      "technical": "Technisch",
+      "health": "Gesundheit & Ernährung",
+      "language": "Sprachen"
+    },
+    "originalLanguage": "Originalsprache",
+    "issuedOn": "Ausgestellt am",
+    "issuedBy": "Ausgestellt von",
+    "viewWithTranslation": "Anzeigen & Übersetzen",
+    "downloadDirectly": "PDF herunterladen",
+    "noResultsFound": "Keine Dokumente gefunden",
+    "tryDifferentSearch": "Versuchen Sie, Ihre Suchbegriffe oder Filter anzupassen",
+    "downloadPack": {
+      "title": "Komplettes Qualifikationspaket",
+      "description": "Laden Sie alle Dokumente in Ihrer bevorzugten Sprache herunter"
+    },
+    "documentViewer": "Dokumenten-Viewer",
+    "backToDocuments": "← Zurück zu Dokumenten",
+    "notFound": {
+      "title": "Dokument nicht gefunden",
+      "description": "Das angeforderte Dokument konnte nicht gefunden werden.",
+      "button": "Alle Dokumente durchsuchen"
+    }
+  },
+  "projects": {
+    "title": "Ausgewählte Projekte",
+    "subtitle": "Entdecken Sie meine neuesten Arbeiten, die Kompetenz in Full-Stack-Entwicklung, KI-Integration und produktionsreifen Anwendungen zeigen.",
+    "filters": {
+      "all": "Alle Projekte",
+      "web": "Webanwendungen",
+      "healthcare": "Gesundheitswesen",
+      "ai": "KI/ML",
+      "education": "Bildung"
+    },
+    "projects": {
+      "biomedical": {
+        "description": "KI-gestütztes biomedizinisches Erkennungssystem mit maschinellen Lernfähigkeiten für medizinische Anwendungen und diagnostische Unterstützung."
+      },
+      "education": {
+        "description": "Umfassende Bildungstechnologie-Plattform mit Kursverwaltung, Schüleranalysen und interaktiven Lernmodulen."
+      },
+      "chatbot": {
+        "description": "Intelligenter Chatbot-Assistent mit natürlicher Sprachverarbeitung, Echtzeit-Antworten und skalierbarer Architektur."
+      },
+      "portfolio": {
+        "description": "Internationales mehrsprachiges Portfolio mit ATS-optimierter Lebenslaufgenerierung für 6+ Sprachen"
+      }
+    },
+    "seo": {
+      "title": "Projekte – Badr Ribzat",
+      "description": "Eine Sammlung meiner Arbeiten, die Fähigkeiten in Full-Stack-Entwicklung, KI, maschinellem Lernen und Design produktionsreifer Anwendungen zeigt."
+    },
+    "technicalStack": {
+      "title": "Produktionsreifer Technologie-Stack",
+      "items": [
+        { "value": "100%", "label": "API-Dokumentationsabdeckung" },
+        { "value": "CI/CD", "label": "Automatisierte Bereitstellungen" },
+        { "value": "Docker", "label": "Containerisierte Apps" },
+        { "value": "Scalable", "label": "Cloud-Architektur" }
+      ]
+    }
+  },
+  "resume": {
+    "pageTitle": "Beruflicher Lebenslauf",
+    "pageDescription": "Laden Sie meinen beruflichen Lebenslauf herunter, optimiert für ATS-Systeme und angepasst an internationale Standards.",
+    "active": "Aktiv",
+    "navigation": {
+      "back": "Zurück zur Startseite"
+    },
+    "languageSelector": {
+      "title": "Wählen Sie Ihre bevorzugte Sprache"
+    },
+    "sections": {
+      "summary": "Berufliche Zusammenfassung",
+      "skills": "Technische Fähigkeiten",
+      "projects": "Wichtige Projekte",
+      "experience": "Berufliche Erfahrung",
+      "education": "Ausbildung & Zertifizierungen",
+      "additional": "Zusätzliche Qualifikationen"
+    },
+    "subsections": {
+      "languages": "Sprachen",
+      "additionalSkills": "Zusätzliche Fähigkeiten"
+    },
+    "personalInfo": {
+      "title": "Full-Stack-Software-Ingenieur"
+    },
+    "summary": "Autodidaktischer Full-Stack-Software-Ingenieur mit nachgewiesener Expertise im Entwickeln und Bereitstellen skalierbarer Webanwendungen und KI-gestützter Systeme. Absolvierte das intensive 18-monatige ALX-Software-Engineering-Programm mit außergewöhnlicher Leistung (106,76 %). Nachweisbare Erfolgsbilanz bei der Entwicklung produktionsreifer Anwendungen mit modernen Technologien wie Python, JavaScript, React und Cloud-Bereitstellungsplattformen. Starke Kenntnisse in API-Entwicklung, Datenbankdesign und DevOps-Praktiken. Engagiert für kontinuierliches Lernen und Exzellenz in der Softwareentwicklung.",
+    "experience": {
+      "0": {
+        "title": "Full-Stack-Software-Ingenieur",
+        "company": "Eigenständige Projekte & Open Source",
+        "achievements": {
+          "0": "Entwickelte und implementierte 3+ Full-Stack-Anwendungen mit modernen Tech-Stacks",
+          "1": "Implementierte RESTful-APIs, die 50+ gleichzeitige Nutzer mit optimierter Leistung bedienen",
+          "2": "Baute KI-gestützte Systeme mit 85 % Genauigkeit bei der Absichtserkennung",
+          "3": "Erstellte umfassende Dokumentation und API-Spezifikationen mit Swagger/OpenAPI",
+          "4": "Richtete CI/CD-Pipelines ein, die die Bereitstellungszeit um 40 % reduzierten"
+        }
+      },
+      "1": {
+        "title": "Digitaler Marketingberater",
+        "company": "Freiberuflich",
+        "achievements": {
+          "0": "Steigerte das Kundenengagement um 35 % durch datengesteuerte Optimierungsstrategien",
+          "1": "Wandte analytische Fähigkeiten zur Leistungsbewertung und Prozessverbesserung an",
+          "2": "Kollaborierte mit funktionsübergreifenden Teams zur Optimierung von Content-Pipelines",
+          "3": "Zeigte Anpassungsfähigkeit in einer schnelllebigen, ergebnisorientierten Umgebung"
+        }
+      }
+    },
+    "projects": {
+      "biomedical": {
+        "description": "KI-gestütztes biomedizinisches Erkennungssystem mit maschinellen Lernfähigkeiten für medizinische Anwendungen und diagnostische Unterstützung.",
+        "highlights": {
+          "0": "Aufbaute Signal-/Daten-Vorverarbeitung und ML-Baselines für Prototyp-Detektoren",
+          "1": "Lieferte reproduzierbare Experimente mit strukturierter Dokumentation",
+          "2": "Implementierte RESTful-APIs mit 100 % Swagger/OpenAPI-Abdeckung"
+        }
+      },
+      "education": {
+        "description": "Bildungsplattform mit Kursverwaltung und Fortschrittsverfolgung",
+        "highlights": {
+          "0": "Reduzierte API-Antwortzeit um 30 % durch Abfrageoptimierung und Caching",
+          "1": "Implementierte CI/CD-Pipelines, die Bereitstellungszeit um 40 % verkürzten",
+          "2": "Baute rollenbasierte Zugriffskontrolle und Benutzerverwaltungssystem"
+        }
+      },
+      "ai": {
+        "description": "Intelligenter Chatbot mit natürlicher Sprachverarbeitung",
+        "highlights": {
+          "0": "Erreichte 85 % Absichtserkennungsgenauigkeit mit domänenspezifischer Klassifizierung",
+          "1": "Optimiert für 50+ gleichzeitige Nutzer mit zustandslosen Endpunkten",
+          "2": "Implementierte Containerisierung und Observability für Produktionsbereitstellung"
+        }
+      }
+    },
+    "certifications": {
+      "alx": {
+        "details": "18-monatiges Intensivprogramm mit Schwerpunkt auf Full-Stack-Entwicklung, Algorithmen und Systemdesign"
+      }
+    },
+    "additionalSkills": {
+      "0": "Professionelle Friseurlizenz (Männer & Frauen) – Staatlich anerkannte Schule",
+      "1": "Gabelstaplerführerschein (CACES R489 & R485)"
+    },
+    "generating": "Wird generiert...",
+    "download": "PDF herunterladen",
+    "preview": "Vorschau",
+    "features": "Funktionen",
+    "featuresList": {
+      "atsOptimized": "ATS-optimiert",
+      "localized": "Lokalisiert und kulturell angepasst",
+      "professionalFormat": "Standard-Berufsformat",
+      "japaneseFormat": "Japanisches Rirekisho-Format"
+    },
+    "specifications": "Spezifikationen",
+    "specs": {
+      "format": "Format",
+      "language": "Sprache",
+      "style": "Stil",
+      "optimized": "Optimiert"
+    },
+    "cta": {
+      "title": "Bereit zur Zusammenarbeit?",
+      "description": "Lassen Sie uns über Möglichkeiten und Projekte sprechen.",
+      "button": "Kontaktieren Sie mich"
+    }
+  },
+  "skills": {
+    "title": "Fähigkeiten & Expertise",
+    "subtitle": "Ein umfassender Überblick über meine technischen Fähigkeiten, praktischen Zertifizierungen und mehrsprachigen Kompetenzen, entwickelt durch selbstgesteuertes Lernen und praktische Erfahrung.",
+    "categories": {
+      "programming": "Programmiersprachen",
+      "backend": "Backend-Entwicklung",
+      "frontend": "Frontend-Entwicklung",
+      "database": "Datenbanksysteme",
+      "aiml": "KI & Maschinelles Lernen",
+      "devops": "DevOps & Infrastruktur"
+    },
+    "technical": {
+      "title": "Technische Fähigkeiten"
+    },
+    "practical": {
+      "title": "Zertifizierte praktische Fähigkeiten",
+      "forklift": "Gabelstaplerbedienung",
+      "forkliftDesc": "Bedienung schwerer Maschinen mit Sicherheitszertifizierungen",
+      "driving": "Berufliches Fahren",
+      "drivingCert": "Gültiger marokkanischer Führerschein (Alle Kategorien)",
+      "drivingDesc": "Berufliches Fahren mit hervorragender Sicherheitsbilanz",
+      "hairstyling": "Professionelles Friseurhandwerk",
+      "hairstylingCert": "Staatlich anerkannte Zertifizierung (Männer & Frauen)",
+      "hairstylingDesc": "Komplettservice-Styling mit modernen Techniken",
+      "culinary": "Kochkunst",
+      "culinaryCert": "Fachkraft für therapeutische Ernährung",
+      "culinaryDesc": "Gesundheitsorientierte Küche und Ernährungsplanung"
+    },
+    "footer": {
+      "madeWith": "Erstellt mit",
+      "builtWith": "Entwickelt mit",
+      "copyright": "Badr Ribzat. Alle Rechte vorbehalten.",
+      "availableForOpportunities": "Verfügbar für Praktika, Einstiegspositionen und Ausbildungen mit Visumsförderung"
+    },
+    "achievements": {
+      "alxScore": "ALX-Punktzahl",
+      "projects": "Projekte",
+      "certifications": "Zertifizierungen",
+      "languages": "Sprachen"
+    },
+    "projectCard": {
+      "scalable": "Skalierbar",
+      "docker": "Docker",
+      "ciCd": "CI/CD",
+      "openToOpportunities": "Offen für Möglichkeiten",
+      "liveDemo": "Live-Demo",
+      "code": "Code",
+      "apiDocs": "API-Dokumentation",
+      "deployed": "Bereitgestellt",
+      "productionReady": "Produktionsbereit",
+      "openToOpportunities": "Offen für Möglichkeiten"
+    },
+    "social": {
+      "email": "E-Mail",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+    "navigation": {
+      "home": "Startseite",
+      "about": "Über mich",
+      "projects": "Projekte",
+      "skills": "Fähigkeiten",
+      "resume": "Lebenslauf",
+      "contact": "Kontakt",
+      "documents": "Dokumente"
+    },
+    "languageSelector": {
+      "ar": "Arabisch",
+      "es": "Spanisch",
+      "de": "Deutsch",
+      "fr": "Französisch",
+      "ja": "Japanisch",
+      "en": "Englisch"
+    },
+    "languages": {
+      "title": "Sprachkenntnisse",
+      "arabic": "Arabisch",
+      "french": "Französisch",
+      "english": "Englisch",
+      "german": "Deutsch",
+      "spanish": "Spanisch",
+      "japanese": "Japanisch"
+    },
+    "levels": {
+      "native": "Muttersprache",
+      "professional": "Beruflich",
+      "upperIntermediate": "Oberstufe",
+      "intermediate": "Mittelstufe",
+      "basic": "Grundkenntnisse"
+    },
+    "proficiency": "Kompetenzniveau",
+    "cta": {
+      "title": "Bereit, Wirkung zu erzielen",
+      "description": "Lassen Sie uns besprechen, wie mein vielfältiges Fähigkeitsset zu Ihrem nächsten Projekt oder Team beitragen kann.",
+      "contact": "Kontakt aufnehmen",
+      "resume": "Lebenslauf ansehen"
+    }
+  },
+  "home": {
+    "seo": {
+      "title": "Badr Ribzat – Full-Stack-Ingenieur",
+      "description": "Autodidaktischer Full-Stack-Software-Ingenieur, spezialisiert auf KI, biomedizinische Anwendungen und Bildungstechnologie. Sitz in Marokko, verfügbar für Remote-Möglichkeiten weltweit."
+    },
+    "hero": {
+      "subtitle": "Full-Stack-Software-Ingenieur",
+      "location": "Ksar El Kebir, Marokko",
+      "availability": "Verfügbar für Remote-Arbeit",
+      "highlights": {
+        "selfTaught": "Autodidaktischer Experte",
+        "aiExpert": "KI & ML-Spezialist",
+        "resilient": "Widerstandsfähiger Problemlöser"
+      },
+      "cta": {
+        "viewResume": "Lebenslauf herunterladen",
+        "viewProjects": "Projekte ansehen"
+      }
+    },
+    "stats": {
+      "alxScore": "ALX-Programmpunktzahl",
+      "projects": "Live-Projekte",
+      "languages": "Programmiersprachen",
+      "technologies": "Beherrschte Technologien"
+    },
+    "projects": {
+      "title": "Ausgewählte Projekte",
+      "description": "Entdecken Sie meine neuesten Arbeiten, die Kompetenz in Full-Stack-Entwicklung, KI-Integration und produktionsreifen Anwendungen zeigen.",
+      "biomedical": {
+        "description": "KI-gestütztes biomedizinisches Erkennungssystem mit maschinellen Lernfähigkeiten für medizinische Anwendungen und diagnostische Unterstützung."
+      },
+      "education": {
+        "description": "Umfassende Bildungstechnologie-Plattform mit Kursverwaltung, Schüleranalysen und interaktiven Lernmodulen."
+      },
+      "chatbot": {
+        "description": "Intelligenter Chatbot-Assistent mit natürlicher Sprachverarbeitung, Echtzeit-Antworten und skalierbarer Architektur."
+      }
+    },
+    "about": {
+      "title": "Über mich",
+      "subtitle": "Autodidaktischer Full-Stack-Ingenieur | Lösung realer Probleme mit Technologie"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "subtitle": "Bereit für neue Herausforderungen und Möglichkeiten."
+    }
+  },
+  "buttons": {
+    "generating": "Wird generiert...",
+    "error": "Fehler",
+    "loadingLink": "Wird geladen..."
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "documents": "Dokumente",
+    "skills": "Fähigkeiten",
+    "resume": "Lebenslauf",
+    "contact": "Kontakt"
+  },
+  "header": {
+    "logoSubtitle": "Full-Stack-Ingenieur"
+  },
+  "theme": {
+    "dark": "Dunkelmodus",
+    "light": "Hellmodus"
+  },
+  "menu": {
+    "open": "Menü öffnen",
+    "close": "Menü schließen"
+  },
+  "footer": {
+    "bio": "Entdecken Sie die Geschichte hinter Badr Ribzat, einem autodidaktischen Full-Stack-Ingenieur, angetrieben von Leidenschaft, Widerstandsfähigkeit und dem Wunsch, komplexe Probleme zu lösen.",
+    "email": "E-Mail",
+    "location": "Ksar El Kebir, Marokko",
+    "quickLinks": "Schnellzugriff",
+    "featuredProjects": "Ausgewählte Projekte",
+    "projects": {
+      "biomedical": "Biomedizinische Erkennung",
+      "education": "IT-Lernplattform",
+      "chatbot": "KI-Chatbot-Assistent"
+    },
+    "keyAchievements": "Wichtige Erfolge",
+    "achievements": {
+      "alxScore": "ALX Punktzahl",
+      "projects": "Projekte",
+      "certifications": "Zertifizierungen",
+      "languages": "Sprachen"
+    },
+    "availableStatus": "Verfügbar für Möglichkeiten",
+    "rights": "Alle Rechte vorbehalten",
+    "builtWith": "Erstellt mit",
+    "madeWith": "Gemacht mit"
+  },
+  "projectCard": {
+    "apiDocs": "API-Dokumentation",
+    "technicalDocs": "Technische Dokumentation",
+    "liveDemo": "Live-Demo",
+    "code": "Code",
+    "productionReady": "Produktionsreif",
+    "scalable": "Skalierbar",
+    "deployed": "Bereitgestellt",
+    "openToOpportunities": "Offen für Möglichkeiten"
+  },
+  "fallbackNotice": "Bitte überprüfen Sie die Übersetzungsplatzhalter."
+}

@@ -1,0 +1,470 @@
+{
+  "seo": {
+    "title": "About Me",
+    "description": "Discover the story behind Badr Ribzat, a self-taught full-stack engineer driven by passion, resilience, and a desire to solve complex problems."
+  },
+  "hero": {
+    "title": "Badr Ribzat: A Journey of Resilience & Innovation",
+    "subtitle": "Self‑Taught Full‑Stack Engineer | Solving Real‑World Problems with Technology",
+    "location": {
+      "title": "Global Availability",
+      "description": "Actively seeking opportunities worldwide with visa sponsorship for international relocation."
+    },
+    "focus": {
+      "title": "Specialized Focus",
+      "description": "Bridging gaps in Healthcare, AI, and Education through innovative software solutions."
+    },
+    "achievement": {
+      "title": "Proven Excellence",
+      "description": "Achieved 106.76% in the rigorous ALX Software Engineering program, consistently exceeding expectations."
+    },
+    "buttons": {
+      "contact": "Contact Me",
+      "viewResume": "View My Resume"
+    },
+    "stats": {
+      "languages": "Languages Spoken",
+      "certifications": "Certifications"
+    }
+  },
+  "story": {
+    "title": "My Story: Beyond the Code",
+    "subtitle": "A Testament to Persistence and Passion",
+    "p1": "My career began not in front of a screen, but with my hands—mastering trades like professional hairstyling, culinary arts, and operating heavy machinery. These roles taught me discipline, attention to detail, and the art of client satisfaction.",
+    "p2": "However, a deep‑seated curiosity for how things work led me to the world of technology. I embarked on an intense journey of self‑directed learning, dedicating thousands of hours to mastering software engineering from the ground up.",
+    "p3": "This culminated in my acceptance and outstanding performance in the ALX Software Engineering program, a rigorous 18‑month curriculum where I solidified my skills in full‑stack development, algorithms, and system design, finishing with a score of 106.76%."
+  },
+  "interests": {
+    "title": "Beyond the Screen",
+    "description": "When I'm not coding, I pursue interests that further enrich my perspective and problem‑solving abilities.",
+    "items": {
+      "reading": "Learning & Reading",
+      "coffee": "Specialty Coffee",
+      "languages": "Language Acquisition",
+      "cooking": "Culinary Arts"
+    }
+  },
+  "certifications": {
+    "title": "My Credentials",
+    "subtitle": "Formal Recognitions & Specialized Training",
+    "technical": {
+      "title": "Technical Competencies"
+    },
+    "professional": {
+      "title": "Professional Expertise"
+    },
+    "languages": {
+      "title": "Language Proficiency"
+    },
+    "viewAll": "View All"
+  },
+  "cta": {
+    "title": "Ready to Collaborate?",
+    "description": "My unique background and proven resilience make me a valuable asset. Let's build something impactful together.",
+    "button": "Get in Touch"
+  },
+  "title": "My Journey",
+  "subtitle": "From Practical Trades to Advanced Technology",
+  "philosophy": {
+    "title": "My Philosophy",
+    "content": "I believe that true innovation comes from a blend of diverse experiences. My path wasn't linear, and that's my greatest strength. I tackle problems with a unique perspective, combining practical, hands‑on skills with deep technical knowledge."
+  },
+  "timeline": {
+    "selfTaught": {
+      "title": "Full‑Stack Engineer (Self‑Directed)",
+      "description": "Independent learning, project development, and open‑source contributions focusing on AI, health‑tech, and education."
+    },
+    "business": {
+      "title": "Multi‑Skilled Professional (Diverse Industries)",
+      "description": "Developed strong interpersonal, client‑facing, and practical skills across logistics, service, and certified roles."
+    },
+    "education": {
+      "title": "Formal Education & Early Career",
+      "description": "Completed preparatory education while balancing significant health challenges, leading to early professional experiences."
+    }
+  },
+  "proofPack": {
+    "title": "Official Document Pack",
+    "description": "Download all my certified diplomas, licenses, and transcripts in one PDF — perfect for visa applications and employer verification.",
+    "download": "Download Certified Documents",
+    "downloadAria": "Download official proof documents as PDF",
+    "note": "Includes academic transcripts, professional licenses, and skill certifications."
+  },
+  "loadingPDFViewer": "Loading PDF Viewer...",
+  "categories": {
+    "programming": "Programming Languages",
+    "backend": "Backend Development",
+    "frontend": "Frontend Development",
+    "database": "Database Systems",
+    "aiml": "AI & Machine Learning",
+    "devops": "DevOps & Infrastructure"
+  },
+  "configurationError": "Configuration Error",
+  "documentIdRequired": "Document ID is required",
+  "reloadPage": "Reload Page",
+  "languages": {
+    "originalLanguage": "Original Language",
+    "en": "English",
+    "fr": "Français",
+    "ar": "العربية",
+    "de": "Deutsch",
+    "es": "Español",
+    "ja": "日本語"
+  },
+  "documentId": "Document ID",
+  "keyboardShortcuts": {
+    "title": "Keyboard Shortcuts",
+    "navigate": "Navigate pages",
+    "zoom": "Zoom in/out",
+    "translation": "Toggle translation",
+    "close": "Close overlay"
+  },
+  "errors": {
+    "title": "Something went wrong",
+    "description": "We encountered an unexpected error. Please try refreshing the page.",
+    "detailsTitle": "Error Details (Development)",
+    "retry": "Try Again",
+    "home": "Go Home",
+    "browseDocs": "Browse Documents"
+  },
+  "translationNotice": {
+    "description": "These are informal translations for informational purposes. Official certified translations may be required for formal procedures."
+  },
+  "documents": {
+    "pageTitle": "Professional Documents",
+    "pageDescription": "Browse my verified certificates, transcripts, and professional credentials with multi-language translation support.",
+    "searchPlaceholder": "Search documents...",
+    "categories": {
+      "all": "All Documents",
+      "education": "Education",
+      "professional": "Professional",
+      "technical": "Technical",
+      "health": "Health & Nutrition",
+      "language": "Languages"
+    },
+    "originalLanguage": "Original Language",
+    "issuedOn": "Issued",
+    "issuedBy": "Issued By",
+    "viewWithTranslation": "View & Translate",
+    "downloadDirectly": "Download PDF",
+    "noResultsFound": "No documents found",
+    "tryDifferentSearch": "Try adjusting your search terms or filters",
+    "downloadPack": {
+      "title": "Complete Credentials Package",
+      "description": "Download all documents in your preferred language"
+    },
+    "documentViewer": "Document Viewer",
+    "backToDocuments": "← Back to Documents",
+    "notFound": {
+      "title": "Document Not Found",
+      "description": "The requested document could not be found.",
+      "button": "Browse All Documents"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Explore my latest work, showcasing expertise in full‑stack development, AI integration, and production‑ready applications.",
+    "filters": {
+      "all": "All Projects",
+      "web": "Web Applications",
+      "healthcare": "Healthcare",
+      "ai": "AI/ML",
+      "education": "Education"
+    },
+    "projects": {
+      "biomedical": {
+        "description": "AI‑powered biomedical detection system with machine learning capabilities for healthcare applications and diagnostic assistance."
+      },
+      "education": {
+        "description": "Comprehensive educational technology platform featuring course management, student analytics, and interactive learning modules."
+      },
+      "chatbot": {
+        "description": "Intelligent chatbot assistant with natural language processing, real‑time responses, and scalable architecture."
+      },
+      "portfolio": {
+        "description": "International multilingual portfolio with ATS‑optimized resume generation supporting 6+ languages"
+      }
+    },
+    "seo": {
+      "title": "Projects – Badr Ribzat",
+      "description": "A collection of my work, showcasing skills in full‑stack development, AI, machine learning, and production‑ready application design."
+    },
+    "technicalStack": {
+      "title": "Production‑Ready Technical Stack",
+      "items": [
+        { "value": "100%", "label": "API Documentation Coverage" },
+        { "value": "CI/CD", "label": "Automated Deployments" },
+        { "value": "Docker", "label": "Containerized Apps" },
+        { "value": "Scalable", "label": "Cloud Architecture" }
+      ]
+    }
+  },
+  "resume": {
+    "pageTitle": "Professional Resume",
+    "pageDescription": "Download my professional resume optimized for ATS systems and adapted to international standards.",
+    "active": "Active",
+    "navigation": {
+      "back": "Back to home"
+    },
+    "languageSelector": {
+      "title": "Choose your preferred language"
+    },
+    "sections": {
+      "summary": "Professional Summary",
+      "skills": "Technical Skills",
+      "projects": "Key Projects",
+      "experience": "Professional Experience",
+      "education": "Education & Certifications",
+      "additional": "Additional Qualifications"
+    },
+    "subsections": {
+      "languages": "Languages",
+      "additionalSkills": "Additional Skills"
+    },
+    "personalInfo": {
+      "title": "Full‑Stack Software Engineer"
+    },
+    "summary": "Self‑taught Full‑Stack Software Engineer with demonstrated expertise in building and deploying scalable web applications and AI‑powered systems. Completed intensive 18‑month ALX Software Engineering program with exceptional performance (106.76%). Proven track record of developing production‑ready applications with modern technologies including Python, JavaScript, React, and cloud deployment platforms. Strong background in API development, database design, and DevOps practices. Committed to continuous learning and excellence in software development.",
+    "experience": {
+      "0": {
+        "title": "Full‑Stack Software Engineer",
+        "company": "Independent Projects & Open Source",
+        "achievements": {
+          "0": "Developed and deployed 3+ full‑stack applications with modern tech stacks",
+          "1": "Implemented RESTful APIs serving 50+ concurrent users with optimized performance",
+          "2": "Built AI‑powered systems achieving 85% accuracy in intent recognition",
+          "3": "Created comprehensive documentation and API specifications using Swagger/OpenAPI",
+          "4": "Established CI/CD pipelines reducing deployment time by 40%"
+        }
+      },
+      "1": {
+        "title": "Digital Marketing Consultant",
+        "company": "Freelance",
+        "achievements": {
+          "0": "Increased client engagement by 35% through data‑driven optimization strategies",
+          "1": "Applied analytical skills to performance assessment and process improvement",
+          "2": "Collaborated with cross‑functional teams on content pipeline optimization",
+          "3": "Demonstrated adaptability in fast‑paced, results‑oriented environment"
+        }
+      }
+    },
+    "projects": {
+      "biomedical": {
+        "description": "AI‑powered biomedical detection system with machine learning capabilities for healthcare applications and diagnostic assistance.",
+        "highlights": {
+          "0": "Built signal/data preprocessing and ML baselines for prototype detectors",
+          "1": "Delivered reproducible experiments with structured documentation",
+          "2": "Implemented RESTful APIs with 100% Swagger/OpenAPI coverage"
+        }
+      },
+      "education": {
+        "description": "Educational platform with course management and progress tracking",
+        "highlights": {
+          "0": "Reduced API response time by 30% through query optimization and caching",
+          "1": "Implemented CI/CD pipelines cutting deployment time by 40%",
+          "2": "Built role‑based access control and user management system"
+        }
+      },
+      "ai": {
+        "description": "Intelligent chatbot with natural language processing capabilities",
+        "highlights": {
+          "0": "Achieved 85% intent recognition accuracy using domain‑tuned classification",
+          "1": "Optimized to handle 50+ concurrent users with stateless endpoints",
+          "2": "Implemented containerization and observability for production deployment"
+        }
+      }
+    },
+    "certifications": {
+      "alx": {
+        "details": "18‑month intensive program covering full‑stack development, algorithms, and system design"
+      }
+    },
+    "additionalSkills": {
+      "0": "Professional Hairstylist Certification (Men & Women) - State Approved School",
+      "1": "Forklift Operation Certification (CACES R489 & R485)"
+    },
+    "generating": "Generating...",
+    "download": "Download PDF",
+    "preview": "Preview",
+    "features": "Features",
+    "featuresList": {
+      "atsOptimized": "ATS Optimized",
+      "localized": "Localized and culturally adapted",
+      "professionalFormat": "Standard professional format",
+      "japaneseFormat": "Japanese Rirekisho format"
+    },
+    "specifications": "Specifications",
+    "specs": {
+      "format": "Format",
+      "language": "Language",
+      "style": "Style",
+      "optimized": "Optimized"
+    },
+    "cta": {
+      "title": "Ready to collaborate?",
+      "description": "Let's discuss opportunities and projects.",
+      "button": "Contact Me"
+    }
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "subtitle": "A comprehensive overview of my technical abilities, practical certifications, and multilingual capabilities developed through self‑directed learning and hands‑on experience.",
+    "categories": {
+      "programming": "Programming Languages",
+      "backend": "Backend Development",
+      "frontend": "Frontend Development",
+      "database": "Database Systems",
+      "aiml": "AI & Machine Learning",
+      "devops": "DevOps & Infrastructure"
+    },
+    "technical": {
+      "title": "Technical Skills"
+    },
+    "practical": {
+      "title": "Certified Practical Skills",
+      "forklift": "Forklift Operation",
+      "forkliftDesc": "Heavy machinery operation with safety certifications",
+      "driving": "Professional Driving",
+      "drivingCert": "Valid Moroccan License (All Categories)",
+      "drivingDesc": "Professional driving with excellent safety record",
+      "hairstyling": "Professional Hairstyling",
+      "hairstylingCert": "State‑Approved Certification (Men & Women)",
+      "hairstylingDesc": "Full‑service styling with modern techniques",
+      "culinary": "Culinary Arts",
+      "culinaryCert": "Therapeutic Nutrition Specialist",
+      "culinaryDesc": "Health‑focused cuisine and nutritional planning"
+    },
+    "languages": {
+      "title": "Language Proficiency",
+      "arabic": "Arabic",
+      "french": "French",
+      "english": "English",
+      "german": "German",
+      "spanish": "Spanish",
+      "japanese": "Japanese"
+    },
+    "levels": {
+      "native": "Native",
+      "professional": "Professional",
+      "upperIntermediate": "Upper‑Intermediate",
+      "intermediate": "Intermediate",
+      "basic": "Basic"
+    },
+    "proficiency": "Proficiency Level",
+    "cta": {
+      "title": "Ready to Make an Impact",
+      "description": "Let's discuss how my diverse skill set can contribute to your next project or team.",
+      "contact": "Get in Touch",
+      "resume": "View Resume"
+    }
+  },
+  "home": {
+    "seo": {
+      "title": "Badr Ribzat – Full‑Stack Engineer",
+      "description": "Self‑taught Full‑Stack Software Engineer specializing in AI, biomedical applications, and educational technology. Based in Morocco, available for remote opportunities worldwide."
+    },
+    "hero": {
+      "subtitle": "Full‑Stack Software Engineer",
+      "location": "Ksar El Kebir, Morocco",
+      "availability": "Available for Remote Work",
+      "highlights": {
+        "selfTaught": "Self‑Taught Expert",
+        "aiExpert": "AI & ML Specialist",
+        "resilient": "Resilient Problem Solver"
+      },
+      "cta": {
+        "viewResume": "Download Resume",
+        "viewProjects": "View Projects"
+      }
+    },
+    "stats": {
+      "alxScore": "ALX Program Score",
+      "projects": "Live Projects",
+      "languages": "Programming Languages",
+      "technologies": "Technologies Mastered"
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "description": "Explore my latest work showcasing expertise in full‑stack development, AI integration, and production‑ready applications.",
+      "biomedical": {
+        "description": "AI‑powered biomedical detection system with machine learning capabilities for healthcare applications and diagnostic assistance."
+      },
+      "education": {
+        "description": "Comprehensive educational technology platform featuring course management, student analytics, and interactive learning modules."
+      },
+      "chatbot": {
+        "description": "Intelligent chatbot assistant with natural language processing capabilities."
+      }
+    },
+    "about": {
+      "title": "About Me",
+      "subtitle": "Self‑taught Full‑Stack Engineer | Solving Real‑World Problems with Technology"
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Ready for new challenges and opportunities."
+    }
+  },
+  "documents": {
+    "downloadPDFViewer": "Loading PDF Viewer..."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "documents": "Documents",
+    "skills": "Skills",
+    "resume": "Resume",
+    "contact": "Contact"
+  },
+  "header": {
+    "logoSubtitle": "Full-Stack Engineer"
+  },
+  "theme": {
+    "dark": "Dark mode",
+    "light": "Light mode"
+  },
+  "menu": {
+    "open": "Open menu",
+    "close": "Close menu"
+  },
+  "footer": {
+    "bio": "Discover the story behind Badr Ribzat, a self-taught full-stack engineer driven by passion, resilience, and a desire to solve complex problems.",
+    "email": "Email",
+    "location": "Ksar El Kebir, Morocco",
+    "quickLinks": "Quick Links",
+    "featuredProjects": "Featured Projects",
+    "projects": {
+      "biomedical": "Biomedical Detection",
+      "education": "IT Learning Platform",
+      "chatbot": "AI Chatbot Assistant"
+    },
+    "keyAchievements": "Key Achievements",
+    "achievements": {
+      "alxScore": "ALX Score",
+      "projects": "Projects",
+      "certifications": "Certifications",
+      "languages": "Languages"
+    },
+    "availableStatus": "Available for Opportunities",
+    "rights": "All rights reserved",
+    "builtWith": "Built with",
+    "madeWith": "Made with"
+  },
+  "buttons": {
+    "generating": "Generating...",
+    "error": "Error",
+    "loadingLink": "Loading..."
+  },
+  "projectCard": {
+    "apiDocs": "API Docs",
+    "technicalDocs": "Technical Docs",
+    "liveDemo": "Live Demo",
+    "code": "Code",
+    "productionReady": "Production Ready",
+    "scalable": "Scalable",
+    "deployed": "Deployed",
+    "openToOpportunities": "Open to Opportunities"
+  },
+  "fallbackNotice": "Please review the translation placeholders."
+}

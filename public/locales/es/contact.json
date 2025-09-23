@@ -1,49 +1,49 @@
 {
-  "availability": {
-    "status": "Disponible para oportunidades",
-    "message": "Generalmente responde en 24h"
-  },
-  "form": {
-    "title": "Envía un mensaje",
-    "name": "Nombre completo",
-    "namePlaceholder": "Tu nombre completo",
-    "email": "Correo electrónico",
-    "emailPlaceholder": "tu@email.com",
-    "subject": "Asunto",
-    "subjectPlaceholder": "Asunto de tu mensaje",
-    "opportunityType": "Tipo de oportunidad",
-    "selectOpportunity": "Selecciona un tipo",
-    "opportunities": {
-      "fulltime": "Puesto a tiempo completo",
-      "internship": "Pasantía",
-      "contract": "Contrato/Freelance",
-      "training": "Formación/Mentoría",
-      "collaboration": "Colaboración",
-      "other": "Otro"
-    },
-    "preferredLanguage": "Idioma preferido",
-    "message": "Mensaje",
-    "messagePlaceholder": "Comparte detalles sobre tu proyecto, oportunidad o preguntas...",
-    "send": "Enviar mensaje",
-    "sending": "Enviando...",
-    "success": "¡Mensaje enviado con éxito!",
-    "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo.",
-    "responseTime": "Generalmente respondo dentro de 24 horas"
-  },
-  "info": {
-    "title": "Información de Contacto",
-    "email": "Correo electrónico",
-    "phone": "Teléfono",
-    "location": "Ubicación",
-    "timezone": "Zona horaria"
-  },
   "seo": {
     "title": "Contacto - Badr Ribzat",
     "description": "Contacta a Badr Ribzat para oportunidades profesionales, colaboraciones o preguntas técnicas."
   },
+  "title": "Conectémonos",
+  "subtitle": "Listo para nuevos desafíos y oportunidades. Hablemos sobre cómo puedo contribuir a tu equipo o proyecto.",
+  "info": {
+    "title": "Información de Contacto",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "location": "Ubicación",
+    "timezone": "Zona Horaria"
+  },
   "social": {
     "title": "Redes Sociales"
   },
-  "subtitle": "Listo para nuevos desafíos y oportunidades. Hablemos de cómo puedo contribuir a tu equipo o proyecto.",
-  "title": "Conectemos"
+  "availability": {
+    "status": "Disponible para Oportunidades",
+    "message": "Normalmente responde en 24h"
+  },
+  "form": {
+    "title": "Envía un Mensaje",
+    "name": "Nombre Completo",
+    "namePlaceholder": "Tu nombre completo",
+    "email": "Correo Electrónico",
+    "emailPlaceholder": "tu@email.com",
+    "subject": "Asunto",
+    "subjectPlaceholder": "Asunto de tu mensaje",
+    "opportunityType": "Tipo de Oportunidad",
+    "selectOpportunity": "Selecciona un tipo",
+    "opportunities": {
+      "fulltime": "Posición a Tiempo Completo",
+      "internship": "Pasantía",
+      "contract": "Contrato/Freelance",
+      "training": "Capacitación/Mentoría",
+      "collaboration": "Colaboración",
+      "other": "Otro"
+    },
+    "preferredLanguage": "Idioma Preferido",
+    "message": "Mensaje",
+    "messagePlaceholder": "Comparte detalles sobre tu proyecto, oportunidad o preguntas...",
+    "send": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+    "responseTime": "Normalmente respondo en 24 horas"
+  }
 }

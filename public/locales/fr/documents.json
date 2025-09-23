@@ -1,0 +1,31 @@
+{
+  "pageTitle": "Documents Professionnels",
+  "pageDescription": "Parcourez mes certificats, relevés et qualifications professionnelles vérifiés avec support de traduction multilingue.",
+  "searchPlaceholder": "Rechercher des documents...",
+  "categories": {
+    "all": "Tous les Documents",
+    "education": "Éducation",
+    "professional": "Professionnel",
+    "technical": "Technique",
+    "health": "Santé & Nutrition",
+    "language": "Langues"
+  },
+  "originalLanguage": "Langue Originale",
+  "issuedOn": "Délivré le",
+  "issuedBy": "Délivré par",
+  "viewWithTranslation": "Voir & Traduire",
+  "downloadDirectly": "Télécharger le PDF",
+  "noResultsFound": "Aucun document trouvé",
+  "tryDifferentSearch": "Essayez d'ajuster vos termes de recherche ou vos filtres",
+  "downloadPack": {
+    "title": "Pack Complet de Qualifications",
+    "description": "Téléchargez tous les documents dans votre langue préférée"
+  },
+  "documentViewer": "Visualiseur de Documents",
+  "backToDocuments": "← Retour aux Documents",
+  "notFound": {
+    "title": "Document Introuvable",
+    "description": "Le document demandé est introuvable.",
+    "button": "Parcourir Tous les Documents"
+  }
+}

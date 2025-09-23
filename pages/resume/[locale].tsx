@@ -15,8 +15,10 @@ import Link from 'next/link';
 const ResumePage: React.FC = () => {
   const router = useRouter();
   const { t } = useTranslation(['resume', 'common']);
-  const { locale: pageLocale } = router.query;
-
+  
+  // Use router.locale as fallback if page locale is missing
+  const pageLocale = (router.query.locale as string) || router.locale || 'en';
+  
   const supportedLocales = [
     { code: 'en', name: t('common:languages.en', 'English'), flag: '🇺🇸' },
     { code: 'fr', name: t('common:languages.fr', 'Français'), flag: '🇫🇷' },
@@ -50,9 +52,7 @@ const ResumePage: React.FC = () => {
   };
 
   return (
-    <Layout
-      noindex={false}
-    >
+    <Layout noindex={false}>
       <SEOHead
         title={t('resume:pageTitle', `Resume/CV - ${currentLocale.name} | Badr Ribzat`)}
         description={t('resume:pageDescription', 'Professional resume and CV of Badr Ribzat, Full-Stack Software Engineer, showcasing technical skills, professional experience, and educational background in multiple languages.')}
@@ -61,7 +61,6 @@ const ResumePage: React.FC = () => {
         canonical={`https://badrribzat.dev/resume/${currentLocale.code}`}
         structuredData={structuredData}
       />
-      
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900 py-12">
         <div className="container mx-auto px-4">
           <motion.div
@@ -80,7 +79,6 @@ const ResumePage: React.FC = () => {
               </motion.button>
             </Link>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -93,7 +91,6 @@ const ResumePage: React.FC = () => {
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-6">
               {t('resume:pageDescription', 'Comprehensive professional resume showcasing my technical expertise, project experience, and educational background as a Full-Stack Software Engineer.')}
             </p>
-            
             <div className="flex items-center justify-center space-x-2 mb-8">
               <span className="text-2xl">{currentLocale.flag}</span>
               <span className="text-lg font-medium text-gray-700 dark:text-gray-300">
@@ -106,7 +103,6 @@ const ResumePage: React.FC = () => {
               </div>
             </div>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -150,17 +146,15 @@ const ResumePage: React.FC = () => {
               </div>
             </div>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <ErrorBoundary>
-              <ResumeGenerator locale={currentLocale.code as any} />
+              <ResumeGenerator />
             </ErrorBoundary>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -180,7 +174,6 @@ const ResumePage: React.FC = () => {
                 {t('resume:features.ats.description', 'Machine-readable format compatible with Applicant Tracking Systems used by 99% of Fortune 500 companies.')}
               </p>
             </div>
-
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/50 rounded-full flex items-center justify-center">
@@ -194,7 +187,6 @@ const ResumePage: React.FC = () => {
                 {t('resume:features.international.description', 'Europass-compliant format suitable for international applications and multilingual professional environments.')}
               </p>
             </div>
-
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-yellow-100 dark:bg-yellow-900/50 rounded-full flex items-center justify-center">
@@ -209,7 +201,6 @@ const ResumePage: React.FC = () => {
               </p>
             </div>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -242,14 +233,12 @@ const ResumePage: React.FC = () => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const locales = ['en', 'fr', 'ar', 'de', 'es', 'ja'];
-  
   const paths = locales.flatMap(pageLocale => 
     locales.map(locale => ({
       params: { locale: pageLocale },
       locale: locale
     }))
   );
-
   return {
     paths,
     fallback: false
@@ -258,7 +247,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   const resumeLocale = params?.locale as string;
-  
   return {
     props: {
       ...(await serverSideTranslations(locale!, ['common', 'resume'])),

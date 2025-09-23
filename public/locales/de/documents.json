@@ -1,0 +1,31 @@
+{
+  "pageTitle": "Berufliche Dokumente",
+  "pageDescription": "Durchsuchen Sie meine verifizierten Zertifikate, Zeugnisse und beruflichen Qualifikationen mit mehrsprachiger Übersetzungsfunktion.",
+  "searchPlaceholder": "Dokumente durchsuchen...",
+  "categories": {
+    "all": "Alle Dokumente",
+    "education": "Bildung",
+    "professional": "Beruflich",
+    "technical": "Technisch",
+    "health": "Gesundheit & Ernährung",
+    "language": "Sprachen"
+  },
+  "originalLanguage": "Originalsprache",
+  "issuedOn": "Ausgestellt am",
+  "issuedBy": "Ausgestellt von",
+  "viewWithTranslation": "Anzeigen & Übersetzen",
+  "downloadDirectly": "PDF herunterladen",
+  "noResultsFound": "Keine Dokumente gefunden",
+  "tryDifferentSearch": "Versuchen Sie, Ihre Suchbegriffe oder Filter anzupassen",
+  "downloadPack": {
+    "title": "Komplettes Qualifikationspaket",
+    "description": "Laden Sie alle Dokumente in Ihrer bevorzugten Sprache herunter"
+  },
+  "documentViewer": "Dokumenten-Viewer",
+  "backToDocuments": "← Zurück zu Dokumenten",
+  "notFound": {
+    "title": "Dokument nicht gefunden",
+    "description": "Das angeforderte Dokument konnte nicht gefunden werden.",
+    "button": "Alle Dokumente durchsuchen"
+  }
+}

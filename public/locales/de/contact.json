@@ -1,4 +1,20 @@
 {
+  "seo": {
+    "title": "Kontakt - Badr Ribzat",
+    "description": "Kontaktieren Sie Badr Ribzat für berufliche Möglichkeiten, Zusammenarbeit oder technische Fragen."
+  },
+  "title": "Kontaktieren wir uns",
+  "subtitle": "Bereit für neue Herausforderungen und Möglichkeiten. Lassen Sie uns besprechen, wie ich zu Ihrem Team oder Projekt beitragen kann.",
+  "info": {
+    "title": "Kontaktinformationen",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "location": "Standort",
+    "timezone": "Zeitzone"
+  },
+  "social": {
+    "title": "Soziale Netzwerke"
+  },
   "availability": {
     "status": "Verfügbar für Möglichkeiten",
     "message": "Antwortet typischerweise innerhalb von 24 Stunden"
@@ -8,42 +24,26 @@
     "name": "Vollständiger Name",
     "namePlaceholder": "Ihr vollständiger Name",
     "email": "E-Mail",
-    "emailPlaceholder": "ihre@email.com",
+    "emailPlaceholder": "ihr@email.com",
     "subject": "Betreff",
     "subjectPlaceholder": "Betreff Ihrer Nachricht",
     "opportunityType": "Art der Gelegenheit",
-    "selectOpportunity": "Wählen Sie eine Art aus",
+    "selectOpportunity": "Wählen Sie einen Typ",
     "opportunities": {
       "fulltime": "Vollzeitstelle",
       "internship": "Praktikum",
       "contract": "Vertrag/Freiberuflich",
-      "training": "Schulung/Mentoring",
+      "training": "Training/Mentoring",
       "collaboration": "Zusammenarbeit",
       "other": "Andere"
     },
     "preferredLanguage": "Bevorzugte Sprache",
     "message": "Nachricht",
-    "messagePlaceholder": "Teilen Sie Details zu Ihrem Projekt, Ihrer Gelegenheit oder Fragen...",
+    "messagePlaceholder": "Teilen Sie Details zu Ihrem Projekt, Ihrer Gelegenheit oder Ihren Fragen...",
     "send": "Nachricht senden",
-    "sending": "Senden...",
+    "sending": "Wird gesendet...",
     "success": "Nachricht erfolgreich gesendet!",
     "error": "Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.",
     "responseTime": "Ich antworte typischerweise innerhalb von 24 Stunden"
-  },
-  "info": {
-    "title": "Kontaktinformationen",
-    "email": "E-Mail",
-    "phone": "Telefon",
-    "location": "Standort",
-    "timezone": "Zeitzone"
-  },
-  "seo": {
-    "title": "Kontakt - Badr Ribzat",
-    "description": "Kontaktieren Sie Badr Ribzat für berufliche Möglichkeiten, Kooperationen oder technische Fragen."
-  },
-  "social": {
-    "title": "Soziale Netzwerke"
-  },
-  "subtitle": "Bereit für neue Herausforderungen und Chancen. Lassen Sie uns besprechen, wie ich zu Ihrem Team oder Projekt beitragen kann.",
-  "title": "Kontaktieren Sie mich"
+  }
 }

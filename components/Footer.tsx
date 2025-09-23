@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
     },
     {
       name: 'LinkedIn',
-      href: 'https://linkedin.com/in/badr-ribzat',
+      href: 'https://www.linkedin.com/in/badr-ribzat14121990/',
       icon: <Linkedin className="w-5 h-5" />,
       color: 'hover:text-blue-600'
     },
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
     },
     {
       name: t('common:footer.projects.chatbot', 'AI Chatbot Assistant'),
-      href: 'https://chatbot-assistant-frontend.vercel.app/',
+      href: 'https://chatbot-assistant-frontend.vercel.app/signin',
     }
   ];
 
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
                 </span>
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                {t('common:seo.description', 'Self-taught Full-Stack Software Engineer specializing in AI, biomedical applications, and educational technology.')}
+                {t('common:footer.bio', 'Discover the story behind Badr Ribzat, a self-taught full-stack engineer driven by passion, resilience, and a desire to solve complex problems.')}
               </p>
               
               <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
