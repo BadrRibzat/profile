@@ -128,3 +128,15 @@ npm install
 
 # Start development server
 npm run dev
+
+## 🌍 Multilingual Support
+
+This portfolio is fully translated into 6 languages:
+- English 🇺🇸
+- Spanish 🇪🇸
+- French 🇫🇷
+- German 🇩🇪
+- Arabic 🇲🇦
+- Japanese 🇯🇵
+
+All content, including project descriptions and UI elements, is localized for international accessibility.
