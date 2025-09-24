@@ -140,3 +140,14 @@ This portfolio is fully translated into 6 languages:
 - Japanese 🇯🇵
 
 All content, including project descriptions and UI elements, is localized for international accessibility.
+
+📞 Contact & Support
+For questions about this portfolio implementation:
+
+📧 Email: badrribzat@gmail.com
+
+💼 LinkedIn: <link="https://www.linkedin.com/in/badr-ribzat14121990/">[Badr Ribzat]
+
+🌐 Portfolio: badrribzat.dev
+
+
