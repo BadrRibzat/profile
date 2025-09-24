@@ -143,6 +143,9 @@ const nextConfig = {
     NEXT_PUBLIC_APP_NAME: 'Badr Ribzat Portfolio',
     NEXT_PUBLIC_APP_VERSION: '2.0.0',
     NEXT_PUBLIC_DOMAIN: 'badrribzat.dev',
+    BREVO_API_KEY: process.env.BREVO_API_KEY,
+    BREVO_SENDER_EMAIL: process.env.BREVO_SENDER_EMAIL,
+    BREVO_RECEIVER_EMAIL: process.env.BREVO_RECEIVER_EMAIL,
   },
 };
 
