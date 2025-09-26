@@ -1,5 +1,4 @@
-// 2. Enhanced next.config.js with production optimizations
-/** @type {import('next').NextConfig} */
+// next.config.js
 const { i18n } = require('./next-i18next.config');
 
 const nextConfig = {
@@ -15,10 +14,9 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
-  // Compression
   compress: true,
   
-  // Headers for security and performance
+  // Enhanced headers with font support
   async headers() {
     return [
       {
@@ -51,6 +49,24 @@ const nextConfig = {
           }
         ]
       },
+      // Add font headers
+      {
+        source: '/fonts/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+          {
+            key: 'Cross-Origin-Resource-Policy',
+            value: 'cross-origin',
+          },
+        ],
+      },
       {
         source: '/api/:path*',
         headers: [
@@ -63,7 +79,6 @@ const nextConfig = {
     ];
   },
 
-  // Redirects for SEO
   async redirects() {
     return [
       {
@@ -79,7 +94,7 @@ const nextConfig = {
     ];
   },
 
-  // Bundle analyzer
+  // Enhanced webpack configuration
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Bundle analyzer in development
     if (process.env.ANALYZE === 'true') {
@@ -91,19 +106,35 @@ const nextConfig = {
       }));
     }
 
+    // Handle font fallback for server-side rendering
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+
+    // Font file handling
+    config.module.rules.push({
+      test: /\.(ttf|woff|woff2|otf)$/,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/fonts/[hash][ext][query]'
+      }
+    });
+
     // PDF.js worker configuration
     config.resolve.alias = {
       ...config.resolve.alias,
       'pdfjs-dist/build/pdf.worker.entry': 'pdfjs-dist/build/pdf.worker.min.js',
     };
 
-    //webpack configuration
+    // WebAssembly configuration
     config.experiments = {
       asyncWebAssembly: true,
       layers: true,
     };
 
-    // Add this to handle WASM files
     config.module.rules.push({
       test: /\.wasm$/,
       type: 'webassembly/async',
@@ -120,6 +151,12 @@ const nextConfig = {
           chunks: 'all',
           priority: 10,
         },
+        fonts: {
+          test: /\.(ttf|woff|woff2|otf)$/,
+          name: 'fonts',
+          chunks: 'all',
+          priority: 8,
+        },
         translations: {
           test: /[\\/]public[\\/]locales[\\/]/,
           name: 'translations',
@@ -134,6 +171,7 @@ const nextConfig = {
 
   // Experimental features
   experimental: {
+    esmExternals: false, // Important for font loading
     optimizeCss: true,
     scrollRestoration: true,
   },

@@ -1,48 +1,8 @@
 // components/CountrySpecificResume.tsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Document, Page, View, Text, StyleSheet, Font, Image } from '@react-pdf/renderer';
 import { meImageBase64 } from '../data/resume/base64-image';
-
-// --- FONT REGISTRATION ---
-try {
-  Font.register({
-    family: 'NotoSans',
-    fonts: [
-      { src: '/fonts/NotoSans-Regular.ttf', fontWeight: 400 },
-      { src: '/fonts/NotoSans-Bold.ttf', fontWeight: 700 },
-    ],
-  });
-  Font.register({
-    family: 'NotoSansArabic',
-    fonts: [
-      { src: '/fonts/NotoSansArabic-Regular.ttf', fontWeight: 400 },
-      { src: '/fonts/NotoSansArabic-Bold.ttf', fontWeight: 700 },
-    ],
-  });
-  Font.register({
-    family: 'NotoSansJP',
-    fonts: [
-      { src: '/fonts/NotoSansJP-Regular.ttf', fontWeight: 400 },
-      { src: '/fonts/NotoSansJP-Bold.ttf', fontWeight: 700 },
-    ],
-  });
-} catch (error) {
-  console.warn('Font registration failed:', error);
-}
-
-// --- IMAGE SOURCE ---
-const getImageSource = () => {
-  try {
-    return { image: meImageBase64 };
-  } catch (error) {
-    console.error('Failed to load image:', error);
-    return { 
-      image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg==' 
-    };
-  }
-};
-
-const profileImage = getImageSource();
+import { registerFonts } from '../utils/fontLoader';
 
 // --- SHARED STYLES ---
 const commonStyles = StyleSheet.create({
@@ -129,6 +89,7 @@ interface Props {
   data: ResumeData;
   locale: string;
   translatedStrings: Record<string, string>;
+  fontsLoaded?: boolean;
 }
 
 interface ResumeTemplateProps {
@@ -327,7 +288,7 @@ const USResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) =>
   );
 };
 
-// --- 2. GERMAN TEMPLATE ---
+// --- 2. GERMAN TEMPLATE (Fixed image display) ---
 const GermanResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) => {
   const s = StyleSheet.create({
     page: { fontFamily: 'NotoSans', fontSize: 10, color: '#333', fontWeight: 400 },
@@ -384,7 +345,8 @@ const GermanResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
     <Page size="A4" style={s.page}>
       <View style={s.container}>
         <View style={s.leftColumn}>
-          <Image src={profileImage.image} style={s.photo} />
+          {/* Fixed image display */}
+          {meImageBase64 && <Image src={meImageBase64} style={s.photo} />}
           <Text style={s.name}>{data.personalInfo.name}</Text>
           <Text style={s.title}>{data.personalInfo.title}</Text>
           <Text style={s.sidebarTitle}>{translatedStrings.germanContact}</Text>
@@ -446,7 +408,7 @@ const GermanResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
             <View key={i} style={s.entry}>
               <Text style={s.entryTitle}>{project.name}</Text>
               <Text style={{ fontSize: 9, marginBottom: 2 }}>{project.description}</Text>
-              <Text style={{ fontSize: 8, color: '#666' }}>{translatedStrings.germanTech}: {project.technologies}</Text>
+              <Text style={{ fontSize: 8, color: '#666' }}>{translatedStrings.tech}: {project.technologies}</Text>
             </View>
           ))}
         </View>
@@ -455,14 +417,14 @@ const GermanResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
   );
 };
 
-// --- 3. JAPANESE TEMPLATE ---
+// --- 3. JAPANESE TEMPLATE (Fixed image display) ---
 const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) => {
   const s = StyleSheet.create({
     page: { 
       padding: 30, 
       fontFamily: 'NotoSansJP', 
       fontSize: 10, 
-      lineHeight: 1.5,
+      lineHeight: 1.4,
       fontWeight: 400
     },
     header: { 
@@ -475,87 +437,168 @@ const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings
     },
     headerTitle: { fontFamily: 'NotoSansJP', fontSize: 24, fontWeight: 700 },
     headerDate: { fontSize: 10, paddingTop: 14 },
+    personalInfoSection: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      marginBottom: 20,
+      border: '1px solid black',
+      padding: 10
+    },
+    personalInfoTable: {
+      flex: 1,
+      marginRight: 20
+    },
     photo: { 
       width: 85, 
       height: 110, 
-      border: '1px solid #ccc', 
-      objectFit: 'cover' 
+      border: '1px solid black',
+      objectFit: 'cover'
     },
-    section: { marginBottom: 15 },
+    infoRow: {
+      flexDirection: 'row',
+      borderBottom: '1px solid #ccc',
+      paddingVertical: 5,
+      minHeight: 25
+    },
+    infoLabel: { 
+      width: 80, 
+      fontSize: 10,
+      borderRight: '1px solid #ccc',
+      paddingRight: 5,
+      paddingLeft: 2
+    },
+    infoValue: { 
+      flex: 1, 
+      fontSize: 10,
+      paddingLeft: 5,
+      fontWeight: 400
+    },
+    section: { marginBottom: 20 },
     sectionTitle: { 
       fontFamily: 'NotoSansJP', 
-      fontSize: 12, 
+      fontSize: 14, 
       fontWeight: 700, 
-      borderBottom: '1px solid black', 
-      paddingBottom: 2, 
-      marginBottom: 8 
+      borderBottom: '2px solid black', 
+      paddingBottom: 3, 
+      marginBottom: 12,
+      textAlign: 'center'
     },
-    row: { flexDirection: 'row', borderBottom: '1px solid #eee', paddingVertical: 4 },
-    label: { width: 80, color: '#555' },
-    value: { flex: 1, fontWeight: 700 },
-    timelineRow: { flexDirection: 'row', marginBottom: 5 },
-    timelineDate: { width: 100 },
-    timelineContent: { flex: 1 },
+    timelineRow: { 
+      flexDirection: 'row', 
+      marginBottom: 8,
+      borderBottom: '1px solid #eee',
+      paddingVertical: 4
+    },
+    timelineDate: { 
+      width: 100,
+      fontSize: 10,
+      textAlign: 'center'
+    },
+    timelineContent: { 
+      flex: 1,
+      fontSize: 10
+    },
+    prBox: {
+      border: '1px solid black',
+      padding: 10,
+      minHeight: 100,
+      marginBottom: 15
+    },
+    hopeBox: {
+      border: '1px solid black',
+      padding: 10,
+      minHeight: 60
+    }
   });
 
   const today = new Date();
+  const formatJapaneseDate = (dateStr: string) => {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    return `${date.getFullYear()}年${date.getMonth() + 1}月`;
+  };
 
   return (
     <Page size="A4" style={s.page}>
+      {/* Header */}
       <View style={s.header}>
         <Text style={s.headerTitle}>{translatedStrings.japaneseTitle}</Text>
-        <Text style={s.headerDate}>{`${today.getFullYear()}年${today.getMonth() + 1}月${today.getDate()}日 現在`}</Text>
+        <Text style={s.headerDate}>
+          {`${today.getFullYear()}年${today.getMonth() + 1}月${today.getDate()}日 現在`}
+        </Text>
       </View>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 15 }}>
-        <View style={{ flex: 1 }}>
-          <View style={s.row}>
-            <Text style={s.label}>{translatedStrings.japaneseKana}</Text>
-            <Text style={s.value}>{data.personalInfo.nameKana || 'ばどる りぶざっと'}</Text>
+
+      {/* Personal Information Section */}
+      <View style={s.personalInfoSection}>
+        <View style={s.personalInfoTable}>
+          <View style={s.infoRow}>
+            <Text style={s.infoLabel}>{translatedStrings.japaneseKana}</Text>
+            <Text style={s.infoValue}>{data.personalInfo.nameKana || 'ばどる りぶざっと'}</Text>
           </View>
-          <View style={s.row}>
-            <Text style={s.label}>{translatedStrings.japaneseName}</Text>
-            <Text style={[s.value, { fontSize: 14 }]}>{data.personalInfo.name}</Text>
+          <View style={[s.infoRow, { minHeight: 35 }]}>
+            <Text style={s.infoLabel}>{translatedStrings.japaneseName}</Text>
+            <Text style={[s.infoValue, { fontSize: 16, fontWeight: 700 }]}>{data.personalInfo.name}</Text>
           </View>
-          <View style={s.row}>
-            <Text style={s.label}>{translatedStrings.japaneseBirth}</Text>
-            <Text style={s.value}>{data.personalInfo.birthDate || '1990年12月14日'}</Text>
+          <View style={s.infoRow}>
+            <Text style={s.infoLabel}>{translatedStrings.japaneseBirth}</Text>
+            <Text style={s.infoValue}>{data.personalInfo.birthDate || '1990年12月14日'}</Text>
           </View>
-          <View style={s.row}>
-            <Text style={s.label}>{translatedStrings.japaneseContact}</Text>
-            <Text style={s.value}>{data.personalInfo.phone} / {data.personalInfo.email}</Text>
+          <View style={s.infoRow}>
+            <Text style={s.infoLabel}>住所</Text>
+            <Text style={s.infoValue}>{data.personalInfo.location}</Text>
+          </View>
+          <View style={s.infoRow}>
+            <Text style={s.infoLabel}>{translatedStrings.japaneseContact}</Text>
+            <Text style={s.infoValue}>{data.personalInfo.phone}</Text>
+          </View>
+          <View style={s.infoRow}>
+            <Text style={s.infoLabel}>メール</Text>
+            <Text style={s.infoValue}>{data.personalInfo.email}</Text>
           </View>
         </View>
-        <View style={{ marginLeft: 20 }}>
-          <Image src={profileImage.image} style={s.photo} />
-        </View>
+        {/* Fixed image display */}
+        {meImageBase64 && <Image src={meImageBase64} style={s.photo} />}
       </View>
+
+      {/* Education and Work History */}
       <View style={s.section}>
         <Text style={s.sectionTitle}>{translatedStrings.japaneseEducationWork}</Text>
-        <Text style={{ fontWeight: 700, marginVertical: 4 }}>{translatedStrings.japaneseEducation}</Text>
+        
+        <Text style={{ fontWeight: 700, fontSize: 12, marginBottom: 8, textAlign: 'center' }}>
+          {translatedStrings.japaneseEducation}
+        </Text>
         {data.education.map((edu, i) => (
           <View key={i} style={s.timelineRow}>
-            <Text style={s.timelineDate}>{edu.period}</Text>
-            <Text style={s.timelineContent}>{edu.institution} - {edu.degree}</Text>
+            <Text style={s.timelineDate}>{formatJapaneseDate(edu.period)}</Text>
+            <Text style={s.timelineContent}>{edu.institution} {edu.degree} 卒業</Text>
           </View>
         ))}
-        <Text style={{ fontWeight: 700, marginVertical: 4, marginTop: 8 }}>{translatedStrings.japaneseWork}</Text>
+
+        <Text style={{ fontWeight: 700, fontSize: 12, marginVertical: 8, textAlign: 'center' }}>
+          {translatedStrings.japaneseWork}
+        </Text>
         {data.experience.map((exp, i) => (
           <View key={i} style={s.timelineRow}>
-            <Text style={s.timelineDate}>{exp.period}</Text>
-            <Text style={s.timelineContent}>{exp.company} - {exp.title}</Text>
+            <Text style={s.timelineDate}>{formatJapaneseDate(exp.period)}</Text>
+            <Text style={s.timelineContent}>{exp.company} {exp.title} として従事</Text>
           </View>
         ))}
+        
         <View style={s.timelineRow}>
           <Text style={s.timelineDate}></Text>
-          <Text style={s.timelineContent}>{translatedStrings.japaneseEnd}</Text>
+          <Text style={[s.timelineContent, { textAlign: 'center', fontWeight: 700 }]}>
+            {translatedStrings.japaneseEnd}
+          </Text>
         </View>
       </View>
+
+      {/* Certifications */}
       <View style={s.section}>
         <Text style={s.sectionTitle}>{translatedStrings.japaneseCertifications}</Text>
-        {data.certifications.slice(0, 10).map((cert, i) => (
+        {data.certifications.slice(0, 8).map((cert, i) => (
           <View key={i} style={s.timelineRow}>
             <Text style={s.timelineDate}>{cert.date}</Text>
-            <Text style={s.timelineContent}>{cert.name} ({cert.issuer})</Text>
+            <Text style={s.timelineContent}>{cert.name} ({cert.issuer}) 取得</Text>
           </View>
         ))}
         {data.practicalLicenses.map((lic, i) => (
@@ -565,19 +608,27 @@ const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings
           </View>
         ))}
       </View>
+
+      {/* Self PR */}
       <View style={s.section}>
         <Text style={s.sectionTitle}>{translatedStrings.japanesePR}</Text>
-        <Text style={{ lineHeight: 1.6 }}>{data.summary}</Text>
+        <View style={s.prBox}>
+          <Text style={{ lineHeight: 1.6, fontSize: 10 }}>{data.summary}</Text>
+        </View>
       </View>
+
+      {/* Hopes */}
       <View style={s.section}>
         <Text style={s.sectionTitle}>{translatedStrings.japaneseHopes}</Text>
-        <Text style={{ lineHeight: 1.6 }}>{data.personalInfo.visaStatus}</Text>
+        <View style={s.hopeBox}>
+          <Text style={{ lineHeight: 1.6, fontSize: 10 }}>{data.personalInfo.visaStatus}</Text>
+        </View>
       </View>
     </Page>
   );
 };
 
-// --- 4. MODERN TEMPLATE (French/Spanish) ---
+// --- 4. MODERN TEMPLATE (Fixed image display for French/Spanish) ---
 const ModernResume: React.FC<Props> = ({ data, locale, translatedStrings }) => {
   const s = StyleSheet.create({
     page: { fontFamily: 'NotoSans', fontSize: 10, color: '#333', fontWeight: 400 },
@@ -637,7 +688,8 @@ const ModernResume: React.FC<Props> = ({ data, locale, translatedStrings }) => {
     <Page size="A4" style={s.page}>
       <View style={s.container}>
         <View style={s.leftColumn}>
-          <Image src={profileImage.image} style={s.photo} />
+          {/* Fixed image display */}
+          {meImageBase64 && <Image src={meImageBase64} style={s.photo} />}
           <Text style={s.name}>{data.personalInfo.name}</Text>
           <Text style={s.title}>{data.personalInfo.title}</Text>
           <Text style={s.sidebarTitle}>{translatedStrings.modernContact}</Text>
@@ -703,7 +755,7 @@ const ModernResume: React.FC<Props> = ({ data, locale, translatedStrings }) => {
   );
 };
 
-// --- 5. ARABIC TEMPLATE ---
+// --- 5. ARABIC TEMPLATE (Fixed image display) ---
 const ArabicResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) => {
   const s = StyleSheet.create({
     page: { 
@@ -771,7 +823,8 @@ const ArabicResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
     <Page size="A4" style={s.page}>
       <View style={s.container}>
         <View style={s.leftColumn}>
-          <Image src={profileImage.image} style={s.photo} />
+          {/* Fixed image display */}
+          {meImageBase64 && <Image src={meImageBase64} style={s.photo} />}
           <Text style={s.name}>{data.personalInfo.name}</Text>
           <Text style={s.title}>{data.personalInfo.title}</Text>
           <Text style={s.sidebarTitle}>{translatedStrings.arabicContact}</Text>
@@ -835,8 +888,44 @@ const ArabicResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
   );
 };
 
-// --- MAIN EXPORT COMPONENT ---
-const CountrySpecificResume: React.FC<Props> = ({ data, locale, translatedStrings }) => {
+// --- MAIN EXPORT COMPONENT WITH PROPER FONT LOADING ---
+const CountrySpecificResume: React.FC<Props> = ({ data, locale, translatedStrings, fontsLoaded = false }) => {
+  const [internalFontsLoaded, setInternalFontsLoaded] = useState(fontsLoaded);
+  const [fontLoadError, setFontLoadError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!internalFontsLoaded && !fontsLoaded) {
+      const loadFonts = async () => {
+        try {
+          await registerFonts();
+          setInternalFontsLoaded(true);
+          setFontLoadError(null);
+        } catch (error) {
+          console.error('Font loading failed in PDF component:', error);
+          setFontLoadError('Font loading failed, using fallback fonts');
+          // Still set to true to render with fallback fonts
+          setInternalFontsLoaded(true);
+        }
+      };
+      loadFonts();
+    }
+  }, [internalFontsLoaded, fontsLoaded]);
+
+  const shouldRenderContent = fontsLoaded || internalFontsLoaded;
+
+  if (!shouldRenderContent) {
+    return (
+      <Document>
+        <Page size="A4" style={{ padding: 50, fontFamily: 'Helvetica' }}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={{ fontSize: 16, marginBottom: 20 }}>Loading fonts...</Text>
+            <Text style={{ fontSize: 12, color: '#666' }}>Please wait while we prepare your resume</Text>
+          </View>
+        </Page>
+      </Document>
+    );
+  }
+
   const resumeDocument = () => {
     switch (locale) {
       case 'de':

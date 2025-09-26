@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { PDFDownloadLink } from "@react-pdf/renderer";
+import { meImageBase64 } from "../data/resume/base64-image"; 
+import { registerFonts } from "../utils/fontLoader";
 import {
   Download,
   Globe,
@@ -17,16 +19,34 @@ import CountrySpecificResume from "./CountrySpecificResume";
 
 const ResumeGenerator: React.FC = () => {
   const router = useRouter();
-  // Use router.locale as fallback
   const locale = (router.query.locale as string) || router.locale || 'en';
   const { t } = useTranslation("resume");
   const [resumeData, setResumeData] = useState<any>(null);
   const [isClient, setIsClient] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+  const [fontError, setFontError] = useState<string | null>(null);
 
-  /* -------------------------------------------------
-     Load the locale‑specific JSON (fallback to English)
-     ------------------------------------------------- */
+  // Load fonts
+  useEffect(() => {
+    const loadFonts = async () => {
+      try {
+        await registerFonts();
+        setFontsLoaded(true);
+        console.log('Fonts loaded successfully');
+      } catch (error) {
+        console.error('Font loading failed:', error);
+        setFontError('Failed to load custom fonts, using fallback fonts');
+        setFontsLoaded(true); // Still allow PDF generation with fallbacks
+      }
+    };
+    
+    if (isClient) {
+      loadFonts();
+    }
+  }, [isClient]);
+
+  // Load resume data
   useEffect(() => {
     if (!locale) return;
     async function load() {
@@ -37,7 +57,6 @@ const ResumeGenerator: React.FC = () => {
       } catch (err) {
         console.error(`Resume data missing for ${locale}`, err);
         setLoadError(t("errors.unavailable", "Resume unavailable for {{locale}}", { locale: locale.toUpperCase() }));
-        // Fallback to English
         try {
           const fallback = await import(`../data/resume/en.json`);
           setResumeData(fallback.default);
@@ -50,96 +69,90 @@ const ResumeGenerator: React.FC = () => {
     load();
   }, [locale, t]);
 
-  // Ensure PDFDownloadLink only renders client‑side
   useEffect(() => setIsClient(true), []);
 
-  /* -------------------------------------------------
-     Pre-translate all strings for PDF
-     ------------------------------------------------- */
+  // Your existing translatedStrings object...
   const translatedStrings = {
-    // Summary
-    summaryTitle: t('resume:summary.title', 'PROFESSIONAL SUMMARY'),
+  // Summary
+    summaryTitle: t('summary.title', 'PROFESSIONAL SUMMARY'),
     // Skills
-    skillsTitle: t('resume:skills.title', 'TECHNICAL COMPETENCIES'),
-    programming: t('resume:skills.programming', 'Programming Languages'),
-    backend: t('resume:skills.backend', 'Backend Technologies'),
-    frontend: t('resume:skills.frontend', 'Frontend & UI'),
-    database: t('resume:skills.database', 'Database & Cloud'),
+    skillsTitle: t('skills.title', 'TECHNICAL COMPETENCIES'),
+    programming: t('skills.programming', 'Programming Languages'),
+    backend: t('skills.backend', 'Backend Technologies'),
+    frontend: t('skills.frontend', 'Frontend & UI'),
+    database: t('skills.database', 'Database & Cloud'),
     // Experience
-    experienceTitle: t('resume:experience.title', 'PROFESSIONAL EXPERIENCE'),
+    experienceTitle: t('experience.title', 'PROFESSIONAL EXPERIENCE'),
     // Projects
-    projectsTitle: t('resume:projects.title', 'KEY PROJECTS'),
-    tech: t('resume:projects.tech', 'Technologies'),
-    liveDemo: t('resume:projects.liveDemo', 'Live Demo'),
+    projectsTitle: t('projects.title', 'KEY PROJECTS'),
+    tech: t('projects.tech', 'Technologies'),
+    liveDemo: t('projects.liveDemo', 'Live Demo'),
     // Education
-    educationTitle: t('resume:education.title', 'EDUCATION & CERTIFICATIONS'),
-    achievement: t('resume:education.achievement', 'Achievement'),
+    educationTitle: t('education.title', 'EDUCATION & CERTIFICATIONS'),
+    achievement: t('achievement', 'Achievement'), // Ensure this is also from resume: namespace if not common
     // Languages
-    languagesTitle: t('resume:languages.title', 'LANGUAGES'),
+    languagesTitle: t('languages.title', 'LANGUAGES'),
     // German
-    germanContact: t('resume:german.contact', 'Persönliche Daten'),
-    germanBirth: t('resume:german.birth', 'Geburtsdatum'),
-    germanNationality: t('resume:german.nationality', 'Nationalität'),
-    germanScore: t('resume:german.score', 'Note'),
-    germanLanguages: t('resume:german.languages', 'Sprachen'),
-    germanSkills: t('resume:german.skills', 'Kernkompetenzen'),
-    germanSkill1: t('resume:german.skill1', 'Full-Stack Entwicklung'),
-    germanSkill2: t('resume:german.skill2', 'API Design & Integration'),
-    germanSkill3: t('resume:german.skill3', 'Datenbank Management'),
-    germanSkill4: t('resume:german.skill4', 'Docker & DevOps'),
-    germanSkill5: t('resume:german.skill5', 'KI & Machine Learning'),
-    germanSummary: t('resume:german.summary', 'Berufliche Zusammenfassung'),
-    germanExperience: t('resume:german.experience', 'Berufserfahrung'),
-    germanEducation: t('resume:german.education', 'Bildungsweg'),
-    germanProjects: t('resume:german.projects', 'Hauptprojekte'),
+    germanContact: t('german.contact', 'Persönliche Daten'),
+    germanBirth: t('german.birth', 'Geburtsdatum'),
+    germanNationality: t('german.nationality', 'Nationalität'),
+    germanScore: t('german.score', 'Note'),
+    germanLanguages: t('german.languages', 'Sprachen'),
+    germanSkills: t('german.skills', 'Kernkompetenzen'),
+    germanSkill1: t('german.skill1', 'Full-Stack Entwicklung'),
+    germanSkill2: t('german.skill2', 'API Design & Integration'),
+    germanSkill3: t('german.skill3', 'Datenbank Management'),
+    germanSkill4: t('german.skill4', 'Docker & DevOps'),
+    germanSkill5: t('german.skill5', 'KI & Machine Learning'),
+    germanSummary: t('german.summary', 'Berufliche Zusammenfassung'),
+    germanExperience: t('german.experience', 'Berufserfahrung'),
+    germanEducation: t('german.education', 'Bildungsweg'),
+    germanProjects: t('german.projects', 'Hauptprojekte'),
     // Japanese
-    japaneseTitle: t('resume:japanese.title', '履 歴 書'),
-    japaneseKana: t('resume:japanese.kana', 'ふりがな'),
-    japaneseName: t('resume:japanese.name', '氏名'),
-    japaneseBirth: t('resume:japanese.birth', '生年月日'),
-    japaneseContact: t('resume:japanese.contact', '連絡先'),
-    japaneseEducationWork: t('resume:japanese.educationWork', '学歴・職歴'),
-    japaneseEducation: t('resume:japanese.education', '学歴'),
-    japaneseWork: t('resume:japanese.work', '職歴'),
-    japaneseEnd: t('resume:japanese.end', '以上'),
-    japaneseCertifications: t('resume:japanese.certifications', '免許・資格'),
-    japanesePR: t('resume:japanese.pr', '自己PR'),
-    japaneseHopes: t('resume:japanese.hopes', '本人希望記入欄'),
+    japaneseTitle: t('japanese.title', '履 歴 書'),
+    japaneseKana: t('japanese.kana', 'ふりがな'),
+    japaneseName: t('japanese.name', '氏名'),
+    japaneseBirth: t('japanese.birth', '生年月日'),
+    japaneseContact: t('japanese.contact', '連絡先'),
+    japaneseEducationWork: t('japanese.educationWork', '学歴・職歴'),
+    japaneseEducation: t('japanese.education', '学歴'),
+    japaneseWork: t('japanese.work', '職歴'),
+    japaneseEnd: t('japanese.end', '以上'),
+    japaneseCertifications: t('japanese.certifications', '免許・資格'),
+    japanesePR: t('japanese.pr', '自己PR'),
+    japaneseHopes: t('japanese.hopes', '本人希望記入欄'),
     // Arabic
-    arabicContact: t('resume:arabic.contact', 'معلومات الاتصال'),
-    arabicLanguages: t('resume:arabic.languages', 'اللغات'),
-    arabicSkills: t('resume:arabic.skills', 'المهارات التقنية'),
-    arabicSkill1: t('resume:arabic.skill1', 'تطوير التطبيقات الشاملة'),
-    arabicSkill2: t('resume:arabic.skill2', 'تصميم واجهات البرمجة'),
-    arabicSkill3: t('resume:arabic.skill3', 'إدارة قواعد البيانات'),
-    arabicSkill4: t('resume:arabic.skill4', 'الذكاء الاصطناعي'),
-    arabicSummary: t('resume:arabic.summary', 'الملخص المهني'),
-    arabicExperience: t('resume:arabic.experience', 'الخبرة العملية'),
-    arabicEducation: t('resume:arabic.education', 'التعليم والشهادات'),
-    arabicProjects: t('resume:arabic.projects', 'المشاريع الرئيسية'),
-    arabicScore: t('resume:arabic.score', 'التقدير'),
-    arabicTech: t('resume:arabic.tech', 'التقنيات'),
+    arabicContact: t('arabic.contact', 'معلومات الاتصال'),
+    arabicLanguages: t('arabic.languages', 'اللغات'),
+    arabicSkills: t('arabic.skills', 'المهارات التقنية'),
+    arabicSkill1: t('arabic.skill1', 'تطوير التطبيقات الشاملة'),
+    arabicSkill2: t('arabic.skill2', 'تصميم واجهات البرمجة'),
+    arabicSkill3: t('arabic.skill3', 'إدارة قواعد البيانات'),
+    arabicSkill4: t('arabic.skill4', 'الذكاء الاصطناعي'),
+    arabicSummary: t('arabic.summary', 'الملخص المهني'),
+    arabicExperience: t('arabic.experience', 'الخبرة العملية'),
+    arabicEducation: t('arabic.education', 'التعليم والشهادات'),
+    arabicProjects: t('arabic.projects', 'المشاريع الرئيسية'),
+    arabicScore: t('arabic.score', 'التقدير'),
+    arabicTech: t('arabic.tech', 'التقنيات'),
     // Modern (French/Spanish)
-    modernContact: t('resume:modern.contact', 'Contact', 'Contacto'),
-    modernPortfolio: t('resume:modern.portfolio', 'Portfolio', 'Portafolio'),
-    modernLanguages: t('resume:modern.languages', 'Languages', 'Idiomas'),
-    modernSkills: t('resume:modern.skills', 'Skills', 'Habilidades'),
-    modernSkill1: t('resume:modern.skill1', 'Full-Stack Development', 'Desarrollo Full-Stack'),
-    modernSkill2: t('resume:modern.skill2', 'API Design & Integration', 'Diseño e Integración de APIs'),
-    modernSkill3: t('resume:modern.skill3', 'Database Management', 'Gestión de Bases de Datos'),
-    modernSkill4: t('resume:modern.skill4', 'Docker & DevOps', 'Docker & DevOps'),
-    modernSkill5: t('resume:modern.skill5', 'AI & Machine Learning', 'IA y Aprendizaje Automático'),
-    modernSummary: t('resume:modern.summary', 'Professional Summary', 'Resumen Profesional'),
-    modernExperience: t('resume:modern.experience', 'Experience', 'Experiencia'),
-    modernEducation: t('resume:modern.education', 'Education', 'Educación'),
-    modernProjects: t('resume:modern.projects', 'Key Projects', 'Proyectos Clave'),
-    modernScore: t('resume:modern.score', 'Score', 'Puntuación'),
-    modernTech: t('resume:modern.tech', 'Tech', 'Tecnologías'),
+    modernContact: t('modern.contact', 'Contact'),
+    modernPortfolio: t('modern.portfolio', 'Portfolio'),
+    modernLanguages: t('modern.languages', 'Languages'),
+    modernSkills: t('modern.skills', 'Skills'),
+    modernSkill1: t('modern.skill1', 'Full-Stack Development'),
+    modernSkill2: t('modern.skill2', 'API Design & Integration'),
+    modernSkill3: t('modern.skill3', 'Database Management'),
+    modernSkill4: t('modern.skill4', 'Docker & DevOps'),
+    modernSkill5: t('modern.skill5', 'AI & Machine Learning'),
+    modernSummary: t('modern.summary', 'Professional Summary'),
+    modernExperience: t('modern.experience', 'Experience'),
+    modernEducation: t('modern.education', 'Education'),
+    modernProjects: t('modern.projects', 'Key Projects'),
+    modernScore: t('modern.score', 'Score'),
+    modernTech: t('modern.tech', 'Tech'),
   };
 
-  /* -------------------------------------------------
-     UI – error / loading / main view
-     ------------------------------------------------- */
   if (loadError && !resumeData) {
     return (
       <div className="flex items-center justify-center p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl">
@@ -149,18 +162,17 @@ const ResumeGenerator: React.FC = () => {
     );
   }
 
-  if (!resumeData) {
+  if (!resumeData || !fontsLoaded) {
     return (
       <div className="flex items-center justify-center p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl">
         <Loader className="w-8 h-8 animate-spin text-blue-600" />
-        <p className="ml-4 text-gray-600 dark:text-gray-300">{t("loading", "Loading...")}</p>
+        <p className="ml-4 text-gray-600 dark:text-gray-300">
+          {!resumeData ? t("loading", "Loading resume data...") : "Loading fonts..."}
+        </p>
       </div>
     );
   }
 
-  /* -------------------------------------------------
-     Localised title based on locale
-     ------------------------------------------------- */
   const getLocalizedTitle = () => {
     const titles = {
       en: t("titles.professional", "Professional"),
@@ -185,6 +197,14 @@ const ResumeGenerator: React.FC = () => {
           <span className="text-sm text-gray-600 dark:text-gray-400">{t("subtitle", "Multilingual Resume Generator")}</span>
         </div>
       </div>
+
+      {/* Font error notice */}
+      {fontError && (
+        <div className="mb-4 p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg text-yellow-700 dark:text-yellow-300 text-sm">
+          <AlertCircle className="w-4 h-4 inline mr-2" />
+          {fontError}
+        </div>
+      )}
 
       {/* Optional fallback notice */}
       {loadError && (
@@ -214,7 +234,14 @@ const ResumeGenerator: React.FC = () => {
         <div className="flex justify-center mt-4">
           {isClient ? (
             <PDFDownloadLink
-              document={<CountrySpecificResume data={resumeData} locale={locale} translatedStrings={translatedStrings} />}
+              document={
+                <CountrySpecificResume 
+                  data={resumeData} 
+                  locale={locale} 
+                  translatedStrings={translatedStrings} 
+                  fontsLoaded={fontsLoaded}
+                />
+              }
               fileName={`Badr_Ribzat_Resume_${locale?.toUpperCase()}.pdf`}
             >
               {({ loading, error }) => (
@@ -257,7 +284,7 @@ const ResumeGenerator: React.FC = () => {
           )}
         </div>
 
-        {/* Small tagline */}
+        {/* Rest of your component remains the same... */}
         <div className="mt-4 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg text-xs text-green-700 dark:text-green-300">
           <Heart className="w-4 h-4 inline mr-2" />
           {t("cta.description", "My comprehensive skill set and proven track record make me an excellent candidate.")}
