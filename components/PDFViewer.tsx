@@ -227,7 +227,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
           cMapUrl: `//unpkg.com/pdfjs-dist@${pdfjs.version}/cmaps/`,
           cMapPacked: true,
           standardFontDataUrl: `//unpkg.com/pdfjs-dist@${pdfjs.version}/standard_fonts/`,
-          disableWorker: false,
+          // Removed deprecated disableWorker option
           isEvalSupported: false,
           disableRange: false,
           disableStream: false,
