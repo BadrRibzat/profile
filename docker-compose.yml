@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: badr-portfolio
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - BREVO_API_KEY=${BREVO_API_KEY}
+      - BREVO_SENDER_EMAIL=${BREVO_SENDER_EMAIL}
+      - BREVO_RECEIVER_EMAIL=${BREVO_RECEIVER_EMAIL}
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge

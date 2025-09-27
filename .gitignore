@@ -40,3 +40,6 @@ public/documents/
 .next
 .next/
 tsconfig.tsbuildinfo
+.env*
+.env.local
+.env.production
