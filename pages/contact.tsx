@@ -47,44 +47,50 @@ const ContactPage: React.FC = () => {
 
   try {
     // Simple form submission to FormSubmit
-    const response = await fetch('https://formsubmit.co/ajax/badrribzat@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          opportunityType: formData.opportunityType,
-          preferredLanguage: formData.preferredLanguage,
-          _replyto: formData.email, // Auto-reply to visitor
-          _template: 'table', // Nice email template
-        }),
-      });
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      setIsSubmitting(true);
+      setSubmitStatus('idle');
 
-      const result = await response.json();
-
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-          preferredLanguage: 'en',
-          opportunityType: ''
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+            opportunityType: formData.opportunityType,
+            preferredLanguage: formData.preferredLanguage,
+          }),
         });
-      } else {
+
+        const result = await response.json();
+
+        if (response.ok) {
+          setSubmitStatus('success');
+          setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
+            preferredLanguage: 'en',
+            opportunityType: ''
+          });
+        } else {
+          setSubmitStatus('error');
+          console.error('Form submission error:', result);
+        }
+      } catch (error) {
+        console.error('Network error:', error);
         setSubmitStatus('error');
+      } finally {
+        setIsSubmitting(false);
       }
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    };
 
   const contactInfo = [
     {
@@ -123,7 +129,7 @@ const ContactPage: React.FC = () => {
     {
       icon: <Linkedin className="w-5 h-5" />,
       label: t('contact:social.linkedin', 'LinkedIn'),
-      href: 'https://linkedin.com/in/badr-ribzat',
+      href: 'https://www.linkedin.com/in/badr-ribzat14121990/',
       color: 'hover:text-blue-600'
     },
     {
@@ -175,7 +181,7 @@ const ContactPage: React.FC = () => {
         ]
       },
       "sameAs": [
-        "https://linkedin.com/in/badr-ribzat",
+        "https://www.linkedin.com/in/badr-ribzat14121990/",
         "https://github.com/BadrRibzat"
       ]
     }
