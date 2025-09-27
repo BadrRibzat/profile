@@ -4,6 +4,51 @@ import { Document, Page, View, Text, StyleSheet, Font, Image } from '@react-pdf/
 import { meImageBase64 } from '../data/resume/base64-image';
 import { registerFonts } from '../utils/fontLoader';
 
+// --- IMAGE HANDLING WITH FALLBACK ---
+const ImageWithFallback: React.FC<{ 
+  src: string; 
+  style: any; 
+  alt?: string 
+}> = ({ src, style, alt = "Profile" }) => {
+  // Validate the image data
+  const isValidImage = src && 
+    src.startsWith('data:image/') && 
+    src.includes('base64,') && 
+    src.split('base64,')[1]?.length > 100; // Should have substantial base64 data
+
+  if (!isValidImage) {
+    console.warn('Invalid image data, rendering placeholder');
+    // Return a placeholder view instead of broken image
+    return (
+      <View style={[style, { 
+        backgroundColor: '#f0f0f0', 
+        border: '1px solid #ccc',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }]}>
+        <Text style={{ fontSize: 8, color: '#666' }}>Photo</Text>
+      </View>
+    );
+  }
+
+  try {
+    return <Image src={src} style={style} />;
+  } catch (error) {
+    console.error('Image rendering failed:', error);
+    // Return placeholder on error
+    return (
+      <View style={[style, { 
+        backgroundColor: '#f0f0f0', 
+        border: '1px solid #ccc',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }]}>
+        <Text style={{ fontSize: 8, color: '#666' }}>Image Error</Text>
+      </View>
+    );
+  }
+};
+
 // --- SHARED STYLES ---
 const commonStyles = StyleSheet.create({
   url: { color: '#007BFF', textDecoration: 'none' },
@@ -346,7 +391,7 @@ const GermanResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
       <View style={s.container}>
         <View style={s.leftColumn}>
           {/* Fixed image display */}
-          {meImageBase64 && <Image src={meImageBase64} style={s.photo} />}
+          <ImageWithFallback src={meImageBase64} style={s.photo} />
           <Text style={s.name}>{data.personalInfo.name}</Text>
           <Text style={s.title}>{data.personalInfo.title}</Text>
           <Text style={s.sidebarTitle}>{translatedStrings.germanContact}</Text>
@@ -557,7 +602,7 @@ const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings
           </View>
         </View>
         {/* Fixed image display */}
-        {meImageBase64 && <Image src={meImageBase64} style={s.photo} />}
+        <ImageWithFallback src={meImageBase64} style={s.photo} />
       </View>
 
       {/* Education and Work History */}
@@ -689,7 +734,7 @@ const ModernResume: React.FC<Props> = ({ data, locale, translatedStrings }) => {
       <View style={s.container}>
         <View style={s.leftColumn}>
           {/* Fixed image display */}
-          {meImageBase64 && <Image src={meImageBase64} style={s.photo} />}
+          <ImageWithFallback src={meImageBase64} style={s.photo} />
           <Text style={s.name}>{data.personalInfo.name}</Text>
           <Text style={s.title}>{data.personalInfo.title}</Text>
           <Text style={s.sidebarTitle}>{translatedStrings.modernContact}</Text>
@@ -824,7 +869,7 @@ const ArabicResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
       <View style={s.container}>
         <View style={s.leftColumn}>
           {/* Fixed image display */}
-          {meImageBase64 && <Image src={meImageBase64} style={s.photo} />}
+          <ImageWithFallback src={meImageBase64} style={s.photo} />
           <Text style={s.name}>{data.personalInfo.name}</Text>
           <Text style={s.title}>{data.personalInfo.title}</Text>
           <Text style={s.sidebarTitle}>{translatedStrings.arabicContact}</Text>
