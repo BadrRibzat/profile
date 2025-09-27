@@ -1,6 +1,8 @@
 // components/SEOHead.tsx
+import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 
 interface SEOHeadProps {
   title?: string;
@@ -13,25 +15,32 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
-  title = t('seo.title', 'Badr Ribzat - Full-Stack Software Engineer'),
-  description = t('seo.description', 'Professional portfolio of Badr Ribzat, featuring verified certificates, projects, and multilingual resume generation.'),
-  keywords = t('seo.keywords', 'software engineer, full-stack developer, Morocco, ALX, portfolio, certificates, multilingual resume'),
+  title,
+  description,
+  keywords,
   image = '/images/me.jpg',
   canonical,
   noindex = false,
   structuredData
 }) => {
   const router = useRouter();
+  const { t } = useTranslation('common');
+  
+  // Use provided props or fallback to translations
+  const pageTitle = title || t('seo.title', 'Badr Ribzat - Full-Stack Software Engineer');
+  const pageDescription = description || t('seo.description', 'Professional portfolio of Badr Ribzat, featuring verified certificates, projects, and multilingual resume generation.');
+  const pageKeywords = keywords || t('seo.keywords', 'software engineer, full-stack developer, Morocco, ALX, portfolio, certificates, multilingual resume');
+  
   const currentUrl = `https://badrribzat.dev${router.asPath}`;
   const canonicalUrl = canonical || currentUrl;
 
   return (
     <Head>
       {/* Primary Meta Tags */}
-      <title>{title}</title>
-      <meta name="title" content={title} />
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
+      <title>{pageTitle}</title>
+      <meta name="title" content={pageTitle} />
+      <meta name="description" content={pageDescription} />
+      <meta name="keywords" content={pageKeywords} />
       <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow'} />
       <meta name="language" content={router.locale || 'en'} />
       <meta name="author" content="Badr Ribzat" />
@@ -40,16 +49,16 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={currentUrl} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={pageDescription} />
       <meta property="og:image" content={`https://badrribzat.dev${image}`} />
       <meta property="og:locale" content={router.locale || 'en'} />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={currentUrl} />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={description} />
+      <meta property="twitter:title" content={pageTitle} />
+      <meta property="twitter:description" content={pageDescription} />
       <meta property="twitter:image" content={`https://badrribzat.dev${image}`} />
 
       {/* Favicons */}
