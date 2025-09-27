@@ -5,7 +5,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { motion } from 'framer-motion';
 import Layout from '../../components/Layout';
-import Link from 'next/link';
 import { 
   FileText, 
   Search, 
@@ -64,7 +63,7 @@ const documentsData: DocumentData[] = [
       en: "Official transcript showing completion of the ALX Software Engineering program with a score of 106.76%",
       fr: "Relevé de notes officiel montrant l'achèvement du programme d'ingénierie logicielle ALX avec un score de 106.76%",
       de: "Offizielles Transcript, das den Abschluss des ALX Software Engineering-Programms mit einer Punktzahl von 106.76% zeigt",
-      es: "Transcripción oficial que muestra la finalización del programa de Ingeniería de Software ALX mit einer Punktzahl von 106.76%",
+      es: "Transcripción oficial que muestra la finalización del programa de Ingeniería de Software ALX con una puntuación de 106.76%",
       ar: "سجل درجات رسمي يوضح إتمام برنامج هندسة البرمجيات ALX بدرجة 106.76٪",
       ja: "ALX ソフトウェアエンジニアリングプログラムを106.76%のスコアで修了したことを示す公式成績証明書",
     },
@@ -312,24 +311,22 @@ const DocumentsPage: React.FC = () => {
   const { t, i18n } = useTranslation(['documents', 'common']);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  
   const currentLocale = i18n.language as keyof typeof documentsData[0]['title'];
-  
+
   const filteredDocuments = documentsData.filter(doc => {
     const titleMatch = doc.title[currentLocale].toLowerCase().includes(searchQuery.toLowerCase());
     const descMatch = doc.description[currentLocale].toLowerCase().includes(searchQuery.toLowerCase());
     const categoryMatch = selectedCategory === 'all' || doc.category === selectedCategory;
-    
     return (titleMatch || descMatch) && categoryMatch;
   });
-  
+
   const categoryCounts = {
     all: documentsData.length,
     education: documentsData.filter(doc => doc.category === 'education').length,
     professional: documentsData.filter(doc => doc.category === 'professional').length,
     technical: documentsData.filter(doc => doc.category === 'technical').length,
   };
-  
+
   const getCategoryIcon = (category: string) => {
     switch(category) {
       case 'education': return <GraduationCap className="w-5 h-5" />;
@@ -359,7 +356,7 @@ const DocumentsPage: React.FC = () => {
               {t('documents:pageDescription')}
             </p>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -379,7 +376,6 @@ const DocumentsPage: React.FC = () => {
                   className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300"
                 />
               </div>
-              
               <div className="flex-shrink-0">
                 <div className="flex items-center space-x-4">
                   <Filter className="h-5 w-5 text-gray-500 dark:text-gray-400" />
@@ -402,7 +398,7 @@ const DocumentsPage: React.FC = () => {
               </div>
             </div>
           </motion.div>
-          
+
           {filteredDocuments.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredDocuments.map((doc, index) => (
@@ -425,7 +421,6 @@ const DocumentsPage: React.FC = () => {
                         <FileText className="w-12 h-12 text-gray-400 dark:text-gray-500" />
                       </div>
                     )}
-                    
                     <div className="absolute top-2 left-2">
                       <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                         doc.category === 'education' 
@@ -438,7 +433,6 @@ const DocumentsPage: React.FC = () => {
                         <span className="ml-1">{t(`documents:categories.${doc.category}`)}</span>
                       </span>
                     </div>
-                    
                     <div className="absolute top-2 right-2">
                       <a
                         href={doc.pdfUrl}
@@ -451,25 +445,29 @@ const DocumentsPage: React.FC = () => {
                       </a>
                     </div>
                   </div>
-                  
-                  <Link href={`/documents/${doc.id}`}>
-                    <div className="p-5 cursor-pointer">
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                        {doc.title[currentLocale]}
-                      </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
-                        {doc.description[currentLocale]}
-                      </p>
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="text-gray-500 dark:text-gray-400">
-                          {t('documents:issuedOn')}: {doc.dateIssued}
-                        </span>
-                        <span className="text-blue-600 dark:text-blue-400 font-medium hover:underline">
-                          {t('documents:viewWithTranslation')}
-                        </span>
-                      </div>
+
+                  {/* Clickable card opens PDF in new tab */}
+                  <a
+                    href={doc.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block p-5 cursor-pointer"
+                  >
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      {doc.title[currentLocale]}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
+                      {doc.description[currentLocale]}
+                    </p>
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-gray-500 dark:text-gray-400">
+                        {t('documents:issuedOn')}: {doc.dateIssued}
+                      </span>
+                      <span className="text-blue-600 dark:text-blue-400 font-medium hover:underline">
+                        {t('documents:viewInBrowser')}
+                      </span>
                     </div>
-                  </Link>
+                  </a>
                 </motion.div>
               ))}
             </div>
@@ -489,7 +487,7 @@ const DocumentsPage: React.FC = () => {
               </p>
             </motion.div>
           )}
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}

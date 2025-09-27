@@ -1,16 +1,13 @@
 // pages/documents/[id].tsx
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
-import dynamic from 'next/dynamic';
-import { FileText, ArrowLeft, Globe, Info, Loader } from 'lucide-react';
 import Link from 'next/link';
-
-const DocumentViewer = dynamic(() => import('../../components/DocumentViewer'), { ssr: false });
+import { FileText, ArrowLeft, Globe, Download } from 'lucide-react';
 
 interface DocumentData {
   id: string;
@@ -75,7 +72,6 @@ const documentsData: DocumentData[] = [
       ar: "ALX أفريقيا (مدرسة هولبرتون)",
       ja: "ALX アフリカ（ホルバートン・スクール）",
     },
-    thumbnail: "/images/documents/alx-transcript.jpg"
   },
   {
     id: "driver-license",
@@ -107,7 +103,6 @@ const documentsData: DocumentData[] = [
       ar: "وزارة النقل بالمملكة المغربية",
       ja: "モロッコ王国運輸省",
     },
-    thumbnail: "/images/documents/driver-license.jpg"
   },
   {
     id: "hairstyling-diploma",
@@ -139,7 +134,6 @@ const documentsData: DocumentData[] = [
       ar: "مدرسة يونيفيرس كوافور (معترف بها من الدولة)",
       ja: "エコール・ユニヴェルス・クワフュール（国家認定）",
     },
-    thumbnail: "/images/documents/hairstyling-diploma.jpg"
   },
   {
     id: "ibm-design",
@@ -171,7 +165,6 @@ const documentsData: DocumentData[] = [
       ar: "آي بي إم",
       ja: "IBM",
     },
-    thumbnail: "/images/documents/ibm-design-certificate.jpg"
   },
   {
     id: "software-engineering-certificates",
@@ -203,7 +196,6 @@ const documentsData: DocumentData[] = [
       ar: "منصات متنوعة عبر الإنترنت",
       ja: "さまざまなオンラインプラットフォーム",
     },
-    thumbnail: "/images/documents/software-engineering-certificates.jpg"
   },
   {
     id: "nutrition-certificates",
@@ -235,7 +227,6 @@ const documentsData: DocumentData[] = [
       ar: "إدراك ومنصات أخرى",
       ja: "エドラアクおよびその他のプラットフォーム",
     },
-    thumbnail: "/images/documents/nutrition-certificates.jpg"
   },
   {
     id: "english-certificates",
@@ -267,7 +258,6 @@ const documentsData: DocumentData[] = [
       ar: "أكاديمية سايلور وغيرها",
       ja: "セイラーアカデミーおよびその他",
     },
-    thumbnail: "/images/documents/english-certificates.jpg"
   },
   {
     id: "third-level-certificate",
@@ -299,7 +289,6 @@ const documentsData: DocumentData[] = [
       ar: "وزارة التربية الوطنية، المغرب",
       ja: "モロッコ教育省",
     },
-    thumbnail: "/images/documents/third-level-certificate.jpg"
   }
 ];
 
@@ -307,16 +296,7 @@ const DocumentPage: React.FC = () => {
   const router = useRouter();
   const { t, i18n } = useTranslation('documents');
   const { id } = router.query;
-
   const document = documentsData.find(doc => doc.id === id);
-
-  const [isDocumentViewerLoaded, setIsDocumentViewerLoaded] = useState(true);
-
-  useEffect(() => {
-    if (DocumentViewer.displayName === 'DynamicDocumentViewer') {
-      setIsDocumentViewerLoaded(true);
-    }
-  }, []);
 
   if (!document) {
     return (
@@ -405,45 +385,39 @@ const DocumentPage: React.FC = () => {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-8 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg"
-          >
-            <div className="flex items-start space-x-3">
-              <div className="mt-0.5">
-                <Info className="w-5 h-5 text-yellow-600 dark:text-yellow-500" />
-              </div>
-              <div>
-                <h3 className="font-medium text-yellow-800 dark:text-yellow-300 mb-1">
-                  {t('translationNotice.title')}
-                </h3>
-                <p className="text-sm text-yellow-700 dark:text-yellow-400">
-                  {t('translationNotice.description')}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
+          {/* Action buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4"
           >
-            {isDocumentViewerLoaded ? (
-              <DocumentViewer 
-                pdfUrl={document.pdfUrl}
-                title={localizedTitle}
-                description={localizedDescription}
-                originalLanguage={document.originalLanguage}
-              />
-            ) : (
-              <div className="flex items-center justify-center h-[600px] bg-gray-100 dark:bg-gray-800 rounded-xl">
-                <Loader className="w-8 h-8 text-blue-600 animate-spin" />
-                <p className="ml-4 text-gray-600 dark:text-gray-400">Loading Document Viewer...</p>
-              </div>
-            )}
+            <a
+              href={document.pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-medium transition-colors duration-200"
+            >
+              <FileText className="w-5 h-5" />
+              <span>{t('viewInBrowser')}</span>
+            </a>
+            <a
+              href={document.pdfUrl}
+              download
+              className="inline-flex items-center justify-center space-x-2 bg-gray-600 hover:bg-gray-700 text-white py-3 px-6 rounded-lg font-medium transition-colors duration-200"
+            >
+              <Download className="w-5 h-5" />
+              <span>{t('download')}</span>
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+            className="mt-6 text-sm text-gray-600 dark:text-gray-400 italic"
+          >
+            {t('opensInNewTab')}
           </motion.div>
         </div>
       </div>
