@@ -8,10 +8,6 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  eslint: {
-    // Disable ESLint during builds
-    ignoreDuringBuilds: true,
-  },
   i18n,
   reactStrictMode: true,
   swcMinify: true,
@@ -83,6 +79,20 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'no-store, no-cache, must-revalidate'
+          }
+        ]
+      },
+      // Web manifest headers
+      {
+        source: '/site.webmanifest',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/manifest+json'
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable'
           }
         ]
       }
