@@ -1,4 +1,4 @@
-// pages/about.tsx - Enhanced version with better storytelling and professional presentation
+// pages/about.tsx
 import React from 'react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -234,7 +234,7 @@ const AboutPage: React.FC = () => {
                 <div className="relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-2xl">
                   <div className="aspect-square overflow-hidden rounded-xl mb-6">
                     <img 
-                      src="/images/me.jpeg" 
+                      src="/images/me.png" 
                       alt={t('common:seo.title', 'Badr Ribzat')}
                       className="w-full h-full object-cover"
                     />
