@@ -1,51 +1,57 @@
 // utils/fontLoader.js
 import { Font } from '@react-pdf/renderer';
 
+// Import the auto-generated base64 font data
+import {
+  NotoSans_Regular,
+  NotoSans_Bold,
+  NotoSansArabic_Regular,
+  NotoSansArabic_Bold,
+  NotoSansJP_Regular,
+  NotoSansJP_Bold,
+} from './fontsBase64';
+
 let fontsRegistered = false;
 
+// This function registers the fonts with @react-pdf/renderer
 export const registerFonts = async () => {
-  if (fontsRegistered) return Promise.resolve();
-  
+  // If fonts are already registered, do nothing.
+  if (fontsRegistered) {
+    return;
+  }
+
   try {
-    console.log('Registering fallback fonts...');
-    
-    // Use system fonts that work everywhere (Helvetica/Arial)
+    console.log('Registering fonts with base64 data...');
+
     Font.register({
       family: 'NotoSans',
       fonts: [
-        { src: 'Helvetica', fontWeight: 400 },
-        { src: 'Helvetica-Bold', fontWeight: 700 },
+        { src: NotoSans_Regular, fontWeight: 400 },
+        { src: NotoSans_Bold, fontWeight: 700 },
       ],
     });
-    
+
     Font.register({
       family: 'NotoSansArabic',
       fonts: [
-        { src: 'Arial', fontWeight: 400 },
-        { src: 'Arial-Bold', fontWeight: 700 },
+        { src: NotoSansArabic_Regular, fontWeight: 400 },
+        { src: NotoSansArabic_Bold, fontWeight: 700 },
       ],
     });
-    
+
     Font.register({
       family: 'NotoSansJP',
       fonts: [
-        { src: 'Arial', fontWeight: 400 },
-        { src: 'Arial-Bold', fontWeight: 700 },
+        { src: NotoSansJP_Regular, fontWeight: 400 },
+        { src: NotoSansJP_Bold, fontWeight: 700 },
       ],
     });
-    
+
     fontsRegistered = true;
-    console.log('Fallback fonts registered successfully');
-    return Promise.resolve();
+    console.log('✅ Fonts registered successfully!');
   } catch (error) {
-    console.error('Font registration failed:', error);
-    fontsRegistered = true;
-    return Promise.resolve(); // Continue with no fonts
+    console.error('❌ Font registration failed:', error);
+    // As a fallback, you could register system fonts, but we'll rely on our base64 for now.
+    throw new Error('Could not register custom fonts.');
   }
-};
-
-export const isFontsRegistered = () => fontsRegistered;
-
-export const resetFontRegistration = () => {
-  fontsRegistered = false;
 };
