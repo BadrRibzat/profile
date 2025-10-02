@@ -4,6 +4,13 @@ import { Font } from '@react-pdf/renderer';
 let fontsRegistered = false;
 let fontLoadingPromise = null;
 
+// Standard fonts that work in @react-pdf/renderer (built-in)
+const FALLBACK_FONTS = {
+  NotoSans: 'Helvetica',
+  NotoSansArabic: 'Helvetica', 
+  NotoSansJP: 'Helvetica'
+};
+
 export const registerFonts = async () => {
   if (fontLoadingPromise) {
     return fontLoadingPromise;
@@ -18,9 +25,25 @@ export const registerFonts = async () => {
       // Dynamic import to handle the fonts
       const fonts = await import('./fontsBase64');
       
-      // Validate fonts are loaded
-      if (!fonts.NotoSansRegular || !fonts.NotoSansBold) {
-        throw new Error('Font data not available');
+      // Validate all fonts are loaded
+      const requiredFonts = [
+        'NotoSansRegular', 
+        'NotoSansBold',
+        'NotoSansArabicRegular',
+        'NotoSansArabicBold',
+        'NotoSansJPRegular',
+        'NotoSansJPBold'
+      ];
+      
+      const missingFonts = requiredFonts.filter(font => !fonts[font]);
+      
+      if (missingFonts.length > 0) {
+        throw new Error(`Missing font exports: ${missingFonts.join(', ')}`);
+      }
+      
+      // Validate base64 data format
+      if (!fonts.NotoSansRegular.startsWith('data:font/')) {
+        throw new Error('Invalid font data format');
       }
       
       // Register fonts with base64 data URLs
@@ -72,40 +95,44 @@ export const registerFonts = async () => {
     } catch (error) {
       console.error('Font registration failed:', error);
       
-      // Fallback to system fonts
+      // Use built-in fonts as fallback (these are supported by react-pdf)
       try {
-        console.log('Using system font fallbacks...');
+        console.log('Using built-in font fallbacks...');
         
+        // Register with standard PDF fonts (built into react-pdf)
         Font.register({
           family: 'NotoSans',
           fonts: [
-            { src: 'Helvetica', fontWeight: 400 },
-            { src: 'Helvetica-Bold', fontWeight: 700 },
+            { src: FALLBACK_FONTS.NotoSans, fontWeight: 400 },
+            { src: `${FALLBACK_FONTS.NotoSans}-Bold`, fontWeight: 700 },
           ],
         });
         
         Font.register({
           family: 'NotoSansArabic',
           fonts: [
-            { src: 'Arial', fontWeight: 400 },
-            { src: 'Arial-Bold', fontWeight: 700 },
+            { src: FALLBACK_FONTS.NotoSansArabic, fontWeight: 400 },
+            { src: `${FALLBACK_FONTS.NotoSansArabic}-Bold`, fontWeight: 700 },
           ],
         });
         
         Font.register({
           family: 'NotoSansJP',
           fonts: [
-            { src: 'Arial', fontWeight: 400 },
-            { src: 'Arial-Bold', fontWeight: 700 },
+            { src: FALLBACK_FONTS.NotoSansJP, fontWeight: 400 },
+            { src: `${FALLBACK_FONTS.NotoSansJP}-Bold`, fontWeight: 700 },
           ],
         });
         
         fontsRegistered = true;
-        console.warn('Using system font fallbacks');
+        console.warn('Using built-in font fallbacks - Arabic and Japanese text may not display correctly');
         resolve();
       } catch (fallbackError) {
         console.error('Fallback font registration failed:', fallbackError);
-        reject(error);
+        // Don't reject - allow PDF generation to continue
+        fontsRegistered = true;
+        console.warn('PDF generation will continue without custom fonts');
+        resolve();
       }
     }
   });
