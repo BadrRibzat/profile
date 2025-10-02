@@ -4,6 +4,19 @@ import { Document, Page, View, Text, StyleSheet, Font, Image } from '@react-pdf/
 import { meImageBase64 } from '../data/resume/base64-image';
 import { registerFonts } from '../utils/fontLoader';
 
+const CountrySpecificResume: React.FC<Props> = ({ data, locale, translatedStrings, fontsLoaded = false }) => {
+  if (!fontsLoaded) {
+    return (
+      <Document>
+        <Page size="A4">
+          <View style={{ padding: 50 }}>
+            <Text>Fonts not loaded. Please try again.</Text>
+          </View>
+        </Page>
+      </Document>
+    );
+  }
+
 // --- IMAGE HANDLING WITH FALLBACK ---
 const ImageWithFallback: React.FC<{ 
   src: string; 

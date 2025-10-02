@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import { meImageBase64 } from "../data/resume/base64-image"; 
 import { registerFonts } from "../utils/fontLoader";
 import {
   Download,
@@ -27,7 +26,7 @@ const ResumeGenerator: React.FC = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
   const [fontError, setFontError] = useState<string | null>(null);
 
-  // Load fonts
+  // Load fonts with error handling
   useEffect(() => {
     const loadFonts = async () => {
       try {
@@ -37,7 +36,7 @@ const ResumeGenerator: React.FC = () => {
       } catch (error) {
         console.error('Font loading failed:', error);
         setFontError('Failed to load custom fonts, using fallback fonts');
-        setFontsLoaded(true); // Still allow PDF generation with fallbacks
+        setFontsLoaded(true); // Proceed with fallbacks
       }
     };
     
@@ -71,28 +70,21 @@ const ResumeGenerator: React.FC = () => {
 
   useEffect(() => setIsClient(true), []);
 
-  // Your existing translatedStrings object...
+  // Translated strings (unchanged from your code)
   const translatedStrings = {
-  // Summary
     summaryTitle: t('summary.title', 'PROFESSIONAL SUMMARY'),
-    // Skills
     skillsTitle: t('skills.title', 'TECHNICAL COMPETENCIES'),
     programming: t('skills.programming', 'Programming Languages'),
     backend: t('skills.backend', 'Backend Technologies'),
     frontend: t('skills.frontend', 'Frontend & UI'),
     database: t('skills.database', 'Database & Cloud'),
-    // Experience
     experienceTitle: t('experience.title', 'PROFESSIONAL EXPERIENCE'),
-    // Projects
     projectsTitle: t('projects.title', 'KEY PROJECTS'),
     tech: t('projects.tech', 'Technologies'),
     liveDemo: t('projects.liveDemo', 'Live Demo'),
-    // Education
     educationTitle: t('education.title', 'EDUCATION & CERTIFICATIONS'),
-    achievement: t('achievement', 'Achievement'), // Ensure this is also from resume: namespace if not common
-    // Languages
+    achievement: t('achievement', 'Achievement'),
     languagesTitle: t('languages.title', 'LANGUAGES'),
-    // German
     germanContact: t('german.contact', 'Persönliche Daten'),
     germanBirth: t('german.birth', 'Geburtsdatum'),
     germanNationality: t('german.nationality', 'Nationalität'),
@@ -108,7 +100,6 @@ const ResumeGenerator: React.FC = () => {
     germanExperience: t('german.experience', 'Berufserfahrung'),
     germanEducation: t('german.education', 'Bildungsweg'),
     germanProjects: t('german.projects', 'Hauptprojekte'),
-    // Japanese
     japaneseTitle: t('japanese.title', '履 歴 書'),
     japaneseKana: t('japanese.kana', 'ふりがな'),
     japaneseName: t('japanese.name', '氏名'),
@@ -121,7 +112,6 @@ const ResumeGenerator: React.FC = () => {
     japaneseCertifications: t('japanese.certifications', '免許・資格'),
     japanesePR: t('japanese.pr', '自己PR'),
     japaneseHopes: t('japanese.hopes', '本人希望記入欄'),
-    // Arabic
     arabicContact: t('arabic.contact', 'معلومات الاتصال'),
     arabicLanguages: t('arabic.languages', 'اللغات'),
     arabicSkills: t('arabic.skills', 'المهارات التقنية'),
@@ -135,7 +125,6 @@ const ResumeGenerator: React.FC = () => {
     arabicProjects: t('arabic.projects', 'المشاريع الرئيسية'),
     arabicScore: t('arabic.score', 'التقدير'),
     arabicTech: t('arabic.tech', 'التقنيات'),
-    // Modern (French/Spanish)
     modernContact: t('modern.contact', 'Contact'),
     modernPortfolio: t('modern.portfolio', 'Portfolio'),
     modernLanguages: t('modern.languages', 'Languages'),
@@ -284,14 +273,13 @@ const ResumeGenerator: React.FC = () => {
           )}
         </div>
 
-        {/* Rest of your component remains the same... */}
         <div className="mt-4 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg text-xs text-green-700 dark:text-green-300">
           <Heart className="w-4 h-4 inline mr-2" />
           {t("cta.description", "My comprehensive skill set and proven track record make me an excellent candidate.")}
         </div>
       </div>
 
-      {/* Template meta‑info */}
+      {/* Template meta-info */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
         <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
           <h4 className="font-medium text-blue-800 dark:text-blue-300 mb-1">{t("meta.style", "Style")}</h4>

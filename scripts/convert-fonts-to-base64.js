@@ -1,4 +1,4 @@
-# scripts/convert-fonts-to-base64.js
+// scripts/convert-fonts-to-base64.js
 const fs = require('fs');
 const path = require('path');
 
@@ -14,10 +14,8 @@ const fonts = [
   { name: 'NotoSansJPBold', file: 'NotoSansJP-Bold.ttf' },
 ];
 
-let output = '// Auto-generated font base64 data
-';
-output += '// DO NOT EDIT MANUALLY
-';
+let output = ' ';
+output += ' ';
 
 fonts.forEach(({ name, file }) => {
   const fontPath = path.join(fontsDir, file);
