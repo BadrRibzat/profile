@@ -41,56 +41,49 @@ const ContactPage: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  setSubmitStatus('idle');
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
 
-  try {
-    // Simple form submission to FormSubmit
-    const handleSubmit = async (e: React.FormEvent) => {
-      e.preventDefault();
-      setIsSubmitting(true);
-      setSubmitStatus('idle');
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          opportunityType: formData.opportunityType,
+          preferredLanguage: formData.preferredLanguage,
+        }),
+      });
 
-      try {
-        const response = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            subject: formData.subject,
-            message: formData.message,
-            opportunityType: formData.opportunityType,
-            preferredLanguage: formData.preferredLanguage,
-          }),
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+          preferredLanguage: 'en',
+          opportunityType: ''
         });
-
-        const result = await response.json();
-
-        if (response.ok) {
-          setSubmitStatus('success');
-          setFormData({
-            name: '',
-            email: '',
-            subject: '',
-            message: '',
-            preferredLanguage: 'en',
-            opportunityType: ''
-          });
-        } else {
-          setSubmitStatus('error');
-          console.error('Form submission error:', result);
-        }
-      } catch (error) {
-        console.error('Network error:', error);
+      } else {
         setSubmitStatus('error');
-      } finally {
-        setIsSubmitting(false);
+        console.error('Form submission error:', result);
       }
-    };
+    } catch (error) {
+      console.error('Network error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const contactInfo = [
     {

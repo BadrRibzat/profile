@@ -4,17 +4,7 @@ import { Font } from '@react-pdf/renderer';
 let fontsRegistered = false;
 let fontLoadingPromise = null;
 
-// Helper function to get the correct font path based on environment
-const getFontPath = (fontFile) => {
-  // Use a relative path directly. Next.js will serve from /public.
-  // When deploying, the base URL should be handled by Next.js or the server.
-  // For local development, '/fonts/...' is already relative to the domain.
-  // We're removing the `process.env.NEXT_PUBLIC_DOMAIN` part for simplicity and common usage.
-  return `/fonts/${fontFile}`;
-};
-
 export const registerFonts = async () => {
-  // Return existing promise if already loading
   if (fontLoadingPromise) {
     return fontLoadingPromise;
   }
@@ -25,28 +15,55 @@ export const registerFonts = async () => {
     try {
       console.log('Starting font registration...');
       
-      // Register fonts with direct URLs. react-pdf will fetch them.
+      // Get the base URL for production/development
+      const baseUrl = typeof window !== 'undefined' 
+        ? window.location.origin 
+        : process.env.NEXT_PUBLIC_VERCEL_URL 
+          ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+          : 'http://localhost:3000';
+      
+      console.log('Loading fonts from:', baseUrl);
+      
+      // Register fonts with absolute URLs
       Font.register({
         family: 'NotoSans',
         fonts: [
-          { src: getFontPath('NotoSans-Regular.ttf'), fontWeight: 400 },
-          { src: getFontPath('NotoSans-Bold.ttf'), fontWeight: 700 },
+          { 
+            src: `${baseUrl}/fonts/NotoSans-Regular.ttf`,
+            fontWeight: 400 
+          },
+          { 
+            src: `${baseUrl}/fonts/NotoSans-Bold.ttf`,
+            fontWeight: 700 
+          },
         ],
       });
 
       Font.register({
         family: 'NotoSansArabic',
         fonts: [
-          { src: getFontPath('NotoSansArabic-Regular.ttf'), fontWeight: 400 },
-          { src: getFontPath('NotoSansArabic-Bold.ttf'), fontWeight: 700 },
+          { 
+            src: `${baseUrl}/fonts/NotoSansArabic-Regular.ttf`,
+            fontWeight: 400 
+          },
+          { 
+            src: `${baseUrl}/fonts/NotoSansArabic-Bold.ttf`,
+            fontWeight: 700 
+          },
         ],
       });
 
       Font.register({
         family: 'NotoSansJP',
         fonts: [
-          { src: getFontPath('NotoSansJP-Regular.ttf'), fontWeight: 400 },
-          { src: getFontPath('NotoSansJP-Bold.ttf'), fontWeight: 700 },
+          { 
+            src: `${baseUrl}/fonts/NotoSansJP-Regular.ttf`,
+            fontWeight: 400 
+          },
+          { 
+            src: `${baseUrl}/fonts/NotoSansJP-Bold.ttf`,
+            fontWeight: 700 
+          },
         ],
       });
 
@@ -56,19 +73,32 @@ export const registerFonts = async () => {
     } catch (error) {
       console.error('Font registration failed:', error);
       
-      // Register fallback system fonts (e.g., Helvetica, Arial)
+      // Register fallback system fonts
       try {
+        console.log('Using system font fallbacks...');
+        
         Font.register({
           family: 'NotoSans',
-          src: 'Helvetica'
+          fonts: [
+            { src: 'Helvetica', fontWeight: 400 },
+            { src: 'Helvetica-Bold', fontWeight: 700 },
+          ],
         });
+        
         Font.register({
           family: 'NotoSansArabic',
-          src: 'Arial'
+          fonts: [
+            { src: 'Arial', fontWeight: 400 },
+            { src: 'Arial-Bold', fontWeight: 700 },
+          ],
         });
+        
         Font.register({
           family: 'NotoSansJP',
-          src: 'Arial'
+          fonts: [
+            { src: 'Arial', fontWeight: 400 },
+            { src: 'Arial-Bold', fontWeight: 700 },
+          ],
         });
         
         fontsRegistered = true;
