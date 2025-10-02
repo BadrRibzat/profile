@@ -1,7 +1,8 @@
 // components/CountrySpecificResume.tsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Document, Page, View, Text, StyleSheet, Font, Image } from '@react-pdf/renderer';
 import { meImageBase64 } from '../data/resume/base64-image';
+import { registerFonts } from '../utils/fontLoader';
 
 // --- IMAGE HANDLING WITH FALLBACK ---
 const ImageWithFallback: React.FC<{ 
@@ -933,14 +934,37 @@ const ArabicResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
 };
 
 // --- MAIN EXPORT COMPONENT WITH PROPER FONT LOADING ---
-const CountrySpecificResume = ({ data, locale, translatedStrings, fontsLoaded = false }: Props) => {
-  if (!fontsLoaded) {
+const CountrySpecificResume: React.FC<Props> = ({ data, locale, translatedStrings, fontsLoaded = false }) => {
+  const [internalFontsLoaded, setInternalFontsLoaded] = useState(fontsLoaded);
+  const [fontLoadError, setFontLoadError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!internalFontsLoaded && !fontsLoaded) {
+      const loadFonts = async () => {
+        try {
+          await registerFonts();
+          setInternalFontsLoaded(true);
+          setFontLoadError(null);
+        } catch (error) {
+          console.error('Font loading failed in PDF component:', error);
+          setFontLoadError('Font loading failed, using fallback fonts');
+          // Still set to true to render with fallback fonts
+          setInternalFontsLoaded(true);
+        }
+      };
+      loadFonts();
+    }
+  }, [internalFontsLoaded, fontsLoaded]);
+
+  const shouldRenderContent = fontsLoaded || internalFontsLoaded;
+
+  if (!shouldRenderContent) {
     return (
       <Document>
         <Page size="A4" style={{ padding: 50, fontFamily: 'Helvetica' }}>
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text style={{ fontSize: 16, marginBottom: 20 }}>Fonts not loaded</Text>
-            <Text style={{ fontSize: 12, color: '#666' }}>Please refresh and try again.</Text>
+            <Text style={{ fontSize: 16, marginBottom: 20 }}>Loading fonts...</Text>
+            <Text style={{ fontSize: 12, color: '#666' }}>Please wait while we prepare your resume</Text>
           </View>
         </Page>
       </Document>
