@@ -234,7 +234,7 @@ const AboutPage: React.FC = () => {
                 <div className="relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-2xl">
                   <div className="aspect-square overflow-hidden rounded-xl mb-6">
                     <img 
-                      src="/images/me.jpg" 
+                      src="/images/me.jpeg" 
                       alt={t('common:seo.title', 'Badr Ribzat')}
                       className="w-full h-full object-cover"
                     />
