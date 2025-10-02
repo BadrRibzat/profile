@@ -4,9 +4,8 @@
   "description": "Professional international portfolio with multi-language support and ATS-optimized resume generation",
   "scripts": {
     "dev": "next dev",
-    "build": "npm run convert-fonts && next build",
+    "build": "next build",
     "start": "next start",
-    "convert-fonts": "node scripts/convert-fonts-to-base64.js",
     "lint": "next lint",
     "export": "next build && next export",
     "analyze": "cross-env ANALYZE=true next build",

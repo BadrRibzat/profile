@@ -146,7 +146,7 @@ interface ResumeTemplateProps {
 const USResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) => {
   const s = StyleSheet.create({
     page: { 
-      fontFamily: 'NotoSans', 
+      fontFamily: 'Helvetica', 
       fontSize: 10, 
       color: '#2d3748', 
       padding: '0.75in',
@@ -154,14 +154,14 @@ const USResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) =>
     },
     header: { textAlign: 'center', marginBottom: 20, borderBottom: '2px solid #2c5282', paddingBottom: 15 },
     name: { 
-      fontFamily: 'NotoSans', 
+      fontFamily: 'Helvetica', 
       fontSize: 24, 
       fontWeight: 700, 
       color: '#1a202c', 
       marginBottom: 4 
     },
     title: { 
-      fontFamily: 'NotoSans', 
+      fontFamily: 'Helvetica', 
       fontSize: 14, 
       color: '#2c5282', 
       marginBottom: 8,
@@ -177,7 +177,7 @@ const USResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) =>
     contactItem: { marginHorizontal: 8 },
     section: { marginBottom: 18 },
     sectionTitle: { 
-      fontFamily: 'NotoSans', 
+      fontFamily: 'Helvetica', 
       fontSize: 12, 
       fontWeight: 700, 
       color: '#2c5282', 
@@ -187,7 +187,7 @@ const USResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) =>
       textTransform: 'uppercase'
     },
     subsectionTitle: { 
-      fontFamily: 'NotoSans', 
+      fontFamily: 'Helvetica', 
       fontSize: 11, 
       fontWeight: 700, 
       color: '#2d3748', 
@@ -196,7 +196,7 @@ const USResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) =>
     entry: { marginBottom: 14 },
     entryHeader: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 4 },
     entryTitle: { 
-      fontFamily: 'NotoSans', 
+      fontFamily: 'Helvetica', 
       fontWeight: 700, 
       fontSize: 11, 
       color: '#1a202c' 
@@ -336,7 +336,7 @@ const USResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) =>
 // --- 2. GERMAN TEMPLATE (Fixed image display) ---
 const GermanResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) => {
   const s = StyleSheet.create({
-    page: { fontFamily: 'NotoSans', fontSize: 10, color: '#333', fontWeight: 400 },
+    page: { fontFamily: 'Helvetica', fontSize: 10, color: '#333', fontWeight: 400 },
     container: { flexDirection: 'row', flex: 1 },
     leftColumn: { width: '35%', backgroundColor: '#f4f4f4', padding: 20 },
     rightColumn: { width: '65%', padding: '20 20 20 15' },
@@ -349,7 +349,7 @@ const GermanResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
       border: '1px solid #ddd'
     },
     name: { 
-      fontFamily: 'NotoSans', 
+      fontFamily: 'Helvetica', 
       fontSize: 18, 
       fontWeight: 700, 
       textAlign: 'center', 
@@ -357,7 +357,7 @@ const GermanResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
       color: '#1a202c' 
     },
     title: { 
-      fontFamily: 'NotoSans', 
+      fontFamily: 'Helvetica', 
       fontSize: 12, 
       textAlign: 'center', 
       color: '#555', 
@@ -365,7 +365,7 @@ const GermanResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
       fontWeight: 400
     },
     sectionTitle: { 
-      fontFamily: 'NotoSans', 
+      fontFamily: 'Helvetica', 
       fontSize: 14, 
       fontWeight: 700, 
       borderBottom: '1.5px solid #333', 
@@ -373,7 +373,7 @@ const GermanResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
       marginBottom: 10 
     },
     sidebarTitle: { 
-      fontFamily: 'NotoSans', 
+      fontFamily: 'Helvetica', 
       fontSize: 12, 
       fontWeight: 700, 
       color: '#1a202c', 
@@ -382,7 +382,7 @@ const GermanResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
     contactItem: { fontSize: 9, marginBottom: 5 },
     skill: { fontSize: 9, marginBottom: 4 },
     entry: { marginBottom: 12 },
-    entryTitle: { fontFamily: 'NotoSans', fontWeight: 700, fontSize: 11 },
+    entryTitle: { fontFamily: 'Helvetica', fontWeight: 700, fontSize: 11 },
     entryMeta: { fontSize: 9, color: '#666', marginBottom: 3 },
   });
 
@@ -467,7 +467,7 @@ const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings
   const s = StyleSheet.create({
     page: { 
       padding: 30, 
-      fontFamily: 'NotoSansJP', 
+      fontFamily: 'Helvetica', 
       fontSize: 10, 
       lineHeight: 1.4,
       fontWeight: 400
@@ -480,7 +480,7 @@ const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings
       paddingBottom: 10, 
       marginBottom: 15 
     },
-    headerTitle: { fontFamily: 'NotoSansJP', fontSize: 24, fontWeight: 700 },
+    headerTitle: { fontFamily: 'Helvetica', fontSize: 24, fontWeight: 700 },
     headerDate: { fontSize: 10, paddingTop: 14 },
     personalInfoSection: {
       flexDirection: 'row',
@@ -520,7 +520,7 @@ const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings
     },
     section: { marginBottom: 20 },
     sectionTitle: { 
-      fontFamily: 'NotoSansJP', 
+      fontFamily: 'Helvetica', 
       fontSize: 14, 
       fontWeight: 700, 
       borderBottom: '2px solid black', 
@@ -676,7 +676,7 @@ const JapaneseResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings
 // --- 4. MODERN TEMPLATE (Fixed image display for French/Spanish) ---
 const ModernResume: React.FC<Props> = ({ data, locale, translatedStrings }) => {
   const s = StyleSheet.create({
-    page: { fontFamily: 'NotoSans', fontSize: 10, color: '#333', fontWeight: 400 },
+    page: { fontFamily: 'Helvetica', fontSize: 10, color: '#333', fontWeight: 400 },
     container: { flexDirection: 'row', flex: 1 },
     leftColumn: { width: '35%', backgroundColor: '#2c3e50', color: 'white', padding: 20 },
     rightColumn: { width: '65%', padding: '20 20 20 15' },
@@ -690,14 +690,14 @@ const ModernResume: React.FC<Props> = ({ data, locale, translatedStrings }) => {
       border: '2px solid white'
     },
     name: { 
-      fontFamily: 'NotoSans', 
+      fontFamily: 'Helvetica', 
       fontSize: 20, 
       fontWeight: 700, 
       textAlign: 'center', 
       marginBottom: 5 
     },
     title: { 
-      fontFamily: 'NotoSans', 
+      fontFamily: 'Helvetica', 
       fontSize: 12, 
       textAlign: 'center', 
       color: '#ecf0f1', 
@@ -705,7 +705,7 @@ const ModernResume: React.FC<Props> = ({ data, locale, translatedStrings }) => {
       fontWeight: 400
     },
     sectionTitle: { 
-      fontFamily: 'NotoSans', 
+      fontFamily: 'Helvetica', 
       fontSize: 14, 
       fontWeight: 700, 
       color: '#2c3e50', 
@@ -714,7 +714,7 @@ const ModernResume: React.FC<Props> = ({ data, locale, translatedStrings }) => {
       marginBottom: 10 
     },
     sidebarTitle: { 
-      fontFamily: 'NotoSans', 
+      fontFamily: 'Helvetica', 
       fontSize: 12, 
       fontWeight: 700, 
       color: 'white', 
@@ -725,7 +725,7 @@ const ModernResume: React.FC<Props> = ({ data, locale, translatedStrings }) => {
     contactItem: { fontSize: 9, marginBottom: 5, color: '#ecf0f1' },
     skill: { fontSize: 9, marginBottom: 4, color: '#ecf0f1' },
     entry: { marginBottom: 12 },
-    entryTitle: { fontFamily: 'NotoSans', fontWeight: 700, fontSize: 11 },
+    entryTitle: { fontFamily: 'Helvetica', fontWeight: 700, fontSize: 11 },
     entryMeta: { fontSize: 9, color: '#666', marginBottom: 3 },
   });
 
@@ -804,7 +804,7 @@ const ModernResume: React.FC<Props> = ({ data, locale, translatedStrings }) => {
 const ArabicResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }) => {
   const s = StyleSheet.create({
     page: { 
-      fontFamily: 'NotoSansArabic', 
+      fontFamily: 'Helvetica', 
       fontSize: 11, 
       color: '#333', 
       padding: 30,
@@ -823,7 +823,7 @@ const ArabicResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
       border: '2px solid white'
     },
     name: { 
-      fontFamily: 'NotoSansArabic', 
+      fontFamily: 'Helvetica', 
       fontSize: 18, 
       fontWeight: 700, 
       textAlign: 'center', 
@@ -831,7 +831,7 @@ const ArabicResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
       marginBottom: 5
     },
     title: { 
-      fontFamily: 'NotoSansArabic', 
+      fontFamily: 'Helvetica', 
       fontSize: 12, 
       textAlign: 'center', 
       color: '#ecf0f1', 
@@ -839,7 +839,7 @@ const ArabicResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
       fontWeight: 400
     },
     sectionTitle: { 
-      fontFamily: 'NotoSansArabic', 
+      fontFamily: 'Helvetica', 
       fontSize: 14, 
       fontWeight: 700, 
       color: '#2c3e50', 
@@ -849,7 +849,7 @@ const ArabicResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
       textAlign: 'right'
     },
     sidebarTitle: { 
-      fontFamily: 'NotoSansArabic', 
+      fontFamily: 'Helvetica', 
       fontSize: 11, 
       fontWeight: 700, 
       color: 'white', 
@@ -860,7 +860,7 @@ const ArabicResume: React.FC<ResumeTemplateProps> = ({ data, translatedStrings }
     },
     contactItem: { fontSize: 9, marginBottom: 5, color: '#ecf0f1', textAlign: 'center' },
     entry: { marginBottom: 12, textAlign: 'right' },
-    entryTitle: { fontFamily: 'NotoSansArabic', fontWeight: 700, fontSize: 11 },
+    entryTitle: { fontFamily: 'Helvetica', fontWeight: 700, fontSize: 11 },
     entryMeta: { fontSize: 9, color: '#6c757d', marginBottom: 3 },
   });
 
@@ -963,7 +963,7 @@ const CountrySpecificResume: React.FC<Props> = ({ data, locale, translatedString
       <Document>
         <Page size="A4" style={{ padding: 50, fontFamily: 'Helvetica' }}>
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text style={{ fontSize: 16, marginBottom: 20 }}>Loading fonts...</Text>
+            <Text style={{ fontSize: 16, marginBottom: 20 }}>Loading resume...</Text>
             <Text style={{ fontSize: 12, color: '#666' }}>Please wait while we prepare your resume</Text>
           </View>
         </Page>
