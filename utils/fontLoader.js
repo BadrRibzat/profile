@@ -1,8 +1,16 @@
 // utils/fontLoader.js
 import { Font } from '@react-pdf/renderer';
 
-// Import base64 fonts from generated file
-import * as fontsBase64 from './fontsBase64';
+// Import base64 fonts directly by name from the generated file.
+// This ensures each named export is correctly resolved.
+import {
+  NotoSansRegular,
+  NotoSansBold,
+  NotoSansArabicRegular,
+  NotoSansArabicBold,
+  NotoSansJPRegular,
+  NotoSansJPBold,
+} from './fontsBase64';
 
 let fontsRegistered = false;
 let fontLoadingPromise = null;
@@ -18,16 +26,16 @@ export const registerFonts = async () => {
     try {
       console.log('Starting font registration with base64...');
       
-      // Register fonts with base64 data URLs
+      // Register fonts with base64 data URLs, using directly imported variables
       Font.register({
         family: 'NotoSans',
         fonts: [
           { 
-            src: fontsBase64.NotoSansRegular,
+            src: NotoSansRegular, // Using the directly imported variable
             fontWeight: 400 
           },
           { 
-            src: fontsBase64.NotoSansBold,
+            src: NotoSansBold, // Using the directly imported variable
             fontWeight: 700 
           },
         ],
@@ -37,11 +45,11 @@ export const registerFonts = async () => {
         family: 'NotoSansArabic',
         fonts: [
           { 
-            src: fontsBase64.NotoSansArabicRegular,
+            src: NotoSansArabicRegular, // Using the directly imported variable
             fontWeight: 400 
           },
           { 
-            src: fontsBase64.NotoSansArabicBold,
+            src: NotoSansArabicBold, // Using the directly imported variable
             fontWeight: 700 
           },
         ],
@@ -51,11 +59,11 @@ export const registerFonts = async () => {
         family: 'NotoSansJP',
         fonts: [
           { 
-            src: fontsBase64.NotoSansJPRegular,
+            src: NotoSansJPRegular, // Using the directly imported variable
             fontWeight: 400 
           },
           { 
-            src: fontsBase64.NotoSansJPBold,
+            src: NotoSansJPBold, // Using the directly imported variable
             fontWeight: 700 
           },
         ],

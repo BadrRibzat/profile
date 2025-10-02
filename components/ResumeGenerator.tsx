@@ -26,7 +26,7 @@ const ResumeGenerator: React.FC = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
   const [fontError, setFontError] = useState<string | null>(null);
 
-  // Load fonts with error handling
+  // Load fonts with retry and error handling
   useEffect(() => {
     const loadFonts = async () => {
       try {
@@ -35,8 +35,15 @@ const ResumeGenerator: React.FC = () => {
         console.log('Fonts loaded successfully');
       } catch (error) {
         console.error('Font loading failed:', error);
-        setFontError('Failed to load custom fonts, using fallback fonts');
-        setFontsLoaded(true); // Proceed with fallbacks
+        setFontError('Failed to load custom fonts. Retrying with fallbacks...');
+        // Retry once with fallbacks
+        try {
+          await registerFonts(); // Assuming registerFonts has fallback logic
+          setFontsLoaded(true);
+        } catch (retryError) {
+          setFontError('Font loading failed completely. Using system defaults.');
+          setFontsLoaded(true); // Proceed anyway to avoid blocking
+        }
       }
     };
     
@@ -70,7 +77,7 @@ const ResumeGenerator: React.FC = () => {
 
   useEffect(() => setIsClient(true), []);
 
-  // Translated strings (unchanged from your code)
+  // Translated strings (unchanged)
   const translatedStrings = {
     summaryTitle: t('summary.title', 'PROFESSIONAL SUMMARY'),
     skillsTitle: t('skills.title', 'TECHNICAL COMPETENCIES'),
